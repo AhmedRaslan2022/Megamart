@@ -23,6 +23,12 @@
 		046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F989E286E5CBD008FDFFC /* Constatnts.swift */; };
 		046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F98A0286E5D26008FDFFC /* Login_ViewController.swift */; };
 		046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */; };
+		04F0FA71286F8BAD00A82FD0 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */; };
+		04F0FA73286F8BB900A82FD0 /* ProductDetails_CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F0FA72286F8BB900A82FD0 /* ProductDetails_CollectionViewCell.xib */; };
+		04F0FA79286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0FA78286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift */; };
+		9C71CCB5488593BFCE891BBB /* Pods_Megamart_MegamartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE3C7B2D01E79E79C1087D /* Pods_Megamart_MegamartUITests.framework */; };
+		C5D10108B4E5C2DDEF4CE997 /* Pods_Megamart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFD13B2A6D75F0171BF185E /* Pods_Megamart.framework */; };
+		E1CFD67D63E9CD8D26E5AC53 /* Pods_MegamartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB60F7450E81E9021A2F061B /* Pods_MegamartTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,10 +69,22 @@
 		046F989E286E5CBD008FDFFC /* Constatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatnts.swift; sourceTree = "<group>"; };
 		046F98A0286E5D26008FDFFC /* Login_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ViewController.swift; sourceTree = "<group>"; };
 		046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_ViewController.swift; sourceTree = "<group>"; };
+		04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
+		04F0FA72286F8BB900A82FD0 /* ProductDetails_CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetails_CollectionViewCell.xib; sourceTree = "<group>"; };
+		04F0FA78286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails_CollectionViewCell.swift; sourceTree = "<group>"; };
+		1E7A9F8253DE37599AF2A0F4 /* Pods-MegamartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegamartTests.debug.xcconfig"; path = "Target Support Files/Pods-MegamartTests/Pods-MegamartTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2FFD13B2A6D75F0171BF185E /* Pods_Megamart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Megamart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C681AD0942D63E9CA0D37C2 /* Pods-Megamart-MegamartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Megamart-MegamartUITests.debug.xcconfig"; path = "Target Support Files/Pods-Megamart-MegamartUITests/Pods-Megamart-MegamartUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		96D6787A6AE130E03A3135F1 /* Pods-Megamart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Megamart.release.xcconfig"; path = "Target Support Files/Pods-Megamart/Pods-Megamart.release.xcconfig"; sourceTree = "<group>"; };
+		CB60F7450E81E9021A2F061B /* Pods_MegamartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MegamartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D272DD88AAB393318F6C31BE /* Pods-MegamartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegamartTests.release.xcconfig"; path = "Target Support Files/Pods-MegamartTests/Pods-MegamartTests.release.xcconfig"; sourceTree = "<group>"; };
 		E28E9055286F3A770041B0A7 /* BrandsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCollectionCell.swift; sourceTree = "<group>"; };
 		E28E9056286F3A770041B0A7 /* BrandsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandsCollectionCell.xib; sourceTree = "<group>"; };
 		E28E9058286F3ADA0041B0A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E28E905A286F3CF60041B0A7 /* BrandsCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCollectionController.swift; sourceTree = "<group>"; };
+		E5CE3C7B2D01E79E79C1087D /* Pods_Megamart_MegamartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Megamart_MegamartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECEA2E2270C8928BCE333FF8 /* Pods-Megamart-MegamartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Megamart-MegamartUITests.release.xcconfig"; path = "Target Support Files/Pods-Megamart-MegamartUITests/Pods-Megamart-MegamartUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F38F179678ACB793EFBF0F35 /* Pods-Megamart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Megamart.debug.xcconfig"; path = "Target Support Files/Pods-Megamart/Pods-Megamart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D10108B4E5C2DDEF4CE997 /* Pods_Megamart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CFD67D63E9CD8D26E5AC53 /* Pods_MegamartTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C71CCB5488593BFCE891BBB /* Pods_Megamart_MegamartUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +122,8 @@
 				0418BE63286CF7F9000F28EC /* MegamartTests */,
 				0418BE6D286CF7F9000F28EC /* MegamartUITests */,
 				0418BE48286CF7F7000F28EC /* Products */,
+				BEFF2A619689B19CC2AC9626 /* Pods */,
+				B1A461EA3E6762AD7B2C75EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,6 +245,7 @@
 		0418BE86286CF8ED000F28EC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				04F0FA72286F8BB900A82FD0 /* ProductDetails_CollectionViewCell.xib */,
 				E28E9059286F3B480041B0A7 /* Brands */,
 			);
 			path = Cells;
@@ -234,6 +258,7 @@
 				0418BE50286CF7F7000F28EC /* Main.storyboard */,
 				0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */,
 				046F989C286E3382008FDFFC /* Authentication.storyboard */,
+				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -246,8 +271,40 @@
 				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
 				046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */,
 				00814DA7286EF06700E94EA4 /* SettingViewController.swift */,
+				04F0FA77286F8BFD00A82FD0 /* Cells */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		04F0FA77286F8BFD00A82FD0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				04F0FA78286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B1A461EA3E6762AD7B2C75EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FFD13B2A6D75F0171BF185E /* Pods_Megamart.framework */,
+				E5CE3C7B2D01E79E79C1087D /* Pods_Megamart_MegamartUITests.framework */,
+				CB60F7450E81E9021A2F061B /* Pods_MegamartTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEFF2A619689B19CC2AC9626 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F38F179678ACB793EFBF0F35 /* Pods-Megamart.debug.xcconfig */,
+				96D6787A6AE130E03A3135F1 /* Pods-Megamart.release.xcconfig */,
+				3C681AD0942D63E9CA0D37C2 /* Pods-Megamart-MegamartUITests.debug.xcconfig */,
+				ECEA2E2270C8928BCE333FF8 /* Pods-Megamart-MegamartUITests.release.xcconfig */,
+				1E7A9F8253DE37599AF2A0F4 /* Pods-MegamartTests.debug.xcconfig */,
+				D272DD88AAB393318F6C31BE /* Pods-MegamartTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E28E9057286F3ACD0041B0A7 /* Home */ = {
@@ -275,9 +332,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0418BE74286CF7F9000F28EC /* Build configuration list for PBXNativeTarget "Megamart" */;
 			buildPhases = (
+				C1096EB40F1B12A41C60D1BB /* [CP] Check Pods Manifest.lock */,
 				0418BE43286CF7F7000F28EC /* Sources */,
 				0418BE44286CF7F7000F28EC /* Frameworks */,
 				0418BE45286CF7F7000F28EC /* Resources */,
+				21D18EC70CC107395DBFE323 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +351,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0418BE77286CF7F9000F28EC /* Build configuration list for PBXNativeTarget "MegamartTests" */;
 			buildPhases = (
+				9FFB012805A5083C24EE1E62 /* [CP] Check Pods Manifest.lock */,
 				0418BE5C286CF7F9000F28EC /* Sources */,
 				0418BE5D286CF7F9000F28EC /* Frameworks */,
 				0418BE5E286CF7F9000F28EC /* Resources */,
@@ -310,9 +370,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0418BE7A286CF7F9000F28EC /* Build configuration list for PBXNativeTarget "MegamartUITests" */;
 			buildPhases = (
+				444A418FDB2BD4B5DAF04A5D /* [CP] Check Pods Manifest.lock */,
 				0418BE66286CF7F9000F28EC /* Sources */,
 				0418BE67286CF7F9000F28EC /* Frameworks */,
 				0418BE68286CF7F9000F28EC /* Resources */,
+				FCD79F5FC843D2AF95D39806 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -372,11 +434,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F0FA73286F8BB900A82FD0 /* ProductDetails_CollectionViewCell.xib in Resources */,
 				0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */,
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
 				00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */,
 				0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */,
 				0418BE52286CF7F7000F28EC /* Main.storyboard in Resources */,
+				04F0FA71286F8BAD00A82FD0 /* ProductDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +460,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21D18EC70CC107395DBFE323 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Megamart/Pods-Megamart-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Megamart/Pods-Megamart-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Megamart/Pods-Megamart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		444A418FDB2BD4B5DAF04A5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Megamart-MegamartUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FFB012805A5083C24EE1E62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MegamartTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1096EB40F1B12A41C60D1BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Megamart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCD79F5FC843D2AF95D39806 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Megamart-MegamartUITests/Pods-Megamart-MegamartUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Megamart-MegamartUITests/Pods-Megamart-MegamartUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Megamart-MegamartUITests/Pods-Megamart-MegamartUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0418BE43286CF7F7000F28EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -409,6 +576,7 @@
 				046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */,
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
+				04F0FA79286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +750,7 @@
 		};
 		0418BE75286CF7F9000F28EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F38F179678ACB793EFBF0F35 /* Pods-Megamart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -609,6 +778,7 @@
 		};
 		0418BE76286CF7F9000F28EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96D6787A6AE130E03A3135F1 /* Pods-Megamart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -636,6 +806,7 @@
 		};
 		0418BE78286CF7F9000F28EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E7A9F8253DE37599AF2A0F4 /* Pods-MegamartTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -660,6 +831,7 @@
 		};
 		0418BE79286CF7F9000F28EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D272DD88AAB393318F6C31BE /* Pods-MegamartTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -684,6 +856,7 @@
 		};
 		0418BE7B286CF7F9000F28EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C681AD0942D63E9CA0D37C2 /* Pods-Megamart-MegamartUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -706,6 +879,7 @@
 		};
 		0418BE7C286CF7F9000F28EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECEA2E2270C8928BCE333FF8 /* Pods-Megamart-MegamartUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
