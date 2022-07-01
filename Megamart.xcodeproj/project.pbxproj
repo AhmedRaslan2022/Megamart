@@ -23,9 +23,6 @@
 		046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F989E286E5CBD008FDFFC /* Constatnts.swift */; };
 		046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F98A0286E5D26008FDFFC /* Login_ViewController.swift */; };
 		046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */; };
-		E28E9049286F149B0041B0A7 /* BrandsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28E9045286F149B0041B0A7 /* BrandsCollectionCell.xib */; };
-		E28E904A286F149B0041B0A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E9046286F149B0041B0A7 /* HomeViewController.swift */; };
-		E28E904B286F149B0041B0A7 /* BrandsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E9047286F149B0041B0A7 /* BrandsCollectionCell.swift */; };
 		E28E904C286F149B0041B0A7 /* BrandsCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E9048286F149B0041B0A7 /* BrandsCollectionController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,10 +64,10 @@
 		046F989E286E5CBD008FDFFC /* Constatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatnts.swift; sourceTree = "<group>"; };
 		046F98A0286E5D26008FDFFC /* Login_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ViewController.swift; sourceTree = "<group>"; };
 		046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_ViewController.swift; sourceTree = "<group>"; };
-		E28E9045286F149B0041B0A7 /* BrandsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BrandsCollectionCell.xib; path = "../../../../../../Downloads/Megamart-master/Megamart/View/ViewControllers/BrandsCollectionCell.xib"; sourceTree = "<group>"; };
-		E28E9046286F149B0041B0A7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "../../../../../../Downloads/Megamart-master/Megamart/View/ViewControllers/HomeViewController.swift"; sourceTree = "<group>"; };
-		E28E9047286F149B0041B0A7 /* BrandsCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrandsCollectionCell.swift; path = "../../../../../../Downloads/Megamart-master/Megamart/View/ViewControllers/BrandsCollectionCell.swift"; sourceTree = "<group>"; };
 		E28E9048286F149B0041B0A7 /* BrandsCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrandsCollectionController.swift; path = "../../../../../../Downloads/Megamart-master/Megamart/View/ViewControllers/BrandsCollectionController.swift"; sourceTree = "<group>"; };
+		E28E9055286F3A770041B0A7 /* BrandsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCollectionCell.swift; sourceTree = "<group>"; };
+		E28E9056286F3A770041B0A7 /* BrandsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandsCollectionCell.xib; sourceTree = "<group>"; };
+		E28E9058286F3ADA0041B0A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +223,7 @@
 		0418BE86286CF8ED000F28EC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E28E9059286F3B480041B0A7 /* Brands */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -244,16 +242,31 @@
 		0418BE88286CF903000F28EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E28E9057286F3ACD0041B0A7 /* Home */,
 				0418BE4E286CF7F7000F28EC /* ViewController.swift */,
 				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
-				E28E9047286F149B0041B0A7 /* BrandsCollectionCell.swift */,
-				E28E9045286F149B0041B0A7 /* BrandsCollectionCell.xib */,
 				E28E9048286F149B0041B0A7 /* BrandsCollectionController.swift */,
-				E28E9046286F149B0041B0A7 /* HomeViewController.swift */,
 				046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */,
 				00814DA7286EF06700E94EA4 /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E28E9057286F3ACD0041B0A7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E28E9058286F3ADA0041B0A7 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E28E9059286F3B480041B0A7 /* Brands */ = {
+			isa = PBXGroup;
+			children = (
+				E28E9055286F3A770041B0A7 /* BrandsCollectionCell.swift */,
+				E28E9056286F3A770041B0A7 /* BrandsCollectionCell.xib */,
+			);
+			path = Brands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,7 +374,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */,
-				E28E9049286F149B0041B0A7 /* BrandsCollectionCell.xib in Resources */,
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
 				00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */,
 				0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */,
@@ -395,12 +407,10 @@
 				0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */,
 				00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */,
 				0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */,
-				E28E904A286F149B0041B0A7 /* HomeViewController.swift in Sources */,
 				046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */,
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				E28E904C286F149B0041B0A7 /* BrandsCollectionController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
-				E28E904B286F149B0041B0A7 /* BrandsCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

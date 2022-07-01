@@ -74,6 +74,11 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="AdsCollection" destination="Lkw-an-6fz" id="3ij-wp-Cbs"/>
+                        <outlet property="BrandsCollection" destination="JnD-ex-DI5" id="mJw-Wj-jbK"/>
+                        <outlet property="BrandsLabel" destination="VW6-QZ-8lX" id="FSe-MW-NTt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyd-cz-tbT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

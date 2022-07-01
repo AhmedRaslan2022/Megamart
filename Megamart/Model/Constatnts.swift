@@ -8,7 +8,7 @@
 import Foundation
 
 struct Constants {
-    
-    let login_viewController_id = "login_viewController_id"
-    let SignUp_viewController_id = "SignUp_ViewController_id"
+   
+    static let login_viewController_id = "login_viewController_id"
+    static let SignUp_viewController_id = "SignUp_ViewController_id"
 }
