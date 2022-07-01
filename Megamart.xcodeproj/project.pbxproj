@@ -275,11 +275,10 @@
 				0418BE50286CF7F7000F28EC /* Main.storyboard */,
 				0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */,
 				046F989C286E3382008FDFFC /* Authentication.storyboard */,
-<<<<<<< HEAD
+
 				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
-=======
-				00FDE47B286F8DFD00D08360 /* BagStoryboard.storyboard */,
->>>>>>> branch_shoppingcardui
+				
+ branch_shoppingcardui
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -287,11 +286,11 @@
 		0418BE88286CF903000F28EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
+
 				E28E9057286F3ACD0041B0A7 /* Home */,
-=======
-				00FDE470286F527300D08360 /* ShoppingCard */,
->>>>>>> branch_shoppingcardui
+
+				
+ branch_shoppingcardui
 				0418BE4E286CF7F7000F28EC /* ViewController.swift */,
 				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
 				046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */,
