@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4CO-bR-jOa">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setting View Controller-->
+        <scene sceneID="AV2-Ix-J0O">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" id="4CO-bR-jOa" customClass="SettingViewController" customModule="Megamart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="thi-ls-GLB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting" translatesAutoresizingMaskIntoConstraints="NO" id="DXT-PK-ffd">
+                                <rect key="frame" x="15" y="44" width="384" height="248"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eEo-II-9ty">
+                                <rect key="frame" x="15" y="292" width="384" height="537.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pL-c7-wlc">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="107.5"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" Change To Arabic ">
+                                            <color key="titleColor" red="0.96416848899999996" green="0.62269365789999997" blue="0.0052955378780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <imageReference key="image" image="book" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="medium">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olh-U3-MOt">
+                                        <rect key="frame" x="0.0" y="107.5" width="384" height="107.5"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" Edit Profile ">
+                                            <color key="titleColor" red="0.96416848899999996" green="0.62269365789999997" blue="0.0052955378780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <imageReference key="image" image="person.circle" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
+                                        </state>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GLc-G7-e4e">
+                                        <rect key="frame" x="0.0" y="215" width="384" height="107.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvR-Tx-jeG">
+                                                <rect key="frame" x="0.0" y="42" width="335" height="23.5"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title=" Dark mode ">
+                                                    <color key="titleColor" red="0.96416848899999996" green="0.62269365789999997" blue="0.0052955378780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <imageReference key="image" image="moon" catalog="system" symbolScale="large"/>
+                                                </state>
+                                            </button>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wbq-ub-SvK">
+                                                <rect key="frame" x="335" y="38.5" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc6-Y5-8Vb">
+                                        <rect key="frame" x="0.0" y="322.5" width="384" height="107.5"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="About Us">
+                                            <color key="titleColor" red="0.96416848899999996" green="0.62269365789999997" blue="0.0052955378780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="18" scale="large" weight="medium"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srU-kR-Rfs">
+                                        <rect key="frame" x="0.0" y="430" width="384" height="107.5"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="  Logout" image="square.and.arrow.down" catalog="system">
+                                            <color key="titleColor" red="0.96416848899999996" green="0.62269365789999997" blue="0.0052955378780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="medium">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H6p-3L-Xqc"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DXT-PK-ffd" firstAttribute="top" secondItem="H6p-3L-Xqc" secondAttribute="top" id="HIC-54-pcV"/>
+                            <constraint firstItem="eEo-II-9ty" firstAttribute="trailing" secondItem="DXT-PK-ffd" secondAttribute="trailing" id="IZE-bk-mRQ"/>
+                            <constraint firstItem="eEo-II-9ty" firstAttribute="top" secondItem="DXT-PK-ffd" secondAttribute="bottom" id="NEM-e7-dag"/>
+                            <constraint firstItem="eEo-II-9ty" firstAttribute="height" secondItem="thi-ls-GLB" secondAttribute="height" multiplier="0.6" id="lBD-1y-hj5"/>
+                            <constraint firstItem="DXT-PK-ffd" firstAttribute="height" secondItem="thi-ls-GLB" secondAttribute="height" multiplier="0.276786" id="nZj-jH-t3W"/>
+                            <constraint firstItem="eEo-II-9ty" firstAttribute="leading" secondItem="DXT-PK-ffd" secondAttribute="leading" id="pjb-HO-lez"/>
+                            <constraint firstItem="DXT-PK-ffd" firstAttribute="trailing" secondItem="H6p-3L-Xqc" secondAttribute="trailing" constant="-15" id="woS-MG-ybR"/>
+                            <constraint firstItem="DXT-PK-ffd" firstAttribute="leading" secondItem="H6p-3L-Xqc" secondAttribute="leading" constant="15" id="zgX-YU-5lQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="switchTheme" destination="wbq-ub-SvK" id="xBy-zc-DPn"/>
+                        <outlet property="uiEditprofile" destination="olh-U3-MOt" id="M2I-e5-kOz"/>
+                        <outlet property="uiLanguage" destination="2pL-c7-wlc" id="Iu1-Ha-9A7"/>
+                        <outlet property="uiLogout" destination="srU-kR-Rfs" id="FB5-do-0sa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qjx-Eg-3Sv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978.26086956521749" y="127.90178571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="moon" catalog="system" width="128" height="121"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="setting" width="203.5" height="203.5"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
