@@ -17,6 +17,10 @@
 		0418BE65286CF7F9000F28EC /* MegamartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE64286CF7F9000F28EC /* MegamartTests.swift */; };
 		0418BE6F286CF7F9000F28EC /* MegamartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE6E286CF7F9000F28EC /* MegamartUITests.swift */; };
 		0418BE71286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */; };
+		046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F989C286E3382008FDFFC /* Authentication.storyboard */; };
+		046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F989E286E5CBD008FDFFC /* Constatnts.swift */; };
+		046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F98A0286E5D26008FDFFC /* Login_ViewController.swift */; };
+		046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		0418BE6A286CF7F9000F28EC /* MegamartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MegamartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0418BE6E286CF7F9000F28EC /* MegamartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegamartUITests.swift; sourceTree = "<group>"; };
 		0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegamartUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		046F989C286E3382008FDFFC /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		046F989E286E5CBD008FDFFC /* Constatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatnts.swift; sourceTree = "<group>"; };
+		046F98A0286E5D26008FDFFC /* Login_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ViewController.swift; sourceTree = "<group>"; };
+		046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 		0418BE7D286CF823000F28EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				046F989E286E5CBD008FDFFC /* Constatnts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +223,7 @@
 			children = (
 				0418BE50286CF7F7000F28EC /* Main.storyboard */,
 				0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */,
+				046F989C286E3382008FDFFC /* Authentication.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -222,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				0418BE4E286CF7F7000F28EC /* ViewController.swift */,
+				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
+				046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -331,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */,
+				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
 				0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */,
 				0418BE52286CF7F7000F28EC /* Main.storyboard in Resources */,
 			);
@@ -357,9 +370,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */,
 				0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */,
 				0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */,
 				0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */,
+				046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */,
+				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
