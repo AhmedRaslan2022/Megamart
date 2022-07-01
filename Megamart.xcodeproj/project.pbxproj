@@ -278,7 +278,7 @@
 
 				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
 				
- branch_shoppingcardui
+ 
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 				E28E9057286F3ACD0041B0A7 /* Home */,
 
 				
- branch_shoppingcardui
+ 
 				0418BE4E286CF7F7000F28EC /* ViewController.swift */,
 				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
 				046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */,
