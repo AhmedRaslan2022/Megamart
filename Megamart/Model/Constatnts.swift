@@ -24,10 +24,13 @@ struct Constants {
     static let SignUp_viewController_id = "SignUp_ViewController_id"
     static let Setting_viewController_id = "SettingViewController_id"
     static let ProductDetails_ViewController_id = "ProductDetails_ViewController_id"
-    
+    static let BagViewController_id = "BagViewController_id"
     
 //MARK: -                   Cells
     
-    static let ProductDetails_cell_id = "ProductDetails_cell_id"
     
+    static let ProductDetails_cell_id = "ProductDetails_cell_id"
+     static let BagTableViewCell = "BagTableViewCell"
+    
+
 }
