@@ -11,4 +11,8 @@ struct Constants {
     
     let login_viewController_id = "login_viewController_id"
     let SignUp_viewController_id = "SignUp_ViewController_id"
+    let setting_viewController_id = "SettingViewController_id"
+    let BagViewController_id = "BagViewController_id"
+    let BagTableViewCell = "BagTableViewCell"
+    
 }

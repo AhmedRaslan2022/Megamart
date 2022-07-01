@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00814DA5286EF03D00E94EA4 /* Setting.storyboard */; };
 		00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00814DA7286EF06700E94EA4 /* SettingViewController.swift */; };
+		00FDE478286F8C8F00D08360 /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDE477286F8C8F00D08360 /* BagViewController.swift */; };
+		00FDE47A286F8CA700D08360 /* BagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDE479286F8CA700D08360 /* BagTableViewCell.swift */; };
+		00FDE47C286F8DFD00D08360 /* BagStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FDE47B286F8DFD00D08360 /* BagStoryboard.storyboard */; };
 		0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4A286CF7F7000F28EC /* AppDelegate.swift */; };
 		0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */; };
 		0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4E286CF7F7000F28EC /* ViewController.swift */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		00814DA5286EF03D00E94EA4 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		00814DA7286EF06700E94EA4 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		00FDE477286F8C8F00D08360 /* BagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
+		00FDE479286F8CA700D08360 /* BagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagTableViewCell.swift; sourceTree = "<group>"; };
+		00FDE47B286F8DFD00D08360 /* BagStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BagStoryboard.storyboard; sourceTree = "<group>"; };
 		0418BE47286CF7F7000F28EC /* Megamart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Megamart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0418BE4A286CF7F7000F28EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00FDE470286F527300D08360 /* ShoppingCard */ = {
+			isa = PBXGroup;
+			children = (
+				00FDE477286F8C8F00D08360 /* BagViewController.swift */,
+				00FDE479286F8CA700D08360 /* BagTableViewCell.swift */,
+			);
+			path = ShoppingCard;
+			sourceTree = "<group>";
+		};
 		0418BE3E286CF7F7000F28EC = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +244,7 @@
 				0418BE50286CF7F7000F28EC /* Main.storyboard */,
 				0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */,
 				046F989C286E3382008FDFFC /* Authentication.storyboard */,
+				00FDE47B286F8DFD00D08360 /* BagStoryboard.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -236,6 +252,7 @@
 		0418BE88286CF903000F28EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				00FDE470286F527300D08360 /* ShoppingCard */,
 				0418BE4E286CF7F7000F28EC /* ViewController.swift */,
 				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
 				046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */,
@@ -350,6 +367,7 @@
 			files = (
 				0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */,
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
+				00FDE47C286F8DFD00D08360 /* BagStoryboard.storyboard in Resources */,
 				00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */,
 				0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */,
 				0418BE52286CF7F7000F28EC /* Main.storyboard in Resources */,
@@ -377,7 +395,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00FDE47A286F8CA700D08360 /* BagTableViewCell.swift in Sources */,
 				046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */,
+				00FDE478286F8C8F00D08360 /* BagViewController.swift in Sources */,
 				0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */,
 				0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */,
 				00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */,
