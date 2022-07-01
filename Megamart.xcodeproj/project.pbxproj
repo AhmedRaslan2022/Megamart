@@ -68,6 +68,7 @@
 		E28E9055286F3A770041B0A7 /* BrandsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCollectionCell.swift; sourceTree = "<group>"; };
 		E28E9056286F3A770041B0A7 /* BrandsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandsCollectionCell.xib; sourceTree = "<group>"; };
 		E28E9058286F3ADA0041B0A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E28E905A286F3CF60041B0A7 /* BrandsCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCollectionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +256,7 @@
 		E28E9057286F3ACD0041B0A7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E28E905A286F3CF60041B0A7 /* BrandsCollectionController.swift */,
 				E28E9058286F3ADA0041B0A7 /* HomeViewController.swift */,
 			);
 			path = Home;
