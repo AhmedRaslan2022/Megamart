@@ -17,5 +17,7 @@ target 'Megamart' do
   end
   pod 'Cosmos'
   pod 'TinyConstraints'
-
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  
 end
