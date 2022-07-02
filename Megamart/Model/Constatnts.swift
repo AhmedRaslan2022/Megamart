@@ -40,12 +40,5 @@ struct Constants {
     static let ProductsViewCell_id = "Products_ViewCell_id"
     static let CategoryViewCell_id = "Category_ViewCell_id"
     
-    
-//MARK: -                   Cells
-    
-     static let Brands_Cell_id = "Brands_Cell_id"
-     static let ProductDetails_cell_id = "ProductDetails_cell_id"
-     static let BagTableViewCell_id = "BagTableViewCell"
-    
 
 }
