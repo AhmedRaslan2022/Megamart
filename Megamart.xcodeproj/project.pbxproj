@@ -325,11 +325,8 @@
 				046F989C286E3382008FDFFC /* Authentication.storyboard */,
 				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
 				041BF14F287051D100339E05 /* Favorites.storyboard */,
-<<<<<<< HEAD
 				E245C2AA287084BB004A341C /* Orders.storyboard */,
-=======
 				008ABD2F2870650F0060CB08 /* payment.storyboard */,
->>>>>>> branch_payment
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -435,11 +432,8 @@
 			children = (
 				E2187B02287049F7009A97F5 /* CategoryViewController.swift */,
 				E28E9058286F3ADA0041B0A7 /* HomeViewController.swift */,
-<<<<<<< HEAD
 				E245C29A287070DD004A341C /* MeViewController.swift */,
-=======
 				008ABD362870C8080060CB08 /* AddressVC.swift */,
->>>>>>> branch_payment
 			);
 			path = Home;
 			sourceTree = "<group>";
