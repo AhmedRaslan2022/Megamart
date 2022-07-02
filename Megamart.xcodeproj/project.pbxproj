@@ -11,6 +11,10 @@
 		00088073286FAFB400DE578B /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00088071286FAFB300DE578B /* BagViewController.swift */; };
 		00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00814DA5286EF03D00E94EA4 /* Setting.storyboard */; };
 		00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00814DA7286EF06700E94EA4 /* SettingViewController.swift */; };
+		008ABD302870650F0060CB08 /* payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008ABD2F2870650F0060CB08 /* payment.storyboard */; };
+		008ABD332870710C0060CB08 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008ABD322870710C0060CB08 /* PaymentVC.swift */; };
+		008ABD35287071330060CB08 /* PaymentOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008ABD34287071330060CB08 /* PaymentOptionVC.swift */; };
+		008ABD372870C8090060CB08 /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008ABD362870C8080060CB08 /* AddressVC.swift */; };
 		00FD6680286FB69000D759D2 /* BagStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0008806D286FAF8B00DE578B /* BagStoryboard.storyboard */; };
 		0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4A286CF7F7000F28EC /* AppDelegate.swift */; };
 		0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */; };
@@ -66,6 +70,10 @@
 		00088071286FAFB300DE578B /* BagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
 		00814DA5286EF03D00E94EA4 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		00814DA7286EF06700E94EA4 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		008ABD2F2870650F0060CB08 /* payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = payment.storyboard; sourceTree = "<group>"; };
+		008ABD322870710C0060CB08 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
+		008ABD34287071330060CB08 /* PaymentOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionVC.swift; sourceTree = "<group>"; };
+		008ABD362870C8080060CB08 /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
 		00FDE477286F8C8F00D08360 /* BagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
 		00FDE479286F8CA700D08360 /* BagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagTableViewCell.swift; sourceTree = "<group>"; };
 		00FDE47B286F8DFD00D08360 /* BagStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BagStoryboard.storyboard; sourceTree = "<group>"; };
@@ -159,6 +167,15 @@
 				00088071286FAFB300DE578B /* BagViewController.swift */,
 			);
 			path = ShoppingCard;
+			sourceTree = "<group>";
+		};
+		008ABD31287070D80060CB08 /* payment  */ = {
+			isa = PBXGroup;
+			children = (
+				008ABD322870710C0060CB08 /* PaymentVC.swift */,
+				008ABD34287071330060CB08 /* PaymentOptionVC.swift */,
+			);
+			path = "payment ";
 			sourceTree = "<group>";
 		};
 		0418BE3E286CF7F7000F28EC = {
@@ -310,9 +327,8 @@
 				0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */,
 				046F989C286E3382008FDFFC /* Authentication.storyboard */,
 				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
-				E2187AFB287049A2009A97F5 /* ProductsCollectionCell.xib */,
 				041BF14F287051D100339E05 /* Favorites.storyboard */,
-
+				008ABD2F2870650F0060CB08 /* payment.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -320,6 +336,7 @@
 		0418BE88286CF903000F28EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				008ABD31287070D80060CB08 /* payment  */,
 				E2187AFF287049DA009A97F5 /* Product */,
 				0008806F286FAFB300DE578B /* ShoppingCard */,
 				E28E9057286F3ACD0041B0A7 /* Home */,
@@ -380,6 +397,7 @@
 				E2187B02287049F7009A97F5 /* CategoryViewController.swift */,
 				E28E905A286F3CF60041B0A7 /* BrandsCollectionController.swift */,
 				E28E9058286F3ADA0041B0A7 /* HomeViewController.swift */,
+				008ABD362870C8080060CB08 /* AddressVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -506,6 +524,7 @@
 				04F0FA73286F8BB900A82FD0 /* ProductDetails_CollectionViewCell.xib in Resources */,
 				0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */,
 				E2187AFA2870495B009A97F5 /* Main.storyboard in Resources */,
+				008ABD302870650F0060CB08 /* payment.storyboard in Resources */,
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
 				00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */,
 				0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */,
@@ -641,6 +660,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008ABD332870710C0060CB08 /* PaymentVC.swift in Sources */,
 				E2187B0628705237009A97F5 /* CategoryCollectionCell.swift in Sources */,
 				046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */,
 				0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */,
@@ -653,9 +673,11 @@
 				00088073286FAFB400DE578B /* BagViewController.swift in Sources */,
 				0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */,
 				046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */,
+				008ABD372870C8090060CB08 /* AddressVC.swift in Sources */,
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
 				00088072286FAFB300DE578B /* BagTableViewCell.swift in Sources */,
+				008ABD35287071330060CB08 /* PaymentOptionVC.swift in Sources */,
 				04F0FA79286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
