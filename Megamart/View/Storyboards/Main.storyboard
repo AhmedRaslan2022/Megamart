@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="Home_viewController_id" id="fa0-oP-dPg" customClass="HomeViewController" customModule="Megamart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GpA-ov-gNT">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brands" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW6-QZ-8lX">
-                                <rect key="frame" x="408" y="189.66666666666666" width="80" height="35"/>
+                                <rect key="frame" x="167" y="430.66666666666669" width="80" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Tf4-Xa-wdI"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="f2N-Va-R3B"/>
@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JnD-ex-DI5">
-                                <rect key="frame" x="44" y="232" width="808" height="182"/>
+                                <rect key="frame" x="0.0" y="473" width="414" height="423"/>
                                 <color key="backgroundColor" red="0.096950954650000004" green="0.4411895763" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cxd-YT-0k4">
                                     <size key="itemSize" width="128" height="128"/>
@@ -38,7 +38,7 @@
                                 <cells/>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lkw-an-6fz">
-                                <rect key="frame" x="104" y="51.000000000000007" width="688" height="122.66666666666669"/>
+                                <rect key="frame" x="60" y="95" width="294" height="319.66666666666669"/>
                                 <color key="backgroundColor" red="0.047172034020000003" green="0.2146632778" blue="0.48655564239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lfb-r9-WNH">
@@ -108,11 +108,11 @@
             <objects>
                 <viewController storyboardIdentifier="CategoryViewController_id" id="YSd-bn-ybB" customClass="CategoryViewController" customModule="Megamart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="86b-pt-9H8">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a0y-bU-AHH">
-                                <rect key="frame" x="44" y="159" width="808" height="255"/>
+                                <rect key="frame" x="0.0" y="203" width="414" height="693"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="znq-H4-ETR">
                                     <size key="itemSize" width="128" height="128"/>
@@ -123,10 +123,10 @@
                                 <cells/>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="s1j-8O-kBp">
-                                <rect key="frame" x="49" y="53" width="798" height="80"/>
+                                <rect key="frame" x="5" y="97" width="404" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYt-QF-Qsu">
-                                        <rect key="frame" x="0.0" y="0.0" width="195.66666666666666" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="97.333333333333329" height="80"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Women"/>
                                         <connections>
@@ -134,7 +134,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlQ-Tn-bkN">
-                                        <rect key="frame" x="200.66666666666663" y="0.0" width="196" height="80"/>
+                                        <rect key="frame" x="102.33333333333334" y="0.0" width="97.333333333333343" height="80"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Men"/>
                                         <connections>
@@ -142,7 +142,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIS-W1-36J">
-                                        <rect key="frame" x="401.66666666666669" y="0.0" width="195.66666666666669" height="80"/>
+                                        <rect key="frame" x="204.66666666666666" y="0.0" width="96.999999999999972" height="80"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Kids"/>
                                         <connections>
@@ -150,7 +150,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="end-vY-Roe">
-                                        <rect key="frame" x="602.33333333333337" y="0.0" width="195.66666666666663" height="80"/>
+                                        <rect key="frame" x="306.66666666666669" y="0.0" width="97.333333333333314" height="80"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="sale"/>
                                         <connections>
@@ -195,7 +195,7 @@
             <objects>
                 <viewController id="gEI-oR-43a" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="63J-ux-w8N">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="lVO-0T-Uae"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -213,7 +213,7 @@
                     <tabBarItem key="tabBarItem" title="Item" image="homekit" catalog="system" id="9Qo-eA-Rf8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="is5-rn-KjW">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -235,7 +235,7 @@
                     <tabBarItem key="tabBarItem" title="Item" image="circle.grid.2x2.fill" catalog="system" id="YAB-qw-euE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0uQ-qP-HIr">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -254,7 +254,7 @@
                     <tabBarItem key="tabBarItem" title="Me" image="person.crop.circle.fill" catalog="system" id="5L7-Ya-84z"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N9p-Rh-sWS">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

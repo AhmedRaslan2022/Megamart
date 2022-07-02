@@ -21,6 +21,8 @@
 		0418BE65286CF7F9000F28EC /* MegamartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE64286CF7F9000F28EC /* MegamartTests.swift */; };
 		0418BE6F286CF7F9000F28EC /* MegamartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE6E286CF7F9000F28EC /* MegamartUITests.swift */; };
 		0418BE71286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */; };
+		041BF150287051D100339E05 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041BF14F287051D100339E05 /* Favorites.storyboard */; };
+		041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BF1512870543200339E05 /* Favorites_ViewController.swift */; };
 		0467CEFC286F8E530070DC64 /* ProductDetails_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */; };
 		046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F989C286E3382008FDFFC /* Authentication.storyboard */; };
 		046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F989E286E5CBD008FDFFC /* Constatnts.swift */; };
@@ -80,6 +82,8 @@
 		0418BE6A286CF7F9000F28EC /* MegamartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MegamartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0418BE6E286CF7F9000F28EC /* MegamartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegamartUITests.swift; sourceTree = "<group>"; };
 		0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegamartUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		041BF14F287051D100339E05 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		041BF1512870543200339E05 /* Favorites_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites_ViewController.swift; sourceTree = "<group>"; };
 		0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails_ViewController.swift; sourceTree = "<group>"; };
 		046F989C286E3382008FDFFC /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		046F989E286E5CBD008FDFFC /* Constatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatnts.swift; sourceTree = "<group>"; };
@@ -306,6 +310,9 @@
 				0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */,
 				046F989C286E3382008FDFFC /* Authentication.storyboard */,
 				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
+				E2187AFB287049A2009A97F5 /* ProductsCollectionCell.xib */,
+				041BF14F287051D100339E05 /* Favorites.storyboard */,
+
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -321,6 +328,7 @@
 				046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */,
 				00814DA7286EF06700E94EA4 /* SettingViewController.swift */,
 				0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */,
+				041BF1512870543200339E05 /* Favorites_ViewController.swift */,
 				04F0FA77286F8BFD00A82FD0 /* Cells */,
 			);
 			path = ViewControllers;
@@ -501,6 +509,7 @@
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
 				00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */,
 				0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */,
+				041BF150287051D100339E05 /* Favorites.storyboard in Resources */,
 				04F0FA71286F8BAD00A82FD0 /* ProductDetails.storyboard in Resources */,
 				E2187AFE287049C6009A97F5 /* Products.storyboard in Resources */,
 				E2187AFC287049A2009A97F5 /* ProductsCollectionCell.xib in Resources */,
@@ -635,6 +644,7 @@
 				E2187B0628705237009A97F5 /* CategoryCollectionCell.swift in Sources */,
 				046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */,
 				0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */,
+				041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */,
 				E2187B03287049F7009A97F5 /* CategoryViewController.swift in Sources */,
 				0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */,
 				E2187B01287049DA009A97F5 /* ProductsViewController.swift in Sources */,

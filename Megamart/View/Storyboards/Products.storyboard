@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_0" orientation="landscape" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="Products_viewController_id" id="Y6W-OH-hqX" customClass="ProductsViewController" customModule="Megamart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7XJ-jU-PZj">
-                                <rect key="frame" x="44" y="185.33333333333337" width="800" height="179.66666666666663"/>
+                                <rect key="frame" x="0.0" y="241.33333333333331" width="390" height="547.66666666666674"/>
                                 <color key="backgroundColor" red="0.096950954650000004" green="0.4411895763" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x4K-pv-aCo">
                                     <size key="itemSize" width="128" height="128"/>
@@ -28,14 +28,14 @@
                                 <cells/>
                             </collectionView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sji-Nl-CLh">
-                                <rect key="frame" x="194" y="109" width="538" height="31"/>
+                                <rect key="frame" x="150" y="165" width="172" height="31"/>
                             </slider>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fvO-Hn-9od">
-                                <rect key="frame" x="60" y="44" width="738" height="51"/>
+                                <rect key="frame" x="16" y="100" width="328" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtN-Hh-bfD">
-                                <rect key="frame" x="82" y="114" width="85" height="20.666666666666657"/>
+                                <rect key="frame" x="38" y="170" width="85" height="20.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="dhM-c7-TpL"/>
                                 </constraints>
@@ -85,7 +85,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FTb-Qh-ah0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ewr-tj-wDC">
-                        <rect key="frame" x="0.0" y="0.0" width="844" height="32"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
