@@ -48,7 +48,7 @@
                 <constraint firstItem="N5M-HU-Rmp" firstAttribute="leading" secondItem="EaG-bZ-5Ls" secondAttribute="trailing" constant="8" symbolic="YES" id="uAD-u7-k9P"/>
             </constraints>
             <size key="customSize" width="287" height="331"/>
-            <point key="canvasLocation" x="92.075892857142847" y="160.1449275362319"/>
+            <point key="canvasLocation" x="22" y="-56"/>
         </collectionViewCell>
         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9yq-yN-XEb">
             <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
