@@ -29,14 +29,18 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="YHu-tg-kog" secondAttribute="bottom" id="33X-51-Dr4"/>
                 <constraint firstAttribute="trailing" secondItem="caJ-LH-IO0" secondAttribute="trailing" id="GOR-5h-N6s"/>
                 <constraint firstAttribute="bottom" secondItem="caJ-LH-IO0" secondAttribute="bottom" constant="40" id="Mnr-PS-6a9"/>
                 <constraint firstItem="YHu-tg-kog" firstAttribute="top" secondItem="caJ-LH-IO0" secondAttribute="bottom" constant="5" id="a27-wv-hEt"/>
                 <constraint firstItem="caJ-LH-IO0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="boX-rm-pdM"/>
                 <constraint firstAttribute="bottom" secondItem="YHu-tg-kog" secondAttribute="bottom" id="idI-Xg-ekO"/>
                 <constraint firstAttribute="trailing" secondItem="YHu-tg-kog" secondAttribute="trailing" id="mVg-6k-qPN"/>
+                <constraint firstItem="YHu-tg-kog" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nYM-LD-Ssu"/>
                 <constraint firstItem="YHu-tg-kog" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qTB-tC-VmB"/>
+                <constraint firstAttribute="trailing" secondItem="YHu-tg-kog" secondAttribute="trailing" id="wHD-Ta-vkM"/>
                 <constraint firstItem="caJ-LH-IO0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wsf-6H-qht"/>
+                <constraint firstItem="YHu-tg-kog" firstAttribute="top" secondItem="caJ-LH-IO0" secondAttribute="bottom" constant="5" id="xMa-Z5-NZc"/>
             </constraints>
             <size key="customSize" width="283" height="218"/>
             <connections>
