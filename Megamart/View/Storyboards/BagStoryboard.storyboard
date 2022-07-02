@@ -50,20 +50,20 @@
                                                     <rect key="frame" x="262" y="107.5" width="122" height="48"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWQ-Ds-VSm">
-                                                            <rect key="frame" x="15" y="15" width="24.5" height="29"/>
+                                                            <rect key="frame" x="15" y="0.0" width="36.5" height="48"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                             <state key="normal" image="plus" catalog="system"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKf-vC-DyD">
-                                                            <rect key="frame" x="87" y="15" width="20" height="25"/>
+                                                            <rect key="frame" x="84.5" y="0.0" width="36.5" height="48"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                             <state key="normal" image="minus" catalog="system"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djN-sn-ygO">
-                                                            <rect key="frame" x="51" y="15" width="20" height="29"/>
+                                                            <rect key="frame" x="47" y="15" width="36.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -71,19 +71,18 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="EKf-vC-DyD" firstAttribute="top" secondItem="tnv-gm-QV1" secondAttribute="top" constant="15" id="0NS-7X-twy"/>
+                                                        <constraint firstItem="EKf-vC-DyD" firstAttribute="top" secondItem="tnv-gm-QV1" secondAttribute="top" id="0NS-7X-twy"/>
                                                         <constraint firstItem="djN-sn-ygO" firstAttribute="top" secondItem="tnv-gm-QV1" secondAttribute="top" constant="15" id="4BM-gp-bvA"/>
-                                                        <constraint firstItem="djN-sn-ygO" firstAttribute="width" secondItem="tnv-gm-QV1" secondAttribute="width" multiplier="0.163934" id="7E1-iz-VKp"/>
+                                                        <constraint firstItem="djN-sn-ygO" firstAttribute="width" secondItem="tnv-gm-QV1" secondAttribute="width" multiplier="0.3" id="7E1-iz-VKp"/>
                                                         <constraint firstItem="GWQ-Ds-VSm" firstAttribute="leading" secondItem="tnv-gm-QV1" secondAttribute="leading" constant="15" id="E9i-yf-GaT"/>
-                                                        <constraint firstItem="EKf-vC-DyD" firstAttribute="leading" secondItem="djN-sn-ygO" secondAttribute="trailing" constant="16" id="L59-RU-Lcg"/>
-                                                        <constraint firstItem="EKf-vC-DyD" firstAttribute="height" secondItem="tnv-gm-QV1" secondAttribute="height" multiplier="0.520833" id="MVQ-yx-nEE"/>
-                                                        <constraint firstItem="GWQ-Ds-VSm" firstAttribute="top" secondItem="tnv-gm-QV1" secondAttribute="top" constant="15" id="Roa-8z-in5"/>
-                                                        <constraint firstItem="GWQ-Ds-VSm" firstAttribute="centerY" secondItem="djN-sn-ygO" secondAttribute="centerY" id="dZZ-QJ-gU8"/>
-                                                        <constraint firstItem="GWQ-Ds-VSm" firstAttribute="width" secondItem="tnv-gm-QV1" secondAttribute="width" multiplier="0.2" id="dmx-VD-V4O"/>
-                                                        <constraint firstItem="EKf-vC-DyD" firstAttribute="width" secondItem="tnv-gm-QV1" secondAttribute="width" multiplier="0.163934" id="dz4-QM-Any"/>
-                                                        <constraint firstItem="djN-sn-ygO" firstAttribute="leading" secondItem="GWQ-Ds-VSm" secondAttribute="trailing" constant="11.5" id="fCd-uc-pdP"/>
-                                                        <constraint firstAttribute="trailing" secondItem="EKf-vC-DyD" secondAttribute="trailing" constant="15" id="mZ6-Tg-joS"/>
-                                                        <constraint firstItem="GWQ-Ds-VSm" firstAttribute="height" secondItem="tnv-gm-QV1" secondAttribute="height" multiplier="0.6" id="s31-mM-xqD"/>
+                                                        <constraint firstItem="EKf-vC-DyD" firstAttribute="height" secondItem="tnv-gm-QV1" secondAttribute="height" id="MVQ-yx-nEE"/>
+                                                        <constraint firstItem="GWQ-Ds-VSm" firstAttribute="top" secondItem="tnv-gm-QV1" secondAttribute="top" id="Roa-8z-in5"/>
+                                                        <constraint firstItem="EKf-vC-DyD" firstAttribute="leading" secondItem="djN-sn-ygO" secondAttribute="trailing" constant="1" id="VEF-4b-lo6"/>
+                                                        <constraint firstItem="GWQ-Ds-VSm" firstAttribute="width" secondItem="tnv-gm-QV1" secondAttribute="width" multiplier="0.3" id="dmx-VD-V4O"/>
+                                                        <constraint firstItem="EKf-vC-DyD" firstAttribute="width" secondItem="tnv-gm-QV1" secondAttribute="width" multiplier="0.3" id="dz4-QM-Any"/>
+                                                        <constraint firstAttribute="trailing" secondItem="EKf-vC-DyD" secondAttribute="trailing" constant="1" id="mZ6-Tg-joS"/>
+                                                        <constraint firstItem="GWQ-Ds-VSm" firstAttribute="height" secondItem="tnv-gm-QV1" secondAttribute="height" id="s31-mM-xqD"/>
+                                                        <constraint firstItem="djN-sn-ygO" firstAttribute="leading" secondItem="GWQ-Ds-VSm" secondAttribute="trailing" constant="3" id="zPj-ku-GuG"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
