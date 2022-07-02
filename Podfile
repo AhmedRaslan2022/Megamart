@@ -17,5 +17,5 @@ target 'Megamart' do
   end
   pod 'Cosmos'
   pod 'TinyConstraints'
-
+  pod 'Alamofire'
 end
