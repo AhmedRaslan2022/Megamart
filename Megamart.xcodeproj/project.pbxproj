@@ -191,6 +191,7 @@
 				0418BE81286CF85E000F28EC /* Services */,
 				0418BE80286CF848000F28EC /* Repository */,
 				0418BE7F286CF83D000F28EC /* View */,
+				E28E9059286F3B480041B0A7 /* Brands */,
 				0418BE7E286CF82E000F28EC /* ViewModel */,
 				0418BE7D286CF823000F28EC /* Model */,
 			);
@@ -288,8 +289,8 @@
 		0418BE86286CF8ED000F28EC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E2187AFB287049A2009A97F5 /* ProductsCollectionCell.xib */,
 				04F0FA72286F8BB900A82FD0 /* ProductDetails_CollectionViewCell.xib */,
-				E28E9059286F3B480041B0A7 /* Brands */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -306,6 +307,7 @@
 				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
 				E2187AFB287049A2009A97F5 /* ProductsCollectionCell.xib */,
 				041BF14F287051D100339E05 /* Favorites.storyboard */,
+
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
