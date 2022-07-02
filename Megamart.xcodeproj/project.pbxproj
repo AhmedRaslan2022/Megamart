@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00088072286FAFB300DE578B /* BagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00088070286FAFB300DE578B /* BagTableViewCell.swift */; };
+		00088073286FAFB400DE578B /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00088071286FAFB300DE578B /* BagViewController.swift */; };
 		00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00814DA5286EF03D00E94EA4 /* Setting.storyboard */; };
 		00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00814DA7286EF06700E94EA4 /* SettingViewController.swift */; };
-		00FDE478286F8C8F00D08360 /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDE477286F8C8F00D08360 /* BagViewController.swift */; };
-		00FDE47A286F8CA700D08360 /* BagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDE479286F8CA700D08360 /* BagTableViewCell.swift */; };
-		00FDE47C286F8DFD00D08360 /* BagStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FDE47B286F8DFD00D08360 /* BagStoryboard.storyboard */; };
+		00FD6680286FB69000D759D2 /* BagStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0008806D286FAF8B00DE578B /* BagStoryboard.storyboard */; };
 		0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4A286CF7F7000F28EC /* AppDelegate.swift */; };
 		0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */; };
 		0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4E286CF7F7000F28EC /* ViewController.swift */; };
@@ -53,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0008806D286FAF8B00DE578B /* BagStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BagStoryboard.storyboard; sourceTree = "<group>"; };
+		00088070286FAFB300DE578B /* BagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTableViewCell.swift; sourceTree = "<group>"; };
+		00088071286FAFB300DE578B /* BagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
 		00814DA5286EF03D00E94EA4 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		00814DA7286EF06700E94EA4 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		00FDE477286F8C8F00D08360 /* BagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
@@ -123,11 +126,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00FDE470286F527300D08360 /* ShoppingCard */ = {
+		0008806C286FAE7F00DE578B /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				00FDE477286F8C8F00D08360 /* BagViewController.swift */,
 				00FDE479286F8CA700D08360 /* BagTableViewCell.swift */,
+				00FDE477286F8C8F00D08360 /* BagViewController.swift */,
+				00FDE47B286F8DFD00D08360 /* BagStoryboard.storyboard */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		0008806F286FAFB300DE578B /* ShoppingCard */ = {
+			isa = PBXGroup;
+			children = (
+				00088070286FAFB300DE578B /* BagTableViewCell.swift */,
+				00088071286FAFB300DE578B /* BagViewController.swift */,
 			);
 			path = ShoppingCard;
 			sourceTree = "<group>";
@@ -141,6 +154,7 @@
 				0418BE48286CF7F7000F28EC /* Products */,
 				BEFF2A619689B19CC2AC9626 /* Pods */,
 				B1A461EA3E6762AD7B2C75EF /* Frameworks */,
+				0008806C286FAE7F00DE578B /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,13 +286,11 @@
 			isa = PBXGroup;
 			children = (
 				00814DA5286EF03D00E94EA4 /* Setting.storyboard */,
+				0008806D286FAF8B00DE578B /* BagStoryboard.storyboard */,
 				0418BE50286CF7F7000F28EC /* Main.storyboard */,
 				0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */,
 				046F989C286E3382008FDFFC /* Authentication.storyboard */,
-
 				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
-				
- 
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -286,11 +298,8 @@
 		0418BE88286CF903000F28EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-
+				0008806F286FAFB300DE578B /* ShoppingCard */,
 				E28E9057286F3ACD0041B0A7 /* Home */,
-
-				
- 
 				0418BE4E286CF7F7000F28EC /* ViewController.swift */,
 				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
 				046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */,
@@ -459,10 +468,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00FD6680286FB69000D759D2 /* BagStoryboard.storyboard in Resources */,
 				04F0FA73286F8BB900A82FD0 /* ProductDetails_CollectionViewCell.xib in Resources */,
 				0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */,
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
-				00FDE47C286F8DFD00D08360 /* BagStoryboard.storyboard in Resources */,
 				00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */,
 				0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */,
 				0418BE52286CF7F7000F28EC /* Main.storyboard in Resources */,
@@ -594,17 +603,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00FDE47A286F8CA700D08360 /* BagTableViewCell.swift in Sources */,
 				046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */,
-				00FDE478286F8C8F00D08360 /* BagViewController.swift in Sources */,
 				0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */,
 				0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */,
 				0467CEFC286F8E530070DC64 /* ProductDetails_ViewController.swift in Sources */,
 				00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */,
+				00088073286FAFB400DE578B /* BagViewController.swift in Sources */,
 				0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */,
 				046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */,
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
+				00088072286FAFB300DE578B /* BagTableViewCell.swift in Sources */,
 				04F0FA79286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,7 +798,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ProductDetails;
+				INFOPLIST_KEY_UIMainStoryboardFile = BagStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -817,7 +826,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ProductDetails;
+				INFOPLIST_KEY_UIMainStoryboardFile = BagStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

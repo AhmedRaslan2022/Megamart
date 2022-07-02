@@ -30,7 +30,7 @@ struct Constants {
     
     
     static let ProductDetails_cell_id = "ProductDetails_cell_id"
-     static let BagTableViewCell = "BagTableViewCell"
+     static let BagTableViewCell_id = "BagTableViewCell"
     
 
 }
