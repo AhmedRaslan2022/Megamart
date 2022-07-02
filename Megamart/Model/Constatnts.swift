@@ -15,6 +15,7 @@ struct Constants {
     static let authentication_storyboard  = "Authentication"
     static let setting_storyboard  = "Setting"
     static let productDetails_storyboard  = "ProductDetails"
+    static let Favorites_storyboard  = "Favorites"
         
         
     
@@ -25,12 +26,15 @@ struct Constants {
     static let Setting_viewController_id = "SettingViewController_id"
     static let ProductDetails_ViewController_id = "ProductDetails_ViewController_id"
     static let BagViewController_id = "BagViewController_id"
+    static let Favorites_ViewController_id = "Favorites_ViewController_id"
+    
+    
     
 //MARK: -                   Cells
     
     
     static let ProductDetails_cell_id = "ProductDetails_cell_id"
-     static let BagTableViewCell_id = "BagTableViewCell"
+    static let BagTableViewCell_id = "BagTableViewCell"
     
 
 }
