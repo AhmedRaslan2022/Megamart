@@ -30,6 +30,9 @@ struct Constants {
     static let BagViewController_id = "BagViewController_id"
     static let Favorites_ViewController_id = "Favorites_ViewController_id"
     static let Orders_ViewController_id = "Orders_ViewController_id"
+    static let Payment_viewController_id = "PaymentVC_id"
+    static let PaymentOption_viewController_id = "PaymentOptionVC_id"
+
     
     
 //MARK: -                   Cells
@@ -39,6 +42,14 @@ struct Constants {
     static let BagTableViewCell_id = "BagTableViewCell"
     static let ProductsViewCell_id = "Products_ViewCell_id"
     static let CategoryViewCell_id = "Category_ViewCell_id"
+    static let ProductsViewController_id = "Products_viewController_id"
+    static let Brands_Cell_id = "Brands_Cell_id"
+    
+    
+
+    
+    
+
     
 
 }
