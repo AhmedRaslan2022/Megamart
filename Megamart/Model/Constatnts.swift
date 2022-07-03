@@ -10,7 +10,9 @@ import Foundation
 struct Constants {
 
     
+    
 //MARK: -                   Storyboards
+    
     static let Main_storyboard  = "Main"
     static let Products_storyboard  = "Products"
     static let authentication_storyboard  = "Authentication"
@@ -21,6 +23,7 @@ struct Constants {
         
     
 //MARK: -                   viewControllers
+    
     static let HomeViewController_id = "Home_viewController_id"
     static let CategoryViewController_id = "CategoryViewController_id"
     static let login_viewController_id = "login_viewController_id"
@@ -36,9 +39,17 @@ struct Constants {
     
     
     static let ProductDetails_cell_id = "ProductDetails_cell_id"
+    static let ProductDetails_nib_name = "ProductDetails_CollectionViewCell"
+    
     static let BagTableViewCell_id = "BagTableViewCell"
     static let ProductsViewCell_id = "Products_ViewCell_id"
     static let CategoryViewCell_id = "Category_ViewCell_id"
     
 
+    
+//MARK: -               others
+    
+    static let noImageAvailabel = "no_image_available-product"
+    
+    
 }

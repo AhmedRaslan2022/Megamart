@@ -15,7 +15,11 @@ target 'Megamart' do
   target 'MegamartUITests' do
     # Pods for testing
   end
+  
   pod 'Cosmos'
   pod 'TinyConstraints'
+  
   pod 'Alamofire'
+  pod 'AlamofireImage'
+  
 end
