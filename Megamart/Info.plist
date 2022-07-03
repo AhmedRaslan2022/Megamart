@@ -20,7 +20,6 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>payment</string>
 					<string>ProductDetails</string>
 				</dict>
 			</array>
