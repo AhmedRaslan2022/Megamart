@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Product Details View Controller-->
+        <!--Product Details-->
         <scene sceneID="MJa-A3-nj7">
             <objects>
                 <viewController storyboardIdentifier="ProductDetails_ViewController_id" id="2Ry-98-gr7" customClass="ProductDetails_ViewController" customModule="Megamart" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,31 +77,12 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="44"/>
                                 <items>
                                     <navigationItem title="Product Details" id="oiT-Wu-5lb">
-                                        <leftBarButtonItems>
-                                            <barButtonItem image="arrowshape.turn.up.left.fill" catalog="system" id="Q1a-7r-pBY">
-                                                <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <connections>
-                                                    <action selector="goBack_button:" destination="2Ry-98-gr7" id="Gbe-TD-gdX"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Item" image="homekit" catalog="system" id="hWg-XA-aX6">
-                                                <connections>
-                                                    <action selector="goToHome_button:" destination="2Ry-98-gr7" id="9uK-rN-85H"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </leftBarButtonItems>
-                                        <rightBarButtonItems>
-                                            <barButtonItem title="Item" image="heart.fill" catalog="system" id="xXq-q6-0lk">
-                                                <connections>
-                                                    <action selector="goToFavorites_button:" destination="2Ry-98-gr7" id="Wy9-xq-nVi"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Item" image="cart.fill" catalog="system" id="grp-1H-eKw">
-                                                <connections>
-                                                    <action selector="goToShopingBag_button:" destination="2Ry-98-gr7" id="Uct-j6-jxc"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </rightBarButtonItems>
+                                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.left.fill" catalog="system" id="Q1a-7r-pBY">
+                                            <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="goBack_button:" destination="2Ry-98-gr7" id="Gbe-TD-gdX"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -149,7 +130,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8A-Ic-wse">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A8A-Ic-wse">
                                                 <rect key="frame" x="10" y="413.33333333333337" width="46" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="fab-Hh-o9o"/>
@@ -297,7 +278,25 @@
                             <constraint firstItem="xKP-KK-KbZ" firstAttribute="trailing" secondItem="cat-nI-mGS" secondAttribute="trailing" id="yxd-lX-4gL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fuD-hC-4GB"/>
+                    <navigationItem key="navigationItem" title="Product Details" id="fuD-hC-4GB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="homekit" catalog="system" id="hWg-XA-aX6">
+                            <connections>
+                                <action selector="goToHome_button:" destination="2Ry-98-gr7" id="9uK-rN-85H"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="heart.fill" catalog="system" id="xXq-q6-0lk">
+                                <connections>
+                                    <action selector="goToFavorites_button:" destination="2Ry-98-gr7" id="Wy9-xq-nVi"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="cart.fill" catalog="system" id="grp-1H-eKw">
+                                <connections>
+                                    <action selector="goToShopingBag_button:" destination="2Ry-98-gr7" id="Uct-j6-jxc"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="addToFavorites_button" destination="elA-e3-yMk" id="wWG-Oa-gZA"/>
                         <outlet property="addToShopingBag_button" destination="Csm-eL-rKT" id="3bh-el-8Bq"/>

@@ -29,8 +29,7 @@ class ProductDetails_ViewController: UIViewController {
     var images_url: [Image]?
     var productID: String? = "7730623709398"
     
-//    var rating = Double.random(in: 1...5)
-    var rating = 2.5
+    var rating = Double.random(in: 1...5)
     
     
     override func viewDidLoad() {
@@ -53,9 +52,12 @@ class ProductDetails_ViewController: UIViewController {
                 self.productTitle_label.text = productDetails.title
                 self.productPrice_label.text = productDetails.variants[0].price
                 self.description_label.text = productDetails.body_html
+                
                 self.starRating.settings.fillMode = .precise
-                self.productRating_label.text = "\(self.rating)"
-                self.starRating.rating = self.rating
+                let rate = self.rating
+                self.productRating_label.text = String(format: "%.1f", rate)
+                self.starRating.rating = rate
+                
                 DispatchQueue.main.async {
                     self.images_url = productDetails.images
                     self.imageController.numberOfPages = productDetails.images.count
