@@ -9,10 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var AdsCollection: UICollectionView!
-    @IBOutlet weak var BrandsLabel: UILabel!
     
-    @IBOutlet weak var BrandsCollection: UICollectionView!
     
     
     
@@ -23,4 +20,9 @@ class HomeViewController: UIViewController {
 
 
 }
+
+
+
+
+
 
