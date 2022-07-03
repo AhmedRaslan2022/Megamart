@@ -10,19 +10,18 @@ import Alamofire
 
 class NetworkManager: APIService {
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
-        print("******************\(UrlServices.productDetails(product_id: endPoint))")
         if let url = URL(string: UrlServices.productDetails(product_id: endPoint)){
             Alamofire.request(url, method: .get, parameters: nil, encoding:JSONEncoding.default)
                         .responseData { response in
                guard let data = response.data else { return }
-                            if let decodedData: Product = convertFromJson(data: data){
-                                completion(decodedData.product , nil)
-                            } else { print("*****************Error in decode data")}
+                    if let decodedData: Product = convertFromJson(data: data){
+                        completion(decodedData.product , nil)
+                    } else {
+                        print("Error in decode data")
+                    }
                             
             }
 
-        }else{
-            print("&&&&&&&&&&&&&&&&&&& else")
         }
         
 

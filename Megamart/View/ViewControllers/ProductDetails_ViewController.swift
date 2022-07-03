@@ -21,10 +21,11 @@ class ProductDetails_ViewController: UIViewController {
     @IBOutlet weak var incrementProducts_button: UIButton!
     @IBOutlet weak var decrementProducts_button: UIButton!
     @IBOutlet weak var addToShopingBag_button: UIButton!
+    @IBOutlet weak var addToFavorites_button: UIButton!
     
     
     var images_url: [Image]?
-    
+    var productID: String? = "7730623709398"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +34,22 @@ class ProductDetails_ViewController: UIViewController {
         products_collectionview.dataSource = self
         
         self.products_collectionview.register(UINib(nibName: Constants.ProductDetails_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.ProductDetails_cell_id)
+
+        
         
         var productDetails_viewModel: ProductDetails_Protocol = ProductDetails_modelView()
-        productDetails_viewModel.fetchData(endPoint: "7730623709398")
-        
+        if let productID = productID {
+            productDetails_viewModel.fetchData(endPoint: productID)
+        }
+
         productDetails_viewModel.bindingData = { productDetails, error in
             if let productDetails = productDetails {
-                print("!!!!!!!!!!!!!!!!!!!!! \(productDetails)")
                 self.productTitle_label.text = productDetails.title
                 self.productPrice_label.text = productDetails.variants[0].price
                 self.description_textView.text = productDetails.body_html
                 DispatchQueue.main.async {
                     self.images_url = productDetails.images
+                    self.imageController.numberOfPages = productDetails.images.count
                     self.products_collectionview.reloadData()
                 }
                 
@@ -54,15 +59,17 @@ class ProductDetails_ViewController: UIViewController {
                         self.availableSizes_label.text! += " "
                     }
                 }
-                
-                
-                
+ 
             }
-            
             if let error = error {
                 print(error.localizedDescription)
             }
             
+        }
+        
+        func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+                super.viewWillTransition(to: size, with: coordinator)
+            products_collectionview.reloadData()
         }
         
     }
@@ -89,12 +96,21 @@ class ProductDetails_ViewController: UIViewController {
     @IBAction func goToShopingBag_button(_ sender: UIBarButtonItem) {
     }
     
+    @IBAction func addToFavorites(_ sender: UIButton) {
+        if addToFavorites_button.currentBackgroundImage == UIImage(systemName: "heart.fill"){
+            self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+        }else{
+            self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        
+    }
     
     
 }
 
 
-//MARK: - Collection View
+//MARK: -                   Collection View
+
 
 extension ProductDetails_ViewController: UICollectionViewDelegate{
     
@@ -103,8 +119,11 @@ extension ProductDetails_ViewController: UICollectionViewDelegate{
 extension ProductDetails_ViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("%%%%%%%%%%%%%%%%%%%%%%%%%%%\(images_url?.count) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
         return images_url?.count ?? 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.imageController.currentPage = indexPath.row
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -128,7 +147,7 @@ extension ProductDetails_ViewController: UICollectionViewDataSource{
 extension ProductDetails_ViewController: UICollectionViewDelegateFlowLayout{
     // to set only one cell in row
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: products_collectionview.bounds.width , height: products_collectionview.bounds.height)
+        return CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height)
     }
 
     

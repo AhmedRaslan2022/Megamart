@@ -33,11 +33,9 @@ class ProductDetails_modelView: ProductDetails_Protocol {
     func fetchData(endPoint: String) {
         apiService.fetchProductInfo(endPoint: endPoint) { product, error in
             if let product = product {
-                print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\(product)")
                 self.data = product
             }
             if let error = error {
-                print("%%%%%%%%%%%%%%%%%%%%5 \(error)")
                 self.error = error
             }
         }
