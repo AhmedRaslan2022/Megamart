@@ -57,12 +57,11 @@ class ProductDetails_ViewController: UIViewController {
                 let rate = self.rating
                 self.productRating_label.text = String(format: "%.1f", rate)
                 self.starRating.rating = rate
-                
-                DispatchQueue.main.async {
-                    self.images_url = productDetails.images
-                    self.imageController.numberOfPages = productDetails.images.count
-                    self.products_collectionview.reloadData()
-                }
+
+                self.images_url = productDetails.images
+                self.imageController.numberOfPages = productDetails.images.count
+                self.products_collectionview.reloadData()
+
                 
                 if let sizes = productDetails.options?[0].values {
                     for size in sizes {

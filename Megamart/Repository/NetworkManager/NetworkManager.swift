@@ -20,8 +20,9 @@ class NetworkManager: APIService {
                     } else {
                         print("Error in decode data")
                     }
-                            
+
             }
+            
 
         }
         
