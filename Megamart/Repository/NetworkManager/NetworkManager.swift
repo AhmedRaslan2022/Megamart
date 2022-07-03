@@ -11,6 +11,7 @@ import Alamofire
 class NetworkManager: APIService {
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.productDetails(product_id: endPoint)){
+            print(url)
             Alamofire.request(url, method: .get, parameters: nil, encoding:JSONEncoding.default)
                         .responseData { response in
                guard let data = response.data else { return }
@@ -19,8 +20,9 @@ class NetworkManager: APIService {
                     } else {
                         print("Error in decode data")
                     }
-                            
+
             }
+            
 
         }
         
