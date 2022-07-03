@@ -9,4 +9,8 @@ import Foundation
 
 protocol APIService {
     
+//MARK: - product Info
+    
+    func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void ) )
+    
 }

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="742.33333333333337" width="390" height="67.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcq-f7-44x">
-                                        <rect key="frame" x="190" y="0.0" width="195" height="67.666666666666671"/>
+                                        <rect key="frame" x="190" y="3" width="195" height="64.666666666666671"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="ADD TO CART">
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
@@ -31,10 +31,10 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iI8-yY-6hg">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="67.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="2" width="187" height="65.666666666666671"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naI-kc-mgr">
-                                                <rect key="frame" x="0.0" y="0.0" width="59" height="67.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="59" height="65.666666666666671"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray">
                                                     <imageReference key="image" image="minus" catalog="system" symbolScale="large"/>
@@ -44,13 +44,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sw2-hw-OZN">
-                                                <rect key="frame" x="64" y="0.0" width="59" height="67.666666666666671"/>
+                                                <rect key="frame" x="64" y="0.0" width="59" height="65.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD6-Mo-8zA">
-                                                <rect key="frame" x="128" y="0.0" width="59" height="67.666666666666671"/>
+                                                <rect key="frame" x="128" y="0.0" width="59" height="65.666666666666671"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="tinted">
                                                     <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
@@ -63,13 +63,13 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="iI8-yY-6hg" firstAttribute="top" secondItem="l56-fM-o8t" secondAttribute="top" id="4aQ-X8-HrV"/>
+                                    <constraint firstItem="iI8-yY-6hg" firstAttribute="top" secondItem="l56-fM-o8t" secondAttribute="top" constant="2" id="4aQ-X8-HrV"/>
                                     <constraint firstItem="iI8-yY-6hg" firstAttribute="leading" secondItem="l56-fM-o8t" secondAttribute="leading" id="8A3-T1-epA"/>
                                     <constraint firstItem="pcq-f7-44x" firstAttribute="width" secondItem="l56-fM-o8t" secondAttribute="width" multiplier="0.5" id="TXX-Sv-Db7"/>
                                     <constraint firstAttribute="bottom" secondItem="iI8-yY-6hg" secondAttribute="bottom" id="aDH-YB-PYN"/>
                                     <constraint firstAttribute="bottom" secondItem="pcq-f7-44x" secondAttribute="bottom" id="e82-d6-6Nt"/>
                                     <constraint firstItem="pcq-f7-44x" firstAttribute="leading" secondItem="iI8-yY-6hg" secondAttribute="trailing" constant="3" id="ewG-XX-TdT"/>
-                                    <constraint firstItem="pcq-f7-44x" firstAttribute="top" secondItem="l56-fM-o8t" secondAttribute="top" id="oaW-Ec-IyS"/>
+                                    <constraint firstItem="pcq-f7-44x" firstAttribute="top" secondItem="l56-fM-o8t" secondAttribute="top" constant="3" id="oaW-Ec-IyS"/>
                                     <constraint firstAttribute="trailing" secondItem="pcq-f7-44x" secondAttribute="trailing" constant="5" id="rhc-Df-8Bn"/>
                                 </constraints>
                             </view>
@@ -105,16 +105,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYD-Cm-euN">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYD-Cm-euN">
                                 <rect key="frame" x="0.0" y="88" width="390" height="654.33333333333337"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmb-gL-1GD">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1193"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1052.3333333333333"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d4L-VL-zaa">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="477.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="421"/>
                                                 <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jSs-x1-HHL">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jSs-x1-HHL">
                                                     <size key="itemSize" width="414" height="410"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -122,15 +122,15 @@
                                                 </collectionViewFlowLayout>
                                                 <cells/>
                                             </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kq0-O4-61l">
-                                                <rect key="frame" x="5" y="487.33333333333331" width="380" height="55.333333333333314"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kq0-O4-61l">
+                                                <rect key="frame" x="7" y="431" width="376" height="55.333333333333314"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5w-Y4-3fK" customClass="CosmosView" customModule="Cosmos">
-                                                <rect key="frame" x="59.000000000000007" y="552.66666666666663" width="124.66666666666669" height="40"/>
+                                                <rect key="frame" x="59.000000000000007" y="496.33333333333337" width="124.66666666666669" height="40"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="rating">
                                                         <real key="value" value="3"/>
@@ -150,7 +150,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zo6-aX-lKI">
-                                                <rect key="frame" x="10" y="552.66666666666663" width="46" height="40"/>
+                                                <rect key="frame" x="10" y="496.33333333333337" width="46" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="B4b-dQ-uNr"/>
                                                 </constraints>
@@ -159,13 +159,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bCq-15-2ff">
-                                                <rect key="frame" x="243.66666666666663" y="552.66666666666663" width="136.33333333333337" height="40"/>
+                                                <rect key="frame" x="243.66666666666663" y="496.33333333333337" width="136.33333333333337" height="40"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bly-Iq-WZY">
-                                                <rect key="frame" x="5" y="602.66666666666663" width="380" height="143"/>
+                                                <rect key="frame" x="5" y="546.33333333333337" width="380" height="143"/>
                                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                                 <string key="text">sizes fhjkdshfjkshdfjkhdsjkfhdskjfhkjdshfkjdsahfkjdshfkjhdskfhdsjkfhdkjshfkjdshfkjdhfkjdshfkjhdkfhdskjhfkshfkdhfkjdshfkhdskfjhdskjfhkdjshfkjdshfkjdshfjkdshfjkdshfkjdshfjkdhfjkdhsfjkhdsjkfhdjkfhjdshfjdhfkjd</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
@@ -173,35 +173,35 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWx-u2-Zqz">
-                                                <rect key="frame" x="5" y="755.66666666666663" width="380" height="37"/>
+                                                <rect key="frame" x="5" y="699.33333333333337" width="380" height="37"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-0K-i7Q">
-                                                <rect key="frame" x="5" y="792.66666666666663" width="380" height="253.33333333333337"/>
+                                                <rect key="frame" x="5" y="736.33333333333337" width="380" height="169"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qc-Ta-h8H">
-                                                <rect key="frame" x="5" y="1056" width="380" height="37"/>
+                                                <rect key="frame" x="5" y="915.33333333333337" width="380" height="37"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HPJ-EO-xI5">
-                                                <rect key="frame" x="5" y="1093.3333333333333" width="380" height="99.666666666666742"/>
+                                                <rect key="frame" x="5" y="952.66666666666674" width="380" height="99.666666666666742"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="av9-jR-0Yy">
-                                                <rect key="frame" x="0.0" y="447.33333333333337" width="390" height="30"/>
+                                                <rect key="frame" x="0.0" y="391" width="390" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="a1p-X4-Au3"/>
                                                 </constraints>
@@ -211,7 +211,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
-                                            <constraint firstItem="kq0-O4-61l" firstAttribute="leading" secondItem="wmb-gL-1GD" secondAttribute="leading" constant="5" id="2ed-oP-w55"/>
+                                            <constraint firstItem="kq0-O4-61l" firstAttribute="leading" secondItem="wmb-gL-1GD" secondAttribute="leading" constant="7" id="2ed-oP-w55"/>
                                             <constraint firstItem="bCq-15-2ff" firstAttribute="top" secondItem="zo6-aX-lKI" secondAttribute="top" id="4Be-Dg-fuq"/>
                                             <constraint firstItem="f5w-Y4-3fK" firstAttribute="top" secondItem="zo6-aX-lKI" secondAttribute="top" id="5SK-Vi-BdG"/>
                                             <constraint firstItem="kq0-O4-61l" firstAttribute="top" secondItem="av9-jR-0Yy" secondAttribute="bottom" constant="10" id="5c5-yr-qjj"/>
@@ -226,7 +226,7 @@
                                             <constraint firstItem="HPJ-EO-xI5" firstAttribute="width" secondItem="8Qc-Ta-h8H" secondAttribute="width" id="Puu-rK-hKd"/>
                                             <constraint firstAttribute="trailing" secondItem="d4L-VL-zaa" secondAttribute="trailing" id="QSf-pr-rij"/>
                                             <constraint firstItem="d4L-VL-zaa" firstAttribute="leading" secondItem="wmb-gL-1GD" secondAttribute="leading" id="Qqb-3C-HCn"/>
-                                            <constraint firstAttribute="trailing" secondItem="kq0-O4-61l" secondAttribute="trailing" constant="5" id="R7u-EY-GdQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="kq0-O4-61l" secondAttribute="trailing" constant="7" id="R7u-EY-GdQ"/>
                                             <constraint firstAttribute="bottom" secondItem="HPJ-EO-xI5" secondAttribute="bottom" id="S1O-Rd-BQ6"/>
                                             <constraint firstItem="OVH-0K-i7Q" firstAttribute="trailing" secondItem="vWx-u2-Zqz" secondAttribute="trailing" id="T5T-Zz-Fei"/>
                                             <constraint firstAttribute="trailing" secondItem="bCq-15-2ff" secondAttribute="trailing" constant="10" id="Trh-QR-HeF"/>
@@ -276,7 +276,7 @@
                             <constraint firstItem="JdM-6f-Q64" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="J9V-uR-kAd"/>
                             <constraint firstItem="l56-fM-o8t" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="KqM-W2-egj"/>
                             <constraint firstItem="zo6-aX-lKI" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.118357" id="OYc-3V-0eQ"/>
-                            <constraint firstItem="OVH-0K-i7Q" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.3" id="Tes-KY-bH9"/>
+                            <constraint firstItem="OVH-0K-i7Q" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.2" id="Tes-KY-bH9"/>
                             <constraint firstItem="DYD-Cm-euN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="XqT-B0-9w3"/>
                             <constraint firstItem="l56-fM-o8t" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.08" id="cad-eT-jRV"/>
                             <constraint firstItem="kq0-O4-61l" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.0658482" id="fXQ-MA-DZJ"/>
@@ -309,11 +309,6 @@
             <point key="canvasLocation" x="139" y="55"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="f5w-Y4-3fK">
-            <size key="intrinsicContentSize" width="170" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
