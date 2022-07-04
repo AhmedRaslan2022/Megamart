@@ -45,14 +45,12 @@ struct Constants {
     
     static let ProductDetails_cell_id = "ProductDetails_cell_id"
     static let ProductDetails_nib_name = "ProductDetails_CollectionViewCell"
-    
     static let BagTableViewCell_id = "BagTableViewCell"
     static let ProductsViewCell_id = "Products_ViewCell_id"
     static let CategoryViewCell_id = "Category_ViewCell_id"
-    static let ProductsViewController_id = "Products_viewController_id"
     static let Brands_Cell_id = "Brands_Cell_id"
     static let Products_nib_name = "ProductCollectionCell"
-    static let CategoryViewCell_id = "Category_ViewCell_id"
+ 
 
     
     

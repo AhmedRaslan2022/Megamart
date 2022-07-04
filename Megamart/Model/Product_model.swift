@@ -34,7 +34,7 @@ struct ProductModel: Codable {
     let images: [Image]
     let options: [OptionList]?
     let product_type: String?
-
+    let image: Image
 }
 
 
