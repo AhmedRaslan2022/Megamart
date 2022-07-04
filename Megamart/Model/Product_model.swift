@@ -1,14 +1,4 @@
 //
-//  Product_model.swift
-//  Megamart
-//
-//  Created by MAC on 02/07/2022.
-//
-
-
-
-
-//
 //  Products.swift
 //  Megamart
 //

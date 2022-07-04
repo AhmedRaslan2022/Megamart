@@ -12,5 +12,11 @@ protocol APIService {
 //MARK: - product Info
     
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void ) )
+
+    
+//MARK: -       register new user
+    
+    func registerCustomer(newCustomer: NewCustomer, completion: @escaping ((NewCustomer?, Error?) -> Void))
     
 }
+

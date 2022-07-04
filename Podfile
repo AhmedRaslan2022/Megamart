@@ -18,13 +18,12 @@ target 'Megamart' do
   
   pod 'Cosmos'
   pod 'TinyConstraints'
-<<<<<<< HEAD
+  
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
-=======
   
   pod 'Alamofire'
   pod 'AlamofireImage'
->>>>>>> master
+
   
 end
