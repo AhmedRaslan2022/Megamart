@@ -3,12 +3,16 @@ PODS:
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
   - Cosmos (23.0.0)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
   - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - Cosmos
+  - SDWebImage
   - TinyConstraints
 
 SPEC REPOS:
@@ -16,14 +20,16 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Cosmos
+    - SDWebImage
     - TinyConstraints
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: ecd12eb790150ffb64731f25a3e2cc904b9481b3
+PODFILE CHECKSUM: c87eca8969fcc5c5aa6b28059f4a5db5288904cc
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

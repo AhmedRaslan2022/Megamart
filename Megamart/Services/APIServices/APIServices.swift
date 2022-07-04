@@ -14,3 +14,10 @@ protocol APIService {
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void ) )
     
 }
+
+//MARK: - products
+protocol ProductsAPIService {
+    
+    func fetchProducts(endPoint: String, completion: @escaping (([ProductModel]?, Error?) -> Void ) )
+    
+}

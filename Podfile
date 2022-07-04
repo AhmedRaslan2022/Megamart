@@ -18,7 +18,7 @@ target 'Megamart' do
   
   pod 'Cosmos'
   pod 'TinyConstraints'
-  
+  pod 'SDWebImage'
   pod 'Alamofire'
   pod 'AlamofireImage'
   

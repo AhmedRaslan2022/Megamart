@@ -29,4 +29,21 @@ class NetworkManager: APIService {
 
     }
     
+    
+    func fetchProducts(endPoint: String, completion: @escaping (([ProductModel]?, Error?) -> Void)) {
+        if let url = URL(string: UrlServices.products()){
+            Alamofire.request(url , method: .get, parameters: nil, encoding:JSONEncoding.default)
+                        .responseData { response in
+               guard let data = response.data else { return }
+                            if let decodedData: Products = convertFromJson(data: data){
+                                completion(decodedData.products, nil)
+                            } else { print("*****************Error in decode data")}
+            }
+        }else{
+            print("&&&&&&&&&&&&&&&&&&& else")
+        }
+        
+
+    }
+    
 }

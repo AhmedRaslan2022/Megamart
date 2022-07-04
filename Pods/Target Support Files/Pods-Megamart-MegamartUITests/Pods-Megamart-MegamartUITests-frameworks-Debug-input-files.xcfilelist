@@ -2,4 +2,5 @@ ${PODS_ROOT}/Target Support Files/Pods-Megamart-MegamartUITests/Pods-Megamart-Me
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework
 ${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework
