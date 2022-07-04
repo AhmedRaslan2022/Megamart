@@ -18,8 +18,16 @@ target 'Megamart' do
   
   pod 'Cosmos'
   pod 'TinyConstraints'
+<<<<<<< HEAD
   pod 'SDWebImage'
+=======
+  
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  
+>>>>>>> firebase
   pod 'Alamofire'
   pod 'AlamofireImage'
+
   
 end

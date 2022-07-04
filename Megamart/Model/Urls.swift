@@ -15,7 +15,13 @@ struct UrlServices {
     static func productDetails(product_id: String) -> String{
         return UrlServices.baseURL + "admin/api/2022-01/products/\(product_id).json"
     }
+    
     static func products() -> String{
         return UrlServices.baseURL + "admin/api/2022-01/products.json"
+    
+    static func registerCustomer() -> String{
+        return UrlServices.baseURL + "admin/api/2022-01/customers.json"
+
     }
 }
+

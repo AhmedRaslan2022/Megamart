@@ -18,6 +18,9 @@
 		008ABD35287071330060CB08 /* PaymentOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008ABD34287071330060CB08 /* PaymentOptionVC.swift */; };
 		008ABD372870C8090060CB08 /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008ABD362870C8080060CB08 /* AddressVC.swift */; };
 		00FD6680286FB69000D759D2 /* BagStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0008806D286FAF8B00DE578B /* BagStoryboard.storyboard */; };
+		04178B522872FCE00044ED7B /* Customer_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04178B512872FCE00044ED7B /* Customer_model.swift */; };
+		04178B5628730FF00044ED7B /* RegisterNewCustomer_ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04178B5528730FF00044ED7B /* RegisterNewCustomer_ModelView.swift */; };
+		04178B582873100A0044ED7B /* RegiserNewCustomer_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04178B572873100A0044ED7B /* RegiserNewCustomer_protocol.swift */; };
 		0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4A286CF7F7000F28EC /* AppDelegate.swift */; };
 		0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */; };
 		0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4E286CF7F7000F28EC /* ViewController.swift */; };
@@ -33,11 +36,12 @@
 		046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F989C286E3382008FDFFC /* Authentication.storyboard */; };
 		046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F989E286E5CBD008FDFFC /* Constatnts.swift */; };
 		046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F98A0286E5D26008FDFFC /* Login_ViewController.swift */; };
-		046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */; };
+		046F98A3286E7258008FDFFC /* Register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F98A2286E7258008FDFFC /* Register_ViewController.swift */; };
 		0477528928709DDB0095EA91 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477528828709DDB0095EA91 /* JSONDecoder.swift */; };
 		0477528D28709E400095EA91 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477528C28709E400095EA91 /* APIServices.swift */; };
 		0477529228709EA90095EA91 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477529128709EA90095EA91 /* NetworkManager.swift */; };
 		0477529428709EE70095EA91 /* AddAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477529328709EE70095EA91 /* AddAlertView.swift */; };
+		047752962870B14E0095EA91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047752952870B14E0095EA91 /* GoogleService-Info.plist */; };
 		047752982870D97B0095EA91 /* Product_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047752972870D97B0095EA91 /* Product_model.swift */; };
 		04AE1F9428720A4D00373837 /* ProductDetails_CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AE1F9328720A4D00373837 /* ProductDetails_CollectionViewCell.xib */; };
 		04C4DA6A2871882200B354DB /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DA692871882200B354DB /* Urls.swift */; };
@@ -100,6 +104,9 @@
 		00FDE477286F8C8F00D08360 /* BagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
 		00FDE479286F8CA700D08360 /* BagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagTableViewCell.swift; sourceTree = "<group>"; };
 		00FDE47B286F8DFD00D08360 /* BagStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BagStoryboard.storyboard; sourceTree = "<group>"; };
+		04178B512872FCE00044ED7B /* Customer_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer_model.swift; sourceTree = "<group>"; };
+		04178B5528730FF00044ED7B /* RegisterNewCustomer_ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewCustomer_ModelView.swift; sourceTree = "<group>"; };
+		04178B572873100A0044ED7B /* RegiserNewCustomer_protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiserNewCustomer_protocol.swift; sourceTree = "<group>"; };
 		0418BE47286CF7F7000F28EC /* Megamart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Megamart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0418BE4A286CF7F7000F28EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,11 +126,12 @@
 		046F989C286E3382008FDFFC /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		046F989E286E5CBD008FDFFC /* Constatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatnts.swift; sourceTree = "<group>"; };
 		046F98A0286E5D26008FDFFC /* Login_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ViewController.swift; sourceTree = "<group>"; };
-		046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_ViewController.swift; sourceTree = "<group>"; };
+		046F98A2286E7258008FDFFC /* Register_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register_ViewController.swift; sourceTree = "<group>"; };
 		0477528828709DDB0095EA91 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		0477528C28709E400095EA91 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		0477529128709EA90095EA91 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0477529328709EE70095EA91 /* AddAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertView.swift; sourceTree = "<group>"; };
+		047752952870B14E0095EA91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		047752972870D97B0095EA91 /* Product_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product_model.swift; sourceTree = "<group>"; };
 		04AE1F9328720A4D00373837 /* ProductDetails_CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetails_CollectionViewCell.xib; sourceTree = "<group>"; };
 		04C4DA692871882200B354DB /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
@@ -218,6 +226,24 @@
 			path = "payment ";
 			sourceTree = "<group>";
 		};
+		04178B53287300C80044ED7B /* productDetails */ = {
+			isa = PBXGroup;
+			children = (
+				04C4DA6C2871909B00B354DB /* ProductDetails_ModelView.swift */,
+				04C4DA6E287190BD00B354DB /* ProductDetails_protocol.swift */,
+			);
+			path = productDetails;
+			sourceTree = "<group>";
+		};
+		04178B54287300D70044ED7B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				04178B5528730FF00044ED7B /* RegisterNewCustomer_ModelView.swift */,
+				04178B572873100A0044ED7B /* RegiserNewCustomer_protocol.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		0418BE3E286CF7F7000F28EC = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +274,7 @@
 				0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */,
 				0418BE56286CF7F9000F28EC /* Assets.xcassets */,
 				0418BE5B286CF7F9000F28EC /* Info.plist */,
+				047752952870B14E0095EA91 /* GoogleService-Info.plist */,
 				0477528728709DC00095EA91 /* Utilitis */,
 				0477528A28709E170095EA91 /* Services */,
 				0418BE80286CF848000F28EC /* Repository */,
@@ -282,6 +309,8 @@
 				047752972870D97B0095EA91 /* Product_model.swift */,
 				04C4DA692871882200B354DB /* Urls.swift */,
 				046F989E286E5CBD008FDFFC /* Constatnts.swift */,
+				047752972870D97B0095EA91 /* Product_model.swift */,
+				04178B512872FCE00044ED7B /* Customer_model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,7 +382,7 @@
 				0418BE4E286CF7F7000F28EC /* ViewController.swift */,
 				E245C2A828708493004A341C /* OrdersViewController.swift */,
 				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
-				046F98A2286E7258008FDFFC /* SignUp_ViewController.swift */,
+				046F98A2286E7258008FDFFC /* Register_ViewController.swift */,
 				00814DA7286EF06700E94EA4 /* SettingViewController.swift */,
 				008ABD362870C8080060CB08 /* AddressVC.swift */,
 				0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */,
@@ -403,6 +432,8 @@
 				04C4DA6E287190BD00B354DB /* ProductDetails_protocol.swift */,
 				E25DE72A2872B9CB003010ED /* ProductsViewModel.swift */,
 				E25DE7292872B9CB003010ED /* Products_Protocol.swift */,
+				04178B53287300C80044ED7B /* productDetails */,
+				04178B54287300D70044ED7B /* Register */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -580,6 +611,7 @@
 				04AE1F9428720A4D00373837 /* ProductDetails_CollectionViewCell.xib in Resources */,
 				E245C2AB287084BB004A341C /* Orders.storyboard in Resources */,
 				E245C29F28707CEA004A341C /* OrderViewCell.xib in Resources */,
+				047752962870B14E0095EA91 /* GoogleService-Info.plist in Resources */,
 				00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */,
 				0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */,
 				006A005928718C1900F2228C /* Main.storyboard in Resources */,
@@ -722,9 +754,10 @@
 				04C4DA6F287190BD00B354DB /* ProductDetails_protocol.swift in Sources */,
 				E245C29B287070DD004A341C /* MeViewController.swift in Sources */,
 				E20C7569287067A2004ACF8F /* ProductViewCell.swift in Sources */,
+				04178B522872FCE00044ED7B /* Customer_model.swift in Sources */,
 				006A00572871838900F2228C /* AdsCollectionViewCell.swift in Sources */,
 				0477529228709EA90095EA91 /* NetworkManager.swift in Sources */,
-				046F98A3286E7258008FDFFC /* SignUp_ViewController.swift in Sources */,
+				046F98A3286E7258008FDFFC /* Register_ViewController.swift in Sources */,
 				0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */,
 				041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */,
 				0477528928709DDB0095EA91 /* JSONDecoder.swift in Sources */,
@@ -737,6 +770,7 @@
 				04C4DA6D2871909B00B354DB /* ProductDetails_ModelView.swift in Sources */,
 				0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */,
 				0467CEFC286F8E530070DC64 /* ProductDetails_ViewController.swift in Sources */,
+				04178B582873100A0044ED7B /* RegiserNewCustomer_protocol.swift in Sources */,
 				00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */,
 				E24ABE262872BFC40047D7F1 /* Products_Model.swift in Sources */,
 				0477529428709EE70095EA91 /* AddAlertView.swift in Sources */,
@@ -746,6 +780,7 @@
 				0477528D28709E400095EA91 /* APIServices.swift in Sources */,
 				046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */,
 				008ABD372870C8090060CB08 /* AddressVC.swift in Sources */,
+				04178B5628730FF00044ED7B /* RegisterNewCustomer_ModelView.swift in Sources */,
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
 				00088072286FAFB300DE578B /* BagTableViewCell.swift in Sources */,
@@ -926,7 +961,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -954,7 +989,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
