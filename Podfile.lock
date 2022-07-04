@@ -1,20 +1,29 @@
 PODS:
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
   - Cosmos (23.0.0)
   - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
   - Cosmos
   - TinyConstraints
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - AlamofireImage
     - Cosmos
     - TinyConstraints
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: fa0641cd93e80d15bdedf1c3fb88294708467d12
+PODFILE CHECKSUM: ecd12eb790150ffb64731f25a3e2cc904b9481b3
 
 COCOAPODS: 1.11.2
