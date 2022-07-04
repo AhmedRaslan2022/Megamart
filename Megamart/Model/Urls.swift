@@ -18,4 +18,8 @@ struct UrlServices {
     static func products() -> String{
         return UrlServices.baseURL + "admin/api/2022-01/products.json"
     }
+    
+    static func getDiscountCode(priceRuleID: String) -> String{
+        return UrlServices.baseURL + "admin/api/2022-01/price_rules/\(priceRuleID)/discount_codes.json"
+    }
 }

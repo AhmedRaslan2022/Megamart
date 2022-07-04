@@ -9,4 +9,5 @@ import UIKit
 
 class AdsCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var adsPhoto: UIImageView!
 }

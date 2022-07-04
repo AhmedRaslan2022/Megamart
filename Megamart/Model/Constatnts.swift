@@ -26,7 +26,7 @@ struct Constants {
     
 //MARK: -                   viewControllers
     
-    static let HomeViewController_id = "Home_viewController_id"
+    static let HomeViewController_id = "HomeVC_id"
     static let CategoryViewController_id = "CategoryViewController_id"
     static let login_viewController_id = "login_viewController_id"
     static let SignUp_viewController_id = "SignUp_ViewController_id"
