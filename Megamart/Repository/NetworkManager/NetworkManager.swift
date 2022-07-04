@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class NetworkManager: APIService {
+class NetworkManager: APIService,ProductsAPIService {
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.productDetails(product_id: endPoint)){
             print(url)
