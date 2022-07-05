@@ -32,5 +32,9 @@ struct UrlServices {
     static func brands() -> String{
         return UrlServices.baseURL + "admin/api/2022-01/smart_collections.json"
     }
+    
+    static func retrievesCustomerS() -> String {
+        return UrlServices.baseURL + "admin/api/2022-01/customers.json"
+    }
 }
 

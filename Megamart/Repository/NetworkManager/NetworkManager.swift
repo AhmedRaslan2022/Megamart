@@ -8,9 +8,14 @@
 import Foundation
 import Alamofire
 
+<<<<<<< HEAD
 
 class NetworkManager: APIService,BrandsAPIService{
   
+=======
+class NetworkManager: APIService {
+    
+>>>>>>> firebase
     
 //MARK:                     product details
     
@@ -32,6 +37,8 @@ class NetworkManager: APIService,BrandsAPIService{
             }
         }
     }
+    
+    
     
 //MARK:                             create new customer
     
@@ -68,6 +75,7 @@ class NetworkManager: APIService,BrandsAPIService{
         
     }
     
+<<<<<<< HEAD
     
     //MARK:                             Brands
     
@@ -98,6 +106,35 @@ class NetworkManager: APIService,BrandsAPIService{
         }*/
 
 
+=======
+
+    
+//MARK:                             Retive Customers
+    
+    func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void)) {
+        if let url = URL(string: UrlServices.retrievesCustomerS()) {
+            print(url)
+            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { response in
+                if let data = response.data {
+                    if let customers: AllCustomers = convertFromJson(data: data) {
+                        print("$$$$$$$$$$$$$\(customers)$$$$$$$$$$$$$$$")
+                        completion(customers.customers, nil)
+                    }else{
+                        print("########### error in decode ############")
+                    }
+                    
+                }
+                if let error = response.error {
+                    completion(nil, error)
+                }
+                print(response)
+                print(response.data)
+                print(response.value)
+            }
+        }
+    }
+    
+>>>>>>> firebase
 }
     /* func fetchSports(endPoint: String, completion: @escaping (([Sport]?, Error?) -> Void)) {
      
