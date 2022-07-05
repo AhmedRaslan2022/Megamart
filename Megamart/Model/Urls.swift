@@ -19,5 +19,9 @@ struct UrlServices {
     static func registerCustomer() -> String{
         return UrlServices.baseURL + "admin/api/2022-01/customers.json"
     }
+    
+    static func retrievesCustomerS() -> String {
+        return UrlServices.baseURL + "admin/api/2022-01/customers.json"
+    }
 }
 

@@ -12,14 +12,17 @@ struct NewCustomer: Codable {
     let customer: Customer
 }
 
+struct AllCustomers: Codable {
+    let customers: [Customer]
+}
+
 struct Customer: Codable {
+    // tags is password
     var first_name, email, tags: String?
     var id: Int?
     var addresses: [Address]?
     // token for firebase
-    var last_order_id: String?
-    
-    
+    var lastName: String?
 }
 
 struct Address: Codable {
@@ -41,53 +44,6 @@ struct CustomerAddress: Codable {
 struct Addresses: Codable {
     var addresses: Address
 }
-
-
-// MARK: - Customer
-//struct Customer: Codable {
-//
-//    let customers: [CustomerElement]
-//}
-//
-//// MARK: - CustomerElement
-//
-//struct CustomerElement: Codable {
-//
-//    let id: Int?
-//    let email: String
-//    let name: String
-//    let password: String?
-//    let token_key: String?
-//    let defaultAddress: Address?
-//
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id, email
-//        case name = "first_name"
-//        case password = "phone"
-//        case token_key = "last_order_name"
-//        case defaultAddress = "default_address"
-//
-//    }
-//}
-//
-//
-//// MARK: - Address
-//
-//struct Address: Codable {
-//
-//    let id, customerID: Int
-//    let name: String
-//    let city, country, zip: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id
-//        case customerID = "customer_id"
-//        case name = "first_name"
-//        case  city, country, zip
-//
-//    }
-//}
 
 extension Encodable {
   func asDictionary() throws -> [String: Any] {

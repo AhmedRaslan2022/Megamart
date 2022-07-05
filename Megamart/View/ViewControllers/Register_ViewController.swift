@@ -27,7 +27,7 @@ class Register_ViewController: UIViewController {
         
         
         register_viewModel.binding = { customer, error in
-            if let customer = customer{
+            if customer != nil{
                 addAlert(title: "Done", message: "You have been registered successfully", ActionTitle: "OK", viewController: self)
             }
             if let error = error {
