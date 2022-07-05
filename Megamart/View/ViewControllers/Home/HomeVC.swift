@@ -13,14 +13,34 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
    
-    @IBOutlet weak var productsCollectionView: UICollectionView!
+    @IBOutlet weak var brandsCollectionView: UICollectionView!
      var arrAdsPhoto = [UIImage(named: "ads1")!, UIImage(named: "ads2")!, UIImage(named: "ads3")!, UIImage(named: "ads4")!, UIImage(named: "ads5")!, UIImage(named: "ads6")!]
     
+    var brandsArray = [BrandsModel]()
     var timer : Timer?
     var currentCellIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.brandsCollectionView.register(UINib(nibName: Constants.Brands_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.Brands_Cell_id)
+        
+        brandsCollectionView.delegate = self
+        brandsCollectionView.dataSource = self
+        
+         let brandsViewModel = BrandsViewModel()
+           brandsViewModel.fetchData()
+           brandsViewModel.bindingData = { brands, error in
+               if let brands = brands {
+                   self.brandsArray = brands
+                    DispatchQueue.main.async {
+                      self.brandsCollectionView.reloadData()
+                   }
+               }
+               if let error = error {
+                   print(error.localizedDescription)
+               }
+           }
+  
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
         startTimer()
@@ -47,14 +67,24 @@ class HomeVC: UIViewController {
 
 extension HomeVC:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if (collectionView == menuCollectionView){
         return arrAdsPhoto.count
+        }
+        return brandsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if (collectionView == menuCollectionView){
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdsCollectionViewCell", for: indexPath) as! AdsCollectionViewCell
         cell.adsPhoto.image = arrAdsPhoto[indexPath.row]
         return cell
+        }
+       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.Brands_Cell_id, for: indexPath) as! BrandsCollectionCell
+        cell.BrandName.text = brandsArray[indexPath.row].title
+        return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }

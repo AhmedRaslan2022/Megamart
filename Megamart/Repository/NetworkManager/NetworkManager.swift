@@ -8,16 +8,13 @@
 import Foundation
 import Alamofire
 
-<<<<<<< HEAD
-class NetworkManager: APIService,ProductsAPIService {
-=======
-class NetworkManager: APIService {
-    
-    
+
+class NetworkManager: APIService,BrandsAPIService{
+  
     
 //MARK:                     product details
     
->>>>>>> firebase
+
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.productDetails(product_id: endPoint)){
             Alamofire.request(url, method: .get, parameters: nil, encoding:JSONEncoding.default)
@@ -72,6 +69,53 @@ class NetworkManager: APIService {
     }
     
     
+    //MARK:                             Brands
+    
+    func  fetchBrands(completion: @escaping (([BrandsModel]?, Error?) -> Void)){
+        if let url = URL(string: UrlServices.brands()){
+            print(url)
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                
+                if let data = data {
+                    guard let decodedData = try? JSONDecoder().decode(Brands.self, from: data) else{ return}
+                    completion(decodedData.brands,nil)
+                }
+                if let error = error {
+                   completion(nil, error)
+                }
+            }.resume()
+        }
+      
+    }
+                
+                
+            /*guard let data = response.data else { return }
+                    print("before decode")
+                    if let decodedData: Brands = convertFromJson(data: data){
+                        completion(decodedData.brands, nil)
+                    } else { print("!!!!!!Error in decode data!!!!!!")}
+                    }
+        }*/
+
+
+}
+    /* func fetchSports(endPoint: String, completion: @escaping (([Sport]?, Error?) -> Void)) {
+     
+     if let  url = URL(string: UrlServices(endPoint: endPoint).url) {
+         URLSession.shared.dataTask(with: url) { data, response, error in
+             if let data = data {
+                 guard let decodedData = try? JSONDecoder().decode(SportModel.self, from: data) else{ return}
+                 completion(decodedData.sports,nil)
+             }
+             if let error = error {
+                completion(nil, error)
+             }
+         }.resume()
+     }
+   
+ }
+}*/
+    
     func fetchProducts(endPoint: String, completion: @escaping (([ProductModel]?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.products()){
             Alamofire.request(url , method: .get, parameters: nil, encoding:JSONEncoding.default)
@@ -88,4 +132,7 @@ class NetworkManager: APIService {
 
     }
     
-}
+
+
+
+
