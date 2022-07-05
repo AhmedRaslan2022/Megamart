@@ -20,12 +20,16 @@ protocol APIService {
     
 }
 
-<<<<<<< HEAD
+//MARK: - Brands
+protocol BrandsAPIService {
+    
+    func fetchBrands(completion: @escaping (([BrandsModel]?, Error?) -> Void ) )
+    
+}
+
 //MARK: - products
 protocol ProductsAPIService {
     
-    func fetchProducts(endPoint: String, completion: @escaping (([ProductModel]?, Error?) -> Void ) )
+    func fetchProducts(completion: @escaping (([ProductModel]?, Error?) -> Void ) )
     
 }
-=======
->>>>>>> firebase

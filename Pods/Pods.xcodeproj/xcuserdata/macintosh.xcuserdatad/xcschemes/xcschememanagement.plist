@@ -62,7 +62,11 @@
 		<key>Pods-Megamart.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>6</integer>
+=======
+			<integer>5</integer>
+>>>>>>> brands
 		</dict>
 		<key>Pods-MegamartTests.xcscheme</key>
 		<dict>
@@ -74,7 +78,11 @@
 		<key>Pods-MegamartTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>5</integer>
+=======
+			<integer>4</integer>
+>>>>>>> brands
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
@@ -86,7 +94,11 @@
 		<key>SDWebImage.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>7</integer>
+=======
+			<integer>6</integer>
+>>>>>>> brands
 		</dict>
 		<key>TinyConstraints.xcscheme</key>
 		<dict>
@@ -98,7 +110,11 @@
 		<key>TinyConstraints.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>8</integer>
+=======
+			<integer>7</integer>
+>>>>>>> brands
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
