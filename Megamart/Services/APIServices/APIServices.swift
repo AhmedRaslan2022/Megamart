@@ -28,7 +28,7 @@ protocol APIService {
 //MARK: - Brands
 protocol BrandsAPIService {
     
-    func fetchBrands(completion: @escaping (([BrandsModel]?, Error?) -> Void ) )
+    func fetchBrands(completion: @escaping (([SmartCollection]?, Error?) -> Void ) )
     
 }
 
