@@ -56,10 +56,18 @@ struct Constants {
 
     
 
+  
     
+//MARK: -               Customers list
+    
+        static var customers_list : [Customer] = []
+    
+    
+    
+
 //MARK: -               others
-    
-    static let noImageAvailabel = "no_image_available-product"
+        
+        static let noImageAvailabel = "no_image_available-product"
     
     
 }

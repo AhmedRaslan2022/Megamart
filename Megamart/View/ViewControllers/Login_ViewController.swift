@@ -22,8 +22,7 @@ class Login_ViewController: UIViewController {
         super.viewDidLoad()
         signInView.layer.cornerRadius = 30
         backgroundView.layer.cornerRadius = 30
-
-        login_viewModel.retriveAllCustomer()
+        
         login_viewModel.binding = {loggedin, error in
             if let error = error {
                 addAlert(title: "Warning", message: error, ActionTitle: "Try Again", viewController: self)
@@ -36,6 +35,10 @@ class Login_ViewController: UIViewController {
             }
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        login_viewModel.retriveAllCustomer()
     }
     
     
