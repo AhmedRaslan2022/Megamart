@@ -56,4 +56,16 @@ class RegisterNewCustomer_ViewModel: RegiserNewCustomer_protocol {
     }
     
     
+    func check_emailAndUserName(userName: String, email: String) -> String? {
+        for customer in Constants.customers_list {
+                if userName == customer.first_name {
+                    return "User name is used before"
+                }
+                if email == customer.email {
+                    return "Email is used before"
+                }
+            }
+        return nil
+    }
+    
 }

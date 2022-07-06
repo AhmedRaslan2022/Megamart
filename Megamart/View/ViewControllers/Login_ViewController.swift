@@ -30,6 +30,9 @@ class Login_ViewController: UIViewController {
             }
             if loggedin {
                 addAlert(title: "Done", message: "", ActionTitle: "Try Again", viewController: self)
+//                let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
+//                let favoritesViewController = storyBoard.instantiateViewController(withIdentifier: Constants.HomeViewController_id) as! HomeViewController
+//                self.navigationController?.pushViewController(favoritesViewController, animated: true)
             }
         }
         
@@ -46,8 +49,14 @@ class Login_ViewController: UIViewController {
             print("empty")
         }
         
+        
     }
     
+    @IBAction func signup(_ sender: UIButton) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: Constants.SignUp_viewController_id) {
+            self.navigationController?.show(vc, sender: self)
+        }
+    }
 
     func checkIs_NotEmpty() -> Bool {
 

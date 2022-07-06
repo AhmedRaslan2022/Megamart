@@ -9,7 +9,6 @@ import Foundation
 
 class Login_modelView: Login_protocol {
     
-    var customers: [Customer]?
     
     var loggedin: String?{
         didSet{
@@ -35,8 +34,7 @@ class Login_modelView: Login_protocol {
     }
     
     func login(userName: String, password: String) {
-        if let customers = customers {
-            for customer in customers {
+        for customer in Constants.customers_list {
                 if userName == customer.email {
                     if password == customer.tags {
                         binding(true, nil)
@@ -48,10 +46,6 @@ class Login_modelView: Login_protocol {
                     error = "Incorrect Username"
                 }
             }
-        }else{
-            print("there is no customers in model view")
-        }
-        
     }
     
     
@@ -61,7 +55,7 @@ class Login_modelView: Login_protocol {
                 print("%%%%%%%%%%%% error in retrive customers ")
             }
             if let customers = customers {
-                self.customers = customers
+                Constants.customers_list = customers
             }
         }
     }

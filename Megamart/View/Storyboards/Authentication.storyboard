@@ -53,7 +53,7 @@
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="EBv-S1-rVy" kind="show" id="94Z-VT-KJ8"/>
+                                            <action selector="signup:" destination="6QI-wM-3GH" eventType="touchUpInside" id="JbB-nh-KEG"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Megamart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wk-FT-Iik">
@@ -196,6 +196,7 @@
                         <outlet property="signUp_button" destination="GFe-Em-vk5" id="WT2-GG-z1C"/>
                         <outlet property="userEmail_textField" destination="bq5-Q8-GM4" id="l5N-sq-gcR"/>
                         <outlet property="userPassword_textField" destination="diq-GR-ZPe" id="MRi-FI-Bt0"/>
+                        <segue destination="EBv-S1-rVy" kind="show" id="k1n-hR-WQ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohK-3B-Y37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -493,12 +494,6 @@
                                     <constraint firstItem="tkn-mO-Wmd" firstAttribute="leading" secondItem="AVk-Ev-snN" secondAttribute="leading" constant="10" id="wNq-HG-OSv"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="here we will show keyboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rg-c0-kkx">
-                                <rect key="frame" x="37.333333333333343" y="648" width="315.66666666666663" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QBX-cN-JIh"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -511,7 +506,6 @@
                             <constraint firstItem="faB-k8-Ap3" firstAttribute="height" secondItem="j8i-RR-CHh" secondAttribute="height" multiplier="0.17" id="Rh0-Ob-Fta"/>
                             <constraint firstItem="VHH-2j-XrT" firstAttribute="height" secondItem="j8i-RR-CHh" secondAttribute="height" multiplier="0.5" id="UeB-tT-YWe"/>
                             <constraint firstItem="nHk-63-G0H" firstAttribute="width" secondItem="j8i-RR-CHh" secondAttribute="width" multiplier="0.617094" id="bOz-wU-kLA"/>
-                            <constraint firstItem="9rg-c0-kkx" firstAttribute="centerX" secondItem="j8i-RR-CHh" secondAttribute="centerX" id="eMf-dZ-vPR"/>
                             <constraint firstItem="AVk-Ev-snN" firstAttribute="width" secondItem="j8i-RR-CHh" secondAttribute="width" multiplier="0.903382" id="iwH-8u-nJL"/>
                             <constraint firstItem="AVk-Ev-snN" firstAttribute="height" secondItem="j8i-RR-CHh" secondAttribute="height" multiplier="0.3" id="rMO-mX-6wJ"/>
                             <constraint firstItem="VHH-2j-XrT" firstAttribute="leading" secondItem="j8i-RR-CHh" secondAttribute="leading" id="tID-Rm-0c9"/>

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class Register_ViewController: UIViewController {
 
@@ -28,7 +30,11 @@ class Register_ViewController: UIViewController {
         
         register_viewModel.binding = { customer, error in
             if customer != nil{
-                addAlert(title: "Done", message: "You have been registered successfully", ActionTitle: "OK", viewController: self)
+//                addAlert(title: "Done", message: "You have been registered successfully", ActionTitle: "OK", viewController: self)
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
             }
             if let error = error {
                 addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "cancle", viewController: self)
@@ -44,7 +50,26 @@ class Register_ViewController: UIViewController {
                let password = userPassword_textField.text, let conformPassword = conformPassword_textField.text {
 
                     if ( register_viewModel.checkPassword(password: password , ConformPassword: conformPassword)) {
-                        register_viewModel.createNewCustomer(email: email , name: name, password: password, conformPassword: conformPassword)
+                        
+                        if let error = register_viewModel.check_emailAndUserName(userName: name, email: email) {
+                            
+                            addAlert(title: "Warning", message: error, ActionTitle: "Try Again", viewController: self)
+                        }
+                        else {
+                            
+                            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                                if let error = error {
+                                    addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Try Again", viewController: self)
+                                }
+                                else {
+                                    self.register_viewModel.createNewCustomer(email: email , name: name, password: password, conformPassword: conformPassword)
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                        
                     } else
                         {
                         addAlert(title: "Warning", message: "Password and confirm password do not match", ActionTitle: "Try Again", viewController: self)
@@ -54,7 +79,6 @@ class Register_ViewController: UIViewController {
                 }
                 
             }
-        
     }
     
     
@@ -78,6 +102,5 @@ class Register_ViewController: UIViewController {
         }
         return true
     }
-    
 
 }
