@@ -8,5 +8,5 @@
 import Foundation
 protocol Brands_Protocol {
     func fetchData ()
-    var  bindingData: (([BrandsModel]?, Error?) -> Void ) {set get}
+    var  bindingData: (([SmartCollection]?, Error?) -> Void ) {set get}
 }

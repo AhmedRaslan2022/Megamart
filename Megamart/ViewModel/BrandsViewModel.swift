@@ -5,10 +5,17 @@
 //  Created by Macintosh on 04/07/2022.
 //
 
+//
+//  Brands.swift
+//  Megamart
+//
+//  Created by Macintosh on 04/07/2022.
+//
+
 import Foundation
 class BrandsViewModel: Brands_Protocol {
     
-    var brandsArray: [BrandsModel]? {
+    var brandsArray: [SmartCollection]? {
         didSet{
             bindingData(brandsArray, nil)
         }
@@ -20,7 +27,7 @@ class BrandsViewModel: Brands_Protocol {
         }
     }
     
-    var bindingData: (([BrandsModel]?, Error?) -> Void) = {_, _ in }
+    var bindingData: (([SmartCollection]?, Error?) -> Void) = {_, _ in }
     var brandsApiService: BrandsAPIService
     
     init(brandsApiService: BrandsAPIService = NetworkManager()) {

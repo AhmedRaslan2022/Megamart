@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fa0-oP-dPg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MnO-CB-GPj">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -89,9 +89,15 @@
                         <rightBarButtonItems>
                             <barButtonItem title="fav" image="heart.fill" catalog="system" id="LVF-n5-C5k">
                                 <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="goFav:" destination="fa0-oP-dPg" id="9N2-aL-Myg"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="cart" image="cart.fill" catalog="system" id="hec-sC-tpn">
                                 <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="goCart:" destination="fa0-oP-dPg" id="LCJ-P7-rWM"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>

@@ -4,9 +4,9 @@
 //
 //  Created by Macintosh on 01/07/2022.
 //
-/*
+
 import UIKit
-import SDWebImage
+
 
 class ProductsViewController: UIViewController {
     
@@ -16,6 +16,8 @@ class ProductsViewController: UIViewController {
     
     @IBOutlet weak var ProductCollection: UICollectionView!
     
+    
+    var brandTitle = String ()
     var productsArray = [ProductModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,7 @@ class ProductsViewController: UIViewController {
         ProductCollection.delegate = self
         ProductCollection.dataSource = self
         
-        self.ProductCollection.register(UINib(nibName: Constants.Products_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.ProductDetails_cell_id)
+     /*   self.ProductCollection.register(UINib(nibName: Constants.Products_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.ProductDetails_cell_id)
         
            let productsViewModel = ProductsViewModel()
              productsViewModel.fetchData(endPoint:"")
@@ -36,16 +38,17 @@ class ProductsViewController: UIViewController {
                 }
         
 }
-}
+}*/
     }
 }
+
 extension ProductsViewController: UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = ProductCollection.dequeueReusableCell(withReuseIdentifier: Constants.ProductsViewCell_id, for: indexPath) as! ProductViewCell
           
         cell.ProductPrice.text = productsArray[indexPath.row].variants[indexPath.row].price
         let data = productsArray[indexPath.row].image.src
-        cell.ProductImage.sd_setImage(with: URL(string: data), placeholderImage: UIImage(named: "Product.jpg"))
+       // cell.ProductImage.sd_setImage(with: URL(string: data), placeholderImage: UIImage(named: "Product.jpg"))
     
         return cell
     }
@@ -75,4 +78,3 @@ extension ProductsViewController: UICollectionViewDataSource,UICollectionViewDel
     
 }*/
 
-*/

@@ -8,15 +8,11 @@
 import Foundation
 import Alamofire
 
-<<<<<<< HEAD
 
-class NetworkManager: APIService,BrandsAPIService{
+class NetworkManager: APIService , BrandsAPIService {
   
-=======
-class NetworkManager: APIService {
     
->>>>>>> firebase
-    
+
 //MARK:                     product details
     
 
@@ -75,38 +71,33 @@ class NetworkManager: APIService {
         
     }
     
-<<<<<<< HEAD
+
     
     //MARK:                             Brands
     
-    func  fetchBrands(completion: @escaping (([BrandsModel]?, Error?) -> Void)){
+    
+    func  fetchBrands(completion: @escaping (([SmartCollection]?, Error?) -> Void)){
         if let url = URL(string: UrlServices.brands()){
             print(url)
             URLSession.shared.dataTask(with: url) { data, response, error in
                 
                 if let data = data {
-                    guard let decodedData = try? JSONDecoder().decode(Brands.self, from: data) else{ return}
-                    completion(decodedData.brands,nil)
+                    print(data)
+                    guard let decodedData = try? JSONDecoder().decode(Brands.self, from: data)
+                    else{ return}
+                    completion(decodedData.smartCollections,nil)
+                    print(decodedData)
+                    
                 }
+               
                 if let error = error {
                    completion(nil, error)
                 }
+            
             }.resume()
         }
       
     }
-                
-                
-            /*guard let data = response.data else { return }
-                    print("before decode")
-                    if let decodedData: Brands = convertFromJson(data: data){
-                        completion(decodedData.brands, nil)
-                    } else { print("!!!!!!Error in decode data!!!!!!")}
-                    }
-        }*/
-
-
-=======
 
     
 //MARK:                             Retive Customers
@@ -134,24 +125,9 @@ class NetworkManager: APIService {
         }
     }
     
->>>>>>> firebase
-}
-    /* func fetchSports(endPoint: String, completion: @escaping (([Sport]?, Error?) -> Void)) {
-     
-     if let  url = URL(string: UrlServices(endPoint: endPoint).url) {
-         URLSession.shared.dataTask(with: url) { data, response, error in
-             if let data = data {
-                 guard let decodedData = try? JSONDecoder().decode(SportModel.self, from: data) else{ return}
-                 completion(decodedData.sports,nil)
-             }
-             if let error = error {
-                completion(nil, error)
-             }
-         }.resume()
-     }
-   
- }
-}*/
+
+
+
     
     func fetchProducts(endPoint: String, completion: @escaping (([ProductModel]?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.products()){
@@ -172,4 +148,5 @@ class NetworkManager: APIService {
 
 
 
+  }
 

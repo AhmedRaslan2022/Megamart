@@ -81,6 +81,7 @@
 		E24ABE262872BFC40047D7F1 /* Products_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24ABE252872BFC40047D7F1 /* Products_Model.swift */; };
 		E25DE72B2872B9CB003010ED /* Products_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DE7292872B9CB003010ED /* Products_Protocol.swift */; };
 		E25DE72C2872B9CB003010ED /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DE72A2872B9CB003010ED /* ProductsViewModel.swift */; };
+		E2F9FCAE2875E01700017E8C /* BrandsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F9FCAD2875E01700017E8C /* BrandsCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,7 +186,7 @@
 		E25DE7292872B9CB003010ED /* Products_Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products_Protocol.swift; sourceTree = "<group>"; };
 		E25DE72A2872B9CB003010ED /* ProductsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		E28E9055286F3A770041B0A7 /* BrandsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCollectionCell.swift; sourceTree = "<group>"; };
-		E28E9056286F3A770041B0A7 /* BrandsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandsCollectionCell.xib; sourceTree = "<group>"; };
+		E2F9FCAD2875E01700017E8C /* BrandsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandsCollectionCell.xib; sourceTree = "<group>"; };
 		E5CE3C7B2D01E79E79C1087D /* Pods_Megamart_MegamartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Megamart_MegamartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEA2E2270C8928BCE333FF8 /* Pods-Megamart-MegamartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Megamart-MegamartUITests.release.xcconfig"; path = "Target Support Files/Pods-Megamart-MegamartUITests/Pods-Megamart-MegamartUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F38F179678ACB793EFBF0F35 /* Pods-Megamart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Megamart.debug.xcconfig"; path = "Target Support Files/Pods-Megamart/Pods-Megamart.debug.xcconfig"; sourceTree = "<group>"; };
@@ -365,10 +366,10 @@
 		0418BE86286CF8ED000F28EC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E2F9FCAD2875E01700017E8C /* BrandsCollectionCell.xib */,
 				E245C2A52870818B004A341C /* WishListCollectionCell.xib */,
 				E245C29D28707CEA004A341C /* OrderViewCell.xib */,
 				E20C756628706767004ACF8F /* ProductCollectionCell.xib */,
-				E28E9056286F3A770041B0A7 /* BrandsCollectionCell.xib */,
 				E2187B0528705237009A97F5 /* CategoryCollectionCell.xib */,
 				04AE1F9328720A4D00373837 /* ProductDetails_CollectionViewCell.xib */,
 			);
@@ -639,6 +640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E245C2A72870818B004A341C /* WishListCollectionCell.xib in Resources */,
+				E2F9FCAE2875E01700017E8C /* BrandsCollectionCell.xib in Resources */,
 				00FD6680286FB69000D759D2 /* BagStoryboard.storyboard in Resources */,
 				0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */,
 				E20C756728706768004ACF8F /* ProductCollectionCell.xib in Resources */,
