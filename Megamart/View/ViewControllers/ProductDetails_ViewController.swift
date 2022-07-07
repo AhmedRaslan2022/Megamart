@@ -122,9 +122,28 @@ class ProductDetails_ViewController: UIViewController {
 //        self.present(bagViewController, animated: true, completion: nil)
     }
     
+    
+    
+    
     @IBAction func addToFavorites(_ sender: UIButton) {
+        
         if addToFavorites_button.currentBackgroundImage == UIImage(systemName: "heart.fill"){
             self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+            
+            if let product = product {
+                print("%%%%%%%%%%%%%%%%% here re %%%%%%%%%%%%%%%%%%%%%%%%%")
+                productDetails_viewModel.removeFromFavorites(product: product)
+            }
+            
+            self.productDetails_viewModel.removeFromFavorites_status = { error in
+                if let error = error {
+                    addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "cancle", viewController: self)
+                }
+                else{
+                    print("$%$%$%$%$%$%$% Removed ")
+                }
+                        
+            }
             
         }else{
             self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)

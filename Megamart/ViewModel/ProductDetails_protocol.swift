@@ -15,5 +15,9 @@ protocol ProductDetails_Protocol {
     // add product to favorites
     func addToFavorites(product: ProductModel)
     var addToFavorites_status: ((Error?) -> Void) {set get}
+    
+    // remove from favorites
+    var removeFromFavorites_status: ((Error?) -> Void) {set get}
+    func removeFromFavorites(product: ProductModel)
 
 }

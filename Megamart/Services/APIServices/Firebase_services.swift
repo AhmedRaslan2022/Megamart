@@ -10,12 +10,20 @@ import Foundation
 
 protocol FirebaseServices {
     
-//MARK: -               Update Favorites
+//MARK: -               Add to Favorites
     
-    func updateFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void))
+    func addToFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void))
  
     
-    //MARK: -               Update Favorites
+    //MARK: -               Fetch Favorites
         
     func fetchFavorites(completion: @escaping (([Int]?,[String]?,[String]?,Error?) -> Void))
+    
+    
+    //MARK: -               Update Favorites
+    
+    
+    func removeFromFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void))
+    
+    
 }

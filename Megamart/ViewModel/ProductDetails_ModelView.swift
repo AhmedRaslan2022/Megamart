@@ -10,6 +10,19 @@ import Foundation
 class ProductDetails_modelView: ProductDetails_Protocol {
     
     
+    var apiService: APIService
+    var firebaseManager: FirebaseServices
+    
+    init(apiService: APIService = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager() ) {
+        self.apiService = apiService
+        self.firebaseManager = firebaseManager
+    }
+    
+    
+    
+//MARK: -               Fetch favorites
+    
+   
     var data: ProductModel? {
         didSet{
             bindingData(data, nil)
@@ -22,22 +35,8 @@ class ProductDetails_modelView: ProductDetails_Protocol {
         }
     }
     
-    var addToFavorites_error: Error? {
-        didSet{
-            addToFavorites_status(error)
-        }
-    }
-    
-    
     var bindingData: ((ProductModel?, Error?) -> Void) = {_, _ in }
     
-    var apiService: APIService
-    var firebaseManager: FirebaseServices
-    
-    init(apiService: APIService = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager() ) {
-        self.apiService = apiService
-        self.firebaseManager = firebaseManager
-    }
     
     func fetchData(endPoint: String) {
         apiService.fetchProductInfo(endPoint: endPoint) { product, error in
@@ -53,12 +52,16 @@ class ProductDetails_modelView: ProductDetails_Protocol {
     
 //MARK: -                           Add Product To Favorites
     
-    
+    var addToFavorites_error: Error? {
+        didSet{
+            addToFavorites_status(error)
+        }
+    }
     
     var addToFavorites_status: ((Error?) -> Void) = { _ in }
     
     func addToFavorites(product: ProductModel) {
-        firebaseManager.updateFavorites(product: product) { error in
+        firebaseManager.addToFavorites(product: product) { error in
             if let error = error {
                 self.addToFavorites_error = error
             }
@@ -67,4 +70,28 @@ class ProductDetails_modelView: ProductDetails_Protocol {
             }
         }
     }
+    
+    
+    //MARK: -                           Remove Product From Favorites
+    
+    
+    var removeFromFavorites_error: Error? {
+        didSet{
+            removeFromFavorites_status(error)
+        }
+    }
+    
+    var removeFromFavorites_status: ((Error?) -> Void) = { _ in }
+    
+    func removeFromFavorites(product: ProductModel) {
+        firebaseManager.removeFromFavorites(product: product) { error in
+            if let error = error {
+                self.removeFromFavorites_error = error
+            }
+            else{
+                self.removeFromFavorites_error = nil
+            }
+        }
+    }
+    
 }

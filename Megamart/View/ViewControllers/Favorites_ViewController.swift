@@ -53,6 +53,12 @@ class Favorites_ViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if ids.count == 0 {
+            addAlert(title: "Alert!", message: "There are no favorite Products", ActionTitle: "Cancle", viewController: self)
+        }
+    }
+
 
 }
 
