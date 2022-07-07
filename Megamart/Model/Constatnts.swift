@@ -51,7 +51,8 @@ struct Constants {
     static let Brands_Cell_id = "Brands_Cell_id"
     static let Products_nib_name = "ProductCollectionCell"
     static let Brands_nib_name = "BrandsCollectionCell"
-    
+    static let WishList_nib_name = "WishListCollectionCell"
+    static let WishList_Cell_id = "WishList_cell_id"
     
 
     

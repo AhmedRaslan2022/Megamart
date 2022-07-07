@@ -26,6 +26,6 @@ target 'Megamart' do
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'Firebase/Core'
-  pod ‘Firebase/Database‘
+  pod 'Firebase/Database'
   
 end
