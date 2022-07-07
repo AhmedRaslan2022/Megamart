@@ -21,9 +21,11 @@ target 'Megamart' do
   
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'FirebaseDatabase'
   
   pod 'Alamofire'
   pod 'AlamofireImage'
-
+  pod 'Firebase/Core'
+  pod ‘Firebase/Database‘
   
 end

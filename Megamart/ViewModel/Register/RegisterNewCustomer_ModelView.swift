@@ -9,7 +9,6 @@ import Foundation
 
 class RegisterNewCustomer_ViewModel: RegiserNewCustomer_protocol {
     
-    
     var error: Error? {
         didSet{
             binding(nil, error)

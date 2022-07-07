@@ -30,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:844037246053:ios:78c9f5e4ea032025db4a8c</string>
+	<key>DATABASE_URL</key>
+	<string>https://megamart-84323-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>

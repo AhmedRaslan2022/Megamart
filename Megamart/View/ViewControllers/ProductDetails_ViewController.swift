@@ -28,8 +28,12 @@ class ProductDetails_ViewController: UIViewController {
     
     var images_url: [Image]?
     var productID: String? = "7730623709398"
+    var product: ProductModel?
     
     var rating = Double.random(in: 1...5)
+    
+    var productDetails_viewModel: ProductDetails_Protocol = ProductDetails_modelView()
+    
     
     
     override func viewDidLoad() {
@@ -42,13 +46,13 @@ class ProductDetails_ViewController: UIViewController {
 
         
         
-        var productDetails_viewModel: ProductDetails_Protocol = ProductDetails_modelView()
         if let productID = productID {
             productDetails_viewModel.fetchData(endPoint: productID)
         }
 
         productDetails_viewModel.bindingData = { productDetails, error in
             if let productDetails = productDetails {
+                self.product = productDetails
                 self.productTitle_label.text = productDetails.title
                 self.productPrice_label.text = productDetails.variants[0].price
                 self.description_label.text = productDetails.body_html
@@ -99,9 +103,9 @@ class ProductDetails_ViewController: UIViewController {
     }
     
     @IBAction func goToHome_button(_ sender: UIBarButtonItem) {
-//        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
-//        let homeViewController = storyBoard.instantiateViewController(withIdentifier: Constants.HomeViewController_id) as HomeViewController
-//        self.navigationController?.pushViewController(homeViewController, animated: true)
+        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
+        let homeViewController = storyBoard.instantiateViewController(withIdentifier: Constants.HomeViewController_id) as! HomeVC
+        self.navigationController?.pushViewController(homeViewController, animated: true)
     }
     
     @IBAction func goToFavorites_button(_ sender: UIBarButtonItem) {
@@ -121,8 +125,25 @@ class ProductDetails_ViewController: UIViewController {
     @IBAction func addToFavorites(_ sender: UIButton) {
         if addToFavorites_button.currentBackgroundImage == UIImage(systemName: "heart.fill"){
             self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+            
         }else{
             self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
+            print("%%%%%%%%%%%%%%%%% here %%%%%%%%%%%%%%%%%%%%%%%%%")
+            if let product = product {
+                productDetails_viewModel.addToFavorites(product: product)
+            }
+            
+            self.productDetails_viewModel.addToFavorites_status = { error in
+                if let error = error {
+                    addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "cancle", viewController: self)
+                }
+                else{
+                    
+                    print("$%$%$%$%$%$%$% Done ")
+                }
+                        
+            }
+            
         }
         
     }
@@ -131,7 +152,7 @@ class ProductDetails_ViewController: UIViewController {
 }
 
 
-//MARK: -                   Collection View
+//MARK: -                                       Collection View
 
 
 extension ProductDetails_ViewController: UICollectionViewDelegate{

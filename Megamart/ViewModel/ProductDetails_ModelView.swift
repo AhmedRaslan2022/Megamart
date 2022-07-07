@@ -22,12 +22,21 @@ class ProductDetails_modelView: ProductDetails_Protocol {
         }
     }
     
+    var addToFavorites_error: Error? {
+        didSet{
+            addToFavorites_status(error)
+        }
+    }
+    
+    
     var bindingData: ((ProductModel?, Error?) -> Void) = {_, _ in }
     
     var apiService: APIService
+    var firebaseManager: FirebaseServices
     
-    init(apiService: APIService = NetworkManager()) {
+    init(apiService: APIService = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager() ) {
         self.apiService = apiService
+        self.firebaseManager = firebaseManager
     }
     
     func fetchData(endPoint: String) {
@@ -40,5 +49,22 @@ class ProductDetails_modelView: ProductDetails_Protocol {
             }
         }
     }
+
     
+//MARK: -                           Add Product To Favorites
+    
+    
+    
+    var addToFavorites_status: ((Error?) -> Void) = { _ in }
+    
+    func addToFavorites(product: ProductModel) {
+        firebaseManager.updateFavorites(product: product) { error in
+            if let error = error {
+                self.addToFavorites_error = error
+            }
+            else{
+                self.addToFavorites_error = nil
+            }
+        }
+    }
 }

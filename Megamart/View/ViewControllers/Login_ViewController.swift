@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class Login_ViewController: UIViewController {
 
@@ -45,7 +46,16 @@ class Login_ViewController: UIViewController {
     @IBAction func signin(_ sender: Any) {
         if checkIs_NotEmpty() {
             if let email = userEmail_textField.text, let  password = userPassword_textField.text{
-                login_viewModel.login(userName: email, password: password)
+                Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                  guard let strongSelf = self else { return }
+                    if let error = error {
+                        addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Try Again", viewController: self!)
+                    }
+                    else{
+                        self?.login_viewModel.login(userName: email, password: password)
+                    }
+                }
+                
             }
             print("Not empty")
         }else{
