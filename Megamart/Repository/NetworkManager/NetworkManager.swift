@@ -9,7 +9,9 @@ import Foundation
 import Alamofire
 
 
-class NetworkManager: APIService , BrandsAPIService {
+class NetworkManager: APIService , BrandsAPIService,ProductsAPIService {
+    
+    
   
     
 
@@ -129,7 +131,7 @@ class NetworkManager: APIService , BrandsAPIService {
 
 
     
-    func fetchProducts(endPoint: String, completion: @escaping (([ProductModel]?, Error?) -> Void)) {
+    func fetchProducts(completion: @escaping (([ProductModel]?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.products()){
             Alamofire.request(url , method: .get, parameters: nil, encoding:JSONEncoding.default)
                         .responseData { response in

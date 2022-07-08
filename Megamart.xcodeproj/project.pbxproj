@@ -63,9 +63,7 @@
 		C5D10108B4E5C2DDEF4CE997 /* Pods_Megamart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFD13B2A6D75F0171BF185E /* Pods_Megamart.framework */; };
 		E1CFD67D63E9CD8D26E5AC53 /* Pods_MegamartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB60F7450E81E9021A2F061B /* Pods_MegamartTests.framework */; };
 		E20C75652870632D004ACF8F /* BrandsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E9055286F3A770041B0A7 /* BrandsCollectionCell.swift */; };
-		E20C756728706768004ACF8F /* ProductCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E20C756628706767004ACF8F /* ProductCollectionCell.xib */; };
-		E20C7569287067A2004ACF8F /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20C7568287067A2004ACF8F /* ProductViewCell.swift */; };
-		E2187AFE287049C6009A97F5 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2187AFD287049C6009A97F5 /* Products.storyboard */; };
+		E21661262878771200B173B3 /* ProductCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E21661252878771200B173B3 /* ProductCollectionCell.xib */; };
 		E2187B03287049F7009A97F5 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2187B02287049F7009A97F5 /* CategoryViewController.swift */; };
 		E2187B0628705237009A97F5 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2187B0428705237009A97F5 /* CategoryCollectionCell.swift */; };
 		E2187B0728705237009A97F5 /* CategoryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2187B0528705237009A97F5 /* CategoryCollectionCell.xib */; };
@@ -74,12 +72,14 @@
 		E23630922873E111009C1352 /* BrandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630902873E111009C1352 /* BrandsViewModel.swift */; };
 		E23630992873E182009C1352 /* ProductDetails_ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630972873E181009C1352 /* ProductDetails_ModelView.swift */; };
 		E236309A2873E182009C1352 /* ProductDetails_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630982873E182009C1352 /* ProductDetails_protocol.swift */; };
+		E2449E7C28785C3F000D649B /* WishListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2449E7B28785C3F000D649B /* WishListCollectionCell.xib */; };
+		E2449E7F287863D6000D649B /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2449E7D28785C7C000D649B /* Products.storyboard */; };
+		E2449E8128786780000D649B /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C2A228707E57004A341C /* ProductsViewController.swift */; };
+		E2449E822878679A000D649B /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20C7568287067A2004ACF8F /* ProductViewCell.swift */; };
 		E245C29B287070DD004A341C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C29A287070DD004A341C /* MeViewController.swift */; };
 		E245C29E28707CEA004A341C /* OrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C29C28707CEA004A341C /* OrderViewCell.swift */; };
 		E245C29F28707CEA004A341C /* OrderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E245C29D28707CEA004A341C /* OrderViewCell.xib */; };
-		E245C2A328707E57004A341C /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C2A228707E57004A341C /* ProductsViewController.swift */; };
 		E245C2A62870818B004A341C /* WishListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C2A42870818B004A341C /* WishListCollectionCell.swift */; };
-		E245C2A72870818B004A341C /* WishListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E245C2A52870818B004A341C /* WishListCollectionCell.xib */; };
 		E245C2A928708493004A341C /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C2A828708493004A341C /* OrdersViewController.swift */; };
 		E245C2AB287084BB004A341C /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E245C2AA287084BB004A341C /* Orders.storyboard */; };
 		E24ABE262872BFC40047D7F1 /* Products_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24ABE252872BFC40047D7F1 /* Products_Model.swift */; };
@@ -171,9 +171,8 @@
 		96D6787A6AE130E03A3135F1 /* Pods-Megamart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Megamart.release.xcconfig"; path = "Target Support Files/Pods-Megamart/Pods-Megamart.release.xcconfig"; sourceTree = "<group>"; };
 		CB60F7450E81E9021A2F061B /* Pods_MegamartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MegamartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D272DD88AAB393318F6C31BE /* Pods-MegamartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegamartTests.release.xcconfig"; path = "Target Support Files/Pods-MegamartTests/Pods-MegamartTests.release.xcconfig"; sourceTree = "<group>"; };
-		E20C756628706767004ACF8F /* ProductCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectionCell.xib; sourceTree = "<group>"; };
 		E20C7568287067A2004ACF8F /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
-		E2187AFD287049C6009A97F5 /* Products.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
+		E21661252878771200B173B3 /* ProductCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectionCell.xib; sourceTree = "<group>"; };
 		E2187B02287049F7009A97F5 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E2187B0428705237009A97F5 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
 		E2187B0528705237009A97F5 /* CategoryCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionCell.xib; sourceTree = "<group>"; };
@@ -182,12 +181,13 @@
 		E23630902873E111009C1352 /* BrandsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsViewModel.swift; sourceTree = "<group>"; };
 		E23630972873E181009C1352 /* ProductDetails_ModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductDetails_ModelView.swift; path = ../ProductDetails_ModelView.swift; sourceTree = "<group>"; };
 		E23630982873E182009C1352 /* ProductDetails_protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductDetails_protocol.swift; path = ../ProductDetails_protocol.swift; sourceTree = "<group>"; };
+		E2449E7B28785C3F000D649B /* WishListCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WishListCollectionCell.xib; sourceTree = "<group>"; };
+		E2449E7D28785C7C000D649B /* Products.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		E245C29A287070DD004A341C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		E245C29C28707CEA004A341C /* OrderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewCell.swift; sourceTree = "<group>"; };
 		E245C29D28707CEA004A341C /* OrderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderViewCell.xib; sourceTree = "<group>"; };
 		E245C2A228707E57004A341C /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		E245C2A42870818B004A341C /* WishListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCollectionCell.swift; sourceTree = "<group>"; };
-		E245C2A52870818B004A341C /* WishListCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListCollectionCell.xib; sourceTree = "<group>"; };
 		E245C2A828708493004A341C /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		E245C2AA287084BB004A341C /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
 		E24ABE252872BFC40047D7F1 /* Products_Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products_Model.swift; sourceTree = "<group>"; };
@@ -376,10 +376,10 @@
 		0418BE86286CF8ED000F28EC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E21661252878771200B173B3 /* ProductCollectionCell.xib */,
 				E2F9FCAD2875E01700017E8C /* BrandsCollectionCell.xib */,
-				E245C2A52870818B004A341C /* WishListCollectionCell.xib */,
 				E245C29D28707CEA004A341C /* OrderViewCell.xib */,
-				E20C756628706767004ACF8F /* ProductCollectionCell.xib */,
+				E2449E7B28785C3F000D649B /* WishListCollectionCell.xib */,
 				E2187B0528705237009A97F5 /* CategoryCollectionCell.xib */,
 				04AE1F9328720A4D00373837 /* ProductDetails_CollectionViewCell.xib */,
 			);
@@ -390,10 +390,10 @@
 			isa = PBXGroup;
 			children = (
 				006A005828718C1900F2228C /* Main.storyboard */,
-				E2187AFD287049C6009A97F5 /* Products.storyboard */,
 				00814DA5286EF03D00E94EA4 /* Setting.storyboard */,
 				0008806D286FAF8B00DE578B /* BagStoryboard.storyboard */,
 				0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */,
+				E2449E7D28785C7C000D649B /* Products.storyboard */,
 				046F989C286E3382008FDFFC /* Authentication.storyboard */,
 				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
 				041BF14F287051D100339E05 /* Favorites.storyboard */,
@@ -659,23 +659,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E245C2A72870818B004A341C /* WishListCollectionCell.xib in Resources */,
+				E2449E7F287863D6000D649B /* Products.storyboard in Resources */,
 				E2F9FCAE2875E01700017E8C /* BrandsCollectionCell.xib in Resources */,
 				00FD6680286FB69000D759D2 /* BagStoryboard.storyboard in Resources */,
+				E21661262878771200B173B3 /* ProductCollectionCell.xib in Resources */,
 				0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */,
-				E20C756728706768004ACF8F /* ProductCollectionCell.xib in Resources */,
 				008ABD302870650F0060CB08 /* payment.storyboard in Resources */,
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
 				04AE1F9428720A4D00373837 /* ProductDetails_CollectionViewCell.xib in Resources */,
 				E245C2AB287084BB004A341C /* Orders.storyboard in Resources */,
 				E245C29F28707CEA004A341C /* OrderViewCell.xib in Resources */,
 				00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */,
+				E2449E7C28785C3F000D649B /* WishListCollectionCell.xib in Resources */,
 				04D6996A287641ED00965CE3 /* GoogleService-Info.plist in Resources */,
 				0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */,
 				006A005928718C1900F2228C /* Main.storyboard in Resources */,
 				041BF150287051D100339E05 /* Favorites.storyboard in Resources */,
 				04F0FA71286F8BAD00A82FD0 /* ProductDetails.storyboard in Resources */,
-				E2187AFE287049C6009A97F5 /* Products.storyboard in Resources */,
 				E2187B0728705237009A97F5 /* CategoryCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -804,6 +804,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2449E822878679A000D649B /* ProductViewCell.swift in Sources */,
+				E2449E8128786780000D649B /* ProductsViewController.swift in Sources */,
 				008ABD332870710C0060CB08 /* PaymentVC.swift in Sources */,
 				E2187B0628705237009A97F5 /* CategoryCollectionCell.swift in Sources */,
 				04B656FB28744D98009EA793 /* Login_ModelView.swift in Sources */,
@@ -813,7 +815,6 @@
 				04D699622876278600965CE3 /* Firebase_services.swift in Sources */,
 				E245C29B287070DD004A341C /* MeViewController.swift in Sources */,
 				00D5B61E28733A230070478E /* DiscountCode.swift in Sources */,
-				E20C7569287067A2004ACF8F /* ProductViewCell.swift in Sources */,
 				04178B522872FCE00044ED7B /* Customer_model.swift in Sources */,
 				006A00572871838900F2228C /* AdsCollectionViewCell.swift in Sources */,
 				0477529228709EA90095EA91 /* NetworkManager.swift in Sources */,
@@ -824,7 +825,6 @@
 				00D5B61A287339CE0070478E /* DiscountCode_ModelView.swift in Sources */,
 				00D5B6162873395E0070478E /* APIServicesDiscountcode.swift in Sources */,
 				E2187B03287049F7009A97F5 /* CategoryViewController.swift in Sources */,
-				E245C2A328707E57004A341C /* ProductsViewController.swift in Sources */,
 				E245C2A62870818B004A341C /* WishListCollectionCell.swift in Sources */,
 				047752982870D97B0095EA91 /* Product_model.swift in Sources */,
 				E25DE72C2872B9CB003010ED /* ProductsViewModel.swift in Sources */,
@@ -1034,7 +1034,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ProductDetails;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1062,7 +1062,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ProductDetails;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ProductViewCell: UICollectionViewCell {
     
@@ -13,4 +15,14 @@ class ProductViewCell: UICollectionViewCell {
     }
     @IBOutlet weak var ProductPrice: UILabel!
     @IBOutlet weak var ProductImage: UIImageView!
+
+func setCell(imageUrl: String) {
+    Alamofire.request(imageUrl).responseImage { response in
+        if case .success(let image) = response.result {
+            self.ProductImage.image = image
+        }
+    }
+    
+}
+
 }

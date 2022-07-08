@@ -4,7 +4,9 @@
 //
 //  Created by Macintosh on 04/07/2022.
 //
-/*
+
+
+
 import Foundation
 class ProductsViewModel: Products_Protocol {
    
@@ -25,12 +27,13 @@ class ProductsViewModel: Products_Protocol {
     
     var productsApiService: ProductsAPIService
     
+    
     init(productsApiService: ProductsAPIService = NetworkManager()) {
         self.productsApiService = productsApiService
     }
     
-    func fetchData(endPoint: String) {
-        productsApiService.fetchProducts(endPoint: endPoint) { products, error in
+    func fetchData() {
+        productsApiService.fetchProducts() { products, error in
             if let products = products {
                 self.productsArray = products
             }
@@ -42,4 +45,4 @@ class ProductsViewModel: Products_Protocol {
     }
     
 }
-*/
+
