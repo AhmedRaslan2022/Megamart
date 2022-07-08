@@ -41,11 +41,16 @@ class ProductsViewController: UIViewController {
     var sortedArrayByPrice = [ProductModel]()
     var maxPrice: Float = 0.0
     
+    var searchedProduct: [ProductModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         PriceLabel.text = String(adjustedPrice)
         ProductCollection.delegate = self
         ProductCollection.dataSource = self
+        
+        self.SearchBar.delegate = self
+        self.hideKeyboardWhenTappedAround()
         
       self.ProductCollection.register(UINib(nibName: "ProductCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.ProductsViewCell_id)
         
@@ -76,6 +81,10 @@ class ProductsViewController: UIViewController {
        }
         
       
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.SearchBar.endEditing(true)
     }
    
   
@@ -121,9 +130,48 @@ extension ProductsViewController: UICollectionViewDataSource,UICollectionViewDel
 }
 
 
+//MARK: -                       SEARCH BAR
 
+extension ProductsViewController: UISearchBarDelegate {
 
-
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let searchText = searchBar.text {
+            sortedArrayByPrice = productsArray.filter({$0.title.contains(searchText)})
+            self.ProductCollection.reloadData()
+        }else{
+            self.ProductCollection.reloadData()
+        }
+        
+        if searchBar.text?.count == 0 {
+            self.sortedArrayByPrice = productsArray
+            self.ProductCollection.reloadData()
+            searchBar.resignFirstResponder()
+        }
+    }
     
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+}
 
+//MArk: -               dismiss Keyboard extension
+    
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
 
