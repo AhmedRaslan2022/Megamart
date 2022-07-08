@@ -161,7 +161,7 @@ extension ProductsViewController: UISearchBarDelegate {
     
 }
 
-//MArk: -               dismiss Keyboard extension
+//MARK: -               dismiss Keyboard extension
     
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
