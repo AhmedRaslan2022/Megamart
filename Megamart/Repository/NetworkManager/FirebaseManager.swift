@@ -132,5 +132,19 @@ class FirebaseManager: FirebaseServices {
     }
     
     
+//MARK: -                               Reset Password
+    
+    func resetPassword(userEmail: String, completion: @escaping ((Error?)-> Void)) {
+        let auth = Auth.auth()
+        auth.sendPasswordReset(withEmail: userEmail) { error in
+            if let error = error{
+                completion(error)
+            }
+            else{
+                completion(nil)
+            }
+        }
+    }
+    
 }
 

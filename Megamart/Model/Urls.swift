@@ -33,8 +33,13 @@ struct UrlServices {
         return UrlServices.baseURL + "admin/api/2022-01/smart_collections.json"
     }
     
-    static func retrievesCustomerS() -> String {
+    static func retrievesCustomers() -> String {
         return UrlServices.baseURL + "admin/api/2022-01/customers.json"
     }
+    
+    static func resetPassword(customerId: String) -> String {
+        return UrlServices.baseURL + "admin/api/2022-01/customers/\(customerId).json"
+    }
+    
 }
 

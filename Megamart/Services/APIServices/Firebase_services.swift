@@ -26,4 +26,9 @@ protocol FirebaseServices {
     func removeFromFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void))
     
     
+//MARK: -                           Reset Password
+    
+    func resetPassword(userEmail: String, completion: @escaping ((Error?)-> Void))
+    
+    
 }

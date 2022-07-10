@@ -29,10 +29,9 @@ class Login_ViewController: UIViewController {
                 addAlert(title: "Warning", message: error, ActionTitle: "Try Again", viewController: self)
             }
             if loggedin {
-                addAlert(title: "Done", message: "", ActionTitle: "Try Again", viewController: self)
-//                let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
-//                let favoritesViewController = storyBoard.instantiateViewController(withIdentifier: Constants.HomeViewController_id) as! HomeViewController
-//                self.navigationController?.pushViewController(favoritesViewController, animated: true)
+                let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
+                let favoritesViewController = storyBoard.instantiateViewController(withIdentifier: Constants.HomeViewController_id) as! HomeVC
+                self.navigationController?.pushViewController(favoritesViewController, animated: true)
             }
         }
         
@@ -41,6 +40,8 @@ class Login_ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         login_viewModel.retriveAllCustomer()
     }
+    
+    
     
     
     @IBAction func signin(_ sender: Any) {
@@ -84,4 +85,16 @@ class Login_ViewController: UIViewController {
 
         return true
     }
+    
+    
+    @IBAction func forgetPassword(_ sender: UIButton) {
+        if let resetPasswordViewController = storyboard?.instantiateViewController(withIdentifier: Constants.resetPassword_ViewController_id){
+            self.navigationController?.show(resetPasswordViewController, sender: self)
+        }
+        
+    }
+    
+    
+    
+    
 }

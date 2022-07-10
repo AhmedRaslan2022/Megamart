@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseAuth
 
 class Login_modelView: Login_protocol {
     
@@ -59,7 +61,6 @@ class Login_modelView: Login_protocol {
             }
         }
     }
-    
 
     
 }

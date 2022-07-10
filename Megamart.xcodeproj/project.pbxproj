@@ -52,6 +52,9 @@
 		04B656FB28744D98009EA793 /* Login_ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B656FA28744D98009EA793 /* Login_ModelView.swift */; };
 		04B656FD28744DA8009EA793 /* Login_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B656FC28744DA8009EA793 /* Login_protocol.swift */; };
 		04C4DA6A2871882200B354DB /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C4DA692871882200B354DB /* Urls.swift */; };
+		04C54389287B14B9005312ED /* ResetPassword_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54388287B14B9005312ED /* ResetPassword_viewModel.swift */; };
+		04C5438B287B14E8005312ED /* ResetPassword_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C5438A287B14E8005312ED /* ResetPassword_protocol.swift */; };
+		04C5438E287B19D6005312ED /* ResetPassword_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C5438D287B19D6005312ED /* ResetPassword_ViewController.swift */; };
 		04D6995C2876271900965CE3 /* Favorites_modelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6995B2876271900965CE3 /* Favorites_modelView.swift */; };
 		04D6995E2876272C00965CE3 /* Favorites_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6995D2876272C00965CE3 /* Favorites_protocol.swift */; };
 		04D699622876278600965CE3 /* Firebase_services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D699612876278600965CE3 /* Firebase_services.swift */; };
@@ -158,6 +161,9 @@
 		04B656FA28744D98009EA793 /* Login_ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_ModelView.swift; sourceTree = "<group>"; };
 		04B656FC28744DA8009EA793 /* Login_protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_protocol.swift; sourceTree = "<group>"; };
 		04C4DA692871882200B354DB /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		04C54388287B14B9005312ED /* ResetPassword_viewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword_viewModel.swift; sourceTree = "<group>"; };
+		04C5438A287B14E8005312ED /* ResetPassword_protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword_protocol.swift; sourceTree = "<group>"; };
+		04C5438D287B19D6005312ED /* ResetPassword_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword_ViewController.swift; sourceTree = "<group>"; };
 		04D6995B2876271900965CE3 /* Favorites_modelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites_modelView.swift; sourceTree = "<group>"; };
 		04D6995D2876272C00965CE3 /* Favorites_protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites_protocol.swift; sourceTree = "<group>"; };
 		04D699612876278600965CE3 /* Firebase_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_services.swift; sourceTree = "<group>"; };
@@ -415,6 +421,7 @@
 				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
 				046F98A2286E7258008FDFFC /* Register_ViewController.swift */,
 				00814DA7286EF06700E94EA4 /* SettingViewController.swift */,
+				04C5438D287B19D6005312ED /* ResetPassword_ViewController.swift */,
 				008ABD362870C8080060CB08 /* AddressVC.swift */,
 				0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */,
 				041BF1512870543200339E05 /* Favorites_ViewController.swift */,
@@ -478,12 +485,23 @@
 				00D5B61B287339DB0070478E /* DiscountCode_Protocol.swift */,
 				E236308F2873E111009C1352 /* Brands_Protocol.swift */,
 				E23630902873E111009C1352 /* BrandsViewModel.swift */,
+				04C5438C287B14EE005312ED /* ResetPassword */,
 				04178B53287300C80044ED7B /* productDetails */,
 				04B656F928744D3B009EA793 /* Login */,
 				04178B54287300D70044ED7B /* Register */,
 				04D6995F2876273800965CE3 /* Favorites */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04C5438C287B14EE005312ED /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				04C54388287B14B9005312ED /* ResetPassword_viewModel.swift */,
+				04C5438A287B14E8005312ED /* ResetPassword_protocol.swift */,
+			);
+			name = ResetPassword;
+			path = productDetails/ResetPassword;
 			sourceTree = "<group>";
 		};
 		04D6995F2876273800965CE3 /* Favorites */ = {
@@ -816,6 +834,7 @@
 				E245C29B287070DD004A341C /* MeViewController.swift in Sources */,
 				00D5B61E28733A230070478E /* DiscountCode.swift in Sources */,
 				04178B522872FCE00044ED7B /* Customer_model.swift in Sources */,
+				04C5438B287B14E8005312ED /* ResetPassword_protocol.swift in Sources */,
 				006A00572871838900F2228C /* AdsCollectionViewCell.swift in Sources */,
 				0477529228709EA90095EA91 /* NetworkManager.swift in Sources */,
 				046F98A3286E7258008FDFFC /* Register_ViewController.swift in Sources */,
@@ -836,11 +855,13 @@
 				00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */,
 				E24ABE262872BFC40047D7F1 /* Products_Model.swift in Sources */,
 				04D6995E2876272C00965CE3 /* Favorites_protocol.swift in Sources */,
+				04C5438E287B19D6005312ED /* ResetPassword_ViewController.swift in Sources */,
 				0477529428709EE70095EA91 /* AddAlertView.swift in Sources */,
 				04C4DA6A2871882200B354DB /* Urls.swift in Sources */,
 				00088073286FAFB400DE578B /* BagViewController.swift in Sources */,
 				E236308E2873DE6B009C1352 /* Brands_Model.swift in Sources */,
 				0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */,
+				04C54389287B14B9005312ED /* ResetPassword_viewModel.swift in Sources */,
 				04D69964287627BA00965CE3 /* FirebaseManager.swift in Sources */,
 				0477528D28709E400095EA91 /* APIServices.swift in Sources */,
 				046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */,
@@ -1034,7 +1055,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1062,7 +1083,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

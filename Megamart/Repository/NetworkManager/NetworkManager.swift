@@ -12,10 +12,7 @@ import Alamofire
 class NetworkManager: APIService , BrandsAPIService,ProductsAPIService {
     
     
-  
-    
-
-//MARK:                     product details
+//MARK: -                               product details
     
 
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
@@ -38,7 +35,7 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService {
     
     
     
-//MARK:                             create new customer
+//MARK: -                                   create new customer
     
 
     func registerCustomer(newCustomer: NewCustomer, completion: @escaping ((NewCustomer?, Error?) -> Void)) {
@@ -50,10 +47,10 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService {
             request.httpShouldHandleCookies = false
 
             do {
-                    request.httpBody = try JSONSerialization.data(withJSONObject: newCustomer.asDictionary(), options: .prettyPrinted)
-                } catch let error {
+                request.httpBody = try JSONSerialization.data(withJSONObject: newCustomer.asDictionary(), options: .prettyPrinted)
+            } catch let error {
                     print(error.localizedDescription)
-                }
+            }
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
 
@@ -67,15 +64,53 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService {
                 if let decodedData: NewCustomer = convertFromJson(data: data) {
                     completion(decodedData, nil)
                 }
+                
             }.resume()
     
         }
         
     }
+   
     
+    
+//MARK: -                                       Reset Password
+        
+
+    func restPassword(customer: NewCustomer, completion: @escaping ((Error?) -> Void))
+    {
+        guard let id = customer.customer.id else { return }
+        if let url = URL(string: UrlServices.resetPassword(customerId: "\(id)")) {
+            var request = URLRequest(url: url)
+            request.httpMethod = "PUT"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            request.httpShouldHandleCookies = false
+
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: customer.asDictionary(), options: .prettyPrinted)
+            } catch let error {
+                print(error.localizedDescription)
+                completion(error)
+            }
+
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    completion(error)
+                    return
+                }
+                completion(nil)
+//                guard let data = data else { return }
+//                if let decodedData: NewCustomer = convertFromJson(data: data) {
+//                    completion(nil)
+//                }
+            }.resume()
+    
+        }
+    
+   }
 
     
-    //MARK:                             Brands
+    //MARK: -                             Brands
     
     
     func  fetchBrands(completion: @escaping (([SmartCollection]?, Error?) -> Void)){
@@ -102,27 +137,21 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService {
     }
 
     
-//MARK:                             Retive Customers
+//MARK: -                             Retive Customers
     
     func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void)) {
-        if let url = URL(string: UrlServices.retrievesCustomerS()) {
+        if let url = URL(string: UrlServices.retrievesCustomers()) {
             print(url)
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { response in
                 if let data = response.data {
                     if let customers: AllCustomers = convertFromJson(data: data) {
-                        print("$$$$$$$$$$$$$\(customers)$$$$$$$$$$$$$$$")
                         completion(customers.customers, nil)
-                    }else{
-                        print("########### error in decode ############")
                     }
                     
                 }
                 if let error = response.error {
                     completion(nil, error)
                 }
-                print(response)
-                print(response.data)
-                print(response.value)
             }
         }
     }
@@ -138,10 +167,8 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService {
                guard let data = response.data else { return }
                             if let decodedData: Products = convertFromJson(data: data){
                                 completion(decodedData.products, nil)
-                            } else { print("*****************Error in decode data")}
+                            }
             }
-        }else{
-            print("&&&&&&&&&&&&&&&&&&& else")
         }
         
 

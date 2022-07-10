@@ -38,6 +38,9 @@ struct Constants {
     static let Payment_viewController_id = "PaymentVC_id"
     static let PaymentOption_viewController_id = "PaymentOptionVC_id"
     static let ProductsViewController_id = "Products_viewController_id"
+    static let resetPassword_ViewController_id = "ResetPassword_ViewController_id"
+  
+    
     
     
 //MARK: -                   Cells

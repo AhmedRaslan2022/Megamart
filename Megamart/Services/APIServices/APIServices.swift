@@ -22,6 +22,10 @@ protocol APIService {
     
     func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void))
     
+//MARK: -                          Reset Password
+    
+    func restPassword(customer: NewCustomer, completion: @escaping ((Error?) -> Void))
+    
     
 }
 
