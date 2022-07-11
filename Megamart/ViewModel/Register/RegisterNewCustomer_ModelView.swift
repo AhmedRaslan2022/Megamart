@@ -9,49 +9,82 @@ import Foundation
 
 class RegisterNewCustomer_ViewModel: RegiserNewCustomer_protocol {
     
-    var error: Error? {
+    
+    var error: String? {
         didSet{
-            binding(nil, error)
+            binding(error)
         }
     }
+
+
     
-    var customer: NewCustomer? {
-        didSet{
-            binding(customer, nil)
-        }
-    }
-    
-    var binding: ((NewCustomer?, Error?) -> Void) = {_,_ in }
+    var binding: ((String?) -> Void) = {_ in }
     
     var apiService: APIService
+    var firebaseManager: FirebaseServices
     
-    init(apiService: APIService = NetworkManager()) {
+    init(apiService: APIService = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager()) {
         self.apiService = apiService
+        self.firebaseManager = firebaseManager
     }
     
     
     func createNewCustomer(email: String, name: String, password: String, conformPassword: String) {
         
-        let newCustomer = NewCustomer(customer: Customer(first_name: name, email: email, tags: password, id: nil, addresses: nil))
-        registerCustomer(newCustomer: newCustomer)
-    }
-    
-    
-    func registerCustomer(newCustomer: NewCustomer) {
-        apiService.registerCustomer(newCustomer: newCustomer) { customer, error in
-            if let error = error {
-                self.error = error
-            }
-            if let customer = customer {
-                self.customer = customer
-            }
+        if let error = check_emailAndUserName(userName: name, email: email) {
+            self.error = error
+        }
+        else{
+            let newCustomer = NewCustomer(customer: Customer(first_name: name, email: email, tags: password, id: nil, addresses: nil))
+            registerCustomer_firebase(newCustomer: newCustomer)
+            print("%%%%%%%%%%%%%% register firebase")
         }
         
     }
     
     
-    func checkPassword(password:String, ConformPassword:String) -> Bool {
-        return password == ConformPassword
+
+    
+//MARK: -                                   register new customer in Firebase
+    
+    
+    func registerCustomer_firebase(newCustomer: NewCustomer) {
+        
+        guard let email = newCustomer.customer.email else { return }
+        guard let password = newCustomer.customer.tags else { return }
+        firebaseManager.register(email: email, password: password) { error in
+            if let error = error {
+                self.error = error.localizedDescription
+            }
+            else{
+                self.registerCustomer_api(newCustomer: newCustomer)
+            }
+        }
+    }
+    
+    
+    
+  //MARK: -                                   register new customer in API
+      
+      
+      func registerCustomer_api(newCustomer: NewCustomer) {
+          apiService.registerCustomer(newCustomer: newCustomer) { customer, error in
+              if let error = error {
+                  self.error = error.localizedDescription
+              }
+              else{
+                  self.error = nil
+                  print("^^^^^^^^^^^^^^^^^^ Done")
+              }
+
+          }
+          
+      }
+      
+    
+    
+    func checkPassword(password:String,ConfirmPassword: String) -> Bool {
+        return password == ConfirmPassword
     }
     
     

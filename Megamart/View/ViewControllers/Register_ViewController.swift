@@ -13,7 +13,7 @@ class Register_ViewController: UIViewController {
 
     @IBOutlet weak var signUp_button: UIButton!
     @IBOutlet weak var userPassword_textField: UITextField!
-    @IBOutlet weak var conformPassword_textField: UITextField!
+    @IBOutlet weak var confirmPassword_textField: UITextField!
     @IBOutlet weak var userEmail_textField: UITextField!
     @IBOutlet weak var fullName_textField: UITextField!
     @IBOutlet weak var signUpView: UIView!
@@ -27,59 +27,43 @@ class Register_ViewController: UIViewController {
         signUpView.layer.cornerRadius = 30
         backgroundView.layer.cornerRadius = 30
         
+        self.hideKeyboardWhenTappedAround()
         
-        register_viewModel.binding = { customer, error in
-            if customer != nil{
-//                addAlert(title: "Done", message: "You have been registered successfully", ActionTitle: "OK", viewController: self)
+        register_viewModel.binding = { error in
+            if let error = error {
+                addAlert(title: "Warning", message: error, ActionTitle: "cancle", viewController: self)
+            }else{
                 DispatchQueue.main.async {
                     self.navigationController?.popViewController(animated: true)
                 }
-                
-            }
-            if let error = error {
-                addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "cancle", viewController: self)
             }
         }
+        
+        
     }
+    
     
     
     
     @IBAction func signUp(_ sender: UIButton) {
         if checkIs_NotEmpty(){
             if let name = fullName_textField.text, let email = userEmail_textField.text,
-               let password = userPassword_textField.text, let conformPassword = conformPassword_textField.text {
+               let password = userPassword_textField.text, let confirmPassword = confirmPassword_textField.text {
 
-                    if ( register_viewModel.checkPassword(password: password , ConformPassword: conformPassword)) {
-                        
-                        if let error = register_viewModel.check_emailAndUserName(userName: name, email: email) {
-                            
-                            addAlert(title: "Warning", message: error, ActionTitle: "Try Again", viewController: self)
-                        }
-                        else {
-                            
-                            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                                if let error = error {
-                                    addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Try Again", viewController: self)
-                                }
-                                else {
-                                    self.register_viewModel.createNewCustomer(email: email , name: name, password: password, conformPassword: conformPassword)
-                                }
-                                
-                            }
-                            
-                        }
-                        
-                        
-                    } else
-                        {
-                        addAlert(title: "Warning", message: "Password and confirm password do not match", ActionTitle: "Try Again", viewController: self)
-                        userPassword_textField.text = ""
-                        conformPassword_textField.text = ""
-                    }
+                if ( register_viewModel.checkPassword(password: password , ConfirmPassword: confirmPassword)) {
+                    self.register_viewModel.createNewCustomer(email: email, name: name, password: password, conformPassword: confirmPassword)
                 }
-                
+            } else
+                {
+                addAlert(title: "Warning", message: "Password and confirm password do not match", ActionTitle: "Try Again", viewController: self)
+                userPassword_textField.text = ""
+                confirmPassword_textField.text = ""
             }
+        }
+        
     }
+    
+    
     
     
     func checkIs_NotEmpty() -> Bool {
@@ -96,8 +80,8 @@ class Register_ViewController: UIViewController {
             addAlert(title: "Warning", message: "Please enter your password", ActionTitle: "Try Again", viewController: self)
             return false
         }
-        if conformPassword_textField.text!.isEmpty {
-            addAlert(title: "Warning", message: "Please conform your password", ActionTitle: "Try Again", viewController: self)
+        if confirmPassword_textField.text!.isEmpty {
+            addAlert(title: "Warning", message: "Please confirm your password", ActionTitle: "Try Again", viewController: self)
             return false
         }
         return true

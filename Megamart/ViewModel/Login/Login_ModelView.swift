@@ -11,50 +11,70 @@ import FirebaseAuth
 
 class Login_modelView: Login_protocol {
     
-    
-    var loggedin: String?{
-        didSet{
-            binding(true, nil)
-        }
-    }
-    
-    
     var error: String? {
         didSet{
-            binding(false, error)
+            binding(error)
         }
     }
     
-
+    var binding: ((String?) -> Void) = {_ in }
     
-    var binding: ((Bool, String?) -> Void) = {_,_ in }
     
-    var apiService: APIService
-    
-    init(apiService: APIService = NetworkManager()) {
+    init(apiService: APIService = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager()) {
         self.apiService = apiService
+        self.firebseManager = firebaseManager
     }
     
+    
     func login(userName: String, password: String) {
+        login_firebase(email: userName, password: password)
+    }
+    
+    
+    
+//MARK: -                               Firebase
+
+    let firebseManager: FirebaseServices
+    
+    func login_firebase(email: String, password: String) {
+        self.firebseManager.login(email: email, password: password) { error in
+            if let error = error {
+                self.error = error.localizedDescription
+            }
+            else{
+                self.login_api(userName: email, password: password)
+            }
+        }
+    }
+    
+    
+    
+//MARK: -                               API
+    
+        
+    var apiService: APIService
+    
+    
+    func login_api(userName: String, password: String) {
         for customer in Constants.customers_list {
                 if userName == customer.email {
                     if password == customer.tags {
-                        binding(true, nil)
+                        error = nil
                         return
                     }else{
                         error = "Incorrect Password"
+                        return
                     }
-                } else{
-                    error = "Incorrect Username"
                 }
             }
+        error = "Incorrect Username"
     }
     
     
     func retriveAllCustomer() {
         apiService.retriveCustomers { customers, error in
             if error != nil {
-                print("%%%%%%%%%%%% error in retrive customers ")
+                print("error in retrive customers")
             }
             if let customers = customers {
                 Constants.customers_list = customers
@@ -62,5 +82,6 @@ class Login_modelView: Login_protocol {
         }
     }
 
+    
     
 }

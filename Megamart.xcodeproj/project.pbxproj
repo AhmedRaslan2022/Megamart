@@ -38,6 +38,7 @@
 		0418BE71286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */; };
 		041BF150287051D100339E05 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041BF14F287051D100339E05 /* Favorites.storyboard */; };
 		041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BF1512870543200339E05 /* Favorites_ViewController.swift */; };
+		042919A5287C150E000034B2 /* Dismiss Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042919A4287C150E000034B2 /* Dismiss Keyboard.swift */; };
 		0467CEFC286F8E530070DC64 /* ProductDetails_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */; };
 		046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F989C286E3382008FDFFC /* Authentication.storyboard */; };
 		046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F989E286E5CBD008FDFFC /* Constatnts.swift */; };
@@ -147,6 +148,7 @@
 		0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegamartUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		041BF14F287051D100339E05 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		041BF1512870543200339E05 /* Favorites_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites_ViewController.swift; sourceTree = "<group>"; };
+		042919A4287C150E000034B2 /* Dismiss Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dismiss Keyboard.swift"; sourceTree = "<group>"; };
 		0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails_ViewController.swift; sourceTree = "<group>"; };
 		046F989C286E3382008FDFFC /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		046F989E286E5CBD008FDFFC /* Constatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatnts.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			children = (
 				0477528828709DDB0095EA91 /* JSONDecoder.swift */,
 				0477529328709EE70095EA91 /* AddAlertView.swift */,
+				042919A4287C150E000034B2 /* Dismiss Keyboard.swift */,
 			);
 			path = Utilitis;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				04B656FB28744D98009EA793 /* Login_ModelView.swift in Sources */,
 				E245C29E28707CEA004A341C /* OrderViewCell.swift in Sources */,
 				E20C75652870632D004ACF8F /* BrandsCollectionCell.swift in Sources */,
+				042919A5287C150E000034B2 /* Dismiss Keyboard.swift in Sources */,
 				E245C2A928708493004A341C /* OrdersViewController.swift in Sources */,
 				04D699622876278600965CE3 /* Firebase_services.swift in Sources */,
 				E245C29B287070DD004A341C /* MeViewController.swift in Sources */,

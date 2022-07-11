@@ -10,17 +10,17 @@ import Foundation
 
 protocol FirebaseServices {
     
-//MARK: -               Add to Favorites
+//MARK: -                           Add to Favorites
     
     func addToFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void))
  
     
-    //MARK: -               Fetch Favorites
+//MARK: -                      Fetch Favorites
         
     func fetchFavorites(completion: @escaping (([Int]?,[String]?,[String]?,Error?) -> Void))
     
     
-    //MARK: -               Update Favorites
+//MARK: -                     Update Favorites
     
     
     func removeFromFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void))
@@ -29,6 +29,16 @@ protocol FirebaseServices {
 //MARK: -                           Reset Password
     
     func resetPassword(userEmail: String, completion: @escaping ((Error?)-> Void))
+    
+    
+//MARK: -                           Login
+    
+    func login(email: String, password: String, completion: @escaping ((Error?) -> Void))
+    
+    
+//MARK: -                          Register
+        
+    func register(email: String, password: String, completion: @escaping ((Error?) -> Void))
     
     
 }
