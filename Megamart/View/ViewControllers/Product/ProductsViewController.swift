@@ -123,6 +123,7 @@ extension ProductsViewController: UICollectionViewDataSource,UICollectionViewDel
         if let productVC = storyboard.instantiateViewController(withIdentifier:Constants.ProductDetails_ViewController_id) as? ProductDetails_ViewController{
             productVC.productID = String(sortedArrayByPrice[indexPath.row].id)
             self.navigationController?.pushViewController(productVC, animated: true)
+            
     }
 
     

@@ -42,3 +42,17 @@ protocol ProductsAPIService {
     func fetchProducts(completion: @escaping (([ProductModel]?, Error?) -> Void ) )
     
 }
+
+//MARK: - Categoty
+protocol CategotyAPIService {
+    
+    func fetchCategoty(completion: @escaping (([ProductModel]?, Error?) -> Void ) )
+    
+}
+
+
+//MARK: - Collects
+protocol CollectsAPIService {
+    
+    func fetchCollects(completion: @escaping (([Collect]?, Error?) -> Void ) )
+}

@@ -74,4 +74,15 @@ struct Constants {
         static let noImageAvailabel = "no_image_available-product"
     
     
+    
+    
+//MARK: -              CategoryId
+    
+    enum CategoryId: Int{
+        case Men = 409147474134
+        case Women = 409147506902
+        case Kids = 409147539670
+        case Sale = 409147605206
+    }
+    
 }

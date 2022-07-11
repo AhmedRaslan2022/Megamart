@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 
-class NetworkManager: APIService , BrandsAPIService,ProductsAPIService {
+class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsAPIService{
     
     
 //MARK: -                               product details
@@ -174,6 +174,28 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService {
 
     }
     
+    
+    //MARK: -                     Collects
+           
+       func fetchCollects(completion: @escaping (([Collect]?, Error?) -> Void)) {
+
+            if let  url = URL(string: UrlServices.collects()) {
+                print(url)
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                    if let data = data {
+                        print("Collections data is here before decoding line 122")
+                        print("\(data)")
+                        guard let decodedData  = try? JSONDecoder().decode(Collects.self, from: data)
+                        else {return}
+                        completion(decodedData.collects,nil)
+                        print(decodedData)
+                    }
+                    if let error = error {
+                       completion(nil, error)
+                    }
+                }.resume()
+            }
+        }
 
 
 

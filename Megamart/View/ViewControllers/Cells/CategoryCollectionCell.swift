@@ -6,17 +6,29 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+
 
 class CategoryCollectionCell: UICollectionViewCell {
     
-    @IBAction func FavouriteButton(_ sender: UIButton) {
+    @IBAction func favouriteButton(_ sender: UIButton) {
     }
-    @IBOutlet weak var ProductPrice: UILabel!
-    @IBOutlet weak var ProductImag: UIImageView!
+    @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var productImag: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setCell(imageUrl: String) {
+        Alamofire.request(imageUrl).responseImage { response in
+            if case .success(let image) = response.result {
+                self.productImag.image = image
+            }
+        }
+        
     }
 
 }

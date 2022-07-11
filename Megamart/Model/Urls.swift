@@ -41,5 +41,8 @@ struct UrlServices {
         return UrlServices.baseURL + "admin/api/2022-01/customers/\(customerId).json"
     }
     
+    static func collects() -> String {
+        return UrlServices.baseURL + "admin/api/2022-01/collects.json"
+    }
 }
 
