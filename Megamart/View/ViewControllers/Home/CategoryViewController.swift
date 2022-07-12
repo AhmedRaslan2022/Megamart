@@ -23,23 +23,76 @@ class CategoryViewController: UIViewController {
     var saleArray = [Int]()
     var productsArray = [ProductModel]()
     var viewedArray = [ProductModel]()
-    
-    
+    let productsViewModel = ProductsViewModel()
+    let collectsViewModel = CollectsViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //MARK: -               SubCategory
-        floatySubCat.addItem(title: "T-shirt",handler: {_ in
+        
+        floatySubCat.addItem("T-shirt",icon: UIImage(named: "T-SHIRTS")!, handler: { item in
             
+            self.productsViewModel.fetchData()
+            self.productsViewModel.bindingData = { products, error in
+                if let products = products {
+                    self.viewedArray.removeAll()
+                    for  index in 0..<products.count    {
+                        
+                        if products[index].product_type == Constants.ProductType.TSHIRTS.rawValue{
+                            self.viewedArray.append(products[index])
+                         
+                       }
+                    }
+                    DispatchQueue.main.async {
+                   self.productsCollection.reloadData()
+               }
+          
+            }
+            }
         })
         
-        floatySubCat.addItem(title: "Accessories",handler: {_ in
-            
+        floatySubCat.addItem("Shoes",icon: UIImage(named: "SHOES")!, handler: { item in
+            self.productsViewModel.fetchData()
+            self.productsViewModel.bindingData = { products, error in
+                if let products = products {
+                    self.viewedArray.removeAll()
+                    for  index in 0..<products.count    {
+                        
+                        if products[index].product_type == Constants.ProductType.SHOES.rawValue{
+                            self.viewedArray.append(products[index])
+                         
+                       }
+                    }
+                    DispatchQueue.main.async {
+                   self.productsCollection.reloadData()
+               }
+          
+            }
+            }
         })
         
-        floatySubCat.addItem(title: "Shoes",handler: {_ in
-            
+        floatySubCat.addItem("Acessories",icon: UIImage(named: "Accessories")!, handler: { item in
+            self.productsViewModel.fetchData()
+            self.productsViewModel.bindingData = { products, error in
+                if let products = products {
+                    self.viewedArray.removeAll()
+                    for  index in 0..<products.count    {
+                        
+                        if products[index].product_type == Constants.ProductType.ACCESSORIES.rawValue{
+                            self.viewedArray.append(products[index])
+                         
+                       }
+                    }
+                    DispatchQueue.main.async {
+                   self.productsCollection.reloadData()
+               }
+          
+            }
+            }
         })
+        
+        floatySubCat.buttonColor = UIColor.white
+        floatySubCat.plusColor = UIColor.black
         self.view.addSubview(floatySubCat)
         
         
@@ -51,9 +104,8 @@ class CategoryViewController: UIViewController {
         
 //MARK: -                 Fetch Products
         
-        let productsViewModel = ProductsViewModel()
+       
           productsViewModel.fetchData()
-     
           productsViewModel.bindingData = { products, error in
               if let products = products {
                   self.productsArray = products
@@ -69,7 +121,7 @@ class CategoryViewController: UIViewController {
         
 //MARK: -                   Fetch Collects
         
-        let collectsViewModel = CollectsViewModel()
+        
             collectsViewModel.fetchData()
             collectsViewModel.bindingData = { collects, error in
                  if let collects = collects {
@@ -95,9 +147,8 @@ class CategoryViewController: UIViewController {
  //MARK: -                   Categories Buttons
     @IBAction func WomenButton(_ sender: UIBarButtonItem) {
         
-        let productsViewModel = ProductsViewModel()
+       
           productsViewModel.fetchData()
-        
           productsViewModel.bindingData = { products, error in
               if let products = products {
                   self.viewedArray.removeAll()
@@ -118,10 +169,8 @@ class CategoryViewController: UIViewController {
 }
     
     @IBAction func Men(_ sender: Any) {
-        
-        let productsViewModel = ProductsViewModel()
+  
           productsViewModel.fetchData()
-        
           productsViewModel.bindingData = { products, error in
               if let products = products {
                   self.viewedArray.removeAll()
@@ -141,9 +190,8 @@ class CategoryViewController: UIViewController {
 }
     
     @IBAction func saleButton(_ sender: UIBarButtonItem) {
-        let productsViewModel = ProductsViewModel()
-          productsViewModel.fetchData()
         
+          productsViewModel.fetchData()
           productsViewModel.bindingData = { products, error in
               if let products = products {
                   self.viewedArray.removeAll()
@@ -164,9 +212,8 @@ class CategoryViewController: UIViewController {
     
     
     @IBAction func kidsButton(_ sender: Any) {
-        let productsViewModel = ProductsViewModel()
-          productsViewModel.fetchData()
         
+          productsViewModel.fetchData()
           productsViewModel.bindingData = { products, error in
               if let products = products {
                   self.viewedArray.removeAll()
