@@ -22,7 +22,7 @@ target 'Megamart' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseDatabase'
-  
+  pod 'Floaty', '~> 4.2.0'
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'Firebase/Core'

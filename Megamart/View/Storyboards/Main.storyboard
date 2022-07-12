@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyd-cz-tbT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60.280373831775698" y="411.44708423326136"/>
+            <point key="canvasLocation" x="-265" y="423"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nfR-7s-xTR">
@@ -152,9 +152,9 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7C8-dW-sr0">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7C8-dW-sr0" customClass="Floaty" customModule="Floaty">
                                 <rect key="frame" x="332.5" y="743.5" width="51.5" height="48.5"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efK-Y0-Lhq">
                                 <rect key="frame" x="0.0" y="90" width="414" height="44"/>
@@ -218,12 +218,13 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="floatySubCat" destination="7C8-dW-sr0" id="4hw-2C-VgF"/>
                         <outlet property="productsCollection" destination="a0y-bU-AHH" id="rhh-U2-NbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsb-CI-One" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462.1495327102803" y="424.40604751619873"/>
+            <point key="canvasLocation" x="1486" y="426"/>
         </scene>
         <!--Me-->
         <scene sceneID="YzF-2f-nwt">
@@ -352,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldT-2l-IEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2857.971014492754" y="425.22321428571428"/>
+            <point key="canvasLocation" x="3046" y="426"/>
         </scene>
         <!--Home-->
         <scene sceneID="R3g-Bb-vOv">
@@ -393,7 +394,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcn-cy-2zW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="778" y="426"/>
+            <point key="canvasLocation" x="777" y="434"/>
         </scene>
         <!--Me-->
         <scene sceneID="RWc-ah-61u">
@@ -412,7 +413,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUa-0B-NZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2132" y="426"/>
+            <point key="canvasLocation" x="2364" y="426"/>
         </scene>
     </scenes>
     <resources>

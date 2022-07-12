@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Floaty
 
 class CategoryViewController: UIViewController {
     
+  
     
-
+    @IBOutlet weak var floatySubCat: Floaty!
+    
     
     @IBOutlet weak var productsCollection: UICollectionView!
     
@@ -24,6 +27,21 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//MARK: -               SubCategory
+        floatySubCat.addItem(title: "T-shirt",handler: {_ in
+            
+        })
+        
+        floatySubCat.addItem(title: "Accessories",handler: {_ in
+            
+        })
+        
+        floatySubCat.addItem(title: "Shoes",handler: {_ in
+            
+        })
+        self.view.addSubview(floatySubCat)
+        
         
         productsCollection.delegate = self
         productsCollection.dataSource = self

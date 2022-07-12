@@ -85,4 +85,14 @@ struct Constants {
         case Sale = 409147605206
     }
     
+    
+    //MARK: -              Product Type
+        
+    enum    ProductType : String{
+            case SHOES = "SHOES"
+            case ACCESSORIES = "ACCESSORIES"
+            case TSHIRTS = "T-SHIRTS"
+        
+        }
+    
 }

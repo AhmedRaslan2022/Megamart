@@ -17,7 +17,6 @@ class ProductsViewController: UIViewController {
         for product in self.sortedProductsArray {
             if  Float(product.variants[0].price)! <= self.adjustedPrice {
                 self.sortedArrayByPrice.append(product)
-                print("*************\(self.sortedProductsArray.count)")
               }
           }
         DispatchQueue.main.async {
@@ -60,14 +59,12 @@ class ProductsViewController: UIViewController {
         productsViewModel.bindingData = { products, error in
                  if let products = products {
                      self.productsArray = products
-                     print(self.productsArray.count)
                      for product in self.productsArray {
                          if product.vendor == self.brandTitle   {
                              self.sortedProductsArray.append(product)
                              if Float(product.variants[0].price)! > self.maxPrice{
                                  self.maxPrice = Float(product.variants[0].price)!
                              }
-                             print("*************\(self.sortedProductsArray.count)")
                            }
                        }
                      self.priceSlide.maximumValue =  self.maxPrice

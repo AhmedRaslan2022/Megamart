@@ -670,6 +670,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/UserDefaults (~> 7.7)
     - PromisesObjC (~> 2.1)
+  - Floaty (4.2.0)
   - GoogleAppMeasurement (9.2.0):
     - GoogleAppMeasurement/AdIdSupport (= 9.2.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
@@ -789,6 +790,7 @@ DEPENDENCIES:
   - FirebaseAuth
   - FirebaseDatabase
   - FirebaseFirestore
+  - Floaty (~> 4.2.0)
   - TinyConstraints
 
 SPEC REPOS:
@@ -807,6 +809,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstallations
+    - Floaty
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -834,6 +837,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 0a888e4bcaa8edc43701597daab336201fb47cc9
   FirebaseFirestore: de27d96de10596ebc114adf25c6aa7d36dd91f2f
   FirebaseInstallations: 21186f0ca7849f90f4a3219fa31a5eca2e30f113
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   GoogleAppMeasurement: 7a33224321f975d58c166657260526775d9c6b1a
   GoogleDataTransport: 5fffe35792f8b96ec8d6775f5eccd83c998d5a3b
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
@@ -846,6 +850,6 @@ SPEC CHECKSUMS:
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: 96719a9a5acdf8c68865452e0bec95734efb95cc
+PODFILE CHECKSUM: c2bab512d90a58a412a377ee56ac13dcb96b3654
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
