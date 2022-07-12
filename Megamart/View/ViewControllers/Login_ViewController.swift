@@ -33,8 +33,9 @@ class Login_ViewController: UIViewController {
             }
             else {
                 let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
-                let favoritesViewController = storyBoard.instantiateViewController(withIdentifier: Constants.HomeViewController_id) as! HomeVC
-                self.navigationController?.pushViewController(favoritesViewController, animated: true)
+                let homeVC = storyBoard.instantiateViewController(withIdentifier: Constants.tabBar_ViewController_id) as! UITabBarController
+                homeVC.modalPresentationStyle = .fullScreen
+                self.present(homeVC, animated: true, completion: nil)
             }
         }
       

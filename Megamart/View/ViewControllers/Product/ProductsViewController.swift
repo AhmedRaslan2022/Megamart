@@ -119,18 +119,21 @@ extension ProductsViewController: UICollectionViewDataSource,UICollectionViewDel
     }
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
         let storyboard = UIStoryboard(name: Constants.productDetails_storyboard,bundle: nil)
         if let productVC = storyboard.instantiateViewController(withIdentifier:Constants.ProductDetails_ViewController_id) as? ProductDetails_ViewController{
             productVC.productID = String(sortedArrayByPrice[indexPath.row].id)
             self.navigationController?.pushViewController(productVC, animated: true)
+        }
     }
-
+    
     
 }
-}
 
 
-//MARK: -                       SEARCH BAR
+
+//MARK: -                                       SEARCH BAR
+
 
 extension ProductsViewController: UISearchBarDelegate {
 
