@@ -26,13 +26,13 @@ class ProductDetails_ViewController: UIViewController {
     
     
     
-    var images_url: [Image]?
-    var productID: String? = "7730623709398"
-    var product: ProductModel?
+    private var images_url: [Image]?
+    var productID: String?
+    private var product: ProductModel?
     
     var rating = Double.random(in: 1...5)
     
-    var productDetails_viewModel: ProductDetails_Protocol = ProductDetails_modelView()
+    var productDetails_viewModel: ProductDetails_Protocol = ProductDetails_viewModel()
     
     
     

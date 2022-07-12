@@ -121,14 +121,17 @@ extension ProductsViewController: UICollectionViewDataSource,UICollectionViewDel
             productVC.productID = String(sortedArrayByPrice[indexPath.row].id)
             self.navigationController?.pushViewController(productVC, animated: true)
             
-    }
+        }
 
+    }
+    
     
 }
-}
 
 
-//MARK: -                       SEARCH BAR
+
+//MARK: -                                       SEARCH BAR
+
 
 extension ProductsViewController: UISearchBarDelegate {
 
@@ -159,17 +162,4 @@ extension ProductsViewController: UISearchBarDelegate {
     
 }
 
-//MARK: -               dismiss Keyboard extension
-    
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-
-    }
-
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
 

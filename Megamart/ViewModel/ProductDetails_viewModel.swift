@@ -1,5 +1,5 @@
 //
-//  ProductDetails_ModelView.swift
+//  ProductDetails_viewModel.swift
 //  Megamart
 //
 //  Created by MAC on 03/07/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductDetails_modelView: ProductDetails_Protocol {
+class ProductDetails_viewModel: ProductDetails_Protocol {
     
     
     var apiService: APIService

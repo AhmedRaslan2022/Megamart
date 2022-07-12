@@ -51,8 +51,6 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
             } catch let error {
                     print(error.localizedDescription)
             }
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue("application/json", forHTTPHeaderField: "Accept")
 
             URLSession.shared.dataTask(with: request) { data, response, error in
 
@@ -63,6 +61,7 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
                 guard let data = data else { return }
                 if let decodedData: NewCustomer = convertFromJson(data: data) {
                     completion(decodedData, nil)
+                    
                 }
                 
             }.resume()

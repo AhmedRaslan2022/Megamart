@@ -11,11 +11,82 @@ import Firebase
 
 class FirebaseManager: FirebaseServices {
     
+    
     var products_id: [Int] = []
     var products_title: [String] = []
     var products_image: [String] = []
     
+    let defaults = UserDefaults.standard
+    
 
+//MARK: -                                       Login
+    
+    
+    func login(email: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard self != nil else { return }
+            if let error = error {
+                completion(nil,error)
+            }
+            else{
+                completion(authResult?.user.uid, nil)
+            }
+        }
+    }
+    
+   
+//MARK: -                                   Register new customer
+    
+    
+    func register(email: String, password: String, completion: @escaping ((Error?) -> Void)) {
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(error)
+            }
+            else {
+                completion(nil)
+            }
+        }
+    }
+    
+    
+ 
+    //MARK: -                               Reset Password
+        
+       
+    func resetPassword(userEmail: String, completion: @escaping ((Error?)-> Void)) {
+        let auth = Auth.auth()
+        auth.sendPasswordReset(withEmail: userEmail) { error in
+            if let error = error{
+                completion(error)
+            }
+            else{
+                completion(nil)
+            }
+        }
+    }
+
+    
+    
+//MARK: -                                        SignOut
+
+
+    func signOut(userEmail: String, completion: @escaping ((Error?)-> Void)) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            self.defaults.set(nil , forKey: "customerId")
+        } catch let signOutError as NSError {
+            completion(signOutError)
+        }
+    }
+    
+    
+    
+    
+    
+    
 //MARK: -                               Update Favorites
     
     
@@ -28,12 +99,12 @@ class FirebaseManager: FirebaseServices {
             products_image.append(product.image.src)
             
             let ref = Database.database().reference()
-            let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
-    //        if let uid = Auth.auth().currentUser?.uid {
-            if let uid = id {
+//            let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
+            if let uid = Auth.auth().currentUser?.uid {
+//            if let uid = id {
                 ref.child("Users").child(uid).setValue(["ids":products_id,
-                                                        "titles": products_title,
-                                                        "images": products_image]) { error, response in
+                                                      "titles": products_title,
+                                                      "images": products_image]) { error, response in
                     if let error = error {
                         print("$$$$$$$$$$$$$$$$$$$$$$\(error.localizedDescription)")
                         completion(error)
@@ -54,40 +125,37 @@ class FirebaseManager: FirebaseServices {
     func removeFromFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void)) {
 
         if (isNotFavorites(product: product)) {
-            print("5555555 \(!isNotFavorites(product: product))")
             let products_id = products_id.filter { $0 !=  product.id }
             let products_title = products_title.filter { $0 !=  product.title }
             let products_image = products_image.filter { $0 !=  product.image.src }
-            print("*********** ids = \(products_id)")
             let ref = Database.database().reference()
-            let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
-    //        if let uid = Auth.auth().currentUser?.uid {
-            if let uid = id {
+//            let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
+            if let uid = Auth.auth().currentUser?.uid {
+//            if let uid = id {
                 ref.child("Users").child(uid).setValue(["ids":products_id,
                                                         "titles": products_title,
                                                         "images": products_image]) { error, response in
                     if let error = error {
-                        print("$$$$$$$$$$$$$$$$$$$$$$\(error.localizedDescription)")
+                        print(error.localizedDescription)
                         completion(error)
                     }
                     else{
                         completion(nil)
                     }
-                    print("^^^^^^^^^^^^^^^^^^^ \(response)")
                 }
             }
-        }else{
-            print("%%%%%%%%%%%%%%%% added before ")
         }
     }
+    
+    
     
 //MARK: -                                   Fetch Favorites
     
     
     func fetchFavorites(completion: @escaping (([Int]?, [String]?, [String]?, Error?) -> Void)) {
         let ref = Database.database().reference()
-        let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
-        if let uid = id {
+//        let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
+        if let uid = Auth.auth().currentUser?.uid {
             ref.child("Users").child(uid).observe(.value) { snapshot in
                 if let favorites = snapshot.value as? [String: Any] {
                     let ids = favorites["ids"] as? [Int]
@@ -96,13 +164,14 @@ class FirebaseManager: FirebaseServices {
                     completion(ids, titles, images, nil)
                 }
             } withCancel: { error in
-                print("%%%%%%%%%%%%%%%%%% \(error.localizedDescription)")
                 completion(nil, nil, nil, error)
             }
 
         }
         
     }
+    
+    
     
     
 //MARK: -                         check is favorites or not
@@ -131,20 +200,6 @@ class FirebaseManager: FirebaseServices {
         return check
     }
     
-    
-//MARK: -                               Reset Password
-    
-    func resetPassword(userEmail: String, completion: @escaping ((Error?)-> Void)) {
-        let auth = Auth.auth()
-        auth.sendPasswordReset(withEmail: userEmail) { error in
-            if let error = error{
-                completion(error)
-            }
-            else{
-                completion(nil)
-            }
-        }
-    }
     
 }
 

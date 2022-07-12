@@ -10,8 +10,7 @@ import Foundation
 
 protocol RegiserNewCustomer_protocol {
     func createNewCustomer(email:String, name:String, password:String, conformPassword:String)
-    func checkPassword(password:String, ConformPassword:String) -> Bool
-    func check_emailAndUserName(userName: String, email: String) -> String?
-    var binding: ((NewCustomer?, Error?) -> Void) { get set }
+    func checkPassword(password:String, ConfirmPassword:String) -> Bool
+    var binding: ((String?) -> Void) { get set }
 }
 

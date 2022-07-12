@@ -17,52 +17,61 @@ class Login_ViewController: UIViewController {
     @IBOutlet weak var signInView: UIView!
     @IBOutlet weak var backgroundView: UIView!
 
-    var login_viewModel: Login_protocol = Login_modelView()
+    var login_viewModel: Login_protocol = Login_viewModel()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         signInView.layer.cornerRadius = 30
         backgroundView.layer.cornerRadius = 30
         
-        login_viewModel.binding = {loggedin, error in
+        self.hideKeyboardWhenTappedAround()
+        
+        // check is logged in before or not
+        if self.defaults.string(forKey: "customerId") != nil  {
+            self.navigateTo_HomeViewController()
+        }
+        
+        login_viewModel.binding = { error in
             if let error = error {
                 addAlert(title: "Warning", message: error, ActionTitle: "Try Again", viewController: self)
             }
-            if loggedin {
-                let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
-                let favoritesViewController = storyBoard.instantiateViewController(withIdentifier: Constants.HomeViewController_id) as! HomeVC
-                self.navigationController?.pushViewController(favoritesViewController, animated: true)
+            else {
+                
+                self.navigateTo_HomeViewController()
             }
         }
+      
         
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         login_viewModel.retriveAllCustomer()
     }
     
     
+    func navigateTo_HomeViewController() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
+        let homeVC = storyBoard.instantiateViewController(withIdentifier: Constants.tabBar_ViewController_id) as! UITabBarController
+        homeVC.modalPresentationStyle = .fullScreen
+        self.present(homeVC, animated: true, completion: nil)
+    }
     
     
-    @IBAction func signin(_ sender: Any) {
+    
+//MARK: -                               Buttons Action
+    
+    
+    
+    @IBAction func login(_ sender: Any) {
         if checkIs_NotEmpty() {
             if let email = userEmail_textField.text, let  password = userPassword_textField.text{
-                Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                  guard let strongSelf = self else { return }
-                    if let error = error {
-                        addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Try Again", viewController: self!)
-                    }
-                    else{
-                        self?.login_viewModel.login(userName: email, password: password)
-                    }
-                }
-                
+                login_viewModel.login(userName: email, password: password)
             }
-            print("Not empty")
-        }else{
-            print("empty")
         }
-        
         
     }
     
