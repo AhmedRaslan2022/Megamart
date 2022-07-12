@@ -15,8 +15,7 @@ class Favorites_ViewController: UIViewController {
     var titles: [String] = []
     var images: [String] = []
     
-    var favoritesModelView: Favorites_protocol = Favorites_modelView()
-    var firebaseManager: FirebaseServices = FirebaseManager()
+    var favoritesModelView: Favorites_protocol = Favorites_viewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +23,13 @@ class Favorites_ViewController: UIViewController {
         favorites_collectionView.delegate = self
         favorites_collectionView.dataSource = self
 
-        self.favorites_collectionView.register(UINib(nibName: Constants.WishList_nib_name , bundle: nil), forCellWithReuseIdentifier: Constants.WishList_Cell_id)
+        self.favorites_collectionView.register(UINib(nibName: Constants.favorite_nib_name , bundle: nil), forCellWithReuseIdentifier: Constants.favorite_Cell_id)
         
         self.favoritesModelView.fetchFavorites()
+        
         self.favoritesModelView.binding = { products, error in
             if let error = error {
-                addAlert(title: "Warning", message: error.localizedDescription , ActionTitle: "cancle", viewController: self)
+                addAlert(title: "Warning", message: error.localizedDescription , ActionTitle: "Cancel", viewController: self)
             }
             if let products = products {
                 if let ids = products["ids"] as? [Int] {
@@ -43,11 +43,6 @@ class Favorites_ViewController: UIViewController {
                 }
                 
                 self.favorites_collectionView.reloadData()
-                print("$$$$$$$$$$$ ids = \(self.ids)")
-                print("$$$$$$$$$$$ titles = \(self.titles)")
-                print("$$$$$$$$$$$ images = \(self.images)")
-            }else{
-                print("%%%%%%%%%%%%%%% products is nil ")
             }
             
         }
@@ -55,7 +50,7 @@ class Favorites_ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if ids.count == 0 {
-            addAlert(title: "Alert!", message: "There are no favorite Products", ActionTitle: "Cancle", viewController: self)
+            addAlert(title: "Alert!", message: "There are no favorite Products", ActionTitle: "Cancel", viewController: self)
         }
     }
 
@@ -73,27 +68,37 @@ extension Favorites_ViewController: UICollectionViewDelegate{
 extension Favorites_ViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("&&&&&&&&&&&&&&&&& \(ids.count)")
         return ids.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.WishList_Cell_id, for: indexPath) as! WishListCollectionCell
-        cell.setCell(imageUrl: images[indexPath.row])
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.favorite_Cell_id, for: indexPath) as? FavoritesCollectionViewCell else{
+            return UICollectionViewCell()
+        }
+        cell.setCell(imageUrl: images[indexPath.row], title: titles[indexPath.row])
         return cell
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.productDetails_storyboard, bundle:nil)
+        let productDetailsViewController = storyBoard.instantiateViewController(withIdentifier: Constants.ProductDetails_ViewController_id) as! ProductDetails_ViewController
+        productDetailsViewController.productID = String(ids[indexPath.row])
+        self.navigationController?.pushViewController(productDetailsViewController, animated: true)
+    
+    }
 
+    
     
 }
 
 
 extension Favorites_ViewController: UICollectionViewDelegateFlowLayout{
-    // to set only one cell in row
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width/2 , height: collectionView.frame.size.height/2)
     }
-
-    
     
 }

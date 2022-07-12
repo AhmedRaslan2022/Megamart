@@ -1,5 +1,5 @@
 //
-//  Favorites_modelView.swift
+//  Favorites_viewModel.swift
 //  Megamart
 //
 //  Created by MAC on 06/07/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Favorites_modelView: Favorites_protocol {
+class Favorites_viewModel: Favorites_protocol {
     
    
     var products: [String: Any] = [:] {

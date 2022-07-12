@@ -11,28 +11,31 @@ import Firebase
 
 class FirebaseManager: FirebaseServices {
     
+    
     var products_id: [Int] = []
     var products_title: [String] = []
     var products_image: [String] = []
     
+    let defaults = UserDefaults.standard
+    
 
-//MARK: -                               Login
+//MARK: -                                       Login
     
     
-    func login(email: String, password: String, completion: @escaping ((Error?) -> Void)) {
+    func login(email: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard self != nil else { return }
             if let error = error {
-                completion(error)
+                completion(nil,error)
             }
             else{
-                completion(nil)
+                completion(authResult?.user.uid, nil)
             }
         }
     }
     
    
-//MARK: -                              Register new customer
+//MARK: -                                   Register new customer
     
     
     func register(email: String, password: String, completion: @escaping ((Error?) -> Void)) {
@@ -48,6 +51,41 @@ class FirebaseManager: FirebaseServices {
     }
     
     
+ 
+    //MARK: -                               Reset Password
+        
+       
+    func resetPassword(userEmail: String, completion: @escaping ((Error?)-> Void)) {
+        let auth = Auth.auth()
+        auth.sendPasswordReset(withEmail: userEmail) { error in
+            if let error = error{
+                completion(error)
+            }
+            else{
+                completion(nil)
+            }
+        }
+    }
+
+    
+    
+//MARK: -                                        SignOut
+
+
+    func signOut(userEmail: String, completion: @escaping ((Error?)-> Void)) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            self.defaults.set(nil , forKey: "customerId")
+        } catch let signOutError as NSError {
+            completion(signOutError)
+        }
+    }
+    
+    
+    
+    
+    
     
 //MARK: -                               Update Favorites
     
@@ -61,12 +99,12 @@ class FirebaseManager: FirebaseServices {
             products_image.append(product.image.src)
             
             let ref = Database.database().reference()
-            let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
-    //        if let uid = Auth.auth().currentUser?.uid {
-            if let uid = id {
+//            let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
+            if let uid = Auth.auth().currentUser?.uid {
+//            if let uid = id {
                 ref.child("Users").child(uid).setValue(["ids":products_id,
-                                                        "titles": products_title,
-                                                        "images": products_image]) { error, response in
+                                                      "titles": products_title,
+                                                      "images": products_image]) { error, response in
                     if let error = error {
                         print("$$$$$$$$$$$$$$$$$$$$$$\(error.localizedDescription)")
                         completion(error)
@@ -109,13 +147,15 @@ class FirebaseManager: FirebaseServices {
         }
     }
     
+    
+    
 //MARK: -                                   Fetch Favorites
     
     
     func fetchFavorites(completion: @escaping (([Int]?, [String]?, [String]?, Error?) -> Void)) {
         let ref = Database.database().reference()
-        let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
-        if let uid = id {
+//        let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
+        if let uid = Auth.auth().currentUser?.uid {
             ref.child("Users").child(uid).observe(.value) { snapshot in
                 if let favorites = snapshot.value as? [String: Any] {
                     let ids = favorites["ids"] as? [Int]
@@ -130,6 +170,7 @@ class FirebaseManager: FirebaseServices {
         }
         
     }
+    
     
     
     
@@ -159,20 +200,6 @@ class FirebaseManager: FirebaseServices {
         return check
     }
     
-    
-//MARK: -                               Reset Password
-    
-    func resetPassword(userEmail: String, completion: @escaping ((Error?)-> Void)) {
-        let auth = Auth.auth()
-        auth.sendPasswordReset(withEmail: userEmail) { error in
-            if let error = error{
-                completion(error)
-            }
-            else{
-                completion(nil)
-            }
-        }
-    }
     
 }
 

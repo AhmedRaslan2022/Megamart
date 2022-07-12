@@ -1,5 +1,5 @@
 //
-//  RegisterNewCustomer_ModelView.swift
+//  RegisterNewCustomer_viewModel.swift
 //  Megamart
 //
 //  Created by MAC on 04/07/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RegisterNewCustomer_ViewModel: RegiserNewCustomer_protocol {
+class RegisterNewCustomer_viewModel: RegiserNewCustomer_protocol {
     
     
     var error: String? {

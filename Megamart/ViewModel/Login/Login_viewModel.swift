@@ -1,5 +1,5 @@
 //
-//  Login_ModelView.swift
+//  Login_viewModel.swift
 //  Megamart
 //
 //  Created by MAC on 05/07/2022.
@@ -9,7 +9,9 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-class Login_modelView: Login_protocol {
+class Login_viewModel: Login_protocol {
+    
+    let defaults = UserDefaults.standard
     
     var error: String? {
         didSet{
@@ -32,33 +34,34 @@ class Login_modelView: Login_protocol {
     
     
     
-//MARK: -                               Firebase
+//MARK: -                                           Login Firebase
 
     let firebseManager: FirebaseServices
     
     func login_firebase(email: String, password: String) {
-        self.firebseManager.login(email: email, password: password) { error in
+        self.firebseManager.login(email: email, password: password) { customerID, error  in
             if let error = error {
                 self.error = error.localizedDescription
             }
-            else{
-                self.login_api(userName: email, password: password)
+            if let customerID = customerID {
+                self.login_api(userName: email, password: password, customerId: customerID)
             }
         }
     }
     
     
     
-//MARK: -                               API
+//MARK: -                                             Login  API
     
         
     var apiService: APIService
     
     
-    func login_api(userName: String, password: String) {
+    func login_api(userName: String, password: String, customerId: String) {
         for customer in Constants.customers_list {
                 if userName == customer.email {
                     if password == customer.tags {
+                        self.defaults.set(customerId, forKey: "customerId")
                         error = nil
                         return
                     }else{

@@ -17,7 +17,8 @@ class Login_ViewController: UIViewController {
     @IBOutlet weak var signInView: UIView!
     @IBOutlet weak var backgroundView: UIView!
 
-    var login_viewModel: Login_protocol = Login_modelView()
+    var login_viewModel: Login_protocol = Login_viewModel()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +28,18 @@ class Login_ViewController: UIViewController {
         
         self.hideKeyboardWhenTappedAround()
         
+        // check is logged in before or not
+        if self.defaults.string(forKey: "customerId") != nil  {
+            self.navigateTo_HomeViewController()
+        }
+        
         login_viewModel.binding = { error in
             if let error = error {
                 addAlert(title: "Warning", message: error, ActionTitle: "Try Again", viewController: self)
             }
             else {
-                let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
-                let homeVC = storyBoard.instantiateViewController(withIdentifier: Constants.tabBar_ViewController_id) as! UITabBarController
-                homeVC.modalPresentationStyle = .fullScreen
-                self.present(homeVC, animated: true, completion: nil)
+                
+                self.navigateTo_HomeViewController()
             }
         }
       
@@ -46,6 +50,14 @@ class Login_ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         login_viewModel.retriveAllCustomer()
+    }
+    
+    
+    func navigateTo_HomeViewController() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
+        let homeVC = storyBoard.instantiateViewController(withIdentifier: Constants.tabBar_ViewController_id) as! UITabBarController
+        homeVC.modalPresentationStyle = .fullScreen
+        self.present(homeVC, animated: true, completion: nil)
     }
     
     

@@ -20,7 +20,7 @@ class Register_ViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     
     
-    var register_viewModel : RegiserNewCustomer_protocol = RegisterNewCustomer_ViewModel()
+    var register_viewModel : RegiserNewCustomer_protocol = RegisterNewCustomer_viewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
