@@ -38,6 +38,8 @@
 		041BF150287051D100339E05 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041BF14F287051D100339E05 /* Favorites.storyboard */; };
 		041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BF1512870543200339E05 /* Favorites_ViewController.swift */; };
 		042919A5287C150E000034B2 /* Dismiss Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042919A4287C150E000034B2 /* Dismiss Keyboard.swift */; };
+		045551CA287F229800D202EA /* Settings_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045551C8287F229800D202EA /* Settings_protocol.swift */; };
+		045551CB287F229800D202EA /* Settings_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045551C9287F229800D202EA /* Settings_ViewModel.swift */; };
 		0467CEFC286F8E530070DC64 /* ProductDetails_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */; };
 		046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F989C286E3382008FDFFC /* Authentication.storyboard */; };
 		046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F989E286E5CBD008FDFFC /* Constatnts.swift */; };
@@ -153,6 +155,8 @@
 		041BF14F287051D100339E05 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		041BF1512870543200339E05 /* Favorites_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites_ViewController.swift; sourceTree = "<group>"; };
 		042919A4287C150E000034B2 /* Dismiss Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dismiss Keyboard.swift"; sourceTree = "<group>"; };
+		045551C8287F229800D202EA /* Settings_protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_protocol.swift; sourceTree = "<group>"; };
+		045551C9287F229800D202EA /* Settings_ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_ViewModel.swift; sourceTree = "<group>"; };
 		0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails_ViewController.swift; sourceTree = "<group>"; };
 		046F989C286E3382008FDFFC /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		046F989E286E5CBD008FDFFC /* Constatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatnts.swift; sourceTree = "<group>"; };
@@ -444,6 +448,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		045551C7287F229800D202EA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				045551C8287F229800D202EA /* Settings_protocol.swift */,
+				045551C9287F229800D202EA /* Settings_ViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		0477528728709DC00095EA91 /* Utilitis */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +514,7 @@
 				00D5B61B287339DB0070478E /* DiscountCode_Protocol.swift */,
 				E236308F2873E111009C1352 /* Brands_Protocol.swift */,
 				E23630902873E111009C1352 /* BrandsViewModel.swift */,
+				045551C7287F229800D202EA /* Settings */,
 				04C5438C287B14EE005312ED /* ResetPassword */,
 				04178B53287300C80044ED7B /* productDetails */,
 				04B656F928744D3B009EA793 /* Login */,
@@ -871,6 +885,7 @@
 				041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */,
 				0477528928709DDB0095EA91 /* JSONDecoder.swift in Sources */,
 				00D5B61A287339CE0070478E /* DiscountCode_ModelView.swift in Sources */,
+				045551CA287F229800D202EA /* Settings_protocol.swift in Sources */,
 				00D5B6162873395E0070478E /* APIServicesDiscountcode.swift in Sources */,
 				E2187B03287049F7009A97F5 /* CategoryViewController.swift in Sources */,
 				E245C2A62870818B004A341C /* WishListCollectionCell.swift in Sources */,
@@ -909,6 +924,7 @@
 				E23630912873E111009C1352 /* Brands_Protocol.swift in Sources */,
 				E2116F2B287CC1E6005360D2 /* Collects_Model.swift in Sources */,
 				E23630992873E182009C1352 /* ProductDetails_viewModel.swift in Sources */,
+				045551CB287F229800D202EA /* Settings_ViewModel.swift in Sources */,
 				E23630992873E182009C1352 /* ProductDetails_viewModel.swift in Sources */,
 				00088072286FAFB300DE578B /* BagTableViewCell.swift in Sources */,
 				008ABD35287071330060CB08 /* PaymentOptionVC.swift in Sources */,

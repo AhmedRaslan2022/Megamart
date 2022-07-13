@@ -28,7 +28,7 @@ protocol FirebaseServices {
 
 //MARK: -                           Sign Out
 
-    func signOut(userEmail: String, completion: @escaping ((Error?)-> Void))
+        func signOut(completion: @escaping ((Error?)-> Void))
     
     
     

@@ -29,7 +29,7 @@ class Login_ViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         
         // check is logged in before or not
-        if self.defaults.string(forKey: "customerId") != nil  {
+        if self.defaults.string(forKey: Constants.userdefaults_key) != nil  {
             self.navigateTo_HomeViewController()
         }
         
@@ -38,11 +38,9 @@ class Login_ViewController: UIViewController {
                 addAlert(title: "Warning", message: error, ActionTitle: "Try Again", viewController: self)
             }
             else {
-                
                 self.navigateTo_HomeViewController()
             }
         }
-      
         
     }
     

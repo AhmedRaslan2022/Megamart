@@ -75,14 +75,6 @@ struct Constants {
     
     
     
-
-//MARK: -               others
-        
-        static let noImageAvailabel = "no_image_available-product"
-    
-    
-    
-    
 //MARK: -              CategoryId
     
     enum CategoryId: Int{
@@ -93,13 +85,20 @@ struct Constants {
     }
     
     
-    //MARK: -              Product Type
+//MARK: -              Product Type
         
-    enum    ProductType : String{
+    enum ProductType: String {
             case SHOES = "SHOES"
             case ACCESSORIES = "ACCESSORIES"
             case TSHIRTS = "T-SHIRTS"
-        
         }
+   
+    
+//MARK: -               others
+            
+    
+    static let noImageAvailabel = "no_image_available-product"
+    static let userdefaults_key = "customerId"
+    
     
 }
