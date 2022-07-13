@@ -346,7 +346,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Me" id="pR6-Ag-eV4">
                         <rightBarButtonItems>
-                            <barButtonItem title="settings" image="gearshape" catalog="system" id="Lmy-F7-Ldr"/>
+                            <barButtonItem title="settings" image="gearshape" catalog="system" id="Lmy-F7-Ldr">
+                                <connections>
+                                    <action selector="goSettings_ViewController:" destination="gEI-oR-43a" id="1by-Cu-c15"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="cart" image="cart.fill" catalog="system" id="DiB-aO-Mrc"/>
                         </rightBarButtonItems>
                     </navigationItem>
