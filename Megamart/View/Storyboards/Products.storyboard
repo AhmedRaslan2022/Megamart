@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FTb-Qh-ah0">
-    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="Products_viewController_id" id="Y6W-OH-hqX" customClass="ProductsViewController" customModule="Megamart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" semanticContentAttribute="spatial" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7XJ-jU-PZj">
-                                <rect key="frame" x="0.0" y="227" width="1180" height="556"/>
+                                <rect key="frame" x="0.0" y="241.33333333333331" width="390" height="547.66666666666674"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LLe-d4-1dq">
                                     <size key="itemSize" width="128" height="128"/>
@@ -28,17 +28,17 @@
                                 <cells/>
                             </collectionView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="sji-Nl-CLh">
-                                <rect key="frame" x="150" y="151" width="1003" height="31"/>
+                                <rect key="frame" x="150" y="165" width="213" height="31"/>
                                 <connections>
                                     <action selector="priceSlider:" destination="Y6W-OH-hqX" eventType="valueChanged" id="mDa-db-HUz"/>
                                 </connections>
                             </slider>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fvO-Hn-9od">
-                                <rect key="frame" x="16" y="86" width="1148" height="51"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
+                                <rect key="frame" x="16" y="100" width="358" height="51"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtN-Hh-bfD">
-                                <rect key="frame" x="38" y="156" width="85" height="20.5"/>
+                                <rect key="frame" x="38" y="170" width="85" height="20.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="dhM-c7-TpL"/>
                                 </constraints>
@@ -83,7 +83,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FTb-Qh-ah0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ewr-tj-wDC">
-                        <rect key="frame" x="0.0" y="24" width="1180" height="50"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>

@@ -56,6 +56,7 @@ class FirebaseManager: FirebaseServices {
         
        
     func resetPassword(userEmail: String, completion: @escaping ((Error?)-> Void)) {
+        
         let auth = Auth.auth()
         auth.sendPasswordReset(withEmail: userEmail) { error in
             if let error = error{
@@ -65,18 +66,19 @@ class FirebaseManager: FirebaseServices {
                 completion(nil)
             }
         }
+        
     }
 
     
     
-//MARK: -                                        SignOut
+//MARK: -                                        Sign Out
 
 
-    func signOut(userEmail: String, completion: @escaping ((Error?)-> Void)) {
+    func signOut(completion: @escaping ((Error?)-> Void)) {
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
-            self.defaults.set(nil , forKey: "customerId")
+            completion(nil)
         } catch let signOutError as NSError {
             completion(signOutError)
         }
