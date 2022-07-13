@@ -84,11 +84,13 @@
 		E23630922873E111009C1352 /* BrandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630902873E111009C1352 /* BrandsViewModel.swift */; };
 		E23630992873E182009C1352 /* ProductDetails_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630972873E181009C1352 /* ProductDetails_viewModel.swift */; };
 		E236309A2873E182009C1352 /* ProductDetails_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630982873E182009C1352 /* ProductDetails_protocol.swift */; };
+		E2391833287F565C00FD000E /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2391832287F565C00FD000E /* HighlightedButton.swift */; };
+		E2391836287F6D6E00FD000E /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2391834287F6D6E00FD000E /* OrderTableViewCell.swift */; };
+		E2391837287F6D6E00FD000E /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2391835287F6D6E00FD000E /* OrderTableViewCell.xib */; };
 		E2449E7C28785C3F000D649B /* WishListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2449E7B28785C3F000D649B /* WishListCollectionCell.xib */; };
 		E2449E8128786780000D649B /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C2A228707E57004A341C /* ProductsViewController.swift */; };
 		E2449E822878679A000D649B /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20C7568287067A2004ACF8F /* ProductViewCell.swift */; };
 		E245C29B287070DD004A341C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C29A287070DD004A341C /* MeViewController.swift */; };
-		E245C29E28707CEA004A341C /* OrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C29C28707CEA004A341C /* OrderViewCell.swift */; };
 		E245C29F28707CEA004A341C /* OrderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E245C29D28707CEA004A341C /* OrderViewCell.xib */; };
 		E245C2A62870818B004A341C /* WishListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C2A42870818B004A341C /* WishListCollectionCell.swift */; };
 		E245C2A928708493004A341C /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E245C2A828708493004A341C /* OrdersViewController.swift */; };
@@ -204,9 +206,11 @@
 		E23630902873E111009C1352 /* BrandsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsViewModel.swift; sourceTree = "<group>"; };
 		E23630972873E181009C1352 /* ProductDetails_viewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductDetails_viewModel.swift; path = ../ProductDetails_viewModel.swift; sourceTree = "<group>"; };
 		E23630982873E182009C1352 /* ProductDetails_protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductDetails_protocol.swift; path = ../ProductDetails_protocol.swift; sourceTree = "<group>"; };
+		E2391832287F565C00FD000E /* HighlightedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
+		E2391834287F6D6E00FD000E /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		E2391835287F6D6E00FD000E /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		E2449E7B28785C3F000D649B /* WishListCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WishListCollectionCell.xib; sourceTree = "<group>"; };
 		E245C29A287070DD004A341C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
-		E245C29C28707CEA004A341C /* OrderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewCell.swift; sourceTree = "<group>"; };
 		E245C29D28707CEA004A341C /* OrderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderViewCell.xib; sourceTree = "<group>"; };
 		E245C2A228707E57004A341C /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		E245C2A42870818B004A341C /* WishListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCollectionCell.swift; sourceTree = "<group>"; };
@@ -364,6 +368,7 @@
 				047752972870D97B0095EA91 /* Product_model.swift */,
 				04178B512872FCE00044ED7B /* Customer_model.swift */,
 				046F989E286E5CBD008FDFFC /* Constatnts.swift */,
+				E2391832287F565C00FD000E /* HighlightedButton.swift */,
 				04C4DA692871882200B354DB /* Urls.swift */,
 			);
 			path = Model;
@@ -399,6 +404,7 @@
 		0418BE86286CF8ED000F28EC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E2391835287F6D6E00FD000E /* OrderTableViewCell.xib */,
 				E2F9FCAD2875E01700017E8C /* BrandsCollectionCell.xib */,
 				E245C29D28707CEA004A341C /* OrderViewCell.xib */,
 				E2116F31287CC4DA005360D2 /* CategoryCollectionCell.xib */,
@@ -550,10 +556,10 @@
 				E2187B0428705237009A97F5 /* CategoryCollectionCell.swift */,
 				04F0FA78286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift */,
 				E20C7568287067A2004ACF8F /* ProductViewCell.swift */,
-				E245C29C28707CEA004A341C /* OrderViewCell.swift */,
 				E245C2A42870818B004A341C /* WishListCollectionCell.swift */,
 				006A00562871838900F2228C /* AdsCollectionViewCell.swift */,
 				04C0777C287DCBB4005BDC0E /* FavoritesCollectionViewCell.swift */,
+				E2391834287F6D6E00FD000E /* OrderTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -723,6 +729,7 @@
 				008ABD302870650F0060CB08 /* payment.storyboard in Resources */,
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
 				E2116F2D287CC483005360D2 /* Main.storyboard in Resources */,
+				E2391837287F6D6E00FD000E /* OrderTableViewCell.xib in Resources */,
 				04AE1F9428720A4D00373837 /* ProductDetails_CollectionViewCell.xib in Resources */,
 				E245C2AB287084BB004A341C /* Orders.storyboard in Resources */,
 				04C0777F287DCBB4005BDC0E /* FavoritesCollectionViewCell.xib in Resources */,
@@ -868,7 +875,6 @@
 				008ABD332870710C0060CB08 /* PaymentVC.swift in Sources */,
 				E2187B0628705237009A97F5 /* CategoryCollectionCell.swift in Sources */,
 				04B656FB28744D98009EA793 /* Login_viewModel.swift in Sources */,
-				E245C29E28707CEA004A341C /* OrderViewCell.swift in Sources */,
 				E20C75652870632D004ACF8F /* BrandsCollectionCell.swift in Sources */,
 				042919A5287C150E000034B2 /* Dismiss Keyboard.swift in Sources */,
 				E245C2A928708493004A341C /* OrdersViewController.swift in Sources */,
@@ -890,6 +896,7 @@
 				E2187B03287049F7009A97F5 /* CategoryViewController.swift in Sources */,
 				E245C2A62870818B004A341C /* WishListCollectionCell.swift in Sources */,
 				047752982870D97B0095EA91 /* Product_model.swift in Sources */,
+				E2391833287F565C00FD000E /* HighlightedButton.swift in Sources */,
 				E25DE72C2872B9CB003010ED /* ProductsViewModel.swift in Sources */,
 				00D5B62028733B8F0070478E /* HomeVC.swift in Sources */,
 				E25DE72B2872B9CB003010ED /* Products_Protocol.swift in Sources */,
@@ -917,6 +924,7 @@
 				04B656FD28744DA8009EA793 /* Login_protocol.swift in Sources */,
 				04D6995C2876271900965CE3 /* Favorites_viewModel.swift in Sources */,
 				04D6995C2876271900965CE3 /* Favorites_viewModel.swift in Sources */,
+				E2391836287F6D6E00FD000E /* OrderTableViewCell.swift in Sources */,
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
 				E2116F38287CCB4A005360D2 /* CollectsViewModel.swift in Sources */,
@@ -1117,7 +1125,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1145,7 +1153,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

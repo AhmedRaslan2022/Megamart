@@ -16,14 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="473" height="116"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTQ-ZI-ZCg">
-                        <rect key="frame" x="5" y="5" width="190" height="41"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0e-OH-C3S">
+                        <rect key="frame" x="10" y="65" width="453" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0e-OH-C3S">
-                        <rect key="frame" x="5" y="76" width="463" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTQ-ZI-ZCg">
+                        <rect key="frame" x="10" y="13" width="178" height="32"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                 <outlet property="OrderPrice" destination="yTQ-ZI-ZCg" id="EzR-vC-NAW"/>
                 <outlet property="OrderTime" destination="v0e-OH-C3S" id="ApJ-2o-LWI"/>
             </connections>
-            <point key="canvasLocation" x="184.78260869565219" y="108.48214285714285"/>
+            <point key="canvasLocation" x="-173" y="-52"/>
         </collectionViewCell>
     </objects>
 </document>

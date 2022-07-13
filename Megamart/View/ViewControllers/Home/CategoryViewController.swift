@@ -145,6 +145,7 @@ class CategoryViewController: UIViewController {
 }
     
  //MARK: -                   Categories Buttons
+    
     @IBAction func WomenButton(_ sender: UIBarButtonItem) {
         
        
@@ -233,6 +234,7 @@ class CategoryViewController: UIViewController {
     }
     
 //MARK: -                    Navigation Bar Buttons
+    
     @IBAction func goFav(_ sender: Any) {
         let storyboard = UIStoryboard(name: Constants.Favorites_storyboard,bundle: nil)
         if let favouriteVC = storyboard.instantiateViewController(withIdentifier: Constants.Favorites_ViewController_id) as? Favorites_ViewController{
