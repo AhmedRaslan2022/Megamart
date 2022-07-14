@@ -9,8 +9,9 @@ import Foundation
 
 class Favorites_viewModel: Favorites_protocol {
     
+    
    
-    var products: [String: Any] = [:] {
+    var products: [productStruct] = [] {
         didSet{
             binding(products,nil)
         }
@@ -22,7 +23,7 @@ class Favorites_viewModel: Favorites_protocol {
         }
     }
     
-    var binding: (([String : Any]?, Error?) -> Void) = {_,_ in }
+    var binding: (([productStruct]?, Error?) -> Void) = {_,_ in }
     
     var firebaseManager: FirebaseServices
     
@@ -33,16 +34,12 @@ class Favorites_viewModel: Favorites_protocol {
     
     
     func fetchFavorites() {
-        firebaseManager.fetchFavorites { ids, titles, images, error in
+        firebaseManager.fetchFavorites { favorites, error in
             if let error = error {
                 self.error = error
             }
-            if let ids = ids {
-                if let images = images {
-                    if let titles = titles {
-                        self.products = ["titles": titles, "images": images, "ids": ids]
-                    }
-                }
+            if let favorites = favorites {
+                self.products = favorites
             }
         }
     }

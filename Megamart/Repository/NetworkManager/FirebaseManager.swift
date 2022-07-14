@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestoreSwift
 
 
 class FirebaseManager: FirebaseServices {
@@ -17,6 +18,7 @@ class FirebaseManager: FirebaseServices {
     var products_image: [String] = []
     
     let defaults = UserDefaults.standard
+    let database = Firestore.firestore()
     
 
 //MARK: -                                       Login
@@ -92,61 +94,62 @@ class FirebaseManager: FirebaseServices {
 //MARK: -                               Update Favorites
     
     
-    func addToFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void)) {
+    func addToFavorites(product: productStruct, completion: @escaping ((Error?) -> Void)) {
 
-        if isNotFavorites(product: product) {
-            print(isNotFavorites(product: product))
-            products_id.append(product.id)
-            products_title.append(product.title)
-            products_image.append(product.image.src)
-            
-            let ref = Database.database().reference()
-//            let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
             if let uid = Auth.auth().currentUser?.uid {
-//            if let uid = id {
-                ref.child("Users").child(uid).setValue(["ids":products_id,
-                                                      "titles": products_title,
-                                                      "images": products_image]) { error, response in
-                    if let error = error {
-                        print("$$$$$$$$$$$$$$$$$$$$$$\(error.localizedDescription)")
-                        completion(error)
-                    }
-                    else{
-                        completion(nil)
-                    }
-                    print("^^^^^^^^^^^^^^^^^^^ \(response)")
+                print("@@@@@@@@ \(uid)")
+                do{
+                    try? database.collection(uid).document(String(product.id)).setData(from: product)
+                    print("Document successfully written!")
+                    completion(nil)
                 }
+                catch let error {
+                    print("Error writing document: \(error)")
+                    completion(error)
+                }
+                
             }
-        }else{
-            print("%%%%%%%%%%%%%%%% added before ")
-        }
+        
     }
+    
+    
     
 //MARK: -                                       Remove Product
     
+    
     func removeFromFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void)) {
 
-        if (isNotFavorites(product: product)) {
-            let products_id = products_id.filter { $0 !=  product.id }
-            let products_title = products_title.filter { $0 !=  product.title }
-            let products_image = products_image.filter { $0 !=  product.image.src }
-            let ref = Database.database().reference()
-//            let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
-            if let uid = Auth.auth().currentUser?.uid {
-//            if let uid = id {
-                ref.child("Users").child(uid).setValue(["ids":products_id,
-                                                        "titles": products_title,
-                                                        "images": products_image]) { error, response in
-                    if let error = error {
-                        print(error.localizedDescription)
-                        completion(error)
+        if let uid = Auth.auth().currentUser?.uid {
+            
+            // delete subcollections
+            database.collection(uid).document(String(product.id)).updateData([
+                "id": FieldValue.delete(),
+                "title": FieldValue.delete(),
+                "image": FieldValue.delete()
+            ]) { error in
+                
+                if let error = error {
+                    print("Error delete subcollections: \(error)")
+                    completion(error)
+                
+                } else {
+                    
+                    // delete document
+                    self.database.collection(uid).document(String(product.id)).delete() { err in
+                            if let error = error {
+                                print("Error deleting document: \(error)")
+                                completion(error)
+                            } else {
+                                print("Document successfully deleted!")
+                                completion(nil)
+                            }
+                        }
                     }
-                    else{
-                        completion(nil)
-                    }
+
                 }
             }
-        }
+        
+        
     }
     
     
@@ -154,54 +157,40 @@ class FirebaseManager: FirebaseServices {
 //MARK: -                                   Fetch Favorites
     
     
-    func fetchFavorites(completion: @escaping (([Int]?, [String]?, [String]?, Error?) -> Void)) {
-        let ref = Database.database().reference()
-//        let id: String? = "5Vu3ThuLqEXT1OZ3QTNIV1JWZdn2"
+    
+    func fetchFavorites(completion: @escaping (([productStruct]?, Error?) -> Void)) {
+        
+        var products: [productStruct] = []
+        
         if let uid = Auth.auth().currentUser?.uid {
-            ref.child("Users").child(uid).observe(.value) { snapshot in
-                if let favorites = snapshot.value as? [String: Any] {
-                    let ids = favorites["ids"] as? [Int]
-                    let titles = favorites["titles"] as? [String]
-                    let images = favorites["images"] as? [String]
-                    completion(ids, titles, images, nil)
-                }
-            } withCancel: { error in
-                completion(nil, nil, nil, error)
-            }
+            database.collection(uid).getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                    completion(nil, error)
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                        let doc = try? document.data(as: productStruct.self)
+                        if let id = doc?.id {
+                            print("^^^^^^^^^^ \(id)")
+                        }
+                        if let doc = doc {
+                            products.append(doc)
+                            print("$$$$$$$$ \(doc)")
+                            print(" products \(products)")
+                        }
 
-        }
-        
-    }
-    
-    
-    
-    
-//MARK: -                         check is favorites or not
-    
-    
-    func isNotFavorites(product: ProductModel) -> Bool {
-        var check = true
-        fetchFavorites { ids, _, _, error in
-            if let error = error {
-                print("$$$$$$$$$$$$$$ \(error.localizedDescription)")
-            }
-            if let ids = ids {
-                self.products_id = ids
-                for id in self.products_id {
-                    print("************* \(id)")
-                    print("##########333 \(product.id)")
-                    if product.id == id {
-                        check = false
-                        print("%%%%%%%%%% $%%%%%%%%%%%%% \(check)5%%%%%%%%%%%%%%%% 5%%%%%%%%%%%%%%%%")
-                        return
                     }
+                    completion(products, nil)
+                    print("%%%%%%%%%%% products \(products)")
                 }
             }
-        }
+            
         
-        return check
+        }
     }
+    
+    
     
     
 }
-

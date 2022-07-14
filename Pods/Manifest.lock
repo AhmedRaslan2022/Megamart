@@ -665,6 +665,8 @@ PODS:
     - "gRPC-C++ (~> 1.44.0)"
     - leveldb-library (~> 1.22)
     - nanopb (< 2.30910.0, >= 2.30908.0)
+  - FirebaseFirestoreSwift (9.2.0):
+    - FirebaseFirestore (~> 9.0)
   - FirebaseInstallations (9.2.0):
     - FirebaseCore (~> 9.0)
     - GoogleUtilities/Environment (~> 7.7)
@@ -790,6 +792,7 @@ DEPENDENCIES:
   - FirebaseAuth
   - FirebaseDatabase
   - FirebaseFirestore
+  - FirebaseFirestoreSwift (> 7.0-beta)
   - Floaty (~> 4.2.0)
   - TinyConstraints
 
@@ -808,6 +811,7 @@ SPEC REPOS:
     - FirebaseCoreInternal
     - FirebaseDatabase
     - FirebaseFirestore
+    - FirebaseFirestoreSwift
     - FirebaseInstallations
     - Floaty
     - GoogleAppMeasurement
@@ -836,6 +840,7 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: cb966328b6985dbd6f535e1461291063e1c4a00f
   FirebaseDatabase: 0a888e4bcaa8edc43701597daab336201fb47cc9
   FirebaseFirestore: de27d96de10596ebc114adf25c6aa7d36dd91f2f
+  FirebaseFirestoreSwift: d7e3e7b587a7b8118b97ddb038852750026ee861
   FirebaseInstallations: 21186f0ca7849f90f4a3219fa31a5eca2e30f113
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   GoogleAppMeasurement: 7a33224321f975d58c166657260526775d9c6b1a
@@ -850,6 +855,6 @@ SPEC CHECKSUMS:
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: c2bab512d90a58a412a377ee56ac13dcb96b3654
+PODFILE CHECKSUM: 44655be28570380afb3d936e3937f9ad71ff116e
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.11.2
