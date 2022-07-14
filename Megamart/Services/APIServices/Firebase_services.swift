@@ -36,12 +36,12 @@ protocol FirebaseServices {
     
 //MARK: -                           Add to Favorites
     
-    func addToFavorites(product: productStruct, completion: @escaping ((Error?) -> Void))
+    func addToFavorites(product: productEntity_firestore, completion: @escaping ((Error?) -> Void))
  
     
 //MARK: -                      Fetch Favorites
         
-    func fetchFavorites(completion: @escaping (([productStruct]?, Error?) -> Void))
+    func fetchFavorites(completion: @escaping (([productEntity_firestore]?, Error?) -> Void))
     
     
 //MARK: -                     Update Favorites

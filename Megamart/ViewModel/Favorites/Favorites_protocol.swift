@@ -9,5 +9,5 @@ import Foundation
 
 protocol Favorites_protocol {
     func fetchFavorites()
-    var  binding: (([productStruct]?, Error?) -> Void) { get set }
+    var  binding: (([productEntity_firestore]?, Error?) -> Void) { get set }
 }

@@ -52,10 +52,10 @@ class ProductDetails_ViewController: UIViewController {
     }
 
         
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-            super.viewWillTransition(to: size, with: coordinator)
-        products_collectionview.reloadData()
-    }
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//            super.viewWillTransition(to: size, with: coordinator)
+//        products_collectionview.reloadData()
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
@@ -163,15 +163,15 @@ extension ProductDetails_ViewController: UICollectionViewDataSource{
 }
 
 
-extension ProductDetails_ViewController: UICollectionViewDelegateFlowLayout{
-    // to set only one cell in row
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height)
-    }
+//extension ProductDetails_ViewController: UICollectionViewDelegateFlowLayout{
+//    // to set only one cell in row
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height)
+//    }
 
     
     
-}
+//}
 
 
 

@@ -8,6 +8,7 @@
 import Foundation
 
 protocol ProductDetails_Protocol {
+   
     // fetch product details
     func fetchData (endPoint: String)
     var  bindingData: ((ProductModel?, Error?) -> Void ) {set get}

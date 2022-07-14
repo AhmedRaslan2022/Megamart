@@ -11,10 +11,8 @@ class Favorites_ViewController: UIViewController {
 
     @IBOutlet weak var favorites_collectionView: UICollectionView!
     
-//    var ids: [Int] = []
-//    var titles: [String] = []
-//    var images: [String] = []
-    var products: [productStruct] = []
+    
+    var products: [productEntity_firestore] = []
     
     var favoritesModelView: Favorites_protocol = Favorites_viewModel()
     
@@ -34,17 +32,6 @@ class Favorites_ViewController: UIViewController {
             }
             if let favorites = favorites {
                 self.products = favorites
-//                if let ids = products[0]["ids"] as? [Int] {
-//                    self.ids = ids
-//                }
-//                if let titles = products[0]["titles"] as? [String] {
-//                    self.titles = titles
-//                }
-//                if let images = products["images"] as? [String] {
-//                    self.images = images
-//                }
-                
-                
                 self.favorites_collectionView.reloadData()
             }
             

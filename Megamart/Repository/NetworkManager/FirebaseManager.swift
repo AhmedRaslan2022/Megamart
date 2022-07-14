@@ -94,17 +94,14 @@ class FirebaseManager: FirebaseServices {
 //MARK: -                               Update Favorites
     
     
-    func addToFavorites(product: productStruct, completion: @escaping ((Error?) -> Void)) {
+    func addToFavorites(product: productEntity_firestore, completion: @escaping ((Error?) -> Void)) {
 
             if let uid = Auth.auth().currentUser?.uid {
-                print("@@@@@@@@ \(uid)")
                 do{
-                    try? database.collection(uid).document(String(product.id)).setData(from: product)
-                    print("Document successfully written!")
+                    try database.collection(uid).document(String(product.id)).setData(from: product)
                     completion(nil)
                 }
                 catch let error {
-                    print("Error writing document: \(error)")
                     completion(error)
                 }
                 
@@ -129,7 +126,6 @@ class FirebaseManager: FirebaseServices {
             ]) { error in
                 
                 if let error = error {
-                    print("Error delete subcollections: \(error)")
                     completion(error)
                 
                 } else {
@@ -137,10 +133,8 @@ class FirebaseManager: FirebaseServices {
                     // delete document
                     self.database.collection(uid).document(String(product.id)).delete() { err in
                             if let error = error {
-                                print("Error deleting document: \(error)")
                                 completion(error)
                             } else {
-                                print("Document successfully deleted!")
                                 completion(nil)
                             }
                         }
@@ -158,19 +152,18 @@ class FirebaseManager: FirebaseServices {
     
     
     
-    func fetchFavorites(completion: @escaping (([productStruct]?, Error?) -> Void)) {
+    func fetchFavorites(completion: @escaping (([productEntity_firestore]?, Error?) -> Void)) {
         
-        var products: [productStruct] = []
+        var products: [productEntity_firestore] = []
         
         if let uid = Auth.auth().currentUser?.uid {
             database.collection(uid).getDocuments() { (querySnapshot, error) in
                 if let error = error {
-                    print("Error getting documents: \(error)")
                     completion(nil, error)
                 } else {
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
-                        let doc = try? document.data(as: productStruct.self)
+                        let doc = try? document.data(as: productEntity_firestore.self)
                         if let id = doc?.id {
                             print("^^^^^^^^^^ \(id)")
                         }

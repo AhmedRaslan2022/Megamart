@@ -62,15 +62,13 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
     var addToFavorites_status: ((Error?) -> Void) = { _ in }
     
     func addToFavorites(product: ProductModel) {
-        let newProdcut = productStruct(id: "\(product.id)", title: product.title, image: product.image.src)
-        firebaseManager.addToFavorites(product: newProdcut) { error in
+        let favoriteProdcut = productEntity_firestore(id: "\(product.id)", title: product.title, image: product.image.src)
+        firebaseManager.addToFavorites(product: favoriteProdcut) { error in
             if let error = error {
                 self.addToFavorites_error = error
-                print("@@@@@@@@@@@@ view model \(error)")
             }
             else{
                 self.addToFavorites_error = nil
-                print("@@@@@@@@@@@@ view model nil")
             }
         }
     }
