@@ -22,17 +22,17 @@ class Login_ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         signInView.layer.cornerRadius = 30
         backgroundView.layer.cornerRadius = 30
-        
-        userEmail_textField.delegate = self
-        userPassword_textField.delegate = self
         
         // check is logged in before or not
         if self.defaults.string(forKey: Constants.userdefaults_key) != nil  {
             self.navigateTo_HomeViewController()
         }
+        
+        userEmail_textField.delegate = self
+        userPassword_textField.delegate = self
+        
         
         login_viewModel.binding = { error in
             if let error = error {
@@ -56,7 +56,7 @@ class Login_ViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
         let homeVC = storyBoard.instantiateViewController(withIdentifier: Constants.tabBar_ViewController_id) as! UITabBarController
         homeVC.modalPresentationStyle = .fullScreen
-        self.present(homeVC, animated: true, completion: nil)
+        self.present(homeVC, animated: false, completion: nil)
     }
     
     

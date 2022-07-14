@@ -44,10 +44,10 @@ protocol FirebaseServices {
     func fetchFavorites(completion: @escaping (([productEntity_firestore]?, Error?) -> Void))
     
     
-//MARK: -                     Update Favorites
+//MARK: -                     Remove Product from Favorites
     
     
-    func removeFromFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void))
+    func removeFromFavorites(productId: String, completion: @escaping ((Error?) -> Void))
     
     
 

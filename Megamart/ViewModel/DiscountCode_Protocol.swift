@@ -9,6 +9,7 @@ import Foundation
 
 
 
+
 protocol DiscountCode_Protocol {
     func fetchDataDiscountCode (endPoint: String)
     var  bindingData: (([DiscountCodeElement]?, Error?) -> Void ) {set get}

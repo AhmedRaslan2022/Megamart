@@ -7,6 +7,7 @@
 
 import UIKit
 import Cosmos
+import SwiftUI
 
 class ProductDetails_ViewController: UIViewController {
 
@@ -23,10 +24,11 @@ class ProductDetails_ViewController: UIViewController {
     @IBOutlet weak var addToShopingBag_button: UIButton!
     @IBOutlet weak var addToFavorites_button: UIButton!
     @IBOutlet weak var description_label: UILabel!
+    @IBOutlet weak var availabelSizes: UIStackView!
     
     
     
-    private var images_url: [Image]?
+    var rootViewController: UIViewController?
     var productID: String?
     private var product: ProductModel?
     
@@ -42,6 +44,10 @@ class ProductDetails_ViewController: UIViewController {
         products_collectionview.dataSource = self
         self.products_collectionview.register(UINib(nibName: Constants.ProductDetails_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.ProductDetails_cell_id)
     
+        if rootViewController != nil {
+            self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        
         if let productID = productID {
             productDetails_viewModel.fetchData(endPoint: productID)
         }
@@ -64,6 +70,8 @@ class ProductDetails_ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
+    
+    
    
 //MARK: -                                    Buttons Action
 
@@ -97,8 +105,6 @@ class ProductDetails_ViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.bag_storyboard, bundle:nil)
         let bagViewController = storyBoard.instantiateViewController(withIdentifier: Constants.BagViewController_id) as! BagViewController
         self.navigationController?.pushViewController(bagViewController, animated: true)
-//        bagViewController.modalPresentationStyle = .fullScreen
-//        self.present(bagViewController, animated: true, completion: nil)
     }
     
     
@@ -108,14 +114,12 @@ class ProductDetails_ViewController: UIViewController {
             self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
             
             if let product = product {
-                print("%%%%%%%%%%%%%%%%% here re %%%%%%%%%%%%%%%%%%%%%%%%%")
-                productDetails_viewModel.removeFromFavorites(product: product)
+                productDetails_viewModel.removeFromFavorites(productId: product.id)
             }
             
             
         }else{
             self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
-            print("%%%%%%%%%%%%%%%%% here %%%%%%%%%%%%%%%%%%%%%%%%%")
             if let product = product {
                 productDetails_viewModel.addToFavorites(product: product)
             }
@@ -138,7 +142,7 @@ extension ProductDetails_ViewController: UICollectionViewDelegate{
 extension ProductDetails_ViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images_url?.count ?? 1
+        return product?.images.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -148,11 +152,11 @@ extension ProductDetails_ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ProductDetails_cell_id, for: indexPath) as! ProductDetails_CollectionViewCell
         
-        if let image = images_url?[indexPath.row].src {
+        if let image = product?.images[indexPath.row].src {
             cell.setCell(imageUrl: image)
         }
         
-        if images_url?.count == 0 {
+        if product?.images.count == 0 {
             cell.setCell(imageUrl: Constants.noImageAvailabel)
         }
 
@@ -163,19 +167,17 @@ extension ProductDetails_ViewController: UICollectionViewDataSource{
 }
 
 
-//extension ProductDetails_ViewController: UICollectionViewDelegateFlowLayout{
-//    // to set only one cell in row
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height)
-//    }
+extension ProductDetails_ViewController: UICollectionViewDelegateFlowLayout{
+    // to set only one cell in row
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width , height: collectionView.bounds.height)
+    }
 
-    
-    
-//}
+}
 
 
 
-//MARK: -                                   Response of fetchProducts and update Favorites
+//MARK: -                                   Response of Fetch Products and update Favorites
 
 
 extension ProductDetails_ViewController {
@@ -184,10 +186,8 @@ extension ProductDetails_ViewController {
         self.productDetails_viewModel.addToFavorites_status = { error in
             if let error = error {
                 addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Cancel", viewController: self)
-                print("%%%%%%%%%%%% error")
             }
             else{
-                print("%%%%%%%%%%%% else")
                 addAlert(title: "Done", message: "The product has been saved to favourites", ActionTitle: "OK", viewController: self)
             }
                     
@@ -198,7 +198,7 @@ extension ProductDetails_ViewController {
                 addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Cancel", viewController: self)
             }
             else{
-                addAlert(title: "Done", message: "Product removed from favourites", ActionTitle: "OK", viewController: self)
+                addAlert(title: "Done", message: "Product removed from favorites", ActionTitle: "OK", viewController: self)
             }
                     
         }
@@ -206,6 +206,7 @@ extension ProductDetails_ViewController {
     
     
     func responseOf_fetchProducts() {
+        
         productDetails_viewModel.bindingData = { productDetails, error in
             if let productDetails = productDetails {
                 self.product = productDetails
@@ -218,15 +219,18 @@ extension ProductDetails_ViewController {
                 self.productRating_label.text = String(format: "%.1f", rate)
                 self.starRating.rating = rate
 
-                self.images_url = productDetails.images
                 self.imageController.numberOfPages = productDetails.images.count
                 self.products_collectionview.reloadData()
 
                 
                 if let sizes = productDetails.options?[0].values {
                     for size in sizes {
-                        self.availableSizes_label.text! += size
-                        self.availableSizes_label.text! += " "
+                        let label = UILabel()
+                        label.text = size
+                        label.backgroundColor = .yellow
+                        label.textAlignment = .center
+                        label.font = UIFont.boldSystemFont(ofSize: 18)
+                        self.availabelSizes.addArrangedSubview(label)
                     }
                 }
  

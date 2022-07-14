@@ -20,6 +20,7 @@ class FirebaseManager: FirebaseServices {
     let defaults = UserDefaults.standard
     let database = Firestore.firestore()
     
+    
 
 //MARK: -                                       Login
     
@@ -91,7 +92,7 @@ class FirebaseManager: FirebaseServices {
     
     
     
-//MARK: -                               Update Favorites
+//MARK: -                                       Add Product to Favorites
     
     
     func addToFavorites(product: productEntity_firestore, completion: @escaping ((Error?) -> Void)) {
@@ -111,15 +112,15 @@ class FirebaseManager: FirebaseServices {
     
     
     
-//MARK: -                                       Remove Product
+//MARK: -                                       Remove Product From Favorites
     
     
-    func removeFromFavorites(product: ProductModel, completion: @escaping ((Error?) -> Void)) {
+    func removeFromFavorites(productId: String, completion: @escaping ((Error?) -> Void)) {
 
         if let uid = Auth.auth().currentUser?.uid {
             
             // delete subcollections
-            database.collection(uid).document(String(product.id)).updateData([
+            database.collection(uid).document(productId).updateData([
                 "id": FieldValue.delete(),
                 "title": FieldValue.delete(),
                 "image": FieldValue.delete()
@@ -131,7 +132,7 @@ class FirebaseManager: FirebaseServices {
                 } else {
                     
                     // delete document
-                    self.database.collection(uid).document(String(product.id)).delete() { err in
+                    self.database.collection(uid).document(productId).delete() { err in
                             if let error = error {
                                 completion(error)
                             } else {
@@ -162,20 +163,13 @@ class FirebaseManager: FirebaseServices {
                     completion(nil, error)
                 } else {
                     for document in querySnapshot!.documents {
-                        print("\(document.documentID) => \(document.data())")
                         let doc = try? document.data(as: productEntity_firestore.self)
-                        if let id = doc?.id {
-                            print("^^^^^^^^^^ \(id)")
-                        }
                         if let doc = doc {
                             products.append(doc)
-                            print("$$$$$$$$ \(doc)")
-                            print(" products \(products)")
                         }
 
                     }
                     completion(products, nil)
-                    print("%%%%%%%%%%% products \(products)")
                 }
             }
             

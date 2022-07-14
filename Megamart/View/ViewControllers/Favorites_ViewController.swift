@@ -14,38 +14,102 @@ class Favorites_ViewController: UIViewController {
     
     var products: [productEntity_firestore] = []
     
-    var favoritesModelView: Favorites_protocol = Favorites_viewModel()
+    var favoritesViewModel: Favorites_protocol = Favorites_viewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         favorites_collectionView.delegate = self
         favorites_collectionView.dataSource = self
+        
 
         self.favorites_collectionView.register(UINib(nibName: Constants.favorite_nib_name , bundle: nil), forCellWithReuseIdentifier: Constants.favorite_Cell_id)
+           
+        responseOf_fetchingFavorites()
+        responseOf_deleteProductFromFavorites()
         
-        self.favoritesModelView.fetchFavorites()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.favoritesViewModel.fetchFavorites()
+    }
+
+
+}
+
+//MARK: -                                   delete Product From Favorites
+
+
+extension Favorites_ViewController: DeleteProductFromFavorites_protocol {
+    
+    func deleteProductFromFavorites(productId: String) {
         
-        self.favoritesModelView.binding = { favorites, error in
+        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to remove this product from your favourites", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.favoritesViewModel.removeFromFavorites(productId: productId)
+            
+            for index in 0..<self.products.count {
+                if self.products[index].id == productId {
+                    self.products.remove(at: index)
+                    break
+                }
+            }
+        }))
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    
+}
+
+
+
+//MARK: -                                   The response of fetching favorites
+
+
+extension Favorites_ViewController {
+    
+    func responseOf_fetchingFavorites() {
+        
+        self.favoritesViewModel.binding = { favorites, error in
             if let error = error {
                 addAlert(title: "Warning", message: error.localizedDescription , ActionTitle: "Cancel", viewController: self)
             }
             if let favorites = favorites {
                 self.products = favorites
+                if self.products.count == 0 {
+                addAlert(title: "Alert!", message: "There are no favorite Products", ActionTitle: "Cancel", viewController: self)
+                }
                 self.favorites_collectionView.reloadData()
             }
             
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if products.count == 0 {
-            addAlert(title: "Alert!", message: "There are no favorite Products", ActionTitle: "Cancel", viewController: self)
+    
+//MARK: -                           The response of Delete product from Favorites
+    
+    
+    func responseOf_deleteProductFromFavorites() {
+        
+        self.favoritesViewModel.removeFromFavorites_status = { error in
+            if let error = error {
+                addAlert(title: "Warning", message: error.localizedDescription , ActionTitle: "Cancel", viewController: self)
+            }
+            else{
+                DispatchQueue.main.async {
+                    self.favorites_collectionView.reloadData()
+                }
+                addAlert(title: "Done", message: "Product removed from favorites", ActionTitle: "OK", viewController: self)
+            }
         }
     }
-
-
 }
+
+
 
 
 //MARK: -                                       Collection View
@@ -66,8 +130,8 @@ extension Favorites_ViewController: UICollectionViewDataSource{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.favorite_Cell_id, for: indexPath) as? FavoritesCollectionViewCell else{
             return UICollectionViewCell()
         }
-        
-        cell.setCell(imageUrl: products[indexPath.row].image, title: products[indexPath.row].title)
+        cell.delegate = self
+        cell.setCell(product: products[indexPath.row])
 
         return cell
     }
@@ -78,6 +142,7 @@ extension Favorites_ViewController: UICollectionViewDataSource{
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.productDetails_storyboard, bundle:nil)
         let productDetailsViewController = storyBoard.instantiateViewController(withIdentifier: Constants.ProductDetails_ViewController_id) as! ProductDetails_ViewController
         productDetailsViewController.productID = products[indexPath.row].id
+        productDetailsViewController.rootViewController = self
         self.navigationController?.pushViewController(productDetailsViewController, animated: true)
     
     }
@@ -88,9 +153,9 @@ extension Favorites_ViewController: UICollectionViewDataSource{
 
 
 extension Favorites_ViewController: UICollectionViewDelegateFlowLayout{
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width/2 , height: collectionView.frame.size.height/2)
+        return CGSize(width: collectionView.bounds.width / 2 , height: collectionView.bounds.height / 2)
     }
-    
+
 }

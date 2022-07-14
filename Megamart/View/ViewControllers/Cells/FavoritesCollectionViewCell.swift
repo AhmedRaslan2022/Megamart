@@ -9,27 +9,43 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
+protocol DeleteProductFromFavorites_protocol {
+    func deleteProductFromFavorites (productId: String)
+}
+
 
 class FavoritesCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak private var productImage: UIImageView!
     @IBOutlet weak private var productTitle: UILabel!
+    @IBOutlet weak var updateFavorites: UIButton!
     
+    var delegate: DeleteProductFromFavorites_protocol?
+    var productId: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func setCell(imageUrl: String, title: String) {
-        Alamofire.request(imageUrl).responseImage { response in
+    func setCell(product: productEntity_firestore) {
+        Alamofire.request(product.image).responseImage { response in
             if case .success(let image) = response.result {
                 self.productImage.image = image
             }
         }
         
-        self.productTitle.text = title
-        
+        self.productTitle.text = product.title
+        self.productId = product.id
+    }
+    
+    
+    @IBAction func updateFavorites(_ sender: Any) {
+        print("*(((((((((((((((((((((((")
+        if let productId = productId {
+            print("*(((((((((((((((((((((((&&&&&&&&&&&&&&&&&&&&")
+            self.delegate?.deleteProductFromFavorites(productId: productId)
+        }
     }
     
 }

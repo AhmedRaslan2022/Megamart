@@ -19,6 +19,6 @@ protocol ProductDetails_Protocol {
     
     // remove from favorites
     var removeFromFavorites_status: ((Error?) -> Void) {set get}
-    func removeFromFavorites(product: ProductModel)
+    func removeFromFavorites(productId: Int)
 
 }

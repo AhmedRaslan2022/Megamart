@@ -43,5 +43,32 @@ class Favorites_viewModel: Favorites_protocol {
             }
         }
     }
+ 
+    
+
+//MARK: -                           Remove Product From Favorites
+    
+    
+    var removeFromFavorites_error: Error? {
+        didSet{
+            removeFromFavorites_status(error)
+        }
+    }
+    
+    var removeFromFavorites_status: ((Error?) -> Void) = { _ in }
+    
+    func removeFromFavorites(productId: String) {
+        firebaseManager.removeFromFavorites(productId: productId) { error in
+            if let error = error {
+                self.removeFromFavorites_error = error
+            }
+            else{
+                self.removeFromFavorites_error = nil
+            }
+        }
+    }
+    
     
 }
+
+

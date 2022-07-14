@@ -377,7 +377,6 @@
 			children = (
 				0418BE88286CF903000F28EC /* ViewControllers */,
 				0418BE87286CF8F8000F28EC /* Storyboards */,
-				0418BE86286CF8ED000F28EC /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,6 +426,7 @@
 				041BF14F287051D100339E05 /* Favorites.storyboard */,
 				E245C2AA287084BB004A341C /* Orders.storyboard */,
 				008ABD2F2870650F0060CB08 /* payment.storyboard */,
+				0418BE86286CF8ED000F28EC /* Cells */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -920,7 +920,6 @@
 				04178B5628730FF00044ED7B /* RegisterNewCustomer_viewModel.swift in Sources */,
 				E236309A2873E182009C1352 /* ProductDetails_protocol.swift in Sources */,
 				04B656FD28744DA8009EA793 /* Login_protocol.swift in Sources */,
-				04D6995C2876271900965CE3 /* Favorites_viewModel.swift in Sources */,
 				E2391836287F6D6E00FD000E /* OrderTableViewCell.swift in Sources */,
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,

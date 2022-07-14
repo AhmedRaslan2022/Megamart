@@ -50,7 +50,7 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
     }
 
     
-//MARK: -                           Add Product To Favorites
+//MARK: -                                   Add Product To Favorites
     
     
     var addToFavorites_error: Error? {
@@ -74,7 +74,7 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
     }
     
     
-    //MARK: -                           Remove Product From Favorites
+//MARK: -                           Remove Product From Favorites
     
     
     var removeFromFavorites_error: Error? {
@@ -85,8 +85,8 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
     
     var removeFromFavorites_status: ((Error?) -> Void) = { _ in }
     
-    func removeFromFavorites(product: ProductModel) {
-        firebaseManager.removeFromFavorites(product: product) { error in
+    func removeFromFavorites(productId: Int) {
+        firebaseManager.removeFromFavorites(productId: String(productId)) { error in
             if let error = error {
                 self.removeFromFavorites_error = error
             }
