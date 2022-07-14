@@ -27,7 +27,6 @@ class Register_ViewController: UIViewController {
         signUpView.layer.cornerRadius = 30
         backgroundView.layer.cornerRadius = 30
         
-        self.hideKeyboardWhenTappedAround()
         
         register_viewModel.binding = { error in
             if let error = error {

@@ -37,7 +37,6 @@
 		0418BE71286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */; };
 		041BF150287051D100339E05 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041BF14F287051D100339E05 /* Favorites.storyboard */; };
 		041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BF1512870543200339E05 /* Favorites_ViewController.swift */; };
-		042919A5287C150E000034B2 /* Dismiss Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042919A4287C150E000034B2 /* Dismiss Keyboard.swift */; };
 		045551CA287F229800D202EA /* Settings_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045551C8287F229800D202EA /* Settings_protocol.swift */; };
 		045551CB287F229800D202EA /* Settings_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045551C9287F229800D202EA /* Settings_ViewModel.swift */; };
 		0467CEFC286F8E530070DC64 /* ProductDetails_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */; };
@@ -60,13 +59,14 @@
 		04C54389287B14B9005312ED /* ResetPassword_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54388287B14B9005312ED /* ResetPassword_viewModel.swift */; };
 		04C5438B287B14E8005312ED /* ResetPassword_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C5438A287B14E8005312ED /* ResetPassword_protocol.swift */; };
 		04C5438E287B19D6005312ED /* ResetPassword_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C5438D287B19D6005312ED /* ResetPassword_ViewController.swift */; };
-		04D6995C2876271900965CE3 /* Favorites_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6995B2876271900965CE3 /* Favorites_viewModel.swift */; };
 		04D6995E2876272C00965CE3 /* Favorites_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6995D2876272C00965CE3 /* Favorites_protocol.swift */; };
 		04D699622876278600965CE3 /* Firebase_services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D699612876278600965CE3 /* Firebase_services.swift */; };
 		04D69964287627BA00965CE3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D69963287627BA00965CE3 /* FirebaseManager.swift */; };
 		04D6996A287641ED00965CE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D69969287641ED00965CE3 /* GoogleService-Info.plist */; };
 		04F0FA71286F8BAD00A82FD0 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */; };
 		04F0FA79286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0FA78286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift */; };
+		04F59E402880656300FF38AE /* Favorites_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6995B2876271900965CE3 /* Favorites_viewModel.swift */; };
+		04F59E412880659500FF38AE /* ProductDetails_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630972873E181009C1352 /* ProductDetails_viewModel.swift */; };
 		9C71CCB5488593BFCE891BBB /* Pods_Megamart_MegamartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE3C7B2D01E79E79C1087D /* Pods_Megamart_MegamartUITests.framework */; };
 		C5D10108B4E5C2DDEF4CE997 /* Pods_Megamart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFD13B2A6D75F0171BF185E /* Pods_Megamart.framework */; };
 		E1CFD67D63E9CD8D26E5AC53 /* Pods_MegamartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB60F7450E81E9021A2F061B /* Pods_MegamartTests.framework */; };
@@ -82,7 +82,6 @@
 		E236308E2873DE6B009C1352 /* Brands_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236308D2873DE6B009C1352 /* Brands_Model.swift */; };
 		E23630912873E111009C1352 /* Brands_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E236308F2873E111009C1352 /* Brands_Protocol.swift */; };
 		E23630922873E111009C1352 /* BrandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630902873E111009C1352 /* BrandsViewModel.swift */; };
-		E23630992873E182009C1352 /* ProductDetails_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630972873E181009C1352 /* ProductDetails_viewModel.swift */; };
 		E236309A2873E182009C1352 /* ProductDetails_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630982873E182009C1352 /* ProductDetails_protocol.swift */; };
 		E2391833287F565C00FD000E /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2391832287F565C00FD000E /* HighlightedButton.swift */; };
 		E2391836287F6D6E00FD000E /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2391834287F6D6E00FD000E /* OrderTableViewCell.swift */; };
@@ -156,7 +155,6 @@
 		0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegamartUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		041BF14F287051D100339E05 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		041BF1512870543200339E05 /* Favorites_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites_ViewController.swift; sourceTree = "<group>"; };
-		042919A4287C150E000034B2 /* Dismiss Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dismiss Keyboard.swift"; sourceTree = "<group>"; };
 		045551C8287F229800D202EA /* Settings_protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_protocol.swift; sourceTree = "<group>"; };
 		045551C9287F229800D202EA /* Settings_ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_ViewModel.swift; sourceTree = "<group>"; };
 		0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails_ViewController.swift; sourceTree = "<group>"; };
@@ -468,7 +466,6 @@
 			children = (
 				0477528828709DDB0095EA91 /* JSONDecoder.swift */,
 				0477529328709EE70095EA91 /* AddAlertView.swift */,
-				042919A4287C150E000034B2 /* Dismiss Keyboard.swift */,
 			);
 			path = Utilitis;
 			sourceTree = "<group>";
@@ -870,13 +867,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F59E412880659500FF38AE /* ProductDetails_viewModel.swift in Sources */,
+				04F59E402880656300FF38AE /* Favorites_viewModel.swift in Sources */,
 				E2449E822878679A000D649B /* ProductViewCell.swift in Sources */,
 				E2449E8128786780000D649B /* ProductsViewController.swift in Sources */,
 				008ABD332870710C0060CB08 /* PaymentVC.swift in Sources */,
 				E2187B0628705237009A97F5 /* CategoryCollectionCell.swift in Sources */,
 				04B656FB28744D98009EA793 /* Login_viewModel.swift in Sources */,
 				E20C75652870632D004ACF8F /* BrandsCollectionCell.swift in Sources */,
-				042919A5287C150E000034B2 /* Dismiss Keyboard.swift in Sources */,
 				E245C2A928708493004A341C /* OrdersViewController.swift in Sources */,
 				E2116F37287CCB4A005360D2 /* Collects_Protocol.swift in Sources */,
 				04D699622876278600965CE3 /* Firebase_services.swift in Sources */,
@@ -922,18 +920,19 @@
 				04178B5628730FF00044ED7B /* RegisterNewCustomer_viewModel.swift in Sources */,
 				E236309A2873E182009C1352 /* ProductDetails_protocol.swift in Sources */,
 				04B656FD28744DA8009EA793 /* Login_protocol.swift in Sources */,
+<<<<<<< HEAD
 				04D6995C2876271900965CE3 /* Favorites_viewModel.swift in Sources */,
 				04D6995C2876271900965CE3 /* Favorites_viewModel.swift in Sources */,
 				E2391836287F6D6E00FD000E /* OrderTableViewCell.swift in Sources */,
+=======
+>>>>>>> firestore
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
 				E2116F38287CCB4A005360D2 /* CollectsViewModel.swift in Sources */,
 				E23630922873E111009C1352 /* BrandsViewModel.swift in Sources */,
 				E23630912873E111009C1352 /* Brands_Protocol.swift in Sources */,
 				E2116F2B287CC1E6005360D2 /* Collects_Model.swift in Sources */,
-				E23630992873E182009C1352 /* ProductDetails_viewModel.swift in Sources */,
 				045551CB287F229800D202EA /* Settings_ViewModel.swift in Sources */,
-				E23630992873E182009C1352 /* ProductDetails_viewModel.swift in Sources */,
 				00088072286FAFB300DE578B /* BagTableViewCell.swift in Sources */,
 				008ABD35287071330060CB08 /* PaymentOptionVC.swift in Sources */,
 				04F0FA79286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift in Sources */,
