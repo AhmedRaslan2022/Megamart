@@ -35,60 +35,39 @@ class ProductDetails_ViewController: UIViewController {
     var productDetails_viewModel: ProductDetails_Protocol = ProductDetails_viewModel()
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         products_collectionview.delegate = self
         products_collectionview.dataSource = self
-        
         self.products_collectionview.register(UINib(nibName: Constants.ProductDetails_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.ProductDetails_cell_id)
-
-        
-        
+    
         if let productID = productID {
             productDetails_viewModel.fetchData(endPoint: productID)
         }
-
-        productDetails_viewModel.bindingData = { productDetails, error in
-            if let productDetails = productDetails {
-                self.product = productDetails
-                self.productTitle_label.text = productDetails.title
-                self.productPrice_label.text = productDetails.variants[0].price
-                self.description_label.text = productDetails.body_html
-                
-                self.starRating.settings.fillMode = .precise
-                let rate = self.rating
-                self.productRating_label.text = String(format: "%.1f", rate)
-                self.starRating.rating = rate
-
-                self.images_url = productDetails.images
-                self.imageController.numberOfPages = productDetails.images.count
-                self.products_collectionview.reloadData()
-
-                
-                if let sizes = productDetails.options?[0].values {
-                    for size in sizes {
-                        self.availableSizes_label.text! += size
-                        self.availableSizes_label.text! += " "
-                    }
-                }
- 
-            }
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            
-        }
         
-        func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-                super.viewWillTransition(to: size, with: coordinator)
-            products_collectionview.reloadData()
-        }
+        responseOf_updateFavorites()
+        responseOf_fetchProducts()
         
     }
-    
 
+        
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//            super.viewWillTransition(to: size, with: coordinator)
+//        products_collectionview.reloadData()
+//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+      
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+   
+//MARK: -                                    Buttons Action
+
+    
     @IBAction func AddToCart(_ sender: UIButton) {
     }
     
@@ -99,7 +78,7 @@ class ProductDetails_ViewController: UIViewController {
     }
     
     @IBAction func goBack_button(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func goToHome_button(_ sender: UIBarButtonItem) {
@@ -123,8 +102,6 @@ class ProductDetails_ViewController: UIViewController {
     }
     
     
-    
-    
     @IBAction func addToFavorites(_ sender: UIButton) {
         
         if addToFavorites_button.currentBackgroundImage == UIImage(systemName: "heart.fill"){
@@ -135,15 +112,6 @@ class ProductDetails_ViewController: UIViewController {
                 productDetails_viewModel.removeFromFavorites(product: product)
             }
             
-            self.productDetails_viewModel.removeFromFavorites_status = { error in
-                if let error = error {
-                    addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "cancle", viewController: self)
-                }
-                else{
-                    print("$%$%$%$%$%$%$% Removed ")
-                }
-                        
-            }
             
         }else{
             self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -151,27 +119,16 @@ class ProductDetails_ViewController: UIViewController {
             if let product = product {
                 productDetails_viewModel.addToFavorites(product: product)
             }
-            
-            self.productDetails_viewModel.addToFavorites_status = { error in
-                if let error = error {
-                    addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "cancle", viewController: self)
-                }
-                else{
-                    
-                    print("$%$%$%$%$%$%$% Done ")
-                }
-                        
-            }
-            
         }
         
     }
-    
+  
     
 }
 
 
-//MARK: -                                       Collection View
+
+//MARK: -                                         Collection View
 
 
 extension ProductDetails_ViewController: UICollectionViewDelegate{
@@ -206,12 +163,80 @@ extension ProductDetails_ViewController: UICollectionViewDataSource{
 }
 
 
-extension ProductDetails_ViewController: UICollectionViewDelegateFlowLayout{
-    // to set only one cell in row
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height)
-    }
+//extension ProductDetails_ViewController: UICollectionViewDelegateFlowLayout{
+//    // to set only one cell in row
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height)
+//    }
 
+    
+    
+//}
+
+
+
+//MARK: -                                   Response of fetchProducts and update Favorites
+
+
+extension ProductDetails_ViewController {
+    
+    func responseOf_updateFavorites () {
+        self.productDetails_viewModel.addToFavorites_status = { error in
+            if let error = error {
+                addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Cancel", viewController: self)
+                print("%%%%%%%%%%%% error")
+            }
+            else{
+                print("%%%%%%%%%%%% else")
+                addAlert(title: "Done", message: "The product has been saved to favourites", ActionTitle: "OK", viewController: self)
+            }
+                    
+        }
+        
+        self.productDetails_viewModel.removeFromFavorites_status = { error in
+            if let error = error {
+                addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Cancel", viewController: self)
+            }
+            else{
+                addAlert(title: "Done", message: "Product removed from favourites", ActionTitle: "OK", viewController: self)
+            }
+                    
+        }
+    }
+    
+    
+    func responseOf_fetchProducts() {
+        productDetails_viewModel.bindingData = { productDetails, error in
+            if let productDetails = productDetails {
+                self.product = productDetails
+                self.productTitle_label.text = productDetails.title
+                self.productPrice_label.text = productDetails.variants[0].price
+                self.description_label.text = productDetails.body_html
+                
+                self.starRating.settings.fillMode = .precise
+                let rate = self.rating
+                self.productRating_label.text = String(format: "%.1f", rate)
+                self.starRating.rating = rate
+
+                self.images_url = productDetails.images
+                self.imageController.numberOfPages = productDetails.images.count
+                self.products_collectionview.reloadData()
+
+                
+                if let sizes = productDetails.options?[0].values {
+                    for size in sizes {
+                        self.availableSizes_label.text! += size
+                        self.availableSizes_label.text! += " "
+                    }
+                }
+ 
+            }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
     
     
 }

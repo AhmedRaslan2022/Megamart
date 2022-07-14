@@ -82,6 +82,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             </preferredSymbolConfiguration>
                                         </state>
+                                        <connections>
+                                            <action selector="logout:" destination="4CO-bR-jOa" eventType="touchUpInside" id="COG-vs-c6Y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -104,7 +107,6 @@
                         <outlet property="switchTheme" destination="wbq-ub-SvK" id="xBy-zc-DPn"/>
                         <outlet property="uiEditprofile" destination="olh-U3-MOt" id="M2I-e5-kOz"/>
                         <outlet property="uiLanguage" destination="2pL-c7-wlc" id="Iu1-Ha-9A7"/>
-                        <outlet property="uiLogout" destination="srU-kR-Rfs" id="FB5-do-0sa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjx-Eg-3Sv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

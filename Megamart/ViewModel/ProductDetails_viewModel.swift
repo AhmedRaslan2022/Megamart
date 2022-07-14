@@ -20,7 +20,7 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
     
     
     
-//MARK: -               Fetch favorites
+//MARK: -                               Fetch Product Details
     
    
     var data: ProductModel? {
@@ -52,6 +52,7 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
     
 //MARK: -                           Add Product To Favorites
     
+    
     var addToFavorites_error: Error? {
         didSet{
             addToFavorites_status(error)
@@ -61,7 +62,8 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
     var addToFavorites_status: ((Error?) -> Void) = { _ in }
     
     func addToFavorites(product: ProductModel) {
-        firebaseManager.addToFavorites(product: product) { error in
+        let favoriteProdcut = productEntity_firestore(id: "\(product.id)", title: product.title, image: product.image.src)
+        firebaseManager.addToFavorites(product: favoriteProdcut) { error in
             if let error = error {
                 self.addToFavorites_error = error
             }

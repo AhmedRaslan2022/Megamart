@@ -8,12 +8,15 @@
 
 import Foundation
 
-// MARK: - Product
+
+// MARK: -          Product
+
 struct Product: Codable {
     let product: ProductModel
 }
 
-// MARK: - ProductClass
+// MARK: -          ProductClass
+
 struct ProductModel: Codable {
     let id: Int
     let title: String
@@ -29,6 +32,15 @@ struct ProductModel: Codable {
 }
 
 
+
+//MARK: -                               Product Entity Firestore
+
+
+struct productEntity_firestore: Codable {
+    let id: String
+    let title: String
+    let image: String
+}
 
 struct Variant: Codable {
     let price: String

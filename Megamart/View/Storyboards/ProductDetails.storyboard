@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TPc-Ue-kaV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -74,20 +74,39 @@
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKP-KK-KbZ">
-                                <rect key="frame" x="0.0" y="88" width="390" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
                                     <navigationItem title="Product Details" id="oiT-Wu-5lb">
-                                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.left.fill" catalog="system" id="Q1a-7r-pBY">
-                                            <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="goBack_button:" destination="2Ry-98-gr7" id="Gbe-TD-gdX"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <leftBarButtonItems>
+                                            <barButtonItem image="arrowshape.turn.up.left.fill" catalog="system" id="Q1a-7r-pBY">
+                                                <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="goBack_button:" destination="2Ry-98-gr7" id="Gbe-TD-gdX"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" image="homekit" catalog="system" id="hWg-XA-aX6">
+                                                <connections>
+                                                    <action selector="goToHome_button:" destination="2Ry-98-gr7" id="9uK-rN-85H"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Item" image="heart.fill" catalog="system" id="xXq-q6-0lk">
+                                                <connections>
+                                                    <action selector="goToFavorites_button:" destination="2Ry-98-gr7" id="Wy9-xq-nVi"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" image="cart.fill" catalog="system" id="grp-1H-eKw">
+                                                <connections>
+                                                    <action selector="goToShopingBag_button:" destination="2Ry-98-gr7" id="Uct-j6-jxc"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S71-Mw-sVN">
-                                <rect key="frame" x="0.0" y="132" width="390" height="610.33333333333337"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="654.33333333333337"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ute-6Z-96i">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="844.33333333333337"/>
@@ -111,7 +130,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pn3-UH-bcB" customClass="CosmosView" customModule="Cosmos">
-                                                <rect key="frame" x="59.000000000000007" y="413.33333333333337" width="124.66666666666669" height="40"/>
+                                                <rect key="frame" x="59.000000000000007" y="413.33333333333331" width="124.66666666666669" height="40"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="rating">
                                                         <real key="value" value="3"/>
@@ -131,7 +150,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A8A-Ic-wse">
-                                                <rect key="frame" x="10" y="413.33333333333337" width="46" height="40"/>
+                                                <rect key="frame" x="10" y="413.33333333333331" width="46" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="fab-Hh-o9o"/>
                                                 </constraints>
@@ -140,7 +159,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7uc-mv-BY8">
-                                                <rect key="frame" x="243.66666666666663" y="413.33333333333337" width="136.33333333333337" height="40"/>
+                                                <rect key="frame" x="243.66666666666663" y="413.33333333333331" width="136.33333333333337" height="40"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -278,25 +297,7 @@
                             <constraint firstItem="xKP-KK-KbZ" firstAttribute="trailing" secondItem="cat-nI-mGS" secondAttribute="trailing" id="yxd-lX-4gL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Product Details" id="fuD-hC-4GB">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="homekit" catalog="system" id="hWg-XA-aX6">
-                            <connections>
-                                <action selector="goToHome_button:" destination="2Ry-98-gr7" id="9uK-rN-85H"/>
-                            </connections>
-                        </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="heart.fill" catalog="system" id="xXq-q6-0lk">
-                                <connections>
-                                    <action selector="goToFavorites_button:" destination="2Ry-98-gr7" id="Wy9-xq-nVi"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="cart.fill" catalog="system" id="grp-1H-eKw">
-                                <connections>
-                                    <action selector="goToShopingBag_button:" destination="2Ry-98-gr7" id="Uct-j6-jxc"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Product Details" id="fuD-hC-4GB"/>
                     <connections>
                         <outlet property="addToFavorites_button" destination="elA-e3-yMk" id="wWG-Oa-gZA"/>
                         <outlet property="addToShopingBag_button" destination="Csm-eL-rKT" id="3bh-el-8Bq"/>
@@ -316,24 +317,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JF-c4-OOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1126.1538461538462" y="0.7109004739336493"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="O51-NO-vcb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TPc-Ue-kaV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g1U-9e-8Ve">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2Ry-98-gr7" kind="relationship" relationship="rootViewController" id="oZZ-FY-1IS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YpQ-YV-jN1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="197" y="1"/>
         </scene>
     </scenes>
     <designables>

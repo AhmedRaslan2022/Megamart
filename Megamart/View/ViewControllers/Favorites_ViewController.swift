@@ -11,9 +11,8 @@ class Favorites_ViewController: UIViewController {
 
     @IBOutlet weak var favorites_collectionView: UICollectionView!
     
-    var ids: [Int] = []
-    var titles: [String] = []
-    var images: [String] = []
+    
+    var products: [productEntity_firestore] = []
     
     var favoritesModelView: Favorites_protocol = Favorites_viewModel()
     
@@ -27,21 +26,12 @@ class Favorites_ViewController: UIViewController {
         
         self.favoritesModelView.fetchFavorites()
         
-        self.favoritesModelView.binding = { products, error in
+        self.favoritesModelView.binding = { favorites, error in
             if let error = error {
                 addAlert(title: "Warning", message: error.localizedDescription , ActionTitle: "Cancel", viewController: self)
             }
-            if let products = products {
-                if let ids = products["ids"] as? [Int] {
-                    self.ids = ids
-                }
-                if let titles = products["titles"] as? [String] {
-                    self.titles = titles
-                }
-                if let images = products["images"] as? [String] {
-                    self.images = images
-                }
-                
+            if let favorites = favorites {
+                self.products = favorites
                 self.favorites_collectionView.reloadData()
             }
             
@@ -49,7 +39,7 @@ class Favorites_ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if ids.count == 0 {
+        if products.count == 0 {
             addAlert(title: "Alert!", message: "There are no favorite Products", ActionTitle: "Cancel", viewController: self)
         }
     }
@@ -68,7 +58,7 @@ extension Favorites_ViewController: UICollectionViewDelegate{
 extension Favorites_ViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ids.count
+        return products.count
     }
     
     
@@ -76,7 +66,9 @@ extension Favorites_ViewController: UICollectionViewDataSource{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.favorite_Cell_id, for: indexPath) as? FavoritesCollectionViewCell else{
             return UICollectionViewCell()
         }
-        cell.setCell(imageUrl: images[indexPath.row], title: titles[indexPath.row])
+        
+        cell.setCell(imageUrl: products[indexPath.row].image, title: products[indexPath.row].title)
+
         return cell
     }
     
@@ -85,7 +77,7 @@ extension Favorites_ViewController: UICollectionViewDataSource{
         
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.productDetails_storyboard, bundle:nil)
         let productDetailsViewController = storyBoard.instantiateViewController(withIdentifier: Constants.ProductDetails_ViewController_id) as! ProductDetails_ViewController
-        productDetailsViewController.productID = String(ids[indexPath.row])
+        productDetailsViewController.productID = products[indexPath.row].id
         self.navigationController?.pushViewController(productDetailsViewController, animated: true)
     
     }
