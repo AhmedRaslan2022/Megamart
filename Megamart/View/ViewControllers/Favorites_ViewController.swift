@@ -155,7 +155,7 @@ extension Favorites_ViewController: UICollectionViewDataSource{
 extension Favorites_ViewController: UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / 2 , height: collectionView.bounds.height / 2)
+        return CGSize(width: collectionView.bounds.width / 2.03 , height: collectionView.bounds.height / 2.03)
     }
 
 }
