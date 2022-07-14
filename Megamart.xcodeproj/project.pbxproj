@@ -920,12 +920,8 @@
 				04178B5628730FF00044ED7B /* RegisterNewCustomer_viewModel.swift in Sources */,
 				E236309A2873E182009C1352 /* ProductDetails_protocol.swift in Sources */,
 				04B656FD28744DA8009EA793 /* Login_protocol.swift in Sources */,
-<<<<<<< HEAD
-				04D6995C2876271900965CE3 /* Favorites_viewModel.swift in Sources */,
 				04D6995C2876271900965CE3 /* Favorites_viewModel.swift in Sources */,
 				E2391836287F6D6E00FD000E /* OrderTableViewCell.swift in Sources */,
-=======
->>>>>>> firestore
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
 				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
 				E2116F38287CCB4A005360D2 /* CollectsViewModel.swift in Sources */,
