@@ -26,7 +26,8 @@ class Login_ViewController: UIViewController {
         signInView.layer.cornerRadius = 30
         backgroundView.layer.cornerRadius = 30
         
-        self.hideKeyboardWhenTappedAround()
+        userEmail_textField.delegate = self
+        userPassword_textField.delegate = self
         
         // check is logged in before or not
         if self.defaults.string(forKey: Constants.userdefaults_key) != nil  {
@@ -59,18 +60,22 @@ class Login_ViewController: UIViewController {
     }
     
     
+    func login() {
+        if checkIs_NotEmpty() {
+            if let email = userEmail_textField.text, let  password = userPassword_textField.text{
+                login_viewModel.login(userName: email, password: password)
+            }
+        }
+    }
+    
+    
     
 //MARK: -                               Buttons Action
     
     
     
     @IBAction func login(_ sender: Any) {
-        if checkIs_NotEmpty() {
-            if let email = userEmail_textField.text, let  password = userPassword_textField.text{
-                login_viewModel.login(userName: email, password: password)
-            }
-        }
-        
+        login()
     }
     
     @IBAction func signup(_ sender: UIButton) {
@@ -103,5 +108,22 @@ class Login_ViewController: UIViewController {
     
     
     
+    
+}
+
+//MARK: -                               UITextFieldDelegate
+
+
+extension Login_ViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.userEmail_textField {
+            self.userPassword_textField.becomeFirstResponder()
+        }
+        if textField == self.userPassword_textField {
+            login()
+        }
+        return true
+    }
     
 }

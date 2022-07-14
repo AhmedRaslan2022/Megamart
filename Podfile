@@ -21,12 +21,11 @@ target 'Megamart' do
   
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
-  pod 'FirebaseDatabase'
+  pod 'Firebase/Core'
+  pod 'FirebaseFirestoreSwift', '> 7.0-beta'
+  pod 'IQKeyboardManager'
   pod 'Floaty', '~> 4.2.0'
   pod 'Alamofire'
   pod 'AlamofireImage'
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
-  pod 'FirebaseFirestoreSwift', '> 7.0-beta'
   
 end

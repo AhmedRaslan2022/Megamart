@@ -49,7 +49,6 @@ class ProductsViewController: UIViewController {
         ProductCollection.dataSource = self
         
         self.SearchBar.delegate = self
-        self.hideKeyboardWhenTappedAround()
         
       self.ProductCollection.register(UINib(nibName: "ProductCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.ProductsViewCell_id)
         
