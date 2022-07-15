@@ -33,7 +33,8 @@ class Settings_ViewModel: SettingsProtocol {
             }
             else{
                 print("@@@@@@@@@@@@@@@@@@@@@@")
-                self.defaults.set(nil, forKey: Constants.userdefaults_key)
+                self.defaults.set(nil, forKey: Userdefaults_key.customerId.rawValue)
+                self.defaults.set(nil, forKey: Userdefaults_key.customerName.rawValue)
                 self.signout_error = nil
             }
         }

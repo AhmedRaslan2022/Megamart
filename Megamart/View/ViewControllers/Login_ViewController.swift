@@ -26,7 +26,7 @@ class Login_ViewController: UIViewController {
         backgroundView.layer.cornerRadius = 30
         
         // check is logged in before or not
-        if self.defaults.string(forKey: Constants.userdefaults_key) != nil  {
+        if self.defaults.string(forKey: Userdefaults_key.customerId.rawValue) != nil  {
             self.navigateTo_HomeViewController()
         }
         

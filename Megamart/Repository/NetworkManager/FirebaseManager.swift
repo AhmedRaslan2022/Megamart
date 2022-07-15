@@ -25,14 +25,14 @@ class FirebaseManager: FirebaseServices {
 //MARK: -                                       Login
     
     
-    func login(email: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
+    func login(email: String, password: String, completion: @escaping ((String?,String?, Error?) -> Void)) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard self != nil else { return }
             if let error = error {
-                completion(nil,error)
+                completion(nil, nil, error)
             }
             else{
-                completion(authResult?.user.uid, nil)
+                completion(authResult?.user.uid,authResult?.user.displayName, nil)
             }
         }
     }

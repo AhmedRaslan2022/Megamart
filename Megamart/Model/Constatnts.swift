@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Constants {
 
@@ -98,7 +99,12 @@ struct Constants {
             
     
     static let noImageAvailabel = "no_image_available-product"
-    static let userdefaults_key = "customerId"
     
     
+}
+
+//MARK: -                       UserDefaults Keys
+
+enum Userdefaults_key: String {
+    case customerId = "customerId", customerName = "customerName"
 }
