@@ -18,7 +18,7 @@ protocol FirebaseServices {
         
 //MARK: -                           Log in
         
-        func login(email: String, password: String, completion: @escaping ((String?, String?, Error?) -> Void))
+        func login(email: String, password: String, completion: @escaping ((String?, Error?) -> Void))
         
         
 //MARK: -                          Register

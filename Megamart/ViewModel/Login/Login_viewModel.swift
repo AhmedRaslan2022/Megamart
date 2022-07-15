@@ -40,14 +40,12 @@ class Login_viewModel: Login_protocol {
     let firebseManager: FirebaseServices
     
     func login_firebase(email: String, password: String) {
-        self.firebseManager.login(email: email, password: password) { customerID, customerName, error  in
+        self.firebseManager.login(email: email, password: password) { customerID, error  in
             if let error = error {
                 self.error = error.localizedDescription
             }
             if let customerID = customerID {
-                if let customerName = customerName {
-                    self.login_api(userName: email, password: password, customerId: customerID, customerName: customerName)
-                }
+                self.login_api(userName: email, password: password, customerId: customerID)
             }
         }
     }
@@ -58,12 +56,12 @@ class Login_viewModel: Login_protocol {
     
     
     
-    func login_api(userName: String, password: String, customerId: String, customerName: String) {
+    func login_api(userName: String, password: String, customerId: String) {
         for customer in Constants.customers_list {
                 if userName == customer.email {
                     if password == customer.tags {
                         self.defaults.set(customerId, forKey: Userdefaults_key.customerId.rawValue)
-                        self.defaults.set(customerName, forKey: Userdefaults_key.customerName.rawValue)
+                        self.defaults.set(customer.first_name, forKey: Userdefaults_key.customerName.rawValue)
                         error = nil
                         return
                     }else{
