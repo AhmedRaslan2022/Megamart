@@ -8,9 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct Constants {
 
-    
+
+
+struct Constants {
     
 //MARK: -                   Storyboards
     
@@ -72,7 +73,7 @@ struct Constants {
     
 //MARK: -               Customers list
     
-        static var customers_list : [Customer] = []
+    static var customers_list : [Customer] = []
     
     
     
@@ -89,10 +90,10 @@ struct Constants {
 //MARK: -              Product Type
         
     enum ProductType: String {
-            case SHOES = "SHOES"
-            case ACCESSORIES = "ACCESSORIES"
-            case TSHIRTS = "T-SHIRTS"
-        }
+        case SHOES = "SHOES"
+        case ACCESSORIES = "ACCESSORIES"
+        case TSHIRTS = "T-SHIRTS"
+    }
    
     
 //MARK: -               others
@@ -102,6 +103,10 @@ struct Constants {
     
     
 }
+
+
+
+
 
 //MARK: -                       UserDefaults Keys
 

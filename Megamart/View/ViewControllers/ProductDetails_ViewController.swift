@@ -7,7 +7,7 @@
 
 import UIKit
 import Cosmos
-import SwiftUI
+
 
 class ProductDetails_ViewController: UIViewController {
 
@@ -15,7 +15,6 @@ class ProductDetails_ViewController: UIViewController {
     @IBOutlet weak var products_collectionview: UICollectionView!
     @IBOutlet weak var starRating: CosmosView!
     @IBOutlet weak var productTitle_label: UILabel!
-    @IBOutlet weak var availableSizes_label: UILabel!
     @IBOutlet weak var productRating_label: UILabel!
     @IBOutlet weak var productPrice_label: UILabel!
     @IBOutlet weak var imageController: UIPageControl!
@@ -31,7 +30,6 @@ class ProductDetails_ViewController: UIViewController {
     var rootViewController: UIViewController?
     var productID: String?
     private var product: ProductModel?
-    
     var rating = Double.random(in: 1...5)
     
     var productDetails_viewModel: ProductDetails_Protocol = ProductDetails_viewModel()
@@ -96,33 +94,52 @@ class ProductDetails_ViewController: UIViewController {
     }
     
     @IBAction func goToFavorites_button(_ sender: UIBarButtonItem) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Favorites_storyboard, bundle:nil)
-        let favoritesViewController = storyBoard.instantiateViewController(withIdentifier: Constants.Favorites_ViewController_id) as! Favorites_ViewController
-        self.navigationController?.pushViewController(favoritesViewController, animated: true)
+        
+        if Login_Verification() {
+            let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Favorites_storyboard, bundle:nil)
+            let favoritesViewController = storyBoard.instantiateViewController(withIdentifier: Constants.Favorites_ViewController_id) as! Favorites_ViewController
+            self.navigationController?.pushViewController(favoritesViewController, animated: true)
+        }
+        else{
+            requestLogin_alert(viewController: self)
+        }
+        
     }
     
     @IBAction func goToShopingBag_button(_ sender: UIBarButtonItem) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.bag_storyboard, bundle:nil)
-        let bagViewController = storyBoard.instantiateViewController(withIdentifier: Constants.BagViewController_id) as! BagViewController
-        self.navigationController?.pushViewController(bagViewController, animated: true)
+        if Login_Verification(){
+            let storyBoard : UIStoryboard = UIStoryboard(name: Constants.bag_storyboard, bundle:nil)
+            let bagViewController = storyBoard.instantiateViewController(withIdentifier: Constants.BagViewController_id) as! BagViewController
+            self.navigationController?.pushViewController(bagViewController, animated: true)
+        }
+        else{
+            requestLogin_alert(viewController: self)
+        }
+        
     }
     
     
     @IBAction func addToFavorites(_ sender: UIButton) {
         
-        if addToFavorites_button.currentBackgroundImage == UIImage(systemName: "heart.fill"){
-            self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
-            
-            if let product = product {
-                productDetails_viewModel.removeFromFavorites(productId: product.id)
+        if Login_Verification() {
+            if addToFavorites_button.currentBackgroundImage == UIImage(systemName: "heart.fill"){
+                self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+                
+                if let product = product {
+                    productDetails_viewModel.removeFromFavorites(productId: product.id)
+                }
+                
+                
+            }else{
+                self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
+                if let product = product {
+                    productDetails_viewModel.addToFavorites(product: product)
+                }
             }
-            
-            
-        }else{
-            self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
-            if let product = product {
-                productDetails_viewModel.addToFavorites(product: product)
-            }
+        
+        }
+        else{
+            requestLogin_alert(viewController: self)
         }
         
     }

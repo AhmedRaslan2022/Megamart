@@ -188,7 +188,14 @@
                             <constraint firstItem="dlD-gR-7uV" firstAttribute="trailing" secondItem="UkA-BL-IE2" secondAttribute="trailing" id="xAa-7G-ZnO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="XF0-1n-Y2l"/>
+                    <navigationItem key="navigationItem" id="XF0-1n-Y2l">
+                        <barButtonItem key="rightBarButtonItem" title="Skip" id="AqD-7a-v9k">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="skipLogin:" destination="6QI-wM-3GH" id="hRb-yx-6XR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="Pwh-a5-goP" id="2Vr-vi-xRA"/>
                         <outlet property="signInView" destination="6B8-NL-Nm5" id="FwZ-0N-yXm"/>

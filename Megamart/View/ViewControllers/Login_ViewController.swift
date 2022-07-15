@@ -11,11 +11,11 @@ import FirebaseAuth
 class Login_ViewController: UIViewController {
 
     @IBOutlet weak var signUp_button: UIButton!
-    @IBOutlet weak var signIn_button: UIButton!
     @IBOutlet weak var userPassword_textField: UITextField!
     @IBOutlet weak var userEmail_textField: UITextField!
     @IBOutlet weak var signInView: UIView!
     @IBOutlet weak var backgroundView: UIView!
+
 
     var login_viewModel: Login_protocol = Login_viewModel()
     let defaults = UserDefaults.standard
@@ -40,7 +40,6 @@ class Login_ViewController: UIViewController {
             }
             else {
                 self.navigateTo_HomeViewController()
-                print("%%%%%%%%% %%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
             }
         }
         
@@ -74,6 +73,9 @@ class Login_ViewController: UIViewController {
 //MARK: -                               Buttons Action
     
     
+    @IBAction func skipLogin(_ sender: UIBarButtonItem) {
+        navigateTo_HomeViewController()
+    }
     
     @IBAction func login(_ sender: Any) {
         login()

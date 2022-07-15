@@ -28,7 +28,6 @@
 		04178B582873100A0044ED7B /* RegiserNewCustomer_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04178B572873100A0044ED7B /* RegiserNewCustomer_protocol.swift */; };
 		0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4A286CF7F7000F28EC /* AppDelegate.swift */; };
 		0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */; };
-		0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4E286CF7F7000F28EC /* ViewController.swift */; };
 		0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE53286CF7F7000F28EC /* Megamart.xcdatamodeld */; };
 		0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0418BE56286CF7F9000F28EC /* Assets.xcassets */; };
 		0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */; };
@@ -65,6 +64,7 @@
 		04D6996A287641ED00965CE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D69969287641ED00965CE3 /* GoogleService-Info.plist */; };
 		04F0FA71286F8BAD00A82FD0 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */; };
 		04F0FA79286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0FA78286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift */; };
+		04F10F9028822C7A007EDA58 /* Login_Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F10F8F28822C7A007EDA58 /* Login_Verification.swift */; };
 		04F59E402880656300FF38AE /* Favorites_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6995B2876271900965CE3 /* Favorites_viewModel.swift */; };
 		04F59E412880659500FF38AE /* ProductDetails_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23630972873E181009C1352 /* ProductDetails_viewModel.swift */; };
 		9C71CCB5488593BFCE891BBB /* Pods_Megamart_MegamartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CE3C7B2D01E79E79C1087D /* Pods_Megamart_MegamartUITests.framework */; };
@@ -143,7 +143,6 @@
 		0418BE47286CF7F7000F28EC /* Megamart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Megamart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0418BE4A286CF7F7000F28EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0418BE4E286CF7F7000F28EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0418BE54286CF7F7000F28EC /* Megamart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Megamart.xcdatamodel; sourceTree = "<group>"; };
 		0418BE56286CF7F9000F28EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0418BE59286CF7F9000F28EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -185,6 +184,7 @@
 		04D69969287641ED00965CE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
 		04F0FA78286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails_CollectionViewCell.swift; sourceTree = "<group>"; };
+		04F10F8F28822C7A007EDA58 /* Login_Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_Verification.swift; sourceTree = "<group>"; };
 		1E7A9F8253DE37599AF2A0F4 /* Pods-MegamartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MegamartTests.debug.xcconfig"; path = "Target Support Files/Pods-MegamartTests/Pods-MegamartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FFD13B2A6D75F0171BF185E /* Pods_Megamart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Megamart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C681AD0942D63E9CA0D37C2 /* Pods-Megamart-MegamartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Megamart-MegamartUITests.debug.xcconfig"; path = "Target Support Files/Pods-Megamart-MegamartUITests/Pods-Megamart-MegamartUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -440,7 +440,6 @@
 				E2187AFF287049DA009A97F5 /* Product */,
 				008ABD31287070D80060CB08 /* payment  */,
 				0008806F286FAFB300DE578B /* ShoppingCard */,
-				0418BE4E286CF7F7000F28EC /* ViewController.swift */,
 				E245C2A828708493004A341C /* OrdersViewController.swift */,
 				046F98A0286E5D26008FDFFC /* Login_ViewController.swift */,
 				046F98A2286E7258008FDFFC /* Register_ViewController.swift */,
@@ -468,6 +467,7 @@
 			children = (
 				0477528828709DDB0095EA91 /* JSONDecoder.swift */,
 				0477529328709EE70095EA91 /* AddAlertView.swift */,
+				04F10F8F28822C7A007EDA58 /* Login_Verification.swift */,
 			);
 			path = Utilitis;
 			sourceTree = "<group>";
@@ -887,7 +887,6 @@
 				006A00572871838900F2228C /* AdsCollectionViewCell.swift in Sources */,
 				0477529228709EA90095EA91 /* NetworkManager.swift in Sources */,
 				046F98A3286E7258008FDFFC /* Register_ViewController.swift in Sources */,
-				0418BE4F286CF7F7000F28EC /* ViewController.swift in Sources */,
 				041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */,
 				0477528928709DDB0095EA91 /* JSONDecoder.swift in Sources */,
 				00D5B61A287339CE0070478E /* DiscountCode_ModelView.swift in Sources */,
@@ -899,6 +898,7 @@
 				E2391833287F565C00FD000E /* HighlightedButton.swift in Sources */,
 				E25DE72C2872B9CB003010ED /* ProductsViewModel.swift in Sources */,
 				00D5B62028733B8F0070478E /* HomeVC.swift in Sources */,
+				04F10F9028822C7A007EDA58 /* Login_Verification.swift in Sources */,
 				E25DE72B2872B9CB003010ED /* Products_Protocol.swift in Sources */,
 				0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */,
 				0467CEFC286F8E530070DC64 /* ProductDetails_ViewController.swift in Sources */,
@@ -1111,7 +1111,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = payment;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1141,7 +1141,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = payment;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
