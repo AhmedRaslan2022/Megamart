@@ -95,7 +95,7 @@ class FirebaseManager: FirebaseServices {
 //MARK: -                                       Add Product to Favorites
     
     
-    func addToFavorites(product: productEntity_firestore, completion: @escaping ((Error?) -> Void)) {
+    func addToFavorites(product: ProductEntity_firestore, completion: @escaping ((Error?) -> Void)) {
 
             if let uid = Auth.auth().currentUser?.uid {
                 do{
@@ -153,9 +153,9 @@ class FirebaseManager: FirebaseServices {
     
     
     
-    func fetchFavorites(completion: @escaping (([productEntity_firestore]?, Error?) -> Void)) {
+    func fetchFavorites(completion: @escaping (([ProductEntity_firestore]?, Error?) -> Void)) {
         
-        var products: [productEntity_firestore] = []
+        var products: [ProductEntity_firestore] = []
         
         if let uid = Auth.auth().currentUser?.uid {
             database.collection(uid).getDocuments() { (querySnapshot, error) in
@@ -163,7 +163,7 @@ class FirebaseManager: FirebaseServices {
                     completion(nil, error)
                 } else {
                     for document in querySnapshot!.documents {
-                        let doc = try? document.data(as: productEntity_firestore.self)
+                        let doc = try? document.data(as: ProductEntity_firestore.self)
                         if let doc = doc {
                             products.append(doc)
                         }
@@ -177,18 +177,80 @@ class FirebaseManager: FirebaseServices {
         }
     }
     
-    
+   
     func addToBagCard(product: ProductBagCard_firestore, completion: @escaping ((Error?) -> Void)) {
+        
+        if let email = Auth.auth().currentUser?.email {
+            do{
+                try database.collection(email).document(String(product.id)).setData(from: product)
+                completion(nil)
+            }
+            catch let error {
+                completion(error)
+            }
+            
+        }
+    }
+    
+    func fetchBagCard(completion: @escaping (([ProductBagCard_firestore]?, Error?) -> Void)) {
+        
+        var products: [ProductBagCard_firestore] = []
+        
+        if let email = Auth.auth().currentUser?.email {
+            database.collection(email).getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    completion(nil, error)
+                   
+                } else {
+                    for document in querySnapshot!.documents {
+                        let doc = try? document.data(as: ProductBagCard_firestore.self)
+                        if let doc = doc {
+                            products.append(doc)
+                            
+                        }
 
-            if let email = Auth.auth().currentUser?.email {
-                do{
-                    try database.collection(email).document(String(product.id)).setData(from: product)
-                    completion(nil)
-                }
-                catch let error {
-                    completion(error)
+                    }
+                    completion(products, nil)
                 }
             }
+            
+        
         }
+    
+    }
+    
+    func removeFromBagCard(productId: String, completion: @escaping ((Error?) -> Void)) {
+        if let email = Auth.auth().currentUser?.email {
+            
+            // delete subcollections
+            database.collection(email).document(productId).updateData([
+                "id": FieldValue.delete(),
+                "title": FieldValue.delete(),
+                "image": FieldValue.delete(),
+                "price": FieldValue.delete(),
+                
+            ]) { error in
+                
+                if let error = error {
+                    completion(error)
+                
+                } else {
+                    
+                    // delete document
+                    self.database.collection(email).document(productId).delete() { err in
+                            if let error = error {
+                                completion(error)
+                            } else {
+                                completion(nil)
+                            }
+                        }
+                    }
+
+                }
+            }
+        
+        
+    }
+    
     
 }

@@ -12,7 +12,7 @@ class Favorites_ViewController: UIViewController {
     @IBOutlet weak var favorites_collectionView: UICollectionView!
     
     
-    var products: [productEntity_firestore] = []
+    var products: [ProductEntity_firestore] = []
     
     var favoritesViewModel: Favorites_protocol = Favorites_viewModel()
     

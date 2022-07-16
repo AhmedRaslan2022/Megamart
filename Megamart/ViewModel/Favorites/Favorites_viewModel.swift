@@ -11,7 +11,7 @@ class Favorites_viewModel: Favorites_protocol {
     
     
    
-    var products: [productEntity_firestore] = [] {
+    var products: [ProductEntity_firestore] = [] {
         didSet{
             binding(products,nil)
         }
@@ -23,7 +23,7 @@ class Favorites_viewModel: Favorites_protocol {
         }
     }
     
-    var binding: (([productEntity_firestore]?, Error?) -> Void) = {_,_ in }
+    var binding: (([ProductEntity_firestore]?, Error?) -> Void) = {_,_ in }
     
     var firebaseManager: FirebaseServices
     

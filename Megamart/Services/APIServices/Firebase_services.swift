@@ -36,22 +36,34 @@ protocol FirebaseServices {
     
 //MARK: -                           Add to Favorites
     
-    func addToFavorites(product: productEntity_firestore, completion: @escaping ((Error?) -> Void))
+    func addToFavorites(product: ProductEntity_firestore, completion: @escaping ((Error?) -> Void))
  
     
 //MARK: -                      Fetch Favorites
         
-    func fetchFavorites(completion: @escaping (([productEntity_firestore]?, Error?) -> Void))
+    func fetchFavorites(completion: @escaping (([ProductEntity_firestore]?, Error?) -> Void))
     
     
 //MARK: -                     Remove Product from Favorites
     
     
     func removeFromFavorites(productId: String, completion: @escaping ((Error?) -> Void))
-    
-    
-//MARK: -                           Add to Cart
 
+    
+//MARK: -                           Add to BagCard
+    
     func addToBagCard(product: ProductBagCard_firestore, completion: @escaping ((Error?) -> Void))
+ 
+    
+//MARK: -                      Fetch BagCard
+        
+    func fetchBagCard(completion: @escaping (([ProductBagCard_firestore]?, Error?) -> Void))
+    
+    
+//MARK: -                     Remove Product from Favorites
+    
+    
+    func removeFromBagCard(productId: String, completion: @escaping ((Error?) -> Void))
+    
     
 }

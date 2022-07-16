@@ -10,7 +10,7 @@ import Foundation
 protocol Favorites_protocol {
     
     func fetchFavorites()
-    var  binding: (([productEntity_firestore]?, Error?) -> Void) { get set }
+    var  binding: (([ProductEntity_firestore]?, Error?) -> Void) { get set }
     
     // remove from favorites
     var removeFromFavorites_status: ((Error?) -> Void) {set get}

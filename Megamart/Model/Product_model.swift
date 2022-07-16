@@ -32,16 +32,6 @@ struct ProductModel: Codable {
 }
 
 
-
-//MARK: -                               Product Entity Firestore
-
-
-struct productEntity_firestore: Codable {
-    let id: String
-    let title: String
-    let image: String
-}
-
 struct Variant: Codable {
     let price: String
 }

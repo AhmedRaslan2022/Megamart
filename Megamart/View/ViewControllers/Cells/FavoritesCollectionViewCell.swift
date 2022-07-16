@@ -28,7 +28,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func setCell(product: productEntity_firestore) {
+    func setCell(product: ProductEntity_firestore) {
         Alamofire.request(product.image).responseImage { response in
             if case .success(let image) = response.result {
                 self.productImage.image = image
