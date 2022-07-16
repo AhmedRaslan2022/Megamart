@@ -12,6 +12,8 @@
 		006A00572871838900F2228C /* AdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A00562871838900F2228C /* AdsCollectionViewCell.swift */; };
 		00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00814DA5286EF03D00E94EA4 /* Setting.storyboard */; };
 		00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00814DA7286EF06700E94EA4 /* SettingViewController.swift */; };
+		00878E4928823295003D1588 /* BagCard_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00878E4728823295003D1588 /* BagCard_protocol.swift */; };
+		00878E4A28823295003D1588 /* BagCard_viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00878E4828823295003D1588 /* BagCard_viewModel.swift */; };
 		008ABD302870650F0060CB08 /* payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 008ABD2F2870650F0060CB08 /* payment.storyboard */; };
 		008ABD332870710C0060CB08 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008ABD322870710C0060CB08 /* PaymentVC.swift */; };
 		008ABD35287071330060CB08 /* PaymentOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008ABD34287071330060CB08 /* PaymentOptionVC.swift */; };
@@ -124,6 +126,8 @@
 		006A00562871838900F2228C /* AdsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsCollectionViewCell.swift; sourceTree = "<group>"; };
 		00814DA5286EF03D00E94EA4 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		00814DA7286EF06700E94EA4 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		00878E4728823295003D1588 /* BagCard_protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagCard_protocol.swift; sourceTree = "<group>"; };
+		00878E4828823295003D1588 /* BagCard_viewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagCard_viewModel.swift; sourceTree = "<group>"; };
 		008ABD2F2870650F0060CB08 /* payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = payment.storyboard; sourceTree = "<group>"; };
 		008ABD322870710C0060CB08 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		008ABD34287071330060CB08 /* PaymentOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionVC.swift; sourceTree = "<group>"; };
@@ -270,6 +274,15 @@
 				00088071286FAFB300DE578B /* BagViewController.swift */,
 			);
 			path = ShoppingCard;
+			sourceTree = "<group>";
+		};
+		00878E4628823295003D1588 /* BagCard */ = {
+			isa = PBXGroup;
+			children = (
+				00878E4728823295003D1588 /* BagCard_protocol.swift */,
+				00878E4828823295003D1588 /* BagCard_viewModel.swift */,
+			);
+			path = BagCard;
 			sourceTree = "<group>";
 		};
 		008ABD31287070D80060CB08 /* payment  */ = {
@@ -512,6 +525,7 @@
 		04C4DA6B28718FE400B354DB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				00878E4628823295003D1588 /* BagCard */,
 				E2116F34287CCB4A005360D2 /* Category */,
 				E25DE72A2872B9CB003010ED /* ProductsViewModel.swift */,
 				E25DE7292872B9CB003010ED /* Products_Protocol.swift */,
@@ -893,6 +907,7 @@
 				00D5B61A287339CE0070478E /* DiscountCode_ModelView.swift in Sources */,
 				045551CA287F229800D202EA /* Settings_protocol.swift in Sources */,
 				00D5B6162873395E0070478E /* APIServicesDiscountcode.swift in Sources */,
+				00878E4928823295003D1588 /* BagCard_protocol.swift in Sources */,
 				E2187B03287049F7009A97F5 /* CategoryViewController.swift in Sources */,
 				E245C2A62870818B004A341C /* WishListCollectionCell.swift in Sources */,
 				047752982870D97B0095EA91 /* Product_model.swift in Sources */,
@@ -904,6 +919,7 @@
 				0467CEFC286F8E530070DC64 /* ProductDetails_ViewController.swift in Sources */,
 				04178B582873100A0044ED7B /* RegiserNewCustomer_protocol.swift in Sources */,
 				00814DA8286EF06700E94EA4 /* SettingViewController.swift in Sources */,
+				00878E4A28823295003D1588 /* BagCard_viewModel.swift in Sources */,
 				E24ABE262872BFC40047D7F1 /* Products_Model.swift in Sources */,
 				04D6995E2876272C00965CE3 /* Favorites_protocol.swift in Sources */,
 				04C5438E287B19D6005312ED /* ResetPassword_ViewController.swift in Sources */,
@@ -1111,7 +1127,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = payment;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1141,7 +1157,7 @@
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = payment;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

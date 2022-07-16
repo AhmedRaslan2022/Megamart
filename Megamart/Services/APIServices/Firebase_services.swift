@@ -50,7 +50,26 @@ protocol FirebaseServices {
     func removeFromFavorites(productId: String, completion: @escaping ((Error?) -> Void))
     
     
+    
 
+    
+//MARK: -                           Add to BagCard
+    
+    func addToBagCard(product: ProductBagCard_firestore, completion: @escaping ((Error?) -> Void))
+ 
+    
+//MARK: -                      Fetch BagCard
+        
+    func fetchBagCard(completion: @escaping (([ProductBagCard_firestore]?, Error?) -> Void))
+    
+    
+//MARK: -                     Remove Product from Favorites
+    
+    
+    func removeFromBagCard(productId: String, completion: @escaping ((Error?) -> Void))
+    
+    
+    
     
     
 }

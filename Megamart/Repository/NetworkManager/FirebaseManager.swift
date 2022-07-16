@@ -177,6 +177,89 @@ class FirebaseManager: FirebaseServices {
         }
     }
     
+   
+    func addToBagCard(product: ProductBagCard_firestore, completion: @escaping ((Error?) -> Void)) {
+        
+        if let email = Auth.auth().currentUser?.email {
+            do{
+                try database.collection(email).document(String(product.id)).setData(from: product)
+                completion(nil)
+            }
+            catch let error {
+                completion(error)
+            }
+            
+        }
+    }
+    
+    func fetchBagCard(completion: @escaping (([ProductBagCard_firestore]?, Error?) -> Void)) {
+        
+        var products: [ProductBagCard_firestore] = []
+        print("##################")
+        
+        if let email = Auth.auth().currentUser?.email {
+            print("&&&&&&&&&&&&")
+            database.collection(email).getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    completion(nil, error)
+                   
+                } else {
+                    print("$$$$$$$$$$$$$")
+                    for document in querySnapshot!.documents {
+                        print("!!!!!!!!!!!!\(document)")
+                        let doc = try? document.data(as: ProductBagCard_firestore.self)
+                        if let doc = doc {
+                            products.append(doc)
+                            
+                        }
+
+                    }
+                    completion(products, nil)
+                    print("!!!!!!!!!!!!\(products)")
+                }
+            }
+            
+        
+        }
+    
+    }
+    
+    func removeFromBagCard(productId: String, completion: @escaping ((Error?) -> Void)) {
+        if let email = Auth.auth().currentUser?.email {
+            
+            // delete subcollections
+            database.collection(email).document(productId).updateData([
+                "id": FieldValue.delete(),
+                "title": FieldValue.delete(),
+                "image": FieldValue.delete(),
+                "price": FieldValue.delete(),
+                
+            ]) { error in
+                
+                if let error = error {
+                    completion(error)
+                
+                } else {
+                    
+                    // delete document
+                    self.database.collection(email).document(productId).delete() { err in
+                            if let error = error {
+                                completion(error)
+                            } else {
+                                completion(nil)
+                            }
+                        }
+                    }
+
+                }
+            }
+        
+        
+    }
+    
+    
+    
+    
     
     
     

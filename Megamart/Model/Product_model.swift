@@ -41,7 +41,13 @@ struct productEntity_firestore: Codable {
     let title: String
     let image: String
 }
-
+struct ProductBagCard_firestore: Codable {
+    let id: String
+    let title: String
+    let image: String
+    let price: String
+    let count : String
+}
 struct Variant: Codable {
     let price: String
 }
