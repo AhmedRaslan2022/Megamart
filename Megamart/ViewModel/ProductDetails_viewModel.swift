@@ -9,7 +9,6 @@ import Foundation
 
 class ProductDetails_viewModel: ProductDetails_Protocol {
     
-    
     var apiService: APIService
     var firebaseManager: FirebaseServices
     
@@ -95,5 +94,31 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
             }
         }
     }
+    
+ 
+//MARK: -                           Add Product To Cart
+    
+    var addToCart_error: Error? {
+        didSet{
+            addToCart_status(error)
+        }
+    }
+    
+    var addToCart_status: ((Error?) -> Void) = { _ in }
+    
+    func addToCart(product: ProductModel, count: String) {
+        let product_cart = ProductBagCard_firestore(id: "\(product.id)", title: product.title, image: product.image.src, price: product.variants[0].price, count: count)
+        firebaseManager.addToBagCard(product: product_cart) { error in
+            if let error = error {
+                self.addToCart_error = error
+            }
+            else{
+                self.addToCart_error = nil
+            }
+        }
+    }
+    
+    
+
     
 }

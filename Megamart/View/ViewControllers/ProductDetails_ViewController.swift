@@ -52,6 +52,7 @@ class ProductDetails_ViewController: UIViewController {
         
         responseOf_updateFavorites()
         responseOf_fetchProducts()
+        responseOf_addToCart()
         
     }
 
@@ -75,9 +76,18 @@ class ProductDetails_ViewController: UIViewController {
 
     
     @IBAction func AddToCart(_ sender: UIButton) {
+        if Login_Verification(){
+            guard let count = self.numberOfProducts_label.text else { return }
+            guard let product = product else { return }
+                self.productDetails_viewModel.addToCart(product: product, count: "3")
+        }
+        else{
+            requestLogin_alert(viewController: self)
+        }
     }
     
     @IBAction func reduceProductNumber_button(_ sender: UIButton) {
+        
     }
     
     @IBAction func increaseProductNumber_button(_ sender: UIButton) {
@@ -148,6 +158,103 @@ class ProductDetails_ViewController: UIViewController {
 }
 
 
+//MARK: -                                   Response of Add To Cart
+
+extension ProductDetails_ViewController {
+ 
+    func responseOf_addToCart() {
+        self.productDetails_viewModel.addToCart_status = { error in
+            if let error = error {
+                addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Cancel", viewController: self)
+            }
+            else{
+                addAlert(title: "Done", message: "The product has been Added to Cart", ActionTitle: "OK", viewController: self)
+            }
+                    
+        }
+    }
+    
+}
+
+
+
+
+//MARK: -                                   Response of Update Favorites
+
+
+extension ProductDetails_ViewController {
+    
+    func responseOf_updateFavorites () {
+        self.productDetails_viewModel.addToFavorites_status = { error in
+            if let error = error {
+                addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Cancel", viewController: self)
+            }
+            else{
+                addAlert(title: "Done", message: "The product has been saved to favourites", ActionTitle: "OK", viewController: self)
+            }
+                    
+        }
+        
+        self.productDetails_viewModel.removeFromFavorites_status = { error in
+            if let error = error {
+                addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Cancel", viewController: self)
+            }
+            else{
+                addAlert(title: "Done", message: "Product removed from favorites", ActionTitle: "OK", viewController: self)
+            }
+                    
+        }
+    }
+  
+}
+
+
+//MARK: -                                   Response of Fetch Products
+
+
+extension ProductDetails_ViewController {
+    
+    func responseOf_fetchProducts() {
+        
+        productDetails_viewModel.bindingData = { productDetails, error in
+            if let productDetails = productDetails {
+                self.product = productDetails
+                self.productTitle_label.text = productDetails.title
+                self.productPrice_label.text = productDetails.variants[0].price
+                self.description_label.text = productDetails.body_html
+                
+                self.starRating.settings.fillMode = .precise
+                let rate = self.rating
+                self.productRating_label.text = String(format: "%.1f", rate)
+                self.starRating.rating = rate
+
+                self.imageController.numberOfPages = productDetails.images.count
+                self.products_collectionview.reloadData()
+
+                
+                if let sizes = productDetails.options?[0].values {
+                    for size in sizes {
+                        let label = UILabel()
+                        label.text = size
+                        label.backgroundColor = .yellow
+                        label.textAlignment = .center
+                        label.font = UIFont.boldSystemFont(ofSize: 18)
+                        self.availabelSizes.addArrangedSubview(label)
+                    }
+                }
+ 
+            }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+
+}
+
+
+
 
 //MARK: -                                         Collection View
 
@@ -192,72 +299,3 @@ extension ProductDetails_ViewController: UICollectionViewDelegateFlowLayout{
 
 }
 
-
-
-//MARK: -                                   Response of Fetch Products and update Favorites
-
-
-extension ProductDetails_ViewController {
-    
-    func responseOf_updateFavorites () {
-        self.productDetails_viewModel.addToFavorites_status = { error in
-            if let error = error {
-                addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Cancel", viewController: self)
-            }
-            else{
-                addAlert(title: "Done", message: "The product has been saved to favourites", ActionTitle: "OK", viewController: self)
-            }
-                    
-        }
-        
-        self.productDetails_viewModel.removeFromFavorites_status = { error in
-            if let error = error {
-                addAlert(title: "Warning", message: error.localizedDescription, ActionTitle: "Cancel", viewController: self)
-            }
-            else{
-                addAlert(title: "Done", message: "Product removed from favorites", ActionTitle: "OK", viewController: self)
-            }
-                    
-        }
-    }
-    
-    
-    func responseOf_fetchProducts() {
-        
-        productDetails_viewModel.bindingData = { productDetails, error in
-            if let productDetails = productDetails {
-                self.product = productDetails
-                self.productTitle_label.text = productDetails.title
-                self.productPrice_label.text = productDetails.variants[0].price
-                self.description_label.text = productDetails.body_html
-                
-                self.starRating.settings.fillMode = .precise
-                let rate = self.rating
-                self.productRating_label.text = String(format: "%.1f", rate)
-                self.starRating.rating = rate
-
-                self.imageController.numberOfPages = productDetails.images.count
-                self.products_collectionview.reloadData()
-
-                
-                if let sizes = productDetails.options?[0].values {
-                    for size in sizes {
-                        let label = UILabel()
-                        label.text = size
-                        label.backgroundColor = .yellow
-                        label.textAlignment = .center
-                        label.font = UIFont.boldSystemFont(ofSize: 18)
-                        self.availabelSizes.addArrangedSubview(label)
-                    }
-                }
- 
-            }
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            
-        }
-    }
-    
-    
-}

@@ -21,4 +21,8 @@ protocol ProductDetails_Protocol {
     var removeFromFavorites_status: ((Error?) -> Void) {set get}
     func removeFromFavorites(productId: Int)
 
+    // add product to Cart
+    func addToCart(product: ProductModel, count: String)
+    var addToCart_status: ((Error?) -> Void) {set get}
+
 }

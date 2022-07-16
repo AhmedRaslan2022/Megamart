@@ -50,7 +50,8 @@ protocol FirebaseServices {
     func removeFromFavorites(productId: String, completion: @escaping ((Error?) -> Void))
     
     
+//MARK: -                           Add to Cart
 
-    
+    func addToBagCard(product: ProductBagCard_firestore, completion: @escaping ((Error?) -> Void))
     
 }

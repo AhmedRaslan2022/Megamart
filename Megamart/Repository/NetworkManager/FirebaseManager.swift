@@ -178,6 +178,17 @@ class FirebaseManager: FirebaseServices {
     }
     
     
-    
+    func addToBagCard(product: ProductBagCard_firestore, completion: @escaping ((Error?) -> Void)) {
+
+            if let email = Auth.auth().currentUser?.email {
+                do{
+                    try database.collection(email).document(String(product.id)).setData(from: product)
+                    completion(nil)
+                }
+                catch let error {
+                    completion(error)
+                }
+            }
+        }
     
 }
