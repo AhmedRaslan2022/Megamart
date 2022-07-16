@@ -14,10 +14,11 @@ class HomeVC: UIViewController {
     
 
     @IBOutlet weak var menuCollectionView: UICollectionView!
-   
     @IBOutlet weak var brandsCollectionView: UICollectionView!
     
-     var arrAdsPhoto = [UIImage(named: "ads1")!, UIImage(named: "ads2")!, UIImage(named: "ads3")!, UIImage(named: "ads4")!, UIImage(named: "ads5")!, UIImage(named: "ads6")!]
+    let defaults = UserDefaults.standard
+    
+    var arrAdsPhoto = [UIImage(named: "ads1")!, UIImage(named: "ads2")!, UIImage(named: "ads3")!, UIImage(named: "ads4")!, UIImage(named: "ads5")!, UIImage(named: "ads6")!]
     
     var brandsArray = [SmartCollection]()
     var timer : Timer?
@@ -33,6 +34,8 @@ class HomeVC: UIViewController {
         
         brandsCollectionView.delegate = self
         brandsCollectionView.dataSource = self
+        
+        defaults.set(0.0, forKey: Userdefaults_key.couponValue.rawValue)
         
          let brandsViewModel = BrandsViewModel()
            brandsViewModel.fetchData()
@@ -57,7 +60,7 @@ class HomeVC: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
     }
     @objc func moveToNextIndex(){
-        if currentCellIndex < arrAdsPhoto.count - 1{
+        if currentCellIndex < arrAdsPhoto.count - 1 {
             currentCellIndex += 1
         }else{
             currentCellIndex = 0
@@ -128,6 +131,12 @@ extension HomeVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == menuCollectionView {
+            defaults.set(Constants.coupons_values[indexPath.row], forKey: Userdefaults_key.couponValue.rawValue)
+            addAlert(title: "congratulations", message: "Coupon added", ActionTitle: "OK", viewController: self)
+        }
+        
         let storyboard = UIStoryboard(name: Constants.Products_storyboard,bundle: nil)
         if let productsVC = storyboard.instantiateViewController(withIdentifier:Constants.ProductsViewController_id) as? ProductsViewController{
             productsVC.brandTitle = brandsArray[indexPath.row].title

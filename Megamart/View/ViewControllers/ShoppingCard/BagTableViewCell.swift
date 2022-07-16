@@ -24,6 +24,7 @@ class BagTableViewCell: UITableViewCell {
     
     var delegate: DeleteProductFromBagCard_protocol?
     var productId: String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

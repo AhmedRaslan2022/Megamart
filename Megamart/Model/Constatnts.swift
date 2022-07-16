@@ -101,6 +101,8 @@ struct Constants {
     
     static let noImageAvailabel = "no_image_available-product"
     
+    static let coupons_values = [0.1, 0.2 , 0.05 , 0.3 , 0.4, 0.15 ]
+    
     
 }
 
@@ -111,5 +113,5 @@ struct Constants {
 //MARK: -                       UserDefaults Keys
 
 enum Userdefaults_key: String {
-    case customerId = "customerId", customerName = "customerName"
+    case customerId = "customerId", customerName = "customerName", couponValue = "couponValue"
 }

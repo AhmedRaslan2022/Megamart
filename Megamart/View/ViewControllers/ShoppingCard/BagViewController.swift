@@ -19,6 +19,7 @@ class BagViewController: UIViewController {
     
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bagTableView.delegate = self
@@ -86,10 +87,7 @@ extension BagViewController {
                 
             }
             else{
-               
                 addAlert(title: "Alert!", message: "There are no bag cart", ActionTitle: "Cancel", viewController: self)
-                
-
             }
             
         }
