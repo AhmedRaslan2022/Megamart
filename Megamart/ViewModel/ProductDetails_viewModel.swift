@@ -106,8 +106,8 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
     
     var addToCart_status: ((Error?) -> Void) = { _ in }
     
-    func addToCart(product: ProductModel, count: String) {
-        let product_cart = ProductBagCard_firestore(id: "\(product.id)", title: product.title, image: product.image.src, price: product.variants[0].price, count: count)
+    func addToCart(product: ProductModel) {
+        let product_cart = ProductBagCard_firestore(id: "\(product.id)", title: product.title, image: product.image.src, price: product.variants[0].price, count: "1")
         firebaseManager.addToBagCard(product: product_cart) { error in
             if let error = error {
                 self.addToCart_error = error

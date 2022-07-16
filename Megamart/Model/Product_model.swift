@@ -34,6 +34,7 @@ struct ProductModel: Codable {
 
 struct Variant: Codable {
     let price: String
+    let inventory_quantity: Int
 }
 
 

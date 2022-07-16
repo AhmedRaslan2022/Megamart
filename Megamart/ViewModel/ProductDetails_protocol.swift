@@ -22,7 +22,7 @@ protocol ProductDetails_Protocol {
     func removeFromFavorites(productId: Int)
 
     // add product to Cart
-    func addToCart(product: ProductModel, count: String)
+    func addToCart(product: ProductModel)
     var addToCart_status: ((Error?) -> Void) {set get}
 
 }

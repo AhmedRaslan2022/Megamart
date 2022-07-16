@@ -13,7 +13,7 @@ import FirebaseFirestoreSwift
 class FirebaseManager: FirebaseServices {
     
     
-    var products_id: [Int] = []
+    var products_id:    [Int]   = []
     var products_title: [String] = []
     var products_image: [String] = []
     
@@ -55,7 +55,7 @@ class FirebaseManager: FirebaseServices {
     
     
  
-    //MARK: -                               Reset Password
+//MARK: -                               Reset Password
         
        
     func resetPassword(userEmail: String, completion: @escaping ((Error?)-> Void)) {

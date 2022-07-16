@@ -11,15 +11,12 @@ import Cosmos
 
 class ProductDetails_ViewController: UIViewController {
 
-    @IBOutlet weak var numberOfProducts_label: UILabel!
     @IBOutlet weak var products_collectionview: UICollectionView!
     @IBOutlet weak var starRating: CosmosView!
     @IBOutlet weak var productTitle_label: UILabel!
     @IBOutlet weak var productRating_label: UILabel!
     @IBOutlet weak var productPrice_label: UILabel!
     @IBOutlet weak var imageController: UIPageControl!
-    @IBOutlet weak var incrementProducts_button: UIButton!
-    @IBOutlet weak var decrementProducts_button: UIButton!
     @IBOutlet weak var addToShopingBag_button: UIButton!
     @IBOutlet weak var addToFavorites_button: UIButton!
     @IBOutlet weak var description_label: UILabel!
@@ -77,20 +74,13 @@ class ProductDetails_ViewController: UIViewController {
     
     @IBAction func AddToCart(_ sender: UIButton) {
         if Login_Verification(){
-            guard let count = self.numberOfProducts_label.text else { return }
             guard let product = product else { return }
-                self.productDetails_viewModel.addToCart(product: product, count: "3")
+                self.productDetails_viewModel.addToCart(product: product)
         }
         else{
             requestLogin_alert(viewController: self)
         }
-    }
-    
-    @IBAction func reduceProductNumber_button(_ sender: UIButton) {
         
-    }
-    
-    @IBAction func increaseProductNumber_button(_ sender: UIButton) {
     }
     
     @IBAction func goBack_button(_ sender: UIBarButtonItem) {
@@ -100,7 +90,8 @@ class ProductDetails_ViewController: UIViewController {
     @IBAction func goToHome_button(_ sender: UIBarButtonItem) {
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
         let homeViewController = storyBoard.instantiateViewController(withIdentifier: Constants.HomeViewController_id) as! HomeVC
-        self.navigationController?.pushViewController(homeViewController, animated: true)
+        homeViewController.modalPresentationStyle = .fullScreen
+        self.present(homeViewController, animated: true, completion: nil)
     }
     
     @IBAction func goToFavorites_button(_ sender: UIBarButtonItem) {
