@@ -136,11 +136,12 @@ extension HomeVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             defaults.set(Constants.coupons_values[indexPath.row], forKey: Userdefaults_key.couponValue.rawValue)
             addAlert(title: "congratulations", message: "Coupon added", ActionTitle: "OK", viewController: self)
         }
-        
-        let storyboard = UIStoryboard(name: Constants.Products_storyboard,bundle: nil)
-        if let productsVC = storyboard.instantiateViewController(withIdentifier:Constants.ProductsViewController_id) as? ProductsViewController{
-            productsVC.brandTitle = brandsArray[indexPath.row].title
-            self.navigationController?.pushViewController(productsVC, animated: true)
+        else{
+            let storyboard = UIStoryboard(name: Constants.Products_storyboard,bundle: nil)
+            if let productsVC = storyboard.instantiateViewController(withIdentifier:Constants.ProductsViewController_id) as? ProductsViewController{
+                productsVC.brandTitle = brandsArray[indexPath.row].title
+                self.navigationController?.pushViewController(productsVC, animated: true)
+            }
     }
     
 }

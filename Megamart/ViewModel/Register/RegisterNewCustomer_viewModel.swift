@@ -16,12 +16,13 @@ class RegisterNewCustomer_viewModel: RegiserNewCustomer_protocol {
         }
     }
 
-
     
     var binding: ((String?) -> Void) = {_ in }
     
+    
     var apiService: APIService
     var firebaseManager: FirebaseServices
+    
     
     init(apiService: APIService = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager()) {
         self.apiService = apiService
@@ -37,7 +38,6 @@ class RegisterNewCustomer_viewModel: RegiserNewCustomer_protocol {
         else{
             let newCustomer = NewCustomer(customer: Customer(first_name: name, email: email, tags: password, id: nil, addresses: nil))
             registerCustomer_firebase(newCustomer: newCustomer)
-            print("%%%%%%%%%%%%%% register firebase")
         }
         
     }
@@ -74,7 +74,6 @@ class RegisterNewCustomer_viewModel: RegiserNewCustomer_protocol {
               }
               else{
                   self.error = nil
-                  print("^^^^^^^^^^^^^^^^^^ Done")
               }
 
           }

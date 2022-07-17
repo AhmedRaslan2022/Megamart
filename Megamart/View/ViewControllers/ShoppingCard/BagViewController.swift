@@ -13,10 +13,9 @@ class BagViewController: UIViewController {
     var productsBagCard: [ProductBagCard_firestore] = []
     var productBag : ProductModel?
     var bagCardViewModel: BagCard_protocol = BagCard_viewModel()
-    
+    var productIndex: Int?
     
     @IBOutlet weak var bagTableView: UITableView!
-    
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var checkoutButton: UIButton!
     
@@ -25,6 +24,8 @@ class BagViewController: UIViewController {
         bagTableView.delegate = self
         bagTableView.dataSource = self
        
+        self.tabBarController?.tabBar.isHidden = true
+        
         responseOf_fetchingBagCard()
         responseOf_deleteProductFrombagCart()
         
@@ -33,7 +34,17 @@ class BagViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.bagCardViewModel.fetchBagCard()
     }
-  
+ 
+    
+    
+    
+    @IBAction func checkout(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.payment_storyboard, bundle:nil)
+        let paymentViewController = storyBoard.instantiateViewController(withIdentifier: Constants.Payment_viewController_id) as! PaymentViewController
+        paymentViewController.order = Order_Model(id: "", products: productsBagCard, totalPrice: "1000", created_at: "2022")
+        self.navigationController?.pushViewController(paymentViewController, animated: true)
+    }
+    
 
 }
 
@@ -79,9 +90,7 @@ extension BagViewController {
             }
             if let bagCard = bagCard {
                 DispatchQueue.main.async {
-                    self.productsBagCard = bagCard
-                    print("******\(self.productsBagCard)")
-                    
+                    self.productsBagCard = bagCard                    
                     self.bagTableView.reloadData()
                 }
                 
@@ -94,7 +103,7 @@ extension BagViewController {
     }
     
     
-//MARK: -                           The response of Delete product from bagcard
+//MARK: -                           The response of Delete product from Cart
     
     
     func responseOf_deleteProductFrombagCart() {
@@ -104,6 +113,8 @@ extension BagViewController {
                 addAlert(title: "Warning", message: error.localizedDescription , ActionTitle: "Cancel", viewController: self)
             }
             else{
+                guard let productIndex = self.productIndex else { return }
+                self.productsBagCard.remove(at: productIndex)
                 DispatchQueue.main.async {
                     self.bagTableView.reloadData()
                 }
@@ -150,12 +161,8 @@ extension BagViewController: UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
             (action, view , completionHandler) in
-            self.productsBagCard.remove(at: indexPath.row)
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-           
-            tableView.endUpdates()
-            
+            self.productIndex = indexPath.row
+            self.bagCardViewModel.removeFromBagCard(productId: self.productsBagCard[indexPath.row].id )            
             completionHandler(true)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])

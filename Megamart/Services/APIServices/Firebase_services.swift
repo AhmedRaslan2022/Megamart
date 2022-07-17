@@ -63,7 +63,10 @@ protocol FirebaseServices {
 //MARK: -                     Remove Product from Favorites
     
     
-    func removeFromBagCard(productId: String, completion: @escaping ((Error?) -> Void))
+    func removeFromCart(productId: String, completion: @escaping ((Error?) -> Void))
     
+//MARK: -                               Save Order
+    
+    func saveOrder(order: Order_Model, completion: @escaping ((Error?) -> Void))
     
 }

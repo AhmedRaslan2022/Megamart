@@ -41,6 +41,8 @@
 		041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BF1512870543200339E05 /* Favorites_ViewController.swift */; };
 		045551CA287F229800D202EA /* Settings_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045551C8287F229800D202EA /* Settings_protocol.swift */; };
 		045551CB287F229800D202EA /* Settings_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045551C9287F229800D202EA /* Settings_ViewModel.swift */; };
+		0462ACB128837C1E00A54995 /* PaymentOption_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462ACB028837C1E00A54995 /* PaymentOption_ViewModel.swift */; };
+		0462ACB328837C5800A54995 /* PaymentOption_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462ACB228837C5800A54995 /* PaymentOption_Protocol.swift */; };
 		0467CEFC286F8E530070DC64 /* ProductDetails_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */; };
 		046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046F989C286E3382008FDFFC /* Authentication.storyboard */; };
 		046F989F286E5CBD008FDFFC /* Constatnts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F989E286E5CBD008FDFFC /* Constatnts.swift */; };
@@ -164,6 +166,8 @@
 		041BF1512870543200339E05 /* Favorites_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites_ViewController.swift; sourceTree = "<group>"; };
 		045551C8287F229800D202EA /* Settings_protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_protocol.swift; sourceTree = "<group>"; };
 		045551C9287F229800D202EA /* Settings_ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_ViewModel.swift; sourceTree = "<group>"; };
+		0462ACB028837C1E00A54995 /* PaymentOption_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOption_ViewModel.swift; sourceTree = "<group>"; };
+		0462ACB228837C5800A54995 /* PaymentOption_Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOption_Protocol.swift; sourceTree = "<group>"; };
 		0467CEFB286F8E530070DC64 /* ProductDetails_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetails_ViewController.swift; sourceTree = "<group>"; };
 		046F989C286E3382008FDFFC /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		046F989E286E5CBD008FDFFC /* Constatnts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatnts.swift; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 			children = (
 				008ABD322870710C0060CB08 /* PaymentViewController.swift */,
 				008ABD34287071330060CB08 /* PaymentOptionVC.swift */,
+				0462ACB028837C1E00A54995 /* PaymentOption_ViewModel.swift */,
+				0462ACB228837C5800A54995 /* PaymentOption_Protocol.swift */,
 			);
 			path = "payment ";
 			sourceTree = "<group>";
@@ -907,6 +913,7 @@
 				E245C29B287070DD004A341C /* MeViewController.swift in Sources */,
 				00D5B61E28733A230070478E /* DiscountCode.swift in Sources */,
 				04178B522872FCE00044ED7B /* Customer_model.swift in Sources */,
+				0462ACB328837C5800A54995 /* PaymentOption_Protocol.swift in Sources */,
 				04C5438B287B14E8005312ED /* ResetPassword_protocol.swift in Sources */,
 				04F10F9228823152007EDA58 /* CartModel.swift in Sources */,
 				006A00572871838900F2228C /* AdsCollectionViewCell.swift in Sources */,
@@ -960,6 +967,7 @@
 				045551CB287F229800D202EA /* Settings_ViewModel.swift in Sources */,
 				00088072286FAFB300DE578B /* BagTableViewCell.swift in Sources */,
 				008ABD35287071330060CB08 /* PaymentOptionVC.swift in Sources */,
+				0462ACB128837C1E00A54995 /* PaymentOption_ViewModel.swift in Sources */,
 				04F0FA79286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift in Sources */,
 				00D5B618287339940070478E /* NetworkMangerDiscountCode.swift in Sources */,
 			);

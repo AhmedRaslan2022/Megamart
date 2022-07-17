@@ -22,7 +22,7 @@ class FirebaseManager: FirebaseServices {
     
     
 
-//MARK: -                                       Login
+//MARK: -                                       Log In
     
     
     func login(email: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
@@ -219,7 +219,7 @@ class FirebaseManager: FirebaseServices {
     
     }
     
-    func removeFromBagCard(productId: String, completion: @escaping ((Error?) -> Void)) {
+    func removeFromCart(productId: String, completion: @escaping ((Error?) -> Void)) {
         if let email = Auth.auth().currentUser?.email {
             
             // delete subcollections
@@ -228,7 +228,6 @@ class FirebaseManager: FirebaseServices {
                 "title": FieldValue.delete(),
                 "image": FieldValue.delete(),
                 "price": FieldValue.delete(),
-                
             ]) { error in
                 
                 if let error = error {
@@ -252,5 +251,23 @@ class FirebaseManager: FirebaseServices {
         
     }
     
+    
+    
+    //MARK: -                                   Save Order
+    
+    func saveOrder(order: Order_Model, completion: @escaping ((Error?) -> Void)) {
+        
+        if let email = Auth.auth().currentUser?.email {
+            do{
+                try database.collection(email).document(order.id).setData(from: order)
+                completion(nil)
+            }
+            catch let error {
+                completion(error)
+            }
+            
+        }
+    }
+
     
 }

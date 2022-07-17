@@ -10,12 +10,17 @@ import PassKit
 
 class PaymentOptionVC: UIViewController {
 
-    var totalPrice: Double?
+    var totalPrice: Double? = 1000
+    var order: Order_Model?
+    var paymentOptionViewModel: PaymentOption_Protocol = PaymentOption_ViewModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        responseOf_removeProductsFromCart()
+        responseOf_saveOrder()
+        
     }
     
     private var paymentRequest: PKPaymentRequest = {
@@ -35,6 +40,7 @@ class PaymentOptionVC: UIViewController {
             controller.delegate = self
             present(controller, animated: true)
             // show alert here
+            
     }
 
 }
@@ -64,7 +70,6 @@ class PaymentOptionVC: UIViewController {
         DispatchQueue.main.async {
             self.present(alert, animated: true, completion: nil)
         }
-        
     }
     
 
@@ -72,12 +77,58 @@ class PaymentOptionVC: UIViewController {
 
 extension PaymentOptionVC: PKPaymentAuthorizationViewControllerDelegate {
 
-func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
-    completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+    }
+
+    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        controller.dismiss(animated: true, completion: nil)
+        removeProductsFromCart()
+    }
+
 }
 
-func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
-    controller.dismiss(animated: true, completion: nil)
+//MARK: -                                       Remove Products From Cart
+
+extension PaymentOptionVC {
+    
+    func removeProductsFromCart() {
+        guard let order = order else { return }
+        self.paymentOptionViewModel.removeFromBagCard(products: order.products)
+    }
+    
+    func responseOf_removeProductsFromCart() {
+        self.paymentOptionViewModel.removeProductsFromCart_status = { error in
+            if let error = error {
+                print("******************* Error in Remove Products From Cart ")
+            }else{
+                print("******************* Done ")
+                self.saveOrder()
+            }
+        }
+    }
+    
 }
 
+
+//MARK: -                                       Save Order
+
+extension PaymentOptionVC {
+    
+    func saveOrder() {
+        guard var order = order else { return }
+        self.paymentOptionViewModel.saveOrder(order: &order)
+    }
+    
+    func responseOf_saveOrder() {
+        self.paymentOptionViewModel.saveOrder_status = { error in
+            if let error = error {
+                print("******************* Error in Save Order ")
+            }else{
+                print("******************* Done ")
+                self.orderPlacement()
+            }
+        }
+    }
+    
 }

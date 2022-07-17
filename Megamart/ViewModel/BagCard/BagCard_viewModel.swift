@@ -59,7 +59,7 @@ class BagCard_viewModel: BagCard_protocol {
     var removeFromBagCard_status: ((Error?) -> Void) = { _ in }
     
     func removeFromBagCard(productId: String) {
-        firebaseManager.removeFromBagCard(productId: productId) { error in
+        firebaseManager.removeFromCart(productId: productId) { error in
             if let error = error {
                 self.removeFromBagCard_error = error
             }

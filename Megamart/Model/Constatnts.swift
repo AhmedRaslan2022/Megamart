@@ -23,7 +23,7 @@ struct Constants {
     static let Favorites_storyboard  = "Favorites"
     static let Orders_storyboard  = "Orders"
     static let bag_storyboard = "BagStoryboard"
-    
+    static let payment_storyboard = "payment"
     
     
 //MARK: -                   viewControllers

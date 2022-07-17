@@ -15,7 +15,7 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var grandTotal: UILabel!
     @IBOutlet weak var coupon: UILabel!
     
-    var order: Order_Model? = Order_Model(id: "10", products: [], totalPrice: "1000", created_at: "2022")
+    var order: Order_Model?
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -34,6 +34,11 @@ class PaymentViewController: UIViewController {
     
 
     @IBAction func paymentOption(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.payment_storyboard, bundle:nil)
+        let paymentOpetionViewController = storyBoard.instantiateViewController(withIdentifier: Constants.PaymentOption_viewController_id) as! PaymentOptionVC
+        guard let order = order else { return }
+        paymentOpetionViewController.order = order
+        self.navigationController?.pushViewController(paymentOpetionViewController, animated: true)
     }
     
     
