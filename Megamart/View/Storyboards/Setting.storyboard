@@ -39,11 +39,12 @@
                                         <rect key="frame" x="0.0" y="107.5" width="384" height="107.5"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title=" Edit Profile ">
+                                        <state key="normal" title="  Set Address" image="house" catalog="system">
                                             <color key="titleColor" red="0.96416848899999996" green="0.62269365789999997" blue="0.0052955378780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <imageReference key="image" image="person.circle" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
                                         </state>
+                                        <connections>
+                                            <action selector="SetAddress:" destination="4CO-bR-jOa" eventType="touchUpInside" id="jbr-P3-kKc"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GLc-G7-e4e">
                                         <rect key="frame" x="0.0" y="215" width="384" height="107.5"/>
@@ -116,7 +117,7 @@
         <!--AddressVC-->
         <scene sceneID="zCp-F6-IfD">
             <objects>
-                <viewController id="Exe-41-Z7U" customClass="AddressVC" customModule="Megamart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addressViewControllerId" id="Exe-41-Z7U" customClass="AddressVC" customModule="Megamart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zao-1N-Fac">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,13 +137,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXS-eW-iU4">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXS-eW-iU4">
                                         <rect key="frame" x="0.0" y="199" width="374" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T3z-HB-v5W">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T3z-HB-v5W">
                                         <rect key="frame" x="0.0" y="299" width="374" height="49.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -167,6 +168,9 @@
                                                 <size key="value" width="5" height="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveAddress:" destination="Exe-41-Z7U" eventType="touchUpInside" id="Ly3-tk-lX4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -180,6 +184,12 @@
                             <constraint firstItem="D4f-sC-xht" firstAttribute="top" secondItem="0bY-OD-wX5" secondAttribute="top" constant="30" id="fX9-X5-bdS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="customerCity" destination="zI3-iU-gIz" id="mB3-wF-ywF"/>
+                        <outlet property="customerCountry" destination="vXS-eW-iU4" id="qso-6A-X3L"/>
+                        <outlet property="customerPhoneNumber" destination="T3z-HB-v5W" id="nZs-DA-Ach"/>
+                        <outlet property="customerStreet" destination="yAJ-Ly-q8X" id="Yug-XE-9Ws"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30N-Ax-21m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,9 +198,9 @@
     </scenes>
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="moon" catalog="system" width="128" height="121"/>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="setting" width="203.5" height="203.5"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">

@@ -34,9 +34,11 @@ class PaymentViewController: UIViewController {
     
 
     @IBAction func paymentOption(_ sender: Any) {
+        
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.payment_storyboard, bundle:nil)
         let paymentOpetionViewController = storyBoard.instantiateViewController(withIdentifier: Constants.PaymentOption_viewController_id) as! PaymentOptionVC
         guard let order = order else { return }
+        print("%%%%%%%%%% \(order)")
         paymentOpetionViewController.order = order
         self.navigationController?.pushViewController(paymentOpetionViewController, animated: true)
     }

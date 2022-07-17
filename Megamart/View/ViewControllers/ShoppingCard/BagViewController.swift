@@ -39,10 +39,10 @@ class BagViewController: UIViewController {
     
     
     @IBAction func checkout(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.payment_storyboard, bundle:nil)
-        let paymentViewController = storyBoard.instantiateViewController(withIdentifier: Constants.Payment_viewController_id) as! PaymentViewController
-        paymentViewController.order = Order_Model(id: "", products: productsBagCard, totalPrice: "1000", created_at: "2022")
-        self.navigationController?.pushViewController(paymentViewController, animated: true)
+        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.setting_storyboard, bundle:nil)
+        let addressViewController = storyBoard.instantiateViewController(withIdentifier: Constants.address_ViewController_id) as! AddressVC
+        addressViewController.order = Order_Model(id: "", products: productsBagCard, totalPrice: "1000", created_at: "2022", address: nil)
+        self.navigationController?.pushViewController(addressViewController, animated: true)
     }
     
 
