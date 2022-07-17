@@ -88,7 +88,7 @@ class BagTableViewCell: UITableViewCell {
         
     }
     
-//MARK: -                                   Button Status
+//MARK: -                                   Buttons Status
     
     func minusButton_status(){
         if self.productCount == 1 {

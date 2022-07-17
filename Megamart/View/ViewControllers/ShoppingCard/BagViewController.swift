@@ -132,6 +132,7 @@ extension BagViewController {
 
 
 extension BagViewController: UpdateProductCount_protocol {
+    
     func updateProductCount(count: Int, index: Int) {
         self.productsBagCard[index].count = count
         updateTotalPrice()
@@ -157,7 +158,8 @@ extension BagViewController: UpdateProductCount_protocol {
 
 
 
-//MARK: -                               Table View
+//MARK: -                                    Table View
+
 
 extension BagViewController: UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
