@@ -228,6 +228,7 @@ class FirebaseManager: FirebaseServices {
                 "title": FieldValue.delete(),
                 "image": FieldValue.delete(),
                 "price": FieldValue.delete(),
+                "inventory_quantity": FieldValue.delete(),
             ]) { error in
                 
                 if let error = error {
@@ -268,6 +269,37 @@ class FirebaseManager: FirebaseServices {
             
         }
     }
-
     
+    
+//MARK: -                                   Fetch Orders
+    func fetchOrders(completion: @escaping (([Order_Model]?, Error?) -> Void)) {
+        
+        var orders: [Order_Model] = []
+        print("@@@@@@@@@@")
+        
+        if let email = Auth.auth().currentUser?.email {
+            print("&&&&&&&&&&&&&&&&&")
+            database.collection(email).getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    completion(nil, error)
+                   
+                } else {
+                    print("************************")
+                    for document in querySnapshot!.documents {
+                        print("!!!!!!!!!!!!\(document)")
+                        let doc = try? document.data(as: Order_Model.self)
+                        if let doc = doc {
+                            orders.append(doc)
+                            
+                        }
+
+                    }
+                    completion(orders, nil)
+                    print("!!!!!!!!!!!!\(orders)")
+                }
+            }
+        
+        }
+    
+}
 }

@@ -46,7 +46,7 @@
                 <outlet property="brandImage" destination="0Eh-ep-xrU" id="W5Y-Ah-0r3"/>
                 <outlet property="brandName" destination="rC1-Cp-O4b" id="2gI-7N-k1J"/>
             </connections>
-            <point key="canvasLocation" x="-97.101449275362327" y="2.6785714285714284"/>
+            <point key="canvasLocation" x="119" y="-53"/>
         </collectionViewCell>
     </objects>
 </document>

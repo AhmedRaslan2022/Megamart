@@ -62,7 +62,7 @@
                                     <color key="baseForegroundColor" systemColor="systemBlueColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="FavouriteProduct:" destination="gTV-IL-0wX" eventType="touchUpInside" id="T3P-5S-j2e"/>
+                                    <action selector="FavouriteProduct:" destination="gTV-IL-0wX" eventType="touchUpInside" id="vIM-nc-u96"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -93,6 +93,7 @@
             </constraints>
             <size key="customSize" width="314" height="250"/>
             <connections>
+                <outlet property="FavouriteProduct" destination="0LO-z7-9ti" id="7Mt-06-VHP"/>
                 <outlet property="ProductImage" destination="tQ4-nb-qq6" id="u9x-Nh-5lu"/>
                 <outlet property="ProductPrice" destination="JoO-Ca-4NB" id="FwO-j2-kjg"/>
             </connections>

@@ -13,6 +13,13 @@ protocol DeleteProductFromBagCard_protocol {
     func deleteProductFromBagCard (productId: String)
 }
 
+
+protocol DecreaseIncrease_protocol {
+    func cartIncrease (productIndex: Int?)
+    func cartDecrease (productIndex: Int?)
+}
+
+
 class BagTableViewCell: UITableViewCell {
     @IBOutlet weak var bagImage: UIImageView!
     
@@ -22,8 +29,13 @@ class BagTableViewCell: UITableViewCell {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var title: UILabel!
     
-    var delegate: DeleteProductFromBagCard_protocol?
+    var delegate: DecreaseIncrease_protocol?
+    var counter: Int = 1
     var productId: String?
+    var productBag : ProductModel?
+    var bagCardViewModel: BagCard_protocol = BagCard_viewModel()
+    var productIndex: Int?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,7 +50,8 @@ class BagTableViewCell: UITableViewCell {
 
     
     
-    func setCellBagCard(product: ProductBagCard_firestore) {
+    func setCellBagCard(product: ProductBagCard_firestore,productIndex: Int) {
+        self.productIndex = productIndex
         Alamofire.request(product.image).responseImage { response in
             if case .success(let image) = response.result {
                 self.bagImage.image = image
@@ -51,9 +64,29 @@ class BagTableViewCell: UITableViewCell {
     }
 
     @IBAction func minusAction(_ sender: Any) {
+        if counter == 1 {
+            counter = 1
+            self.count.text = "\(counter)"
+        }
+        else{
+            counter -= 1
+            self.count.text = "\(counter)"
+            self.delegate?.cartDecrease (productIndex: productIndex)
+        }
     }
     
     
+    
     @IBAction func plusAction(_ sender: Any) {
+        if counter == 5 {
+            counter = 5
+            self.count.text = "\(counter)"
+        }
+        else{
+            counter += 1
+            self.count.text = "\(counter)"
+            self.delegate?.cartIncrease (productIndex: productIndex)
+        }
+        
     }
 }

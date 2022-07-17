@@ -154,7 +154,7 @@ extension BagViewController: UITableViewDataSource , UITableViewDelegate{
             return UITableViewCell ()
         }
         
-        cell.setCellBagCard(product: productsBagCard[indexPath.row])
+        cell.setCellBagCard(product: productsBagCard[indexPath.row], productIndex: indexPath.row)
         return cell
     }
     
@@ -173,3 +173,28 @@ extension BagViewController: UITableViewDataSource , UITableViewDelegate{
     }
     
 }
+/*
+extension BagViewController: DecreaseIncrease_protocol
+{
+    
+
+    func cartIncrease (productIndex: Int?) {
+        if  Int(productsBagCard[productIndex ?? 0].count) ?? 0 < productsBagCard[productIndex ?? 0].inventory_quantity{
+           
+
+        
+    }
+   
+    
+    func cartDecrease(productIndex: Int?) {
+        if  Int(productsBagCard[productIndex ?? 0].count) ?? 0 > productsBagCard[productIndex ?? 0].inventory_quantity{
+            
+            Int(productsBagCard[productIndex ?? 0].count) = Int(productsBagCard[productIndex ?? 0].count) ?? 0 - 1
+    }
+    
+}
+        
+    }
+
+
+}*/

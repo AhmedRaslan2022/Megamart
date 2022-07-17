@@ -14,5 +14,6 @@ struct ProductBagCard_firestore: Codable {
     let image: String
     let price: String
     let count : String
+    let inventory_quantity: Int
 
 }
