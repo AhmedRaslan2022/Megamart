@@ -141,7 +141,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" semanticContentAttribute="spatial" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a0y-bU-AHH">
                                 <rect key="frame" x="0.0" y="139" width="428" height="787"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="znq-H4-ETR">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="znq-H4-ETR">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -305,9 +305,6 @@
                                 <rect key="frame" x="1284" y="490.66666666666669" width="58" height="31.000000000000057"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="More"/>
-                                <connections>
-                                    <action selector="wishListMore:" destination="gEI-oR-43a" eventType="touchUpInside" id="io4-hu-fdX"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94k-nQ-2qd">
                                 <rect key="frame" x="16" y="110" width="179" height="34"/>
@@ -334,7 +331,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="More"/>
                                 <connections>
-                                    <action selector="orderMore:" destination="gEI-oR-43a" eventType="touchUpInside" id="0S6-CY-wiJ"/>
+                                    <action selector="wishListMore:" destination="gEI-oR-43a" eventType="touchUpInside" id="Eks-WD-pFs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -377,7 +374,11 @@
                                     <action selector="goSettings_ViewController:" destination="gEI-oR-43a" id="1by-Cu-c15"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="cart" image="cart.fill" catalog="system" id="DiB-aO-Mrc"/>
+                            <barButtonItem title="cart" image="cart.fill" catalog="system" id="DiB-aO-Mrc">
+                                <connections>
+                                    <action selector="goCart:" destination="gEI-oR-43a" id="rXr-pY-uyg"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
