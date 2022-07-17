@@ -44,8 +44,6 @@
             <connections>
                 <outlet property="WishListImag" destination="gIn-ZY-wBi" id="yhO-UR-DnM"/>
                 <outlet property="WishListLabel" destination="nAZ-tp-d3i" id="0De-e0-4ln"/>
-                <outlet property="productImage" destination="gIn-ZY-wBi" id="TqH-OF-GBp"/>
-                <outlet property="productTitle" destination="nAZ-tp-d3i" id="Epd-QO-lgT"/>
             </connections>
             <point key="canvasLocation" x="213" y="32"/>
         </collectionViewCell>

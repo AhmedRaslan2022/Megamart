@@ -13,6 +13,7 @@ class MeViewController: UIViewController {
     var orderViewModel: Order_Protocol = OrderViewModel()
     var orders: [Order_Model] = []
     
+   
     var favorites: [ProductEntity_firestore] = []
     var favoritesViewModel: Favorites_protocol = Favorites_viewModel()
     
@@ -41,14 +42,13 @@ welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customer
        
         self.wishlistCollection.register(UINib(nibName: Constants.WishList_nib_name , bundle: nil), forCellWithReuseIdentifier: Constants.WishList_Cell_id)
 
-        
-        
         responseOf_fetchingOrders()
-        
+        responseOf_fetchingFavorites()
     }
       
     override func viewWillAppear(_ animated: Bool) {
         self.orderViewModel.fetchOrders()
+        self.favoritesViewModel.fetchFavorites()
     }
     
     
@@ -113,7 +113,9 @@ welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customer
 }
 
 
- //MARK: -                    Favourite collectionView
+
+
+//MARK: -                    Favourite collectionView
 
 extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     
@@ -133,6 +135,7 @@ extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource
        return  cell ?? UICollectionViewCell()
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: Constants.Favorites_storyboard,bundle: nil)
         if let favVC = storyboard.instantiateViewController(withIdentifier:Constants.Favorites_ViewController_id) as? Favorites_ViewController{
@@ -141,13 +144,13 @@ extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource
         }
    
   
-}
+    }
 
 }
 
 
 
-//MARK: -                    OrdersTableView
+//MARK: -                          OrdersTableView
 
 
 
@@ -159,16 +162,26 @@ extension MeViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell = ordersTable.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as! OrderTableViewCell
 
-        cell.priceLbel.text =  "\(orders[indexPath.row].totalPrice)"
-        cell.createdAtLabel.text =  orders[indexPath.row].created_at
+        cell.priceLbel.text =  "Price: \(orders[indexPath.row].totalPrice)"
+        cell.createdAtLabel.text =  "Created At: \(orders[indexPath.row].created_at)"
         
        return  cell
- 
     }
-}
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width / 2.03 , height: collectionView.bounds.height / 2.03)
+    }
+
+   
+  
+    }
     
     
+
     
+    
+//MARK: -                    Fetch data
+
     
  
 extension MeViewController {
@@ -176,7 +189,7 @@ extension MeViewController {
         
         self.orderViewModel.binding = { orders , error in
             if let error = error {
-               print("*****ordererror*******\(error)")
+               print("*****order error*******\(error)")
             }
             if let orders = orders {
                 print(orders)
@@ -195,8 +208,22 @@ extension MeViewController {
     
 }
     
-
+    func responseOf_fetchingFavorites() {
+        
+        self.favoritesViewModel.binding = { favorites, error in
+            if let error = error {
+              print("error in wishlist\(error)")
+            }
+            if let favorites = favorites {
+                self.favorites = favorites
+                if self.favorites.count == 0 {
+                
+                }
+                self.wishlistCollection.reloadData()
+            }
+            
+        }
 }
-
+}
 
 
