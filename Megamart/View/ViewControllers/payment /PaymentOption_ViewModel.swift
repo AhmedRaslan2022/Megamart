@@ -11,14 +11,6 @@ import Foundation
 class PaymentOption_ViewModel: PaymentOption_Protocol {
     
     
-//    var error_removeProducts: Error? {
-//        didSet{
-//            binding(error_removeProducts)
-//        }
-//    }
-    
-//    var binding: ((Error?) -> Void) = { _ in }
-    
     var firebaseManager: FirebaseServices
     
     init(firebaseManager: FirebaseServices = FirebaseManager()) {

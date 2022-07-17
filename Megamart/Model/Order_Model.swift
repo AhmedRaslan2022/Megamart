@@ -12,7 +12,7 @@ struct Order_Model: Codable {
 
     var id: String
     let products: [ProductBagCard_firestore]
-    let totalPrice: String
+    var totalPrice: Double
     let created_at: String
     var address: Order_Address?
 

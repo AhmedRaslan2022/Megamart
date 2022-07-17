@@ -9,8 +9,8 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-protocol DeleteProductFromBagCard_protocol {
-    func deleteProductFromBagCard (productId: String)
+protocol UpdateProductCount_protocol {
+    func updateProductCount(count: Int, index: Int)
 }
 
 class BagTableViewCell: UITableViewCell {
@@ -22,12 +22,15 @@ class BagTableViewCell: UITableViewCell {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var title: UILabel!
     
-    var delegate: DeleteProductFromBagCard_protocol?
-    var productId: String?
+    var delegate: UpdateProductCount_protocol?
+    var productIndex: Int?
+    var product: ProductBagCard_firestore?
+    var productCount: Int = 1
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,7 +41,7 @@ class BagTableViewCell: UITableViewCell {
 
     
     
-    func setCellBagCard(product: ProductBagCard_firestore) {
+    func setCellBagCard(product: ProductBagCard_firestore, productIndex: Int) {
         Alamofire.request(product.image).responseImage { response in
             if case .success(let image) = response.result {
                 self.bagImage.image = image
@@ -46,14 +49,64 @@ class BagTableViewCell: UITableViewCell {
         }
         
         self.title.text = product.title
-        self.price.text = product.price
-        self.productId = product.id
+        self.price.text = String(product.price)
+        self.productCount = product.count
+        self.product = product
+        self.productIndex = productIndex
+        
+        updateCount()
+        
     }
 
     @IBAction func minusAction(_ sender: Any) {
+        if productCount > 1 {
+            self.productCount -= 1
+            updateCount()
+        }
     }
     
     
     @IBAction func plusAction(_ sender: Any) {
+        guard let product = product else { return }
+        if productCount < 5 || productCount < product.avaliableAmount {
+            self.productCount += 1
+            updateCount()
+        }
+    }
+    
+    
+    
+    func updateCount() {
+        DispatchQueue.main.async {
+            self.minusButton_status()
+            self.plusButton_status()
+            self.count.text = "\(self.productCount)"
+        }
+        
+        guard let productIndex = productIndex else { return }
+        self.delegate?.updateProductCount(count: self.productCount, index: productIndex)
+        
+    }
+    
+//MARK: -                                   Button Status
+    
+    func minusButton_status(){
+        if self.productCount == 1 {
+            self.uiMinus.isEnabled = false
+        }else{
+            self.uiMinus.isEnabled = true
+        }
+    }
+    
+    
+    func plusButton_status() {
+        guard let product = product else { return }
+        if productCount == 5 || productCount == product.avaliableAmount {
+            self.uiPlus.isEnabled = false
+        }
+        else {
+            self.uiPlus.isEnabled = true
+            
+        }
     }
 }

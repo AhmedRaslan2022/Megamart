@@ -12,7 +12,8 @@ struct ProductBagCard_firestore: Codable {
     let id: String
     let title: String
     let image: String
-    let price: String
-    let count : String
-
+    let price: Double
+    var count : Int
+    let avaliableAmount: Int
+    
 }

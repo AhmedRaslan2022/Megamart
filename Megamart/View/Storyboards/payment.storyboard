@@ -188,7 +188,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="cashOnDelivery:" destination="Hwy-m7-C19" eventType="touchUpInside" id="XY3-BQ-lZW"/>
+                                    <action selector="cashOnDelivery:" destination="Hwy-m7-C19" eventType="touchUpInside" id="rmy-v3-NpS"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -11,9 +11,10 @@ class BagViewController: UIViewController {
 
     
     var productsBagCard: [ProductBagCard_firestore] = []
-    var productBag : ProductModel?
-    var bagCardViewModel: BagCard_protocol = BagCard_viewModel()
     var productIndex: Int?
+    var totalPrice: Double = 0.0
+    
+    var bagCardViewModel: BagCard_protocol = BagCard_viewModel()
     
     @IBOutlet weak var bagTableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -41,41 +42,53 @@ class BagViewController: UIViewController {
     @IBAction func checkout(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.setting_storyboard, bundle:nil)
         let addressViewController = storyBoard.instantiateViewController(withIdentifier: Constants.address_ViewController_id) as! AddressVC
-        addressViewController.order = Order_Model(id: "", products: productsBagCard, totalPrice: "1000", created_at: "2022", address: nil)
+        
+        addressViewController.order = Order_Model(id: "", products: productsBagCard, totalPrice: self.totalPrice, created_at: getCurrentTime(), address: nil)
         self.navigationController?.pushViewController(addressViewController, animated: true)
     }
     
 
+    func getCurrentTime() -> String {
+        let today = Date()
+        let hours   = (Calendar.current.component(.hour, from: today))
+        let minutes = (Calendar.current.component(.minute, from: today))
+        let seconds = (Calendar.current.component(.second, from: today))
+        let time = "\(today) \(hours) \(minutes) \(seconds)"
+        return time
+    }
+    
+    
 }
+
 
 
 //MARK: -                                   delete Product From BadCard
 
-
-extension BagViewController: DeleteProductFromBagCard_protocol {
-    
-    func deleteProductFromBagCard(productId: String) {
-        
-        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to remove this product from your bagCart", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.bagCardViewModel.removeFromBagCard(productId: productId)
-            
-            for index in 0..<self.productsBagCard.count {
-                if self.productsBagCard[index].id == productId {
-                    self.productsBagCard.remove(at: index)
-                    break
-                }
-            }
-        }))
-        
-        DispatchQueue.main.async {
-            self.present(alert, animated: true, completion: nil)
-        }
-        
-    }
-    
-}
+//
+//extension BagViewController: DeleteProductFromBagCard_protocol {
+//
+//    func deleteProductFromBagCard(productId: String) {
+//
+//        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to remove this product from your bagCart", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+//            self.bagCardViewModel.removeFromBagCard(productId: productId)
+//
+//            for index in 0..<self.productsBagCard.count {
+//                if self.productsBagCard[index].id == productId {
+//                    self.productsBagCard.remove(at: index)
+//                    break
+//                }
+//            }
+//        }))
+//
+//        DispatchQueue.main.async {
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//
+//    }
+//
+//}
 
 //MARK: -                                   The response of fetching BagCard
 
@@ -90,13 +103,14 @@ extension BagViewController {
             }
             if let bagCard = bagCard {
                 DispatchQueue.main.async {
-                    self.productsBagCard = bagCard                    
+                    self.productsBagCard = bagCard
                     self.bagTableView.reloadData()
                 }
+                self.updateTotalPrice()
                 
             }
             else{
-                addAlert(title: "Alert!", message: "There are no bag cart", ActionTitle: "Cancel", viewController: self)
+                addAlert(title: "Alert!", message: "There are no product in cart", ActionTitle: "Cancel", viewController: self)
             }
             
         }
@@ -142,7 +156,36 @@ extension BagViewController {
 }
 
 
+//MARK: -                                       Update Product Count and Total Price
 
+
+extension BagViewController: UpdateProductCount_protocol {
+    func updateProductCount(count: Int, index: Int) {
+        self.productsBagCard[index].count = count
+        updateTotalPrice()
+    }
+    
+    func updateTotalPrice() {
+        totalPrice = 0.0
+        for product in productsBagCard {
+            let priceOfProduct = Double(product.price) * Double(product.count)
+            totalPrice += priceOfProduct
+        }
+        
+        DispatchQueue.main.async {
+            self.totalPriceLabel.text = "\(self.totalPrice)"
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+//MARK: -                               Table View
 
 extension BagViewController: UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -153,8 +196,8 @@ extension BagViewController: UITableViewDataSource , UITableViewDelegate{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.BagTableViewCell_id, for: indexPath) as? BagTableViewCell else{
             return UITableViewCell ()
         }
-        
-        cell.setCellBagCard(product: productsBagCard[indexPath.row])
+        cell.delegate = self
+        cell.setCellBagCard(product: productsBagCard[indexPath.row], productIndex: indexPath.row)
         return cell
     }
     
@@ -173,3 +216,5 @@ extension BagViewController: UITableViewDataSource , UITableViewDelegate{
     }
     
 }
+
+

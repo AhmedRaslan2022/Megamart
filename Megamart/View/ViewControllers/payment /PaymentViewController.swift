@@ -22,7 +22,7 @@ class PaymentViewController: UIViewController {
         super.viewDidLoad()
         
         if let order = order {
-            self.totalPrice.text = order.totalPrice
+            self.totalPrice.text = "\(order.totalPrice)"
             self.coupon.text = "\(defaults.double(forKey: Userdefaults_key.couponValue.rawValue))"
             self.discount.text = "\(calculateDiscountValue())"
             self.shoppingFees.text = "0.0"
@@ -38,7 +38,6 @@ class PaymentViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.payment_storyboard, bundle:nil)
         let paymentOpetionViewController = storyBoard.instantiateViewController(withIdentifier: Constants.PaymentOption_viewController_id) as! PaymentOptionVC
         guard let order = order else { return }
-        print("%%%%%%%%%% \(order)")
         paymentOpetionViewController.order = order
         self.navigationController?.pushViewController(paymentOpetionViewController, animated: true)
     }
@@ -47,18 +46,15 @@ class PaymentViewController: UIViewController {
     func calculateDiscountValue() -> Double {
         var discountValue: Double = 0.0
         guard let order = order else { return 0.0 }
-        if let totalPrice = Double(order.totalPrice) {
-             discountValue = defaults.double(forKey: Userdefaults_key.couponValue.rawValue) * totalPrice
-        }
+        discountValue = defaults.double(forKey: Userdefaults_key.couponValue.rawValue) * order.totalPrice
         return discountValue
     }
     
     func calculateGrandPrice() -> Double {
         var grandPrice: Double = 0.0
         guard let order = order else { return 0.0 }
-        if let totalPrice = Double(order.totalPrice) {
-            grandPrice = totalPrice - calculateDiscountValue()
-        }
+        grandPrice = order.totalPrice - calculateDiscountValue()
+        self.order?.totalPrice = grandPrice
         return grandPrice
     }
     

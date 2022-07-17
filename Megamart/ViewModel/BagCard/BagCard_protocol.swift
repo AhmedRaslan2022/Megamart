@@ -18,6 +18,6 @@ protocol BagCard_protocol {
     func removeFromBagCard(productId: String)
     
     
-    func addToBagCart(product: ProductModel , count: String)
+    func addToBagCart(product: ProductModel , count: Int)
     var addToBagCart_status: ((Error?) -> Void) {set get}
 }

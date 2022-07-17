@@ -10,10 +10,9 @@ import PassKit
 
 class PaymentOptionVC: UIViewController {
 
-    var totalPrice: Double? = 1000
     var order: Order_Model?
     var paymentOptionViewModel: PaymentOption_Protocol = PaymentOption_ViewModel()
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +26,11 @@ class PaymentOptionVC: UIViewController {
             let request = PKPaymentRequest()
             request.merchantIdentifier = "merchant.m.saad19962019@gmail.com"
             request.supportedNetworks = [.visa, .masterCard,.amex,.discover]
-            request.supportedCountries = ["UA","EG"]
+            request.supportedCountries = ["EG"]
             request.merchantCapabilities = .capability3DS
             request.countryCode = "EG"
             request.currencyCode = "EGP"
-            request.paymentSummaryItems = [PKPaymentSummaryItem(label: "Megamart", amount: 10.99)]
+        request.paymentSummaryItems = [PKPaymentSummaryItem(label: "Megamart", amount: 100.0 )]
             return request
         }()
     
@@ -39,7 +38,6 @@ class PaymentOptionVC: UIViewController {
         if let controller = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest) {
             controller.delegate = self
             present(controller, animated: true)
-            // show alert here
             
     }
 
@@ -47,12 +45,12 @@ class PaymentOptionVC: UIViewController {
     
     
     @IBAction func cashOnDelivery(_ sender: UIButton) {
-        guard let totalPrice = self.totalPrice else { return }
+        guard let totalPrice: Double = order?.totalPrice else { return }
         if totalPrice >= 2000 {
             addAlert(title: "Warning", message: "Can not pay this amount cash", ActionTitle: "OK", viewController: self)
         }
         else{
-            orderPlacement()
+            removeProductsFromCart()
         }
     }
     
@@ -100,9 +98,8 @@ extension PaymentOptionVC {
     func responseOf_removeProductsFromCart() {
         self.paymentOptionViewModel.removeProductsFromCart_status = { error in
             if let error = error {
-                print("******************* Error in Remove Products From Cart ")
+                print("******************* Error in Remove Products From Cart \(error.localizedDescription)")
             }else{
-                print("******************* Done ")
                 self.saveOrder()
             }
         }
@@ -123,9 +120,8 @@ extension PaymentOptionVC {
     func responseOf_saveOrder() {
         self.paymentOptionViewModel.saveOrder_status = { error in
             if let error = error {
-                print("******************* Error in Save Order ")
+                print("******************* Error in Save Order \(error.localizedDescription) ")
             }else{
-                print("******************* Done ")
                 self.orderPlacement()
             }
         }
