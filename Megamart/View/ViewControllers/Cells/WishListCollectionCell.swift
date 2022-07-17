@@ -11,6 +11,7 @@ import AlamofireImage
 
 class WishListCollectionCell: UICollectionViewCell {
     
+    @IBOutlet weak var WishListLabel: UILabel!
     @IBOutlet weak private var WishListImag: UIImageView!
     
     override func awakeFromNib() {
@@ -18,13 +19,15 @@ class WishListCollectionCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setCell(imageUrl: String) {
-        Alamofire.request(imageUrl).responseImage { response in
+    func setCell(product: ProductEntity_firestore) {
+        Alamofire.request(product.image).responseImage { response in
             if case .success(let image) = response.result {
                 self.WishListImag.image = image
             }
         }
         
+     
+        self.WishListLabel.text = product.title
     }
 
 }

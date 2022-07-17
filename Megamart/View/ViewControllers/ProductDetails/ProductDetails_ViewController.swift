@@ -28,6 +28,7 @@ class ProductDetails_ViewController: UIViewController {
     var productID: String?
     private var product: ProductModel?
     var rating = Double.random(in: 1...5)
+    var isRotate = false
     
     var productDetails_viewModel: ProductDetails_Protocol = ProductDetails_viewModel()
     
@@ -53,11 +54,6 @@ class ProductDetails_ViewController: UIViewController {
         
     }
 
-        
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//            super.viewWillTransition(to: size, with: coordinator)
-//        products_collectionview.reloadData()
-//    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
@@ -66,6 +62,24 @@ class ProductDetails_ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
+    
+    
+    override func viewWillLayoutSubviews() {
+      super.viewWillLayoutSubviews()
+
+      guard let flowLayout = products_collectionview.collectionViewLayout as? UICollectionViewFlowLayout else {
+        return
+      }
+
+        if UIApplication.shared.statusBarOrientation.isLandscape {
+            self.isRotate = true
+        } else {
+            self.isRotate = false
+      }
+
+      flowLayout.invalidateLayout()
+    }
+    
     
     
    
@@ -129,8 +143,7 @@ class ProductDetails_ViewController: UIViewController {
                 if let product = product {
                     productDetails_viewModel.removeFromFavorites(productId: product.id)
                 }
-                
-                
+
             }else{
                 self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
                 if let product = product {
@@ -283,9 +296,14 @@ extension ProductDetails_ViewController: UICollectionViewDataSource{
 
 
 extension ProductDetails_ViewController: UICollectionViewDelegateFlowLayout{
-    // to set only one cell in row
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width , height: collectionView.bounds.height)
+        if  self.isRotate {
+            return CGSize(width: collectionView.bounds.width , height: collectionView.bounds.height)
+        }
+        else{
+            return CGSize(width: collectionView.bounds.height , height: collectionView.bounds.width)
+        }
+        
     }
 
 }

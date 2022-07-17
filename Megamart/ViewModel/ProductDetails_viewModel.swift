@@ -106,7 +106,9 @@ class ProductDetails_viewModel: ProductDetails_Protocol {
     
     var addToCart_status: ((Error?) -> Void) = { _ in }
     
+    
     func addToCart(product: ProductModel) {
+
         guard let price: Double = Double(product.variants[0].price) else { return }
         let product_cart = ProductBagCard_firestore(id: "\(product.id)", title: product.title, image: product.image.src, price: price, count: 1, avaliableAmount: product.variants[0].inventory_quantity)
         firebaseManager.addToBagCard(product: product_cart) { error in

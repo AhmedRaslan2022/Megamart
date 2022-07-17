@@ -62,34 +62,6 @@ class BagViewController: UIViewController {
 
 
 
-//MARK: -                                   delete Product From BadCard
-
-//
-//extension BagViewController: DeleteProductFromBagCard_protocol {
-//
-//    func deleteProductFromBagCard(productId: String) {
-//
-//        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to remove this product from your bagCart", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-//            self.bagCardViewModel.removeFromBagCard(productId: productId)
-//
-//            for index in 0..<self.productsBagCard.count {
-//                if self.productsBagCard[index].id == productId {
-//                    self.productsBagCard.remove(at: index)
-//                    break
-//                }
-//            }
-//        }))
-//
-//        DispatchQueue.main.async {
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//
-//    }
-//
-//}
-
 //MARK: -                                   The response of fetching BagCard
 
 
@@ -216,5 +188,3 @@ extension BagViewController: UITableViewDataSource , UITableViewDelegate{
     }
     
 }
-
-

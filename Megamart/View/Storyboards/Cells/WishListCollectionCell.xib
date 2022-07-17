@@ -19,7 +19,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lur-QB-IEV">
                         <rect key="frame" x="0.0" y="0.0" width="306" height="245"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvm-DJ-FtN">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvm-DJ-FtN">
                         <rect key="frame" x="0.0" y="257.5" width="306" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -47,8 +47,9 @@
             <size key="customSize" width="306" height="278"/>
             <connections>
                 <outlet property="WishListImag" destination="Lur-QB-IEV" id="zu0-uf-iSN"/>
+                <outlet property="WishListLabel" destination="qvm-DJ-FtN" id="ZbL-8G-AnJ"/>
             </connections>
-            <point key="canvasLocation" x="323.1884057971015" y="147.99107142857142"/>
+            <point key="canvasLocation" x="255" y="145"/>
         </collectionViewCell>
     </objects>
 </document>

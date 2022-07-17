@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct ProductBagCard_firestore: Codable {
 
     let id: String

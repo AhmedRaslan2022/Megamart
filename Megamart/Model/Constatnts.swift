@@ -67,6 +67,8 @@ struct Constants {
     static let favorite_nib_name  = "FavoritesCollectionViewCell"
     static let favorite_Cell_id   = "favoritesCell_id"
     
+    static let order_nib_name  = "OrderTableViewCell"
+    static let order_Cell_id   = "Order_cell_id"
 
     
 

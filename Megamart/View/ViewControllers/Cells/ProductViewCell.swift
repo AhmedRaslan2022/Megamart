@@ -11,8 +11,19 @@ import AlamofireImage
 
 class ProductViewCell: UICollectionViewCell {
     
+    private var product: ProductModel?
+    var productDetails_viewModel: ProductDetails_Protocol = ProductDetails_viewModel()
+    
+
+    @IBOutlet weak var FavouriteProduct: UIButton!
     @IBAction func FavouriteProduct(_ sender: UIButton) {
+        
+        
+        
+        
     }
+    
+    
     @IBOutlet weak var ProductPrice: UILabel!
     @IBOutlet weak var ProductImage: UIImageView!
 
