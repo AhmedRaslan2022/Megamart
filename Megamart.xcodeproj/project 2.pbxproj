@@ -773,11 +773,11 @@
 				04AE1F9428720A4D00373837 /* ProductDetails_CollectionViewCell.xib in Resources */,
 				E245C2AB287084BB004A341C /* Orders.storyboard in Resources */,
 				04C0777F287DCBB4005BDC0E /* FavoritesCollectionViewCell.xib in Resources */,
-
+<<<<<<< HEAD
 				00814DA6286EF03D00E94EA4 /* Setting.storyboard in Resources */,
-
+=======
 				E245C29F28707CEA004A341C /* OrderViewCell.xib in Resources */,
-
+>>>>>>> 8fcea3ed049d1dd8c1260a8442bec88b8aa46483
 				04C07781287DDDEF005BDC0E /* Products.storyboard in Resources */,
 				E2449E7C28785C3F000D649B /* WishListCollectionCell.xib in Resources */,
 				04D6996A287641ED00965CE3 /* GoogleService-Info.plist in Resources */,
