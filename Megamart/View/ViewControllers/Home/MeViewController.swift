@@ -10,10 +10,12 @@ import UIKit
 
 class MeViewController: UIViewController {
     
-    
     var orderViewModel: Order_Protocol = OrderViewModel()
+    var orders: [Order_Model] = []
+    
     var favorites: [ProductEntity_firestore] = []
     var favoritesViewModel: Favorites_protocol = Favorites_viewModel()
+    
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -24,6 +26,8 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         
 welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customerName.rawValue) ?? " ")"
         
@@ -37,9 +41,15 @@ welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customer
        
         self.wishlistCollection.register(UINib(nibName: Constants.WishList_nib_name , bundle: nil), forCellWithReuseIdentifier: Constants.WishList_Cell_id)
 
+        
+        
+        responseOf_fetchingOrders()
+        
     }
       
-   
+    override func viewWillAppear(_ animated: Bool) {
+        self.orderViewModel.fetchOrders()
+    }
     
     
     @IBAction func orderMore(_ sender: Any) {
@@ -135,21 +145,24 @@ extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource
 
 }
 
-//MARK -                    OrdersTableView
+
+
+//MARK: -                    OrdersTableView
 
 
 
 extension MeViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return orders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let  cell = ordersTable.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as? OrderTableViewCell
+        let  cell = ordersTable.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as! OrderTableViewCell
 
-      
-   
-       return  cell!
+        cell.priceLbel.text =  orders[indexPath.row].totalPrice
+        cell.createdAtLabel.text =  orders[indexPath.row].created_at
+        
+       return  cell
  
     }
 }
@@ -159,9 +172,31 @@ extension MeViewController:UITableViewDelegate,UITableViewDataSource {
     
  
 extension MeViewController {
-    
+    func responseOf_fetchingOrders() {
+        
+        self.orderViewModel.binding = { orders , error in
+            if let error = error {
+               print("*****ordererror*******\(error)")
+            }
+            if let orders = orders {
+                print(orders)
+                DispatchQueue.main.async {
+                    self.orders = orders
+                    print (self.orders.count)
+                    self.ordersTable.reloadData()
+                }
+                
+            }
+
+            
+        }
 
     
     
 }
+    
+
+}
+
+
 

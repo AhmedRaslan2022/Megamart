@@ -129,8 +129,7 @@ class ProductDetails_ViewController: UIViewController {
                 if let product = product {
                     productDetails_viewModel.removeFromFavorites(productId: product.id)
                 }
-                
-                
+
             }else{
                 self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
                 if let product = product {

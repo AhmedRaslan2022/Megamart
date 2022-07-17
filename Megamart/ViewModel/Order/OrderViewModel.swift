@@ -31,12 +31,15 @@ class OrderViewModel : Order_Protocol{
     }
     
     func fetchOrders() {
+        print ("InsideOrders")
         firebaseManager.fetchOrders { orders, error in
             if let error = error {
                 self.error = error
+                print ("OrdersError")
             }
                if let orders = orders {
                 self.orders = orders
+                   print ("OrdersSuccess")
             }
         }
     }
