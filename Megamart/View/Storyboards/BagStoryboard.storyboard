@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3rQ-rL-kzK">
-                                <rect key="frame" x="0.0" y="44" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="537.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BagTableViewCell" rowHeight="173" id="toW-2S-zdI" customClass="BagTableViewCell" customModule="Megamart" customModuleProvider="target">
@@ -124,25 +124,25 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdF-hY-XuI">
-                                <rect key="frame" x="0.0" y="726" width="414" height="125.5"/>
+                                <rect key="frame" x="0.0" y="591.5" width="414" height="125.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="i97-fp-O5m">
                                         <rect key="frame" x="10" y="0.0" width="394" height="125.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Pt-O0-bFl">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="57.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="58"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixe-3t-9M6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="57.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="58"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDU-vk-fZ3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="197" height="57.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="197" height="58"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhL-Ln-pf5">
-                                                                <rect key="frame" x="197" y="0.0" width="197" height="57.5"/>
+                                                                <rect key="frame" x="197" y="0.0" width="197" height="58"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -155,7 +155,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNR-EL-ptr">
-                                                <rect key="frame" x="0.0" y="67.5" width="394" height="58"/>
+                                                <rect key="frame" x="0.0" y="68" width="394" height="57.5"/>
                                                 <color key="backgroundColor" name="Color"/>
                                                 <state key="normal" title="Checkout">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -198,7 +198,7 @@
                             <constraint firstItem="YdF-hY-XuI" firstAttribute="leading" secondItem="3rQ-rL-kzK" secondAttribute="leading" id="8fl-Df-f5h"/>
                             <constraint firstItem="YdF-hY-XuI" firstAttribute="height" secondItem="MoP-9h-1V4" secondAttribute="height" multiplier="0.14" id="BwE-7A-r2g"/>
                             <constraint firstItem="osK-Hh-NKr" firstAttribute="trailing" secondItem="3rQ-rL-kzK" secondAttribute="trailing" id="iMt-7U-vOu"/>
-                            <constraint firstItem="3rQ-rL-kzK" firstAttribute="height" secondItem="MoP-9h-1V4" secondAttribute="height" multiplier="0.75" id="iub-NT-mtO"/>
+                            <constraint firstItem="3rQ-rL-kzK" firstAttribute="height" secondItem="MoP-9h-1V4" secondAttribute="height" multiplier="0.6" id="iub-NT-mtO"/>
                             <constraint firstItem="YdF-hY-XuI" firstAttribute="trailing" secondItem="3rQ-rL-kzK" secondAttribute="trailing" id="l5D-x0-ELw"/>
                             <constraint firstItem="YdF-hY-XuI" firstAttribute="top" secondItem="3rQ-rL-kzK" secondAttribute="bottom" constant="10" id="qD3-ug-4Se"/>
                             <constraint firstItem="3rQ-rL-kzK" firstAttribute="top" secondItem="osK-Hh-NKr" secondAttribute="top" id="tgP-8P-uQZ"/>

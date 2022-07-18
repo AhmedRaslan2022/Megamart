@@ -38,6 +38,7 @@ class HomeVC: UIViewController {
             favButton.isEnabled  = false
             cartButton.isEnabled = false
         }
+        
        brandsCollectionView.register(UINib(nibName: Constants.Brands_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.Brands_Cell_id)
         
         menuCollectionView.delegate = self

@@ -24,8 +24,6 @@ class BagViewController: UIViewController {
         super.viewDidLoad()
         bagTableView.delegate = self
         bagTableView.dataSource = self
-       
-        self.tabBarController?.tabBar.isHidden = true
         
         responseOf_fetchingBagCard()
         responseOf_deleteProductFrombagCart()
@@ -34,6 +32,7 @@ class BagViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.bagCardViewModel.fetchBagCard()
+        self.tabBarController?.tabBar.isHidden = true
     }
  
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,11 +42,17 @@ class BagViewController: UIViewController {
     
     
     @IBAction func checkout(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.setting_storyboard, bundle:nil)
-        let addressViewController = storyBoard.instantiateViewController(withIdentifier: Constants.address_ViewController_id) as! AddressVC
+        if self.productsBagCard.count > 0 {
+            let storyBoard : UIStoryboard = UIStoryboard(name: Constants.setting_storyboard, bundle:nil)
+            let addressViewController = storyBoard.instantiateViewController(withIdentifier: Constants.address_ViewController_id) as! AddressVC
+            
+            addressViewController.order = Order_Model(id: "", products: productsBagCard, totalPrice: self.totalPrice, created_at: self.bagCardViewModel.getCurrentTime(), address: nil)
+            self.navigationController?.pushViewController(addressViewController, animated: true)
+        }
+        else{
+            addAlert(title: "Warning", message: "There are no product in cart \n add products and Try again", ActionTitle: "OK", viewController: self)
+        }
         
-        addressViewController.order = Order_Model(id: "", products: productsBagCard, totalPrice: self.totalPrice, created_at: self.bagCardViewModel.getCurrentTime(), address: nil)
-        self.navigationController?.pushViewController(addressViewController, animated: true)
     }
     
 

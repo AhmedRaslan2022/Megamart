@@ -20,27 +20,31 @@ class AddressVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        self.customerStreet.delegate = self
+        self.customerCity.delegate = self
+        self.customerCountry.delegate = self
+        self.customerPhoneNumber.delegate = self
+
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+ 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     @IBAction func saveAddress(_ sender: Any) {
-        if checkIs_NotEmpty() {
-            guard let street = customerStreet.text else { return }
-            guard let city = customerCity.text else { return }
-            guard let country = customerCountry.text else { return }
-            guard let phoneNumber = customerPhoneNumber.text else { return }
-            guard var order = order else { return }
-            
-            order.address = Order_Address(street: street, city: city, country: country, phoneNumber: phoneNumber)
-            
-            goToPaymentVC(order: order)
-        
-        }
-        
+        saveAddress()
     }
-    
-    
+
+}
+
+
+// MARK: -                          Extension for check is not Empty
+
+extension AddressVC {
     
     func checkIs_NotEmpty() -> Bool {
 
@@ -64,7 +68,24 @@ class AddressVC: UIViewController {
         return true
     }
 
+//MARK: -                                       Save Address
     
+    func saveAddress() {
+        if checkIs_NotEmpty() {
+            guard let street = customerStreet.text else { return }
+            guard let city = customerCity.text else { return }
+            guard let country = customerCountry.text else { return }
+            guard let phoneNumber = customerPhoneNumber.text else { return }
+            guard var order = order else { return }
+            
+            order.address = Order_Address(street: street, city: city, country: country, phoneNumber: phoneNumber)
+            
+            goToPaymentVC(order: order)
+        
+        }
+    }
+    
+//MARK: -                                       go To Payment
     
     func goToPaymentVC(order: Order_Model) {
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.payment_storyboard, bundle:nil)
@@ -72,5 +93,37 @@ class AddressVC: UIViewController {
         addressViewController.order = order
         self.navigationController?.pushViewController(addressViewController, animated: true)
     }
+    
 
+}
+
+
+
+
+//MARK: -                               UITextFieldDelegate
+
+
+extension AddressVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField {
+        case self.customerStreet:
+            self.customerCity.becomeFirstResponder()
+            
+        case self.customerCity:
+            self.customerCountry.becomeFirstResponder()
+        
+        case self.customerCountry:
+            self.customerPhoneNumber.becomeFirstResponder()
+        
+        case self.customerPhoneNumber:
+            saveAddress()
+        default:
+            return false
+        }
+        
+        return true
+    }
+    
 }

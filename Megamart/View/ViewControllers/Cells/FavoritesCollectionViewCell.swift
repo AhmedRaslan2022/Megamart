@@ -41,9 +41,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func updateFavorites(_ sender: Any) {
-        print("*(((((((((((((((((((((((")
         if let productId = productId {
-            print("*(((((((((((((((((((((((&&&&&&&&&&&&&&&&&&&&")
             self.delegate?.deleteProductFromFavorites(productId: productId)
         }
     }

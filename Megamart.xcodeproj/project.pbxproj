@@ -570,10 +570,10 @@
 				E2187B0428705237009A97F5 /* CategoryCollectionCell.swift */,
 				04F0FA78286F8BFD00A82FD0 /* ProductDetails_CollectionViewCell.swift */,
 				E20C7568287067A2004ACF8F /* ProductViewCell.swift */,
+				04C0777C287DCBB4005BDC0E /* FavoritesCollectionViewCell.swift */,
 				E245C2A42870818B004A341C /* WishListCollectionCell.swift */,
 				006A00562871838900F2228C /* AdsCollectionViewCell.swift */,
 				048C95CF2885851600B48EA9 /* OrderTableViewCell.swift */,
-				04C0777C287DCBB4005BDC0E /* FavoritesCollectionViewCell.swift */,
 				E21B2F09288546430068D835 /* OrderCollectionViewCell.swift */,
 			);
 			path = Cells;

@@ -40,6 +40,8 @@ class ProductDetails_ViewController: UIViewController {
         products_collectionview.dataSource = self
         self.products_collectionview.register(UINib(nibName: Constants.ProductDetails_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.ProductDetails_cell_id)
     
+
+        
         if rootViewController != nil {
             self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
@@ -56,12 +58,15 @@ class ProductDetails_ViewController: UIViewController {
 
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
         navigationController?.isNavigationBarHidden = true
     }
-      
+ 
     override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
         navigationController?.isNavigationBarHidden = false
     }
+
     
     
     override func viewWillLayoutSubviews() {

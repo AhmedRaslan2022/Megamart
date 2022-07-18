@@ -24,6 +24,14 @@ class PaymentOptionVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+ 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     
     func paymentRequest() -> PKPaymentRequest {
         let request = PKPaymentRequest()

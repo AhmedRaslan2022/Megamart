@@ -81,7 +81,7 @@ class MeViewController: UIViewController {
         let storyboard = UIStoryboard(name: Constants.Orders_storyboard,bundle: nil)
         if let orderVC = storyboard.instantiateViewController(withIdentifier: Constants.Orders_ViewController_id) as? OrdersViewController{
             self.navigationController?.pushViewController(orderVC, animated: true)
-    }
+        }
     }
   
     @IBAction func wishListMore(_ sender: Any) {
@@ -95,7 +95,7 @@ class MeViewController: UIViewController {
     
     
     
-//MARK: -                    Register and Login Buttons Buttons
+//MARK: -                        Register and Login Buttons Buttons
     
     
  @IBAction func goLogin(_ sender: UIButton) {
@@ -132,8 +132,7 @@ class MeViewController: UIViewController {
     @IBAction func goSettings_ViewController(_ sender: UIBarButtonItem) {
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.setting_storyboard, bundle:nil)
         let settingsVC = storyBoard.instantiateViewController(withIdentifier: Constants.Setting_viewController_id) as! SettingViewController
-        settingsVC.modalPresentationStyle = .fullScreen
-        self.present(settingsVC, animated: true, completion: nil)
+        self.navigationController?.show(settingsVC, sender: self)
     }
 
 }
@@ -141,7 +140,7 @@ class MeViewController: UIViewController {
 
 
 
-//MARK: -                    Favourite collectionView
+//MARK: -                            Favourite collectionView
 
 extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     
@@ -176,11 +175,12 @@ extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource
 
 
 
-//MARK: -                          OrdersTableView
+//MARK: -                                    Orders TableView
 
 
 
-extension MeViewController:UITableViewDelegate,UITableViewDataSource {
+extension MeViewController: UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if orders.isEmpty{
             return 0
@@ -189,7 +189,7 @@ extension MeViewController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let  cell = ordersTable.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as? OrderTableViewCell
+        let  cell = tableView.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as? OrderTableViewCell
 
         cell?.priceLbel.text =  "Price: \(orders[indexPath.row].totalPrice)"
         cell?.createdAtLabel.text =  "Created At: \(orders[indexPath.row].created_at)"
@@ -212,6 +212,7 @@ extension MeViewController:UITableViewDelegate,UITableViewDataSource {
     
  
 extension MeViewController {
+   
     func responseOf_fetchingOrders() {
         
         self.orderViewModel.binding = { orders , error in

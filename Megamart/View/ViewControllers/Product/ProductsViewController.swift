@@ -12,8 +12,6 @@ class ProductsViewController: UIViewController {
     
 
 
-    
-
     @IBOutlet weak var priceSlide: UISlider!
     @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var PriceLabel: UILabel!
@@ -111,7 +109,7 @@ extension ProductsViewController: UICollectionViewDataSource,UICollectionViewDel
      
         
         let cell = ProductCollection.dequeueReusableCell(withReuseIdentifier: Constants.ProductsViewCell_id, for: indexPath) as! ProductViewCell
-        cell.ProductPrice.text = sortedArrayByPrice[indexPath.row].variants[0].price
+            cell.ProductPrice.text = sortedArrayByPrice[indexPath.row].variants[0].price
            let image = sortedArrayByPrice[indexPath.row].image.src
            cell.setCell(imageUrl: image)
         return cell

@@ -82,7 +82,7 @@ class RegisterNewCustomer_viewModel: RegiserNewCustomer_protocol {
       
     
     
-    func checkPassword(password:String,ConfirmPassword: String) -> Bool {
+    func checkPassword(password:String, ConfirmPassword: String) -> Bool {
         return password == ConfirmPassword
     }
     
@@ -97,6 +97,18 @@ class RegisterNewCustomer_viewModel: RegiserNewCustomer_protocol {
                 }
             }
         return nil
+    }
+    
+    
+    func retriveAllCustomer() {
+        apiService.retriveCustomers { customers, error in
+            if error != nil {
+                print("error in retrive customers")
+            }
+            if let customers = customers {
+                Constants.customers_list = customers
+            }
+        }
     }
     
 }
