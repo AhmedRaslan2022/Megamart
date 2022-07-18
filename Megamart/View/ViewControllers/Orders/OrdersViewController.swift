@@ -56,8 +56,11 @@ extension OrdersViewController : UICollectionViewDelegate,UICollectionViewDataSo
 
         cell?.dateLabel.text  = orders[indexPath.row].created_at
         cell?.priceLabel.text = String(orders[indexPath.row].totalPrice)
-        cell?.countLabel.text = "\(orders[indexPath.row].address?.street) " + "\(orders[indexPath.row].address?.city)"
-        
+        if let street = orders[indexPath.row].address?.street {
+            if  let city = orders[indexPath.row].address?.city {
+                    cell?.countLabel.text = "\(street) " + "\(city)"
+            }
+        }
        return  cell ?? UICollectionViewCell()
     }
     
@@ -86,5 +89,15 @@ extension OrdersViewController {
 
     }
     
+}
+
+
+extension OrdersViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: collectionView.bounds.width , height: collectionView.bounds.height / 3 )
+
+        
+    }
+
 }
 

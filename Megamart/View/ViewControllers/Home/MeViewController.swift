@@ -35,7 +35,7 @@ class MeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customerName.rawValue) ?? " ")"
+        welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customerName.rawValue) ?? " ")"
         
        self.wishlistCollection.delegate = self
        self.wishlistCollection.dataSource = self

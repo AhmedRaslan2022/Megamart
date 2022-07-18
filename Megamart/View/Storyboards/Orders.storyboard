@@ -16,10 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OIb-Do-UlU">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TtL-py-AAe">
+                                <rect key="frame" x="5" y="93" width="404" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eO5-hc-xVL">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="QYp-Er-0kl">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -31,25 +31,24 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OIb-Do-UlU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ESo-Mn-CI2"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OIb-Do-UlU" secondAttribute="trailing" id="FE8-AJ-v9Q"/>
-                            <constraint firstItem="OIb-Do-UlU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="fni-Ba-YMk"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OIb-Do-UlU" secondAttribute="bottom" id="xxA-BZ-cP9"/>
+                            <constraint firstItem="TtL-py-AAe" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="Lvx-ib-wyx"/>
+                            <constraint firstItem="TtL-py-AAe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="fGj-se-0FT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TtL-py-AAe" secondAttribute="bottom" constant="5" id="g1w-VM-Cc1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TtL-py-AAe" secondAttribute="trailing" constant="5" id="kWt-4x-p0S"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d71-FZ-MKO"/>
                     <connections>
-                        <outlet property="ordersCollection" destination="OIb-Do-UlU" id="7r7-td-cPv"/>
+                        <outlet property="ordersCollection" destination="TtL-py-AAe" id="Eij-rh-pGy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="86"/>
+            <point key="canvasLocation" x="1486" y="5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aKb-7m-5G4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yBu-B0-fiY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0IK-cI-GVm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2ym-EL-Ykx">
@@ -61,6 +60,7 @@
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="1Us-0D-YeK"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBu-B0-fiY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="533" y="6"/>
         </scene>
