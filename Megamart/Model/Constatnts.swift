@@ -106,6 +106,8 @@ struct Constants {
     
     static let coupons_values = [0.1, 0.2 , 0.05 , 0.3 , 0.4, 0.15 ]
     
+    static let merchantId = "merchant.m.saad19962019@gmail.com"
+    
     
 }
 

@@ -66,7 +66,7 @@ class PaymentOption_ViewModel: PaymentOption_Protocol {
             if let error = error {
                 self.saveOrder_error = error
             }
-            else{
+            else {
                 self.saveOrder_error = nil
             }
         }

@@ -13,6 +13,7 @@ class PaymentOptionVC: UIViewController {
     var order: Order_Model?
     var paymentOptionViewModel: PaymentOption_Protocol = PaymentOption_ViewModel()
 
+    var  pKPaymentSummaryItems: [PKPaymentSummaryItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,25 +23,32 @@ class PaymentOptionVC: UIViewController {
         
     }
     
-    private var paymentRequest: PKPaymentRequest = {
-            let request = PKPaymentRequest()
-            request.merchantIdentifier = "merchant.m.saad19962019@gmail.com"
-            request.supportedNetworks = [.visa, .masterCard,.amex,.discover]
-            request.supportedCountries = ["EG"]
-            request.merchantCapabilities = .capability3DS
-            request.countryCode = "EG"
-            request.currencyCode = "EGP"
-        request.paymentSummaryItems = [PKPaymentSummaryItem(label: "Megamart", amount: 100.0 )]
-            return request
-        }()
     
-    @IBAction func applePay(_ sender: UIButton) {
-        if let controller = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest) {
-            controller.delegate = self
-            present(controller, animated: true)
-            
+    func paymentRequest() -> PKPaymentRequest {
+        let request = PKPaymentRequest()
+        request.merchantIdentifier =  Constants.merchantId
+        request.supportedNetworks = [.visa, .masterCard,.amex,.discover]
+        request.supportedCountries = ["EG"]
+        request.merchantCapabilities = .capability3DS
+        request.countryCode = "EG"
+        request.currencyCode = "EGP"
+        request.paymentSummaryItems = self.pKPaymentSummaryItems
+        return request
     }
 
+    
+    
+    @IBAction func applePay(_ sender: UIButton) {
+        guard let order = order else { return }
+        for product in order.products {
+            self.pKPaymentSummaryItems.append(PKPaymentSummaryItem(label: "\(product.title) \ncount: \(product.count) " , amount: NSDecimalNumber(value: product.price * Double(product.count))))
+        }
+        self.pKPaymentSummaryItems.append(PKPaymentSummaryItem(label: "Total Price", amount: NSDecimalNumber(value: order.totalPrice), type: .final))
+        if let controller = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest()) {
+            controller.delegate = self
+            present(controller, animated: true)
+        }
+        
 }
     
     
@@ -70,20 +78,22 @@ class PaymentOptionVC: UIViewController {
         }
     }
     
-
 }
 
-extension PaymentOptionVC: PKPaymentAuthorizationViewControllerDelegate {
 
+extension PaymentOptionVC: PKPaymentAuthorizationViewControllerDelegate {
+    
+    // called when user authorizes a payment request only
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
         completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+        removeProductsFromCart()
     }
 
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
         controller.dismiss(animated: true, completion: nil)
-        removeProductsFromCart()
     }
 
+    
 }
 
 //MARK: -                                       Remove Products From Cart
