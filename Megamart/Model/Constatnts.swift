@@ -43,7 +43,7 @@ struct Constants {
     static let resetPassword_ViewController_id = "ResetPassword_ViewController_id"
     static let tabBar_ViewController_id = "tabViewControllerId"
     static let address_ViewController_id = "addressViewControllerId"
-    
+    static let about_ViewController_id = "AboutViewControllerId"
     
     
 //MARK: -                   Cells
@@ -120,3 +120,21 @@ struct Constants {
 enum Userdefaults_key: String {
     case customerId = "customerId", customerName = "customerName", couponValue = "couponValue"
 }
+
+
+//MARK: -                      Links
+enum GithubLinks: String {
+    
+    case raslanGit = "https://github.com/AhmedRaslan2022"
+    case sophyGit = "https://github.com/MohamedSaad9622"
+    case saadGit = "https://github.com/MahmoudAzam"
+}
+
+
+enum LinkedinLinks: String {
+    
+    case raslanGit = "https://www.linkedin.com/in/ahmed-rasslan-143a04108"
+    case sophyGit = "https://www.linkedin.com/in/mahmoud-sophy-304072192/%22"
+    case saadGit = "https://www.linkedin.com/in/mohamed-saad-aboasal/"
+}
+

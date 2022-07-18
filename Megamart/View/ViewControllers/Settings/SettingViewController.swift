@@ -51,4 +51,11 @@ class SettingViewController: UIViewController {
         
     }
     
+    @IBAction func aboutUs(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.setting_storyboard, bundle:nil)
+        let aboutVC = storyBoard.instantiateViewController(withIdentifier: Constants.setting_storyboard) as! AboutViewController
+
+               self.navigationController?.show(aboutVC, sender: self)
+    }
+    
 }

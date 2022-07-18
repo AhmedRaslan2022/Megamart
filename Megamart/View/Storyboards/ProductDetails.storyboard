@@ -27,6 +27,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="elA-e3-yMk" secondAttribute="height" multiplier="1:1" id="PZW-zM-hMN"/>
                                                 </constraints>
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" backgroundImage="heart" catalog="system"/>
                                                 <connections>
@@ -38,6 +39,8 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="ADD TO CART">
                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="AddToCart:" destination="2Ry-98-gr7" eventType="touchUpInside" id="gJb-3T-qmj"/>
@@ -65,6 +68,7 @@
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem title="Item" image="homekit" catalog="system" id="hWg-XA-aX6">
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <connections>
                                                     <action selector="goToHome_button:" destination="2Ry-98-gr7" id="9uK-rN-85H"/>
                                                 </connections>
@@ -72,11 +76,13 @@
                                         </leftBarButtonItems>
                                         <rightBarButtonItems>
                                             <barButtonItem title="Item" image="heart.fill" catalog="system" id="xXq-q6-0lk">
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <connections>
                                                     <action selector="goToFavorites_button:" destination="2Ry-98-gr7" id="Wy9-xq-nVi"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem title="Item" image="cart.fill" catalog="system" id="grp-1H-eKw">
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <connections>
                                                     <action selector="goToShopingBag_button:" destination="2Ry-98-gr7" id="Uct-j6-jxc"/>
                                                 </connections>
@@ -93,7 +99,7 @@
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E8b-ff-5JI">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="294.66666666666669"/>
-                                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="3HQ-eu-BTq">
                                                     <size key="itemSize" width="414" height="410"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -193,6 +199,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <constraints>
                                             <constraint firstItem="A8A-Ic-wse" firstAttribute="top" secondItem="CcT-ZO-z8w" secondAttribute="bottom" constant="10" id="1s4-X5-myR"/>
                                             <constraint firstItem="9iG-KY-nBr" firstAttribute="top" secondItem="mQe-HM-42k" secondAttribute="bottom" constant="2" id="3oa-E9-wb6"/>
@@ -239,7 +246,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstItem="ute-6Z-96i" firstAttribute="leading" secondItem="S71-Mw-sVN" secondAttribute="leading" id="2wb-nn-v0E"/>
                                     <constraint firstItem="ute-6Z-96i" firstAttribute="bottom" secondItem="S71-Mw-sVN" secondAttribute="bottom" id="53S-IA-PEH"/>
@@ -291,17 +298,22 @@
             <point key="canvasLocation" x="1126.1538461538462" y="0.7109004739336493"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="pn3-UH-bcB">
+            <size key="intrinsicContentSize" width="170" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="cart.fill" catalog="system" width="32" height="32"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

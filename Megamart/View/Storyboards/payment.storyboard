@@ -168,6 +168,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Apple Pay">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemOrangeColor"/>
                                 </state>
                                 <connections>
                                     <action selector="applePay:" destination="Hwy-m7-C19" eventType="touchUpInside" id="X3i-yc-OMV"/>
@@ -186,6 +187,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Cash On Delivery">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemOrangeColor"/>
                                 </state>
                                 <connections>
                                     <action selector="cashOnDelivery:" destination="Hwy-m7-C19" eventType="touchUpInside" id="rmy-v3-NpS"/>

@@ -84,20 +84,20 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Home" id="hMS-kk-X0R" userLabel="Home">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="XXC-VN-EnL" userLabel="search">
-                            <color key="tintColor" systemColor="linkColor"/>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
                                 <action selector="searchButton:" destination="fa0-oP-dPg" id="vDd-4h-ab6"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="fav" image="heart.fill" catalog="system" id="LVF-n5-C5k">
-                                <color key="tintColor" systemColor="linkColor"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="goFav:" destination="fa0-oP-dPg" id="9N2-aL-Myg"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="cart" image="cart.fill" catalog="system" id="hec-sC-tpn">
-                                <color key="tintColor" systemColor="linkColor"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="goCart:" destination="fa0-oP-dPg" id="LCJ-P7-rWM"/>
                                 </connections>
@@ -164,25 +164,28 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="De5-qE-ruK"/>
                                     <barButtonItem title="Women" id="EOD-Tv-BFS">
-                                        <color key="tintColor" systemColor="tintColor"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <connections>
                                             <action selector="WomenButton:" destination="YSd-bn-ybB" id="ffp-ve-Enh"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2bU-5j-cxT"/>
                                     <barButtonItem title="Men" id="sJo-Xr-RA2">
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <connections>
                                             <action selector="Men:" destination="YSd-bn-ybB" id="X3O-Dd-MPo"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="eSz-Rj-38O"/>
                                     <barButtonItem title="Kids" id="Xfe-pB-c6j">
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <connections>
                                             <action selector="kidsButton:" destination="YSd-bn-ybB" id="0jH-be-dum"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="9bv-2D-e5j"/>
                                     <barButtonItem title="Sale" id="cYs-MS-SMA">
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <connections>
                                             <action selector="saleButton:" destination="YSd-bn-ybB" id="8ea-W1-jtM"/>
                                         </connections>
@@ -213,17 +216,20 @@
                     </view>
                     <navigationItem key="navigationItem" title="Category" id="6RN-Wo-Pgs">
                         <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="MIr-cS-Iao">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
                                 <action selector="searchButton:" destination="YSd-bn-ybB" id="plW-LG-e12"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="heart.fill" catalog="system" id="LTB-oa-qYy">
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="goFav:" destination="YSd-bn-ybB" id="HEq-Oq-yfu"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="cart.fill" catalog="system" id="8Z5-oU-7zf">
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="goCart:" destination="YSd-bn-ybB" id="8Ws-qh-eXe"/>
                                 </connections>
@@ -268,10 +274,12 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-NS-TVx">
                                                 <rect key="frame" x="0.0" y="0.0" width="418" height="107.66666666666667"/>
-                                                <color key="backgroundColor" red="0.21011042730000001" green="0.14608737520000001" blue="0.49885773839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Login" cornerStyle="capsule"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Login" cornerStyle="capsule">
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="goLogin:" destination="WeX-yy-TLl" eventType="touchUpInside" id="lW4-Hj-aRm"/>
                                                 </connections>
@@ -290,7 +298,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utw-cv-kyk">
                                                 <rect key="frame" x="215.33333333333337" y="0.0" width="202.66666666666663" height="107.66666666666667"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="More"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="More">
+                                                    <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="orderMore:" destination="WeX-yy-TLl" eventType="touchUpInside" id="WA8-nt-CSE"/>
                                                 </connections>
@@ -317,7 +327,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2Z-ow-klN">
                                                 <rect key="frame" x="209" y="0.0" width="209" height="107.66666666666667"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="More"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="More">
+                                                    <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="wishListMore:" destination="WeX-yy-TLl" eventType="touchUpInside" id="fbz-RM-pmq"/>
                                                 </connections>
@@ -354,8 +366,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="YSB-Ec-5ZQ">
                         <rightBarButtonItems>
-                            <barButtonItem image="gearshape" catalog="system" id="DAF-8s-971"/>
-                            <barButtonItem image="cart.fill" catalog="system" id="P4H-KQ-YB2"/>
+                            <barButtonItem image="gearshape" catalog="system" id="DAF-8s-971">
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                            </barButtonItem>
+                            <barButtonItem image="cart.fill" catalog="system" id="P4H-KQ-YB2">
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -438,26 +454,23 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="cart.fill" catalog="system" width="32" height="32"/>
         <image name="circle.grid.2x2.fill" catalog="system" width="128" height="112"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
