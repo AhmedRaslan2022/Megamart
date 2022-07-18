@@ -100,7 +100,6 @@
 		E24ABE262872BFC40047D7F1 /* Products_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24ABE252872BFC40047D7F1 /* Products_Model.swift */; };
 		E25DE72B2872B9CB003010ED /* Products_Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DE7292872B9CB003010ED /* Products_Protocol.swift */; };
 		E25DE72C2872B9CB003010ED /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DE72A2872B9CB003010ED /* ProductsViewModel.swift */; };
-		E2D2973D288477AB00E2CADF /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D2973A288477AA00E2CADF /* playstore.png */; };
 		E2D2973E288477AB00E2CADF /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D2973B288477AB00E2CADF /* appstore.png */; };
 		E2E47EE92884B8B8004B9FB8 /* Connectivity_alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E47EE82884B8B8004B9FB8 /* Connectivity_alamofire.swift */; };
 		E2F9FCAE2875E01700017E8C /* BrandsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F9FCAD2875E01700017E8C /* BrandsCollectionCell.xib */; };
@@ -228,7 +227,6 @@
 		E25DE7292872B9CB003010ED /* Products_Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products_Protocol.swift; sourceTree = "<group>"; };
 		E25DE72A2872B9CB003010ED /* ProductsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		E28E9055286F3A770041B0A7 /* BrandsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsCollectionCell.swift; sourceTree = "<group>"; };
-		E2D2973A288477AA00E2CADF /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
 		E2D2973B288477AB00E2CADF /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
 		E2E47EE82884B8B8004B9FB8 /* Connectivity_alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity_alamofire.swift; sourceTree = "<group>"; };
 		E2F9FCAD2875E01700017E8C /* BrandsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandsCollectionCell.xib; sourceTree = "<group>"; };
@@ -353,7 +351,6 @@
 				0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */,
 				0418BE56286CF7F9000F28EC /* Assets.xcassets */,
 				E2D2973B288477AB00E2CADF /* appstore.png */,
-				E2D2973A288477AA00E2CADF /* playstore.png */,
 				0418BE5B286CF7F9000F28EC /* Info.plist */,
 				04D69969287641ED00965CE3 /* GoogleService-Info.plist */,
 				0477528728709DC00095EA91 /* Utilitis */,
@@ -826,7 +823,6 @@
 				008ABD302870650F0060CB08 /* payment.storyboard in Resources */,
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
 				E2D2973E288477AB00E2CADF /* appstore.png in Resources */,
-				E2D2973D288477AB00E2CADF /* playstore.png in Resources */,
 				E2116F2D287CC483005360D2 /* Main.storyboard in Resources */,
 				E2391837287F6D6E00FD000E /* OrderTableViewCell.xib in Resources */,
 				04FB89DA288439E2005147B8 /* Setting.storyboard in Resources */,

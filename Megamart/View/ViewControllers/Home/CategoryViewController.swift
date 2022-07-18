@@ -13,8 +13,6 @@ class CategoryViewController: UIViewController {
   
     
     @IBOutlet weak var floatySubCat: Floaty!
-    
-    
     @IBOutlet weak var productsCollection: UICollectionView!
     
     var menArray = [Int]()
