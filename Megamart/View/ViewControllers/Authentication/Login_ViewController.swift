@@ -62,6 +62,7 @@ class Login_ViewController: UIViewController {
     
     func login() {
         if checkIs_NotEmpty() {
+            self.login_viewModel.retriveAllCustomer()
             if let email = userEmail_textField.text, let  password = userPassword_textField.text{
                 login_viewModel.login(userName: email, password: password)
             }
