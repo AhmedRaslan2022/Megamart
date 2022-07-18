@@ -22,7 +22,6 @@ class MeViewController: UIViewController {
     
     @IBOutlet weak var orderMore: UIButton!
     @IBOutlet weak var wishlistMore: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var ordersLabel: UILabel!
@@ -36,12 +35,7 @@ class MeViewController: UIViewController {
         super.viewDidLoad()
 
         welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customerName.rawValue) ?? " ")"
-        
-       self.wishlistCollection.delegate = self
-       self.wishlistCollection.dataSource = self
-        
-        self.ordersTable.delegate = self
-        self.ordersTable.dataSource = self
+
         
        self.ordersTable.register(UINib(nibName: Constants.order_nib_name, bundle: nil), forCellReuseIdentifier: Constants.order_Cell_id)
        
@@ -50,13 +44,12 @@ class MeViewController: UIViewController {
         responseOf_fetchingOrders()
         responseOf_fetchingFavorites()
         
-        
+
         if Login_Verification(){
             loginButton.isHidden = true
-            registerButton.isHidden = true
         }
         else {
-            
+
             requestLogin_alert(viewController: self)
             wishlistCollection.isHidden = true
             ordersTable.isHidden = true
@@ -103,14 +96,6 @@ class MeViewController: UIViewController {
      let loginVC = storyBoard.instantiateViewController(withIdentifier: Constants.login_viewController_id) as! Login_ViewController
      loginVC.modalPresentationStyle = .fullScreen
      self.present(loginVC, animated: true, completion: nil)
-        }
-    
- @IBAction func goRegister(_ sender: Any) {
-   
-     let storyBoard : UIStoryboard = UIStoryboard(name: Constants.authentication_storyboard, bundle:nil)
-     let registerVC = storyBoard.instantiateViewController(withIdentifier: Constants.SignUp_viewController_id) as! Register_ViewController
-     registerVC.modalPresentationStyle = .fullScreen
-     self.present(registerVC, animated: true, completion: nil)
         }
     
    
@@ -180,22 +165,31 @@ extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource
 
 
 extension MeViewController: UITableViewDelegate,UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if orders.isEmpty{
-            return 0
-        }
         return orders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let  cell = tableView.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as? OrderTableViewCell
-
-        cell?.priceLbel.text =  "Price: \(orders[indexPath.row].totalPrice)"
-        cell?.createdAtLabel.text =  "Created At: \(orders[indexPath.row].created_at)"
-        
-        return  cell ??  UITableViewCell()
+        print("******************************")
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.order_Cell_id) as! OrderTableViewCell
+        cell.priceLbel.text =  "Price: \(orders[indexPath.row].totalPrice)"
+        cell.createdAtLabel.text =  "Created At: \(orders[indexPath.row].created_at)"
+        return cell
     }
+    
+    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return orders.count
+//    }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let  cell = tableView.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as? OrderTableViewCell
+//
+//        cell?.priceLbel.text =  "Price: \(orders[indexPath.row].totalPrice)"
+//        cell?.createdAtLabel.text =  "Created At: \(orders[indexPath.row].created_at)"
+//
+//        return  cell ??  UITableViewCell()
+//    }
     
    
 
