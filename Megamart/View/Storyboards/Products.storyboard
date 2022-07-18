@@ -19,7 +19,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" semanticContentAttribute="spatial" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7XJ-jU-PZj">
                                 <rect key="frame" x="0.0" y="241.33333333333331" width="390" height="547.66666666666674"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LLe-d4-1dq">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="LLe-d4-1dq">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -64,7 +64,20 @@
                             <constraint firstAttribute="trailing" secondItem="fvO-Hn-9od" secondAttribute="trailing" constant="16" id="xkr-E6-eQO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Products" id="v1k-ap-pyO"/>
+                    <navigationItem key="navigationItem" title="Products" id="v1k-ap-pyO">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Filter" id="q10-cP-ER7">
+                                <connections>
+                                    <action selector="filter:" destination="Y6W-OH-hqX" id="xU5-6n-Bgu"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="line.3.horizontal.decrease.circle" catalog="system" id="3Q6-5v-xgh">
+                                <connections>
+                                    <action selector="filter:" destination="Y6W-OH-hqX" id="Huc-QB-2hj"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="PriceLabel" destination="rtN-Hh-bfD" id="njw-cg-05M"/>
@@ -75,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110.7692307692307" y="111.61137440758293"/>
+            <point key="canvasLocation" x="906" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4pe-gS-q4H">
@@ -98,6 +111,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

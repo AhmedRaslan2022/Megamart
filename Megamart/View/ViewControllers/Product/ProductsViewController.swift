@@ -11,15 +11,14 @@ import UIKit
 class ProductsViewController: UIViewController {
     
 
+
     
+
     @IBOutlet weak var priceSlide: UISlider!
-    
     @IBOutlet weak var SearchBar: UISearchBar!
-  
     @IBOutlet weak var PriceLabel: UILabel!
-    
     @IBOutlet weak var ProductCollection: UICollectionView!
-    
+
     
     var brandTitle = String ()
     var adjustedPrice: Float = 200.0
@@ -33,6 +32,8 @@ class ProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         PriceLabel.text = String(adjustedPrice)
+        priceSlide.isHidden = true
+        PriceLabel.isHidden = true
         ProductCollection.delegate = self
         ProductCollection.dataSource = self
         
@@ -66,6 +67,12 @@ class ProductsViewController: UIViewController {
         
       
     }
+    @IBAction func filter(_ sender: UIBarButtonItem) {
+        priceSlide.isHidden = false
+        PriceLabel.isHidden = false
+    }
+    
+    
     
     @IBAction func priceSlider(_ sender: UISlider) {
         adjustedPrice = sender.value
