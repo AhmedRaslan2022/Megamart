@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MnO-CB-GPj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ghr-bB-Wnt">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -238,17 +238,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxN-Om-ltk">
-                                <rect key="frame" x="1284" y="489.66666666666674" width="58" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxN-Om-ltk">
+                                <rect key="frame" x="1284" y="489.66666666666669" width="57.333333333333258" height="31.000000000000057"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="More"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="huY-om-vIf">
-                                <rect key="frame" x="5" y="93" width="418" height="573"/>
+                                <rect key="frame" x="5" y="93" width="418" height="750"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="132" translatesAutoresizingMaskIntoConstraints="NO" id="Jl3-WE-zic">
-                                        <rect key="frame" x="0.0" y="0.0" width="418" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="387.66666666666669" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94k-nQ-2qd">
                                                 <rect key="frame" x="0.0" y="0.0" width="93" height="31"/>
@@ -257,10 +256,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RBV-Kp-eIG">
-                                                <rect key="frame" x="225" y="0.0" width="193" height="31"/>
+                                                <rect key="frame" x="225" y="0.0" width="162.66666666666663" height="31"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ui-Kc-oJ1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="77.333333333333329" height="31"/>
                                                         <color key="backgroundColor" red="0.21011042732648036" green="0.14608737520089138" blue="0.49885773835358793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
@@ -270,7 +269,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-Ht-XBR">
-                                                        <rect key="frame" x="100.66666666666669" y="0.0" width="92.333333333333314" height="31"/>
+                                                        <rect key="frame" x="85.333333333333314" y="0.0" width="77.333333333333314" height="31"/>
                                                         <color key="backgroundColor" red="0.21011042730000001" green="0.14608737520000001" blue="0.49885773839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
@@ -302,24 +301,26 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OIm-cM-VDJ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bMp-Cs-Rot">
                                         <rect key="frame" x="0.0" y="152" width="418" height="103"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="103" id="2YG-EQ-3kb"/>
-                                        </constraints>
-                                    </tableView>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OIm-cM-VDJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="418" height="103"/>
+                                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="279" translatesAutoresizingMaskIntoConstraints="NO" id="Ii0-7m-tnQ">
                                         <rect key="frame" x="0.0" y="300" width="418" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wishlist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIP-GV-Rmu">
-                                                <rect key="frame" x="0.0" y="0.0" width="59.666666666666664" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bp7-ZT-gEh">
-                                                <rect key="frame" x="338.66666666666669" y="0.0" width="79.333333333333314" height="31"/>
+                                                <rect key="frame" x="347.33333333333331" y="0.0" width="70.666666666666686" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="More"/>
                                                 <connections>
@@ -329,10 +330,13 @@
                                         </subviews>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BZK-cA-KZX">
-                                        <rect key="frame" x="0.0" y="376" width="418" height="197"/>
+                                        <rect key="frame" x="0.0" y="376" width="418" height="374"/>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vUh-Lg-ljH">
-                                            <size key="itemSize" width="128" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="374" id="Wks-bK-HZV"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vUh-Lg-ljH">
+                                            <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -341,19 +345,22 @@
                                     </collectionView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="OIm-cM-VDJ" firstAttribute="centerX" secondItem="Jl3-WE-zic" secondAttribute="centerX" id="b6s-rD-Zgz"/>
-                                    <constraint firstItem="OIm-cM-VDJ" firstAttribute="trailing" secondItem="Ii0-7m-tnQ" secondAttribute="trailing" id="e0P-Xe-wRr"/>
-                                    <constraint firstItem="Ii0-7m-tnQ" firstAttribute="trailing" secondItem="BZK-cA-KZX" secondAttribute="trailing" id="kqn-TV-GAq"/>
+                                    <constraint firstItem="bMp-Cs-Rot" firstAttribute="trailing" secondItem="huY-om-vIf" secondAttribute="trailingMargin" id="Bam-x7-a98"/>
+                                    <constraint firstItem="bMp-Cs-Rot" firstAttribute="trailing" secondItem="Ii0-7m-tnQ" secondAttribute="trailing" id="KZh-Ix-VZ0"/>
+                                    <constraint firstItem="363-KW-WGW" firstAttribute="leading" secondItem="Bp7-ZT-gEh" secondAttribute="leading" id="UvA-j4-nVO"/>
+                                    <constraint firstItem="Ii0-7m-tnQ" firstAttribute="trailing" secondItem="BZK-cA-KZX" secondAttribute="trailing" id="pI8-bX-eq7"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lVO-0T-Uae"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="huY-om-vIf" firstAttribute="top" secondItem="lVO-0T-Uae" secondAttribute="top" constant="5" id="Agb-Jf-Dr1"/>
-                            <constraint firstItem="lVO-0T-Uae" firstAttribute="bottom" secondItem="huY-om-vIf" secondAttribute="bottom" constant="177" id="ZiL-k5-MeN"/>
-                            <constraint firstItem="huY-om-vIf" firstAttribute="leading" secondItem="lVO-0T-Uae" secondAttribute="leading" constant="5" id="ssb-0i-IHL"/>
-                            <constraint firstItem="lVO-0T-Uae" firstAttribute="trailing" secondItem="huY-om-vIf" secondAttribute="trailing" constant="5" id="uWp-0K-bsT"/>
+                            <constraint firstItem="huY-om-vIf" firstAttribute="top" secondItem="lVO-0T-Uae" secondAttribute="top" constant="5" id="1l0-zM-fqH"/>
+                            <constraint firstItem="OxN-Om-ltk" firstAttribute="leading" secondItem="63J-ux-w8N" secondAttribute="leading" constant="1284" id="2ui-8e-jSS"/>
+                            <constraint firstItem="huY-om-vIf" firstAttribute="bottom" secondItem="lVO-0T-Uae" secondAttribute="bottom" id="7P8-ff-CHC"/>
+                            <constraint firstItem="huY-om-vIf" firstAttribute="centerX" secondItem="63J-ux-w8N" secondAttribute="centerX" id="b7G-qI-kF6"/>
+                            <constraint firstItem="huY-om-vIf" firstAttribute="leading" secondItem="lVO-0T-Uae" secondAttribute="leading" constant="5" id="f86-Bd-WUd"/>
+                            <constraint firstItem="OxN-Om-ltk" firstAttribute="top" secondItem="63J-ux-w8N" secondAttribute="top" constant="489.66666666666674" id="ygD-D1-Hn5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Me" id="pR6-Ag-eV4">
@@ -371,11 +378,17 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="cartButton" destination="DiB-aO-Mrc" id="MND-HG-xuc"/>
+                        <outlet property="loginButton" destination="8Ui-Kc-oJ1" id="TwV-YC-k42"/>
+                        <outlet property="orderMore" destination="363-KW-WGW" id="g6d-Mq-lvd"/>
                         <outlet property="ordersLabel" destination="rgB-nu-4dq" id="Yyo-hR-p6q"/>
                         <outlet property="ordersTable" destination="OIm-cM-VDJ" id="g2R-DT-VuE"/>
+                        <outlet property="registerButton" destination="JgN-Ht-XBR" id="kV5-af-1BG"/>
+                        <outlet property="settingButton" destination="Lmy-F7-Ldr" id="Qxf-rE-glg"/>
                         <outlet property="welcomeLabel" destination="94k-nQ-2qd" id="Oc5-Ha-HPy"/>
                         <outlet property="wishListLabel" destination="pIP-GV-Rmu" id="BUT-BC-WPA"/>
                         <outlet property="wishlistCollection" destination="BZK-cA-KZX" id="Kt9-Rl-uj6"/>
+                        <outlet property="wishlistMore" destination="Bp7-ZT-gEh" id="tDn-YS-3Rc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldT-2l-IEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -421,7 +434,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcn-cy-2zW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757" y="423"/>
+            <point key="canvasLocation" x="777" y="432"/>
         </scene>
         <!--Me-->
         <scene sceneID="RWc-ah-61u">

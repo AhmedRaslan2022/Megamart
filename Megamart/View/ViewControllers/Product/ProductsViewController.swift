@@ -10,19 +10,7 @@ import UIKit
 
 class ProductsViewController: UIViewController {
     
-    @IBAction func priceSlider(_ sender: UISlider) {
-        adjustedPrice = sender.value
-        PriceLabel.text = String(adjustedPrice)
-        sortedArrayByPrice = []
-        for product in self.sortedProductsArray {
-            if  Float(product.variants[0].price)! <= self.adjustedPrice {
-                self.sortedArrayByPrice.append(product)
-              }
-          }
-        DispatchQueue.main.async {
-       self.ProductCollection.reloadData()
-   }
-    }
+
     
     @IBOutlet weak var priceSlide: UISlider!
     
@@ -78,6 +66,21 @@ class ProductsViewController: UIViewController {
         
       
     }
+    
+    @IBAction func priceSlider(_ sender: UISlider) {
+        adjustedPrice = sender.value
+        PriceLabel.text = String(adjustedPrice)
+        sortedArrayByPrice = []
+        for product in self.sortedProductsArray {
+            if  Float(product.variants[0].price)! <= self.adjustedPrice {
+                self.sortedArrayByPrice.append(product)
+              }
+          }
+        DispatchQueue.main.async {
+       self.ProductCollection.reloadData()
+   }
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.SearchBar.endEditing(true)

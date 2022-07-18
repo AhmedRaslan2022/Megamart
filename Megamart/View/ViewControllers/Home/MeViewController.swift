@@ -10,6 +10,7 @@ import UIKit
 
 class MeViewController: UIViewController {
     
+   
     var orderViewModel: Order_Protocol = OrderViewModel()
     var orders: [Order_Model] = []
     
@@ -19,17 +20,21 @@ class MeViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
+    @IBOutlet weak var orderMore: UIButton!
+    @IBOutlet weak var wishlistMore: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var ordersLabel: UILabel!
     @IBOutlet weak var wishListLabel: UILabel!
+    @IBOutlet weak var settingButton: UIBarButtonItem!
+    @IBOutlet weak var cartButton: UIBarButtonItem!
     @IBOutlet weak var wishlistCollection: UICollectionView!
     @IBOutlet weak var ordersTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
 welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customerName.rawValue) ?? " ")"
         
        self.wishlistCollection.delegate = self
@@ -44,6 +49,25 @@ welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customer
 
         responseOf_fetchingOrders()
         responseOf_fetchingFavorites()
+        
+        
+        if Login_Verification(){
+            loginButton.isHidden = true
+            registerButton.isHidden = true
+        }
+        else {
+            
+            requestLogin_alert(viewController: self)
+            wishlistCollection.isHidden = true
+            ordersTable.isHidden = true
+            orderMore.isHidden = true
+            wishlistMore.isHidden = true
+            ordersLabel.isHidden = true
+            wishListLabel.isHidden = true
+            settingButton.isEnabled = false
+            cartButton.isEnabled = false
+        }
+        
     }
       
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +77,7 @@ welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customer
     
     
     @IBAction func orderMore(_ sender: Any) {
+        
         let storyboard = UIStoryboard(name: Constants.Orders_storyboard,bundle: nil)
         if let orderVC = storyboard.instantiateViewController(withIdentifier: Constants.Orders_ViewController_id) as? OrdersViewController{
             self.navigationController?.pushViewController(orderVC, animated: true)
@@ -81,13 +106,14 @@ welcomeLabel.text = "Welcome \(defaults.string(forKey: Userdefaults_key.customer
         }
     
  @IBAction func goRegister(_ sender: Any) {
+   
      let storyBoard : UIStoryboard = UIStoryboard(name: Constants.authentication_storyboard, bundle:nil)
      let registerVC = storyBoard.instantiateViewController(withIdentifier: Constants.SignUp_viewController_id) as! Register_ViewController
      registerVC.modalPresentationStyle = .fullScreen
      self.present(registerVC, animated: true, completion: nil)
         }
     
-
+   
     
     
     
@@ -124,7 +150,7 @@ extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource
         if favorites.isEmpty{
             return 0
         }
-        return favorites.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
