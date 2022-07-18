@@ -43,19 +43,12 @@ class BagViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.setting_storyboard, bundle:nil)
         let addressViewController = storyBoard.instantiateViewController(withIdentifier: Constants.address_ViewController_id) as! AddressVC
         
-        addressViewController.order = Order_Model(id: "", products: productsBagCard, totalPrice: self.totalPrice, created_at: getCurrentTime(), address: nil)
+        addressViewController.order = Order_Model(id: "", products: productsBagCard, totalPrice: self.totalPrice, created_at: self.bagCardViewModel.getCurrentTime(), address: nil)
         self.navigationController?.pushViewController(addressViewController, animated: true)
     }
     
 
-    func getCurrentTime() -> String {
-        let today = Date()
-        let hours   = (Calendar.current.component(.hour, from: today))
-        let minutes = (Calendar.current.component(.minute, from: today))
-        let seconds = (Calendar.current.component(.second, from: today))
-        let time = "\(today) \(hours) \(minutes) \(seconds)"
-        return time
-    }
+    
     
     
 }

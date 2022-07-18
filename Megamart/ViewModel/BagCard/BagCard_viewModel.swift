@@ -45,7 +45,6 @@ class BagCard_viewModel: BagCard_protocol {
         }
     }
  
-    
 
 //MARK: -                           Remove Product From bagCard
     
@@ -71,7 +70,7 @@ class BagCard_viewModel: BagCard_protocol {
     
     
     
-    
+//MARK: -                       Add to Cart
     
     var addToBagCart_error: Error? {
         didSet{
@@ -93,5 +92,23 @@ class BagCard_viewModel: BagCard_protocol {
             }
         }
     }
+    
+ //MARK: -                                  get Current Time
+    
+    func getCurrentTime() -> String {
+        
+        let today = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let result = dateFormatter.string(from: today)
+        let hours   = (Calendar.current.component(.hour, from: today))
+        let minutes = (Calendar.current.component(.minute, from: today))
+        let seconds = (Calendar.current.component(.second, from: today))
+        let time = "\(result) , \(hours):\(minutes):\(seconds)"
+        return time
+    }
+    
+    
+    
     
 }

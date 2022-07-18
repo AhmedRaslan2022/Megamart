@@ -11,6 +11,7 @@ import PassKit
 class PaymentOptionVC: UIViewController {
 
     var order: Order_Model?
+    var requestIsAuthorized = false
     var paymentOptionViewModel: PaymentOption_Protocol = PaymentOption_ViewModel()
 
     var  pKPaymentSummaryItems: [PKPaymentSummaryItem] = []
@@ -86,11 +87,15 @@ extension PaymentOptionVC: PKPaymentAuthorizationViewControllerDelegate {
     // called when user authorizes a payment request only
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
         completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
-        removeProductsFromCart()
+        self.requestIsAuthorized = true
+        
     }
 
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
         controller.dismiss(animated: true, completion: nil)
+        if self.requestIsAuthorized {
+            removeProductsFromCart()
+        }
     }
 
     
