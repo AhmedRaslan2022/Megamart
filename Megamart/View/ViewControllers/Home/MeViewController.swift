@@ -150,7 +150,7 @@ extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource
         if favorites.isEmpty{
             return 0
         }
-        return 1
+        return favorites.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -182,21 +182,22 @@ extension MeViewController : UICollectionViewDelegate,UICollectionViewDataSource
 
 extension MeViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if orders.isEmpty{
+            return 0
+        }
         return orders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let  cell = ordersTable.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as! OrderTableViewCell
+        let  cell = ordersTable.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as? OrderTableViewCell
 
-        cell.priceLbel.text =  "Price: \(orders[indexPath.row].totalPrice)"
-        cell.createdAtLabel.text =  "Created At: \(orders[indexPath.row].created_at)"
+        cell?.priceLbel.text =  "Price: \(orders[indexPath.row].totalPrice)"
+        cell?.createdAtLabel.text =  "Created At: \(orders[indexPath.row].created_at)"
         
-       return  cell
+        return  cell ??  UITableViewCell()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / 2.03 , height: collectionView.bounds.height / 2.03)
-    }
+   
 
    
   

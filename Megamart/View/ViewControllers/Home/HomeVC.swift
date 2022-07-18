@@ -12,7 +12,12 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    
+    
+    
 
+    @IBOutlet weak var favButton: UIBarButtonItem!
+    @IBOutlet weak var cartButton: UIBarButtonItem!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var brandsCollectionView: UICollectionView!
     
@@ -27,6 +32,14 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        if Login_Verification(){
+            favButton.isEnabled = true
+        }
+        else {
+            favButton.isEnabled  = false
+            cartButton.isEnabled = false
+        }
        brandsCollectionView.register(UINib(nibName: Constants.Brands_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.Brands_Cell_id)
         
         menuCollectionView.delegate = self
@@ -84,6 +97,12 @@ class HomeVC: UIViewController {
     }
     }
     
+    @IBAction func searchButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: Constants.Products_storyboard,bundle: nil)
+        if let productVC = storyboard.instantiateViewController(withIdentifier: Constants.ProductsViewController_id) as? ProductsViewController{
+            self.navigationController?.pushViewController(productVC, animated: true)
+        }
+    }
     
     
 }

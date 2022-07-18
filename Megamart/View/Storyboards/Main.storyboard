@@ -85,6 +85,9 @@
                     <navigationItem key="navigationItem" title="Home" id="hMS-kk-X0R" userLabel="Home">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="XXC-VN-EnL" userLabel="search">
                             <color key="tintColor" systemColor="linkColor"/>
+                            <connections>
+                                <action selector="searchButton:" destination="fa0-oP-dPg" id="vDd-4h-ab6"/>
+                            </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="fav" image="heart.fill" catalog="system" id="LVF-n5-C5k">
@@ -104,6 +107,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="brandsCollectionView" destination="MPW-2c-PVv" id="ZJY-MN-DNP"/>
+                        <outlet property="cartButton" destination="hec-sC-tpn" id="XO3-gJ-k7h"/>
+                        <outlet property="favButton" destination="LVF-n5-C5k" id="vI2-cT-n1z"/>
                         <outlet property="menuCollectionView" destination="brg-ZE-29y" id="wIz-NF-pxy"/>
                     </connections>
                 </viewController>
@@ -207,7 +212,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Category" id="6RN-Wo-Pgs">
-                        <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="MIr-cS-Iao"/>
+                        <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="MIr-cS-Iao">
+                            <connections>
+                                <action selector="searchButton:" destination="YSd-bn-ybB" id="plW-LG-e12"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="heart.fill" catalog="system" id="LTB-oa-qYy">
                                 <connections>
@@ -222,6 +231,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="cartButton" destination="8Z5-oU-7zf" id="yrB-Ug-VEM"/>
+                        <outlet property="favButton" destination="LTB-oa-qYy" id="EP3-hn-Wjp"/>
                         <outlet property="floatySubCat" destination="7C8-dW-sr0" id="4hw-2C-VgF"/>
                         <outlet property="productsCollection" destination="a0y-bU-AHH" id="rhh-U2-NbA"/>
                     </connections>
