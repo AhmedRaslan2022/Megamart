@@ -24,7 +24,6 @@
 		04178B582873100A0044ED7B /* RegiserNewCustomer_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04178B572873100A0044ED7B /* RegiserNewCustomer_protocol.swift */; };
 		0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4A286CF7F7000F28EC /* AppDelegate.swift */; };
 		0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */; };
-		0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE53286CF7F7000F28EC /* Megamart.xcdatamodeld */; };
 		0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0418BE56286CF7F9000F28EC /* Assets.xcassets */; };
 		0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */; };
 		0418BE65286CF7F9000F28EC /* MegamartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE64286CF7F9000F28EC /* MegamartTests.swift */; };
@@ -145,7 +144,6 @@
 		0418BE47286CF7F7000F28EC /* Megamart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Megamart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0418BE4A286CF7F7000F28EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0418BE54286CF7F7000F28EC /* Megamart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Megamart.xcdatamodel; sourceTree = "<group>"; };
 		0418BE56286CF7F9000F28EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0418BE59286CF7F9000F28EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0418BE5B286CF7F9000F28EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -414,17 +412,8 @@
 			isa = PBXGroup;
 			children = (
 				0477529028709E870095EA91 /* NetworkManager */,
-				0418BE84286CF8C4000F28EC /* Database */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		0418BE84286CF8C4000F28EC /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				0418BE53286CF7F7000F28EC /* Megamart.xcdatamodeld */,
-			);
-			path = Database;
 			sourceTree = "<group>";
 		};
 		0418BE86286CF8ED000F28EC /* Cells */ = {
@@ -1026,7 +1015,6 @@
 				04B656FD28744DA8009EA793 /* Login_protocol.swift in Sources */,
 				E2391836287F6D6E00FD000E /* OrderTableViewCell.swift in Sources */,
 				046F98A1286E5D26008FDFFC /* Login_ViewController.swift in Sources */,
-				0418BE55286CF7F7000F28EC /* Megamart.xcdatamodeld in Sources */,
 				E2116F38287CCB4A005360D2 /* CollectsViewModel.swift in Sources */,
 				E23630922873E111009C1352 /* BrandsViewModel.swift in Sources */,
 				E23630912873E111009C1352 /* Brands_Protocol.swift in Sources */,
@@ -1397,19 +1385,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0418BE53286CF7F7000F28EC /* Megamart.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0418BE54286CF7F7000F28EC /* Megamart.xcdatamodel */,
-			);
-			currentVersion = 0418BE54286CF7F7000F28EC /* Megamart.xcdatamodel */;
-			path = Megamart.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0418BE3F286CF7F7000F28EC /* Project object */;
 }
