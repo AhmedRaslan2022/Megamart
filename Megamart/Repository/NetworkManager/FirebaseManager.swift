@@ -90,8 +90,6 @@ class FirebaseManager: FirebaseServices {
     
     
     
-    
-    
 //MARK: -                                       Add Product to Favorites
     
     

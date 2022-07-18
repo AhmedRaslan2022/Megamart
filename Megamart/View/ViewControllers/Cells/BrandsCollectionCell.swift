@@ -20,7 +20,7 @@ class BrandsCollectionCell: UICollectionViewCell {
     }
     
     func setCell(imageUrl: String) {
-        Alamofire.request(imageUrl).responseImage { response in
+        AF.request(imageUrl).responseImage { response in
             if case .success(let image) = response.result {
                 self.brandImage.image = image
             }

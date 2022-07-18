@@ -29,7 +29,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     }
 
     func setCell(product: ProductEntity_firestore) {
-        Alamofire.request(product.image).responseImage { response in
+        AF.request(product.image).responseImage { response in
             if case .success(let image) = response.result {
                 self.productImage.image = image
             }

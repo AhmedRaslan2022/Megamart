@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import FirebaseAuth
+
+
 
 class Login_ViewController: UIViewController {
 
@@ -74,9 +75,10 @@ class Login_ViewController: UIViewController {
 //MARK: -                               Buttons Action
     
     
-    @IBAction func skipLogin(_ sender: UIBarButtonItem) {
+    @IBAction func loginAsGuest(_ sender: Any) {
         navigateTo_HomeViewController()
     }
+
     
     @IBAction func login(_ sender: Any) {
         login()
@@ -88,6 +90,9 @@ class Login_ViewController: UIViewController {
         }
     }
 
+
+    
+    
     func checkIs_NotEmpty() -> Bool {
 
         if userEmail_textField.text!.isEmpty {

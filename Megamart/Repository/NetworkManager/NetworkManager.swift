@@ -17,7 +17,7 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
 
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.productDetails(product_id: endPoint)){
-            Alamofire.request(url, method: .get, parameters: nil, encoding:JSONEncoding.default)
+            AF.request(url, method: .get, parameters: nil, encoding:JSONEncoding.default)
                     .responseData { response in
                             if let error = response.error {
                                 completion(nil, error)
@@ -141,7 +141,7 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
     func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.retrievesCustomers()) {
             print(url)
-            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { response in
+            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { response in
                 if let data = response.data {
                     if let customers: AllCustomers = convertFromJson(data: data) {
                         completion(customers.customers, nil)
@@ -161,7 +161,7 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
     
     func fetchProducts(completion: @escaping (([ProductModel]?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.products()){
-            Alamofire.request(url , method: .get, parameters: nil, encoding:JSONEncoding.default)
+            AF.request(url , method: .get, parameters: nil, encoding:JSONEncoding.default)
                         .responseData { response in
                guard let data = response.data else { return }
                             if let decodedData: Products = convertFromJson(data: data){

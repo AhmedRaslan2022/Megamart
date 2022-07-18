@@ -42,7 +42,7 @@ class BagTableViewCell: UITableViewCell {
     
     
     func setCellBagCard(product: ProductBagCard_firestore, productIndex: Int) {
-        Alamofire.request(product.image).responseImage { response in
+        AF.request(product.image).responseImage { response in
             if case .success(let image) = response.result {
                 self.bagImage.image = image
             }
