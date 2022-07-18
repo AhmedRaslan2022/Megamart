@@ -70,7 +70,6 @@ class ProductDetails_ViewController: UIViewController {
       guard let flowLayout = products_collectionview.collectionViewLayout as? UICollectionViewFlowLayout else {
         return
       }
-
         if UIApplication.shared.statusBarOrientation.isLandscape {
             self.isRotate = true
         } else {

@@ -36,6 +36,9 @@ class BagViewController: UIViewController {
         self.bagCardViewModel.fetchBagCard()
     }
  
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     
     

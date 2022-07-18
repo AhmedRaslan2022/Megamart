@@ -13,15 +13,13 @@ import UIKit
 class HomeVC: UIViewController {
     
     
-    
-    
-
     @IBOutlet weak var favButton: UIBarButtonItem!
     @IBOutlet weak var cartButton: UIBarButtonItem!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var brandsCollectionView: UICollectionView!
     
     let defaults = UserDefaults.standard
+    var isRotate = false
     
     var arrAdsPhoto = [UIImage(named: "ads1")!, UIImage(named: "ads2")!, UIImage(named: "ads3")!, UIImage(named: "ads4")!, UIImage(named: "ads5")!, UIImage(named: "ads6")!]
     
@@ -67,6 +65,22 @@ class HomeVC: UIViewController {
         
         startTimer()
     
+    }
+    
+    override func viewWillLayoutSubviews() {
+      super.viewWillLayoutSubviews()
+
+      guard let flowLayout = brandsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+        return
+      }
+
+        if UIApplication.shared.statusBarOrientation.isLandscape {
+            self.isRotate = true
+        } else {
+            self.isRotate = false
+      }
+
+      flowLayout.invalidateLayout()
     }
 
     func startTimer () {
@@ -137,7 +151,12 @@ extension HomeVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         if (collectionView == menuCollectionView){
         return CGSize(width: brandsCollectionView.frame.width, height: brandsCollectionView.frame.height)
     }
-        return CGSize(width: brandsCollectionView.bounds.width/2, height: brandsCollectionView.bounds.height/2)
+        if  self.isRotate {
+            return CGSize(width: brandsCollectionView.bounds.width / 3 , height: brandsCollectionView.bounds.height )
+        }
+        else{
+            return CGSize(width: brandsCollectionView.bounds.height / 2 , height: brandsCollectionView.bounds.width / 2 )
+        }
     }
        
 
@@ -165,3 +184,4 @@ extension HomeVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
 }
 }
+
