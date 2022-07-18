@@ -254,6 +254,7 @@ class FirebaseManager: FirebaseServices {
     
     //MARK: -                                   Save Order
     
+    
     func saveOrder(order: Order_Model, completion: @escaping ((Error?) -> Void)) {
         
         if let email = Auth.auth().currentUser?.email {
@@ -270,6 +271,8 @@ class FirebaseManager: FirebaseServices {
     
     
 //MARK: -                                   Fetch Orders
+    
+    
     func fetchOrders(completion: @escaping (([Order_Model]?, Error?) -> Void)) {
         
         var orders: [Order_Model] = []

@@ -109,7 +109,7 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
    }
 
     
-    //MARK: -                             Brands
+//MARK: -                             Brands
     
     
     func  fetchBrands(completion: @escaping (([SmartCollection]?, Error?) -> Void)){
@@ -136,7 +136,9 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
     }
 
     
+    
 //MARK: -                             Retive Customers
+    
     
     func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.retrievesCustomers()) {
@@ -175,6 +177,7 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
     
     
     //MARK: -                     Collects
+    
            
        func fetchCollects(completion: @escaping (([Collect]?, Error?) -> Void)) {
 
