@@ -27,5 +27,6 @@ target 'Megamart' do
   pod 'Floaty', '~> 4.2.0'
   pod 'Alamofire'
   pod 'AlamofireImage'
+  pod 'lottie-ios'
   
 end

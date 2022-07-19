@@ -25,12 +25,13 @@
 		0418BE4B286CF7F7000F28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4A286CF7F7000F28EC /* AppDelegate.swift */; };
 		0418BE4D286CF7F7000F28EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */; };
 		0418BE57286CF7F9000F28EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0418BE56286CF7F9000F28EC /* Assets.xcassets */; };
-		0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */; };
 		0418BE65286CF7F9000F28EC /* MegamartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE64286CF7F9000F28EC /* MegamartTests.swift */; };
 		0418BE6F286CF7F9000F28EC /* MegamartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE6E286CF7F9000F28EC /* MegamartUITests.swift */; };
 		0418BE71286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */; };
 		041BF150287051D100339E05 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041BF14F287051D100339E05 /* Favorites.storyboard */; };
 		041BF1522870543200339E05 /* Favorites_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BF1512870543200339E05 /* Favorites_ViewController.swift */; };
+		0443A74F2886A1D400D35237 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0443A74E2886A1D400D35237 /* SplashScreen.storyboard */; };
+		0443A7512886A1F000D35237 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443A7502886A1F000D35237 /* SplashScreenViewController.swift */; };
 		045551CA287F229800D202EA /* Settings_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045551C8287F229800D202EA /* Settings_protocol.swift */; };
 		045551CB287F229800D202EA /* Settings_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045551C9287F229800D202EA /* Settings_ViewModel.swift */; };
 		0462ACB128837C1E00A54995 /* PaymentOption_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462ACB028837C1E00A54995 /* PaymentOption_ViewModel.swift */; };
@@ -147,7 +148,6 @@
 		0418BE4A286CF7F7000F28EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0418BE4C286CF7F7000F28EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0418BE56286CF7F9000F28EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0418BE59286CF7F9000F28EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0418BE5B286CF7F9000F28EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0418BE60286CF7F9000F28EC /* MegamartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MegamartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0418BE64286CF7F9000F28EC /* MegamartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegamartTests.swift; sourceTree = "<group>"; };
@@ -156,6 +156,8 @@
 		0418BE70286CF7F9000F28EC /* MegamartUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegamartUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		041BF14F287051D100339E05 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		041BF1512870543200339E05 /* Favorites_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites_ViewController.swift; sourceTree = "<group>"; };
+		0443A74E2886A1D400D35237 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		0443A7502886A1F000D35237 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		045551C8287F229800D202EA /* Settings_protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_protocol.swift; sourceTree = "<group>"; };
 		045551C9287F229800D202EA /* Settings_ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_ViewModel.swift; sourceTree = "<group>"; };
 		0462ACB028837C1E00A54995 /* PaymentOption_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOption_ViewModel.swift; sourceTree = "<group>"; };
@@ -441,12 +443,12 @@
 				04C07780287DDDEF005BDC0E /* Products.storyboard */,
 				04FB89D9288439E2005147B8 /* Setting.storyboard */,
 				0008806D286FAF8B00DE578B /* BagStoryboard.storyboard */,
-				0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */,
 				046F989C286E3382008FDFFC /* Authentication.storyboard */,
 				04F0FA70286F8BAD00A82FD0 /* ProductDetails.storyboard */,
 				041BF14F287051D100339E05 /* Favorites.storyboard */,
 				E245C2AA287084BB004A341C /* Orders.storyboard */,
 				008ABD2F2870650F0060CB08 /* payment.storyboard */,
+				0443A74E2886A1D400D35237 /* SplashScreen.storyboard */,
 				0418BE86286CF8ED000F28EC /* Cells */,
 			);
 			path = Storyboards;
@@ -455,7 +457,7 @@
 		0418BE88286CF903000F28EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E234DEEC288602CE00E0EFC3 /* AboutViewController.swift */,
+				0443A7502886A1F000D35237 /* SplashScreenViewController.swift */,
 				E2D2973528846FCC00E2CADF /* Favourites */,
 				E2D2973428846FBC00E2CADF /* Settings */,
 				E2D2973328846F9000E2CADF /* ProductDetails */,
@@ -676,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				00814DA7286EF06700E94EA4 /* SettingViewController.swift */,
+				E234DEEC288602CE00E0EFC3 /* AboutViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -817,7 +820,6 @@
 			files = (
 				E2F9FCAE2875E01700017E8C /* BrandsCollectionCell.xib in Resources */,
 				00FD6680286FB69000D759D2 /* BagStoryboard.storyboard in Resources */,
-				0418BE5A286CF7F9000F28EC /* LaunchScreen.storyboard in Resources */,
 				008ABD302870650F0060CB08 /* payment.storyboard in Resources */,
 				046F989D286E3382008FDFFC /* Authentication.storyboard in Resources */,
 				E2116F2D287CC483005360D2 /* Main.storyboard in Resources */,
@@ -828,6 +830,7 @@
 				04C0777F287DCBB4005BDC0E /* FavoritesCollectionViewCell.xib in Resources */,
 				04C07781287DDDEF005BDC0E /* Products.storyboard in Resources */,
 				E2449E7C28785C3F000D649B /* WishListCollectionCell.xib in Resources */,
+				0443A74F2886A1D400D35237 /* SplashScreen.storyboard in Resources */,
 				E21B2F0C288546430068D835 /* OrderCollectionViewCell.xib in Resources */,
 				04D6996A287641ED00965CE3 /* GoogleService-Info.plist in Resources */,
 				E2116F33287CC4DA005360D2 /* CategoryCollectionCell.xib in Resources */,
@@ -964,6 +967,7 @@
 			files = (
 				04F59E412880659500FF38AE /* ProductDetails_viewModel.swift in Sources */,
 				04FB89DC28843A08005147B8 /* AddressVC.swift in Sources */,
+				0443A7512886A1F000D35237 /* SplashScreenViewController.swift in Sources */,
 				04F59E402880656300FF38AE /* Favorites_viewModel.swift in Sources */,
 				E2449E822878679A000D649B /* ProductViewCell.swift in Sources */,
 				E2449E8128786780000D649B /* ProductsViewController.swift in Sources */,
@@ -1068,17 +1072,6 @@
 			targetProxy = 0418BE6B286CF7F9000F28EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0418BE58286CF7F9000F28EC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0418BE59286CF7F9000F28EC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0418BE72286CF7F9000F28EC /* Debug */ = {
@@ -1210,8 +1203,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = SplashScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1240,8 +1233,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Megamart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = SplashScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -770,6 +770,7 @@ PODS:
   - Libuv-gRPC/Implementation (0.0.10):
     - Libuv-gRPC/Interface (= 0.0.10)
   - Libuv-gRPC/Interface (0.0.10)
+  - lottie-ios (3.4.0)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -788,6 +789,7 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift (> 7.0-beta)
   - Floaty (~> 4.2.0)
   - IQKeyboardManager
+  - lottie-ios
   - TinyConstraints
 
 SPEC REPOS:
@@ -816,6 +818,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - leveldb-library
     - Libuv-gRPC
+    - lottie-ios
     - nanopb
     - PromisesObjC
     - TinyConstraints
@@ -845,10 +848,11 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
+  lottie-ios: 69495122151a378fdc7d1bb4c5930347e37baf1f
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: cbf939726bda94b401560256dc023ebbd54cb945
+PODFILE CHECKSUM: c2ef20fb0d238565ebc78029eddf306f384463f6
 
 COCOAPODS: 1.11.2
