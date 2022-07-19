@@ -44,45 +44,46 @@ class MeViewController: UIViewController {
         responseOf_fetchingOrders()
         responseOf_fetchingFavorites()
         
-
-        if Login_Verification(){
-            loginButton.isHidden = true
-        }
-        else {
-
-            requestLogin_alert(viewController: self)
-            wishlistCollection.isHidden = true
-            ordersTable.isHidden = true
-            orderMore.isHidden = true
-            wishlistMore.isHidden = true
-            ordersLabel.isHidden = true
-            wishListLabel.isHidden = true
-            settingButton.isEnabled = false
-            cartButton.isEnabled = false
-        }
-        
     }
+    
+    
       
     override func viewWillAppear(_ animated: Bool) {
+        
+        if Login_Verification(){
+            self.loginButton.isHidden = true
+        }else{
+            self.loginButton.isHidden = false
+            self.welcomeLabel.isHidden = true
+        }
+        
         self.orderViewModel.fetchOrders()
         self.favoritesViewModel.fetchFavorites()
     }
     
     
     @IBAction func orderMore(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: Constants.Orders_storyboard,bundle: nil)
-        if let orderVC = storyboard.instantiateViewController(withIdentifier: Constants.Orders_ViewController_id) as? OrdersViewController{
-            self.navigationController?.pushViewController(orderVC, animated: true)
+        if Login_Verification(){
+            let storyboard = UIStoryboard(name: Constants.Orders_storyboard,bundle: nil)
+            if let orderVC = storyboard.instantiateViewController(withIdentifier: Constants.Orders_ViewController_id) as? OrdersViewController{
+                self.navigationController?.pushViewController(orderVC, animated: true)
+            }
+        }
+        else{
+            requestLogin_alert(viewController: self)
         }
     }
   
     @IBAction func wishListMore(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: Constants.Favorites_storyboard,bundle: nil)
-        if let favVC = storyboard.instantiateViewController(withIdentifier: Constants.Favorites_ViewController_id) as? Favorites_ViewController{
-            self.navigationController?.pushViewController(favVC, animated: true)
-        
+        if Login_Verification() {
+            let storyboard = UIStoryboard(name: Constants.Favorites_storyboard,bundle: nil)
+            if let favVC = storyboard.instantiateViewController(withIdentifier: Constants.Favorites_ViewController_id) as? Favorites_ViewController{
+                self.navigationController?.pushViewController(favVC, animated: true)
+            
+            }
+        }
+        else{
+            requestLogin_alert(viewController: self)
         }
     }
     
@@ -92,11 +93,13 @@ class MeViewController: UIViewController {
     
     
  @IBAction func goLogin(_ sender: UIButton) {
+     
      let storyBoard : UIStoryboard = UIStoryboard(name: Constants.authentication_storyboard, bundle:nil)
      let loginVC = storyBoard.instantiateViewController(withIdentifier: Constants.login_viewController_id) as! Login_ViewController
      loginVC.modalPresentationStyle = .fullScreen
      self.present(loginVC, animated: true, completion: nil)
-        }
+     
+}
     
    
     
@@ -107,18 +110,29 @@ class MeViewController: UIViewController {
     
     
     @IBAction func goCart(_ sender: Any) {
-        let storyboard = UIStoryboard(name: Constants.bag_storyboard,bundle: nil)
-        if let cartVC = storyboard.instantiateViewController(withIdentifier: Constants.BagViewController_id) as? BagViewController{
-            self.navigationController?.pushViewController(cartVC, animated: true)
-      }
+        if Login_Verification(){
+            let storyboard = UIStoryboard(name: Constants.bag_storyboard,bundle: nil)
+            if let cartVC = storyboard.instantiateViewController(withIdentifier: Constants.BagViewController_id) as? BagViewController{
+                self.navigationController?.pushViewController(cartVC, animated: true)
+            }
+        }
+        else{
+            requestLogin_alert(viewController: self)
+        }
     
    }
        
     @IBAction func goSettings_ViewController(_ sender: UIBarButtonItem) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.setting_storyboard, bundle:nil)
-        let settingsVC = storyBoard.instantiateViewController(withIdentifier: Constants.Setting_viewController_id) as! SettingViewController
-        self.navigationController?.show(settingsVC, sender: self)
+        if Login_Verification(){
+            let storyBoard : UIStoryboard = UIStoryboard(name: Constants.setting_storyboard, bundle:nil)
+            let settingsVC = storyBoard.instantiateViewController(withIdentifier: Constants.Setting_viewController_id) as! SettingViewController
+            self.navigationController?.show(settingsVC, sender: self)
+        }
+        else{
+            requestLogin_alert(viewController: self)
+        }
     }
+        
 
 }
 
@@ -170,32 +184,13 @@ extension MeViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("******************************")
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.order_Cell_id) as! OrderTableViewCell
         cell.priceLbel.text =  "Price: \(orders[indexPath.row].totalPrice)"
         cell.createdAtLabel.text =  "Created At: \(orders[indexPath.row].created_at)"
         return cell
     }
     
-    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return orders.count
-//    }
-    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let  cell = tableView.dequeueReusableCell(withIdentifier: Constants.order_Cell_id, for: indexPath) as? OrderTableViewCell
-//
-//        cell?.priceLbel.text =  "Price: \(orders[indexPath.row].totalPrice)"
-//        cell?.createdAtLabel.text =  "Created At: \(orders[indexPath.row].created_at)"
-//
-//        return  cell ??  UITableViewCell()
-//    }
-    
-   
-
-   
-  
-    }
+}
     
     
 
@@ -220,15 +215,9 @@ extension MeViewController {
                     print (self.orders.count)
                     self.ordersTable.reloadData()
                 }
-                
             }
-
-            
         }
-
-    
-    
-}
+    }
     
     func responseOf_fetchingFavorites() {
         
@@ -245,7 +234,7 @@ extension MeViewController {
             }
             
         }
-}
+    }
 }
 
 

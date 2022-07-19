@@ -39,8 +39,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zt2-Zd-bDZ">
                         <rect key="frame" x="0.0" y="175" width="314" height="75"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JoO-Ca-4NB">
-                                <rect key="frame" x="20" y="19" width="188.5" height="37.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JoO-Ca-4NB">
+                                <rect key="frame" x="5" y="19" width="304" height="37.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" systemColor="tintColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,31 +48,12 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LO-z7-9ti">
-                                <rect key="frame" x="245" y="9.5" width="56" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="0LO-z7-9ti" secondAttribute="height" multiplier="1:1" id="5Lt-Lc-luK"/>
-                                    <constraint firstAttribute="height" secondItem="0LO-z7-9ti" secondAttribute="height" multiplier="1:1" id="Cqw-P4-YwT"/>
-                                    <constraint firstAttribute="width" secondItem="0LO-z7-9ti" secondAttribute="width" multiplier="1:1" id="M1n-eb-Mxt"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="tintColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background"/>
-                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="favouriteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qMh-k4-eqr"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JoO-Ca-4NB" firstAttribute="leading" secondItem="Zt2-Zd-bDZ" secondAttribute="leading" constant="20" symbolic="YES" id="HSl-g4-LKm"/>
+                            <constraint firstAttribute="trailing" secondItem="JoO-Ca-4NB" secondAttribute="trailing" constant="5" id="1dE-cb-7jT"/>
+                            <constraint firstItem="JoO-Ca-4NB" firstAttribute="leading" secondItem="Zt2-Zd-bDZ" secondAttribute="leading" constant="5" id="HSl-g4-LKm"/>
                             <constraint firstItem="JoO-Ca-4NB" firstAttribute="centerY" secondItem="Zt2-Zd-bDZ" secondAttribute="centerY" id="MM5-II-tFJ"/>
-                            <constraint firstAttribute="trailing" secondItem="0LO-z7-9ti" secondAttribute="trailing" constant="13" id="a9y-4o-i1d"/>
-                            <constraint firstItem="0LO-z7-9ti" firstAttribute="height" secondItem="Zt2-Zd-bDZ" secondAttribute="height" multiplier="0.746667" id="haX-kq-dvz"/>
-                            <constraint firstItem="0LO-z7-9ti" firstAttribute="centerY" secondItem="JoO-Ca-4NB" secondAttribute="centerY" id="vf3-II-piR"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -84,7 +65,6 @@
                 <constraint firstItem="Zt2-Zd-bDZ" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="5Ia-iz-U9J"/>
                 <constraint firstItem="gtx-PK-ayI" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.7" id="7eN-C6-nRM"/>
                 <constraint firstItem="gtx-PK-ayI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8m5-0j-JyH"/>
-                <constraint firstItem="JoO-Ca-4NB" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.6" id="C1V-aI-kzh"/>
                 <constraint firstItem="Zt2-Zd-bDZ" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.3" id="OkM-6x-oMa"/>
                 <constraint firstItem="gtx-PK-ayI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="T4s-Nq-eHX"/>
                 <constraint firstAttribute="trailing" secondItem="Zt2-Zd-bDZ" secondAttribute="trailing" id="bUE-lN-oXJ"/>
@@ -100,12 +80,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

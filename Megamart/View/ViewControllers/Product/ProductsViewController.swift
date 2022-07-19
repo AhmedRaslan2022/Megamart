@@ -66,8 +66,8 @@ class ProductsViewController: UIViewController {
       
     }
     @IBAction func filter(_ sender: UIBarButtonItem) {
-        priceSlide.isHidden = false
-        PriceLabel.isHidden = false
+        priceSlide.isHidden = !priceSlide.isHidden
+        PriceLabel.isHidden = !PriceLabel.isHidden
     }
     
     

@@ -60,20 +60,12 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
                                     <navigationItem title="Product Details" id="oiT-Wu-5lb">
-                                        <leftBarButtonItems>
-                                            <barButtonItem image="arrowshape.turn.up.left.fill" catalog="system" id="Q1a-7r-pBY">
-                                                <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <connections>
-                                                    <action selector="goBack_button:" destination="2Ry-98-gr7" id="Gbe-TD-gdX"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Item" image="homekit" catalog="system" id="hWg-XA-aX6">
-                                                <color key="tintColor" systemColor="systemOrangeColor"/>
-                                                <connections>
-                                                    <action selector="goToHome_button:" destination="2Ry-98-gr7" id="9uK-rN-85H"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </leftBarButtonItems>
+                                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.left.fill" catalog="system" id="Q1a-7r-pBY">
+                                            <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="goBack_button:" destination="2Ry-98-gr7" id="Gbe-TD-gdX"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem title="Item" image="heart.fill" catalog="system" id="xXq-q6-0lk">
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
@@ -110,7 +102,7 @@
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CcT-ZO-z8w">
                                                 <rect key="frame" x="7" y="304.66666666666669" width="376" height="55.333333333333314"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -155,7 +147,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mQe-HM-42k">
                                                 <rect key="frame" x="5" y="496.33333333333337" width="380" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -168,7 +160,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSa-cf-hLV">
                                                 <rect key="frame" x="5" y="561.33333333333337" width="380" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -295,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JF-c4-OOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126.1538461538462" y="0.7109004739336493"/>
+            <point key="canvasLocation" x="1017" y="1"/>
         </scene>
     </scenes>
     <designables>
@@ -305,10 +297,9 @@
     </designables>
     <resources>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
-        <image name="cart.fill" catalog="system" width="32" height="32"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="homekit" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

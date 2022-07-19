@@ -36,14 +36,6 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Login_Verification(){
-            favButton.isEnabled = true
-        }
-        else {
-            favButton.isEnabled  = false
-            cartButton.isEnabled = false
-        }
-        
         
         
         
@@ -255,17 +247,28 @@ class CategoryViewController: UIViewController {
 //MARK: -                    Navigation Bar Buttons
     
     @IBAction func goFav(_ sender: Any) {
-        let storyboard = UIStoryboard(name: Constants.Favorites_storyboard,bundle: nil)
-        if let favouriteVC = storyboard.instantiateViewController(withIdentifier: Constants.Favorites_ViewController_id) as? Favorites_ViewController{
-            self.navigationController?.pushViewController(favouriteVC, animated: true)
-    }
+        if Login_Verification(){
+            let storyboard = UIStoryboard(name: Constants.Favorites_storyboard,bundle: nil)
+            if let favouriteVC = storyboard.instantiateViewController(withIdentifier: Constants.Favorites_ViewController_id) as? Favorites_ViewController{
+                self.navigationController?.pushViewController(favouriteVC, animated: true)
+            }
+        }
+        else{
+            requestLogin_alert(viewController: self)
+        }
     }
     
     @IBAction func goCart(_ sender: Any) {
-        let storyboard = UIStoryboard(name: Constants.bag_storyboard,bundle: nil)
-        if let cartVC = storyboard.instantiateViewController(withIdentifier: Constants.BagViewController_id) as? BagViewController{
-            self.navigationController?.pushViewController(cartVC, animated: true)
-      }
+        
+        if Login_Verification(){
+            let storyboard = UIStoryboard(name: Constants.bag_storyboard,bundle: nil)
+            if let cartVC = storyboard.instantiateViewController(withIdentifier: Constants.BagViewController_id) as? BagViewController{
+                self.navigationController?.pushViewController(cartVC, animated: true)
+            }
+        }
+        else{
+            requestLogin_alert(viewController: self)
+        }
     
    }
     

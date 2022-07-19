@@ -133,8 +133,8 @@ enum GithubLinks: String {
 
 enum LinkedinLinks: String {
     
-    case raslanGit = "https://www.linkedin.com/in/ahmed-rasslan-143a04108"
-    case sophyGit = "https://www.linkedin.com/in/mahmoud-sophy-304072192/%22"
-    case saadGit = "https://www.linkedin.com/in/mohamed-saad-aboasal/"
+    case raslanLink = "https://www.linkedin.com/in/ahmed-rasslan-143a04108"
+    case sophyLink = "https://www.linkedin.com/in/mahmoud-sophy-304072192/%22"
+    case saadLink = "https://www.linkedin.com/in/mohamed-saad-aboasal/"
 }
 

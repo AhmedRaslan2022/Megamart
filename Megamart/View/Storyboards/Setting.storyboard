@@ -31,7 +31,7 @@
                                             <color key="titleColor" systemColor="systemOrangeColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="SetAddress:" destination="4CO-bR-jOa" eventType="touchUpInside" id="jbr-P3-kKc"/>
+                                            <action selector="editPassword:" destination="4CO-bR-jOa" eventType="touchUpInside" id="kbS-jZ-R3I"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GLc-G7-e4e">
@@ -48,6 +48,9 @@
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wbq-ub-SvK">
                                                 <rect key="frame" x="311" y="47.666666666666686" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="darkMode:" destination="4CO-bR-jOa" eventType="valueChanged" id="dNE-UJ-Ed5"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -98,6 +101,7 @@
                     <connections>
                         <outlet property="switchTheme" destination="wbq-ub-SvK" id="xBy-zc-DPn"/>
                         <outlet property="uiEditprofile" destination="olh-U3-MOt" id="M2I-e5-kOz"/>
+                        <outlet property="uiLogout" destination="srU-kR-Rfs" id="F97-W0-0Qy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjx-Eg-3Sv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -255,16 +259,14 @@
                                                         <rect key="frame" x="257" y="8" width="58.666666666666686" height="39.666666666666664"/>
                                                         <state key="normal" title="Button" image="linkedIn"/>
                                                         <connections>
-                                                            <action selector="aminLinkedIn:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="Psc-JQ-dLF"/>
-                                                            <action selector="sophyLinkedin:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="yuN-mw-vZc"/>
+                                                            <action selector="sophyLinkedin:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="T5S-UJ-YvX"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qM-vd-F8v">
                                                         <rect key="frame" x="315.66666666666669" y="8" width="58.333333333333314" height="39.666666666666664"/>
                                                         <state key="normal" title="Button" image="gitHub"/>
                                                         <connections>
-                                                            <action selector="aminGithub:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="dun-WU-wru"/>
-                                                            <action selector="sophyGithub:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="i7w-z0-uuf"/>
+                                                            <action selector="sophyGithub:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="gHu-95-MIW"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -287,16 +289,14 @@
                                                         <rect key="frame" x="257" y="8" width="58.666666666666686" height="39.666666666666664"/>
                                                         <state key="normal" title="Button" image="linkedIn"/>
                                                         <connections>
-                                                            <action selector="elattarLinkedIn:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="zht-iu-rMm"/>
-                                                            <action selector="saadLinkedIn:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="gzQ-C2-Rlj"/>
+                                                            <action selector="saadLinkedIn:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="hCZ-vp-f9Y"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkx-aZ-KRN">
                                                         <rect key="frame" x="315.66666666666669" y="8" width="58.333333333333314" height="39.666666666666664"/>
                                                         <state key="normal" title="Button" image="gitHub"/>
                                                         <connections>
-                                                            <action selector="elattarGithub:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="Z5z-Qm-O1A"/>
-                                                            <action selector="saadGithb:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="5ON-FF-Lil"/>
+                                                            <action selector="saadGithb:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="5Pv-0G-ddd"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -319,16 +319,14 @@
                                                         <rect key="frame" x="257" y="8" width="58.666666666666686" height="39.333333333333336"/>
                                                         <state key="normal" title="Button" image="linkedIn"/>
                                                         <connections>
-                                                            <action selector="RaslanLikedin:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="2if-aX-b0r"/>
-                                                            <action selector="mohamedLinkedIn:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="W51-K8-J1E"/>
+                                                            <action selector="RaslanLikedin:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="uFc-hj-CZE"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU5-Er-oaU">
                                                         <rect key="frame" x="315.66666666666669" y="8" width="58.333333333333314" height="39.333333333333336"/>
                                                         <state key="normal" title="Button" image="gitHub"/>
                                                         <connections>
-                                                            <action selector="Raslan:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="oC1-hS-UhV"/>
-                                                            <action selector="mohamedGithub:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="hZe-eD-Ven"/>
+                                                            <action selector="raslanGithub:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="mAu-KS-gdJ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -378,7 +376,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                 </state>
                                 <connections>
-                                    <action selector="back:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="lK6-M7-MSH"/>
+                                    <action selector="dismissButton:" destination="6nX-Vq-nbJ" eventType="touchUpInside" id="cLj-Fk-Qnt"/>
                                 </connections>
                             </button>
                         </subviews>

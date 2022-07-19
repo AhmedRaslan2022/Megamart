@@ -105,12 +105,7 @@ class ProductDetails_ViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func goToHome_button(_ sender: UIBarButtonItem) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Main_storyboard, bundle:nil)
-        let homeViewController = storyBoard.instantiateViewController(withIdentifier: Constants.HomeViewController_id) as! HomeVC
-        homeViewController.modalPresentationStyle = .fullScreen
-        self.present(homeViewController, animated: true, completion: nil)
-    }
+
     
     @IBAction func goToFavorites_button(_ sender: UIBarButtonItem) {
         
@@ -228,7 +223,7 @@ extension ProductDetails_ViewController {
             if let productDetails = productDetails {
                 self.product = productDetails
                 self.productTitle_label.text = productDetails.title
-                self.productPrice_label.text = productDetails.variants[0].price
+                self.productPrice_label.text = "\(productDetails.variants[0].price) LE"
                 self.description_label.text = productDetails.body_html
                 
                 self.starRating.settings.fillMode = .precise
@@ -244,7 +239,7 @@ extension ProductDetails_ViewController {
                     for size in sizes {
                         let label = UILabel()
                         label.text = size
-                        label.backgroundColor = .yellow
+                        label.backgroundColor = .systemBackground
                         label.textAlignment = .center
                         label.font = UIFont.boldSystemFont(ofSize: 18)
                         self.availabelSizes.addArrangedSubview(label)

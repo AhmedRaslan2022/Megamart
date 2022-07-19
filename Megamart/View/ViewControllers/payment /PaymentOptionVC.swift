@@ -52,7 +52,7 @@ class PaymentOptionVC: UIViewController {
         for product in order.products {
             self.pKPaymentSummaryItems.append(PKPaymentSummaryItem(label: "\(product.title) \ncount: \(product.count) " , amount: NSDecimalNumber(value: product.price * Double(product.count))))
         }
-        self.pKPaymentSummaryItems.append(PKPaymentSummaryItem(label: "Total Price", amount: NSDecimalNumber(value: order.totalPrice), type: .final))
+        self.pKPaymentSummaryItems.append(PKPaymentSummaryItem(label: "MEGAMART", amount: NSDecimalNumber(value: order.totalPrice), type: .final))
         if let controller = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest()) {
             controller.delegate = self
             present(controller, animated: true)

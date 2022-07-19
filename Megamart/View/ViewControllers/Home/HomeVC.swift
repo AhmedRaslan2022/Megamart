@@ -31,14 +31,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         
-        if Login_Verification(){
-            favButton.isEnabled = true
-        }
-        else {
-            favButton.isEnabled  = false
-            cartButton.isEnabled = false
-        }
-        
        brandsCollectionView.register(UINib(nibName: Constants.Brands_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.Brands_Cell_id)
         
         menuCollectionView.delegate = self
@@ -99,17 +91,28 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func goFav(_ sender: Any) {
-        let storyboard = UIStoryboard(name: Constants.Favorites_storyboard,bundle: nil)
-        if let favouriteVC = storyboard.instantiateViewController(withIdentifier: Constants.Favorites_ViewController_id) as? Favorites_ViewController{
-            self.navigationController?.pushViewController(favouriteVC, animated: true)
-    }
+        if Login_Verification() {
+            let storyboard = UIStoryboard(name: Constants.Favorites_storyboard,bundle: nil)
+            if let favouriteVC = storyboard.instantiateViewController(withIdentifier: Constants.Favorites_ViewController_id) as? Favorites_ViewController{
+                self.navigationController?.pushViewController(favouriteVC, animated: true)
+            }
+        }
+        else{
+            requestLogin_alert(viewController: self)
+        }
+        
     }
     
     @IBAction func goCart(_ sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: Constants.bag_storyboard,bundle: nil)
-        if let cartVC = storyboard.instantiateViewController(withIdentifier: Constants.BagViewController_id) as? BagViewController{
-            self.navigationController?.pushViewController(cartVC, animated: true)
-    }
+        if Login_Verification(){
+            let storyboard = UIStoryboard(name: Constants.bag_storyboard,bundle: nil)
+            if let cartVC = storyboard.instantiateViewController(withIdentifier: Constants.BagViewController_id) as? BagViewController{
+                self.navigationController?.pushViewController(cartVC, animated: true)
+            }
+        }
+        else{
+            requestLogin_alert(viewController: self)
+        }
     }
     
     @IBAction func searchButton(_ sender: Any) {
@@ -118,7 +121,6 @@ class HomeVC: UIViewController {
             self.navigationController?.pushViewController(productVC, animated: true)
         }
     }
-    
     
 }
     

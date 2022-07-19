@@ -35,7 +35,7 @@ class Register_ViewController: UIViewController {
         
         register_viewModel.binding = { error in
             if let error = error {
-                addAlert(title: "Warning", message: error, ActionTitle: "cancle", viewController: self)
+                addAlert(title: "Warning", message: error, ActionTitle: "cancel", viewController: self)
             }else{
                 DispatchQueue.main.async {
                     self.navigationController?.popViewController(animated: true)
