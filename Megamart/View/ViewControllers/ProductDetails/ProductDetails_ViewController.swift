@@ -239,7 +239,7 @@ extension ProductDetails_ViewController {
                     for size in sizes {
                         let label = UILabel()
                         label.text = size
-                        label.backgroundColor = .systemBackground
+                        label.backgroundColor = .systemYellow
                         label.textAlignment = .center
                         label.font = UIFont.boldSystemFont(ofSize: 18)
                         self.availabelSizes.addArrangedSubview(label)
