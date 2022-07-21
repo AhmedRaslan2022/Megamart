@@ -68,9 +68,12 @@ struct Constants {
     
     static let order_nib_name  = "OrderTableViewCell"
     static let order_Cell_id   = "Order_cell_id"
-
-    static let orders_nib_name  = "OrderCollectionViewCell"
-    static let orders_Cell_id    = "OrderDetails_cell_id"
+    
+    static let orders_nib_name  = "OrdersTableViewCell"
+    static let orders_Cell_id   = "Orders_cell_id"
+//
+//    static let orders_nib_name  = "OrderCollectionViewCell"
+//    static let orders_Cell_id    = "OrderDetails_cell_id"
   
     
 //MARK: -               Customers list

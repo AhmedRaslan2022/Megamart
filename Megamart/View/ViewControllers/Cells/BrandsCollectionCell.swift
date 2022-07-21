@@ -16,6 +16,11 @@ class BrandsCollectionCell: UICollectionViewCell {
     @IBOutlet weak var brandImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        brandImage.layer.borderWidth = 2
+        brandImage.layer.borderColor = UIColor.systemOrange.cgColor
+        brandImage.layer.masksToBounds = true
+        brandImage.layer.cornerRadius = 10
       
     }
     

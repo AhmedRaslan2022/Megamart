@@ -16,30 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TtL-py-AAe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JHa-PY-hPA">
                                 <rect key="frame" x="5" y="93" width="404" height="764"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="QYp-Er-0kl">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TtL-py-AAe" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="Lvx-ib-wyx"/>
-                            <constraint firstItem="TtL-py-AAe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="fGj-se-0FT"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TtL-py-AAe" secondAttribute="bottom" constant="5" id="g1w-VM-Cc1"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TtL-py-AAe" secondAttribute="trailing" constant="5" id="kWt-4x-p0S"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JHa-PY-hPA" secondAttribute="bottom" constant="5" id="Arr-Ep-uHM"/>
+                            <constraint firstItem="JHa-PY-hPA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="FMU-rN-gLy"/>
+                            <constraint firstItem="JHa-PY-hPA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="cIg-B4-ff0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JHa-PY-hPA" secondAttribute="trailing" constant="5" id="xD6-zg-LPK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d71-FZ-MKO"/>
                     <connections>
-                        <outlet property="ordersCollection" destination="TtL-py-AAe" id="Eij-rh-pGy"/>
+                        <outlet property="ordersTabelView" destination="JHa-PY-hPA" id="FbJ-0s-lpM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

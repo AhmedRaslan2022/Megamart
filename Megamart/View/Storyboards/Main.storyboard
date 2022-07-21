@@ -144,7 +144,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" semanticContentAttribute="spatial" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a0y-bU-AHH">
-                                <rect key="frame" x="0.0" y="139" width="428" height="787"/>
+                                <rect key="frame" x="0.0" y="129" width="428" height="797"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="znq-H4-ETR">
                                     <size key="itemSize" width="128" height="128"/>
@@ -158,60 +158,35 @@
                                 <rect key="frame" x="344.66666666666669" y="772" width="53.333333333333314" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efK-Y0-Lhq">
-                                <rect key="frame" x="0.0" y="90" width="428" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="De5-qE-ruK"/>
-                                    <barButtonItem title="Women" id="EOD-Tv-BFS">
-                                        <color key="tintColor" systemColor="systemOrangeColor"/>
-                                        <connections>
-                                            <action selector="WomenButton:" destination="YSd-bn-ybB" id="ffp-ve-Enh"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2bU-5j-cxT"/>
-                                    <barButtonItem title="Men" id="sJo-Xr-RA2">
-                                        <color key="tintColor" systemColor="systemOrangeColor"/>
-                                        <connections>
-                                            <action selector="Men:" destination="YSd-bn-ybB" id="X3O-Dd-MPo"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eSz-Rj-38O"/>
-                                    <barButtonItem title="Kids" id="Xfe-pB-c6j">
-                                        <color key="tintColor" systemColor="systemOrangeColor"/>
-                                        <connections>
-                                            <action selector="kidsButton:" destination="YSd-bn-ybB" id="0jH-be-dum"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9bv-2D-e5j"/>
-                                    <barButtonItem title="Sale" id="cYs-MS-SMA">
-                                        <color key="tintColor" systemColor="systemOrangeColor"/>
-                                        <connections>
-                                            <action selector="saleButton:" destination="YSd-bn-ybB" id="8ea-W1-jtM"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qyB-uP-a0V"/>
-                                </items>
-                                <color key="tintColor" systemColor="systemBlueColor"/>
-                                <color key="barTintColor" systemColor="tertiarySystemBackgroundColor"/>
-                            </toolbar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jwV-vX-Fkb">
+                                <rect key="frame" x="5" y="88" width="418" height="32"/>
+                                <segments>
+                                    <segment title="Women"/>
+                                    <segment title="Men"/>
+                                    <segment title="Kids"/>
+                                    <segment title="Sale"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segments_Action:" destination="YSd-bn-ybB" eventType="valueChanged" id="evr-wU-EkC"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qy3-Bc-Tk3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qy3-Bc-Tk3" firstAttribute="trailing" secondItem="7C8-dW-sr0" secondAttribute="trailing" constant="30" id="EeW-fw-jl6"/>
+                            <constraint firstItem="a0y-bU-AHH" firstAttribute="top" secondItem="jwV-vX-Fkb" secondAttribute="bottom" constant="10" id="FCa-uG-Urd"/>
                             <constraint firstItem="a0y-bU-AHH" firstAttribute="leading" secondItem="qy3-Bc-Tk3" secondAttribute="leading" id="THr-wD-wgY"/>
                             <constraint firstItem="a0y-bU-AHH" firstAttribute="trailing" secondItem="qy3-Bc-Tk3" secondAttribute="trailing" id="WbV-YP-6V4"/>
                             <constraint firstItem="qy3-Bc-Tk3" firstAttribute="bottom" secondItem="7C8-dW-sr0" secondAttribute="bottom" constant="21" id="YZB-do-vXG"/>
+                            <constraint firstItem="qy3-Bc-Tk3" firstAttribute="trailing" secondItem="jwV-vX-Fkb" secondAttribute="trailing" constant="5" id="aw4-PN-4vY"/>
                             <constraint firstItem="a0y-bU-AHH" firstAttribute="leading" secondItem="qy3-Bc-Tk3" secondAttribute="leading" id="crZ-6m-3dr"/>
+                            <constraint firstItem="jwV-vX-Fkb" firstAttribute="top" secondItem="qy3-Bc-Tk3" secondAttribute="top" id="dql-Yd-eW5"/>
                             <constraint firstItem="7C8-dW-sr0" firstAttribute="height" secondItem="86b-pt-9H8" secondAttribute="height" multiplier="0.0539957" id="eCR-lH-G3X"/>
-                            <constraint firstItem="a0y-bU-AHH" firstAttribute="top" secondItem="efK-Y0-Lhq" secondAttribute="bottom" constant="5" id="fdl-NG-QbA"/>
                             <constraint firstAttribute="bottom" secondItem="a0y-bU-AHH" secondAttribute="bottom" id="gYm-nU-eDh"/>
                             <constraint firstItem="7C8-dW-sr0" firstAttribute="width" secondItem="86b-pt-9H8" secondAttribute="width" multiplier="0.125" id="j1z-Ta-KtO"/>
-                            <constraint firstItem="efK-Y0-Lhq" firstAttribute="leading" secondItem="qy3-Bc-Tk3" secondAttribute="leading" id="kjW-UL-eXU"/>
-                            <constraint firstItem="efK-Y0-Lhq" firstAttribute="top" secondItem="qy3-Bc-Tk3" secondAttribute="top" constant="2" id="s7Z-z9-U4O"/>
                             <constraint firstItem="a0y-bU-AHH" firstAttribute="trailing" secondItem="qy3-Bc-Tk3" secondAttribute="trailing" id="tuO-dk-kGi"/>
-                            <constraint firstItem="qy3-Bc-Tk3" firstAttribute="trailing" secondItem="efK-Y0-Lhq" secondAttribute="trailing" id="xbj-Ui-mjT"/>
+                            <constraint firstItem="jwV-vX-Fkb" firstAttribute="leading" secondItem="qy3-Bc-Tk3" secondAttribute="leading" constant="5" id="uOz-fg-px6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Category" id="6RN-Wo-Pgs">
@@ -479,14 +454,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

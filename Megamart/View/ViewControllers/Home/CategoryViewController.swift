@@ -13,7 +13,6 @@ class CategoryViewController: UIViewController {
   
     @IBOutlet weak var favButton: UIBarButtonItem!
     @IBOutlet weak var cartButton: UIBarButtonItem!
-    
     @IBOutlet weak var floatySubCat: Floaty!
     @IBOutlet weak var productsCollection: UICollectionView!
     
@@ -157,92 +156,89 @@ class CategoryViewController: UIViewController {
     
  //MARK: -                   Categories Buttons
     
-    @IBAction func WomenButton(_ sender: UIBarButtonItem) {
-        
-       
-          productsViewModel.fetchData()
-          productsViewModel.bindingData = { products, error in
-              if let products = products {
-                  self.viewedArray.removeAll()
-                  for  index in 0..<products.count    {
-                      for i in 0..<self.womenArray.count {
-                      if self.womenArray[i] == products[index].id{
-                          self.viewedArray.append(products[index])
-                       }
-                     }
-                  }
-                  DispatchQueue.main.async {
-                 self.productsCollection.reloadData()
-             }
-        
-          }
-     }
-        
-}
-    
-    @IBAction func Men(_ sender: Any) {
-  
-          productsViewModel.fetchData()
-          productsViewModel.bindingData = { products, error in
-              if let products = products {
-                  self.viewedArray.removeAll()
-                  for  index in 0..<products.count    {
-                      for i in 0..<self.menArray.count {
-                      if self.menArray[i] == products[index].id{
-                          self.viewedArray.append(products[index])
-                       }
-                     }
-                  }
-                  DispatchQueue.main.async {
-                 self.productsCollection.reloadData()
-             }
-        
-          }
-    }
-}
-    
-    @IBAction func saleButton(_ sender: UIBarButtonItem) {
-        
-          productsViewModel.fetchData()
-          productsViewModel.bindingData = { products, error in
-              if let products = products {
-                  self.viewedArray.removeAll()
-                  for  index in 0..<products.count    {
-                      for i in 0..<self.saleArray.count {
-                      if self.saleArray[i] == products[index].id{
-                          self.viewedArray.append(products[index])
-                       }
-                     }
-                  }
-                  DispatchQueue.main.async {
-                 self.productsCollection.reloadData()
-             }
-        
-          }
-    }
-}
     
     
-    @IBAction func kidsButton(_ sender: Any) {
+    @IBAction func segments_Action(_ sender: UISegmentedControl) {
         
-          productsViewModel.fetchData()
-          productsViewModel.bindingData = { products, error in
-              if let products = products {
-                  self.viewedArray.removeAll()
-                  for  index in 0..<products.count    {
-                      for i in 0..<self.kidsArray.count {
-                      if self.kidsArray[i] == products[index].id{
-                          self.viewedArray.append(products[index])
+        switch sender.selectedSegmentIndex {
+        case 0:
+            productsViewModel.fetchData()
+            productsViewModel.bindingData = { products, error in
+                if let products = products {
+                    self.viewedArray.removeAll()
+                    for  index in 0..<products.count    {
+                        for i in 0..<self.womenArray.count {
+                        if self.womenArray[i] == products[index].id{
+                            self.viewedArray.append(products[index])
+                         }
                        }
-                     }
-                  }
-                  DispatchQueue.main.async {
-                 self.productsCollection.reloadData()
-               }
-        
+                    }
+                    DispatchQueue.main.async {
+                   self.productsCollection.reloadData()
+                    }
+                 }
+              }
+            
+        case 1:
+            productsViewModel.fetchData()
+            productsViewModel.bindingData = { products, error in
+                if let products = products {
+                    self.viewedArray.removeAll()
+                    for  index in 0..<products.count    {
+                        for i in 0..<self.menArray.count {
+                        if self.menArray[i] == products[index].id{
+                            self.viewedArray.append(products[index])
+                         }
+                       }
+                    }
+                    DispatchQueue.main.async {
+                   self.productsCollection.reloadData()
+                    }
+                }
             }
+            
+        case 2:
+            productsViewModel.fetchData()
+            productsViewModel.bindingData = { products, error in
+                if let products = products {
+                    self.viewedArray.removeAll()
+                    for  index in 0..<products.count    {
+                        for i in 0..<self.saleArray.count {
+                        if self.saleArray[i] == products[index].id{
+                            self.viewedArray.append(products[index])
+                         }
+                       }
+                    }
+                    DispatchQueue.main.async {
+                   self.productsCollection.reloadData()
+                    }
+                }
+            }
+            
+        case 3:
+            productsViewModel.fetchData()
+            productsViewModel.bindingData = { products, error in
+                if let products = products {
+                    self.viewedArray.removeAll()
+                    for  index in 0..<products.count    {
+                        for i in 0..<self.kidsArray.count {
+                        if self.kidsArray[i] == products[index].id{
+                            self.viewedArray.append(products[index])
+                         }
+                       }
+                    }
+                    DispatchQueue.main.async {
+                   self.productsCollection.reloadData()
+                 }
+                }
+            }
+        default:
+            break
         }
+        
     }
+    
+
     
 //MARK: -                    Navigation Bar Buttons
     
@@ -284,7 +280,8 @@ class CategoryViewController: UIViewController {
 }
 
 
-//MARK: -                    CollectionView Layout
+//MARK: -                                     CollectionView Layout
+
 
  extension CategoryViewController: UICollectionViewDataSource,UICollectionViewDelegate {
 
