@@ -40,9 +40,6 @@ class ProductDetails_ViewController: UIViewController {
         products_collectionview.dataSource = self
         self.products_collectionview.register(UINib(nibName: Constants.ProductDetails_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.ProductDetails_cell_id)
     
-
-//        self.productTitle_label.layer.borderWidth = 3
-//        self.productTitle_label.layer.borderColor = UIColor.systemOrange.cgColor
         
         
         if rootViewController != nil {
