@@ -25,7 +25,7 @@ func requestLogin_alert(viewController: UIViewController) {
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.authentication_storyboard, bundle:nil)
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: Constants.login_viewController_id) as! Login_ViewController
 //        loginViewController.modalPresentationStyle = .fullScreen
-        viewController.navigationController?.show(loginViewController, sender: viewController)
+        viewController.navigationController?.pushViewController(loginViewController, animated: true)
     }))
     
     DispatchQueue.main.async {

@@ -41,6 +41,9 @@ class ProductDetails_ViewController: UIViewController {
         self.products_collectionview.register(UINib(nibName: Constants.ProductDetails_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.ProductDetails_cell_id)
     
 
+//        self.productTitle_label.layer.borderWidth = 3
+//        self.productTitle_label.layer.borderColor = UIColor.systemOrange.cgColor
+        
         
         if rootViewController != nil {
             self.addToFavorites_button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -239,7 +242,7 @@ extension ProductDetails_ViewController {
                     for size in sizes {
                         let label = UILabel()
                         label.text = size
-                        label.backgroundColor = .systemBackground
+                        label.backgroundColor = .systemOrange
                         label.textAlignment = .center
                         label.font = UIFont.boldSystemFont(ofSize: 18)
                         self.availabelSizes.addArrangedSubview(label)

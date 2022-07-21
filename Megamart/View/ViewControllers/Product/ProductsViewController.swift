@@ -37,7 +37,7 @@ class ProductsViewController: UIViewController {
         
         self.SearchBar.delegate = self
         
-      self.ProductCollection.register(UINib(nibName: "ProductCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.ProductsViewCell_id)
+        self.ProductCollection.register(UINib(nibName: Constants.Products_nib_name , bundle: nil), forCellWithReuseIdentifier: Constants.ProductsViewCell_id)
         
            let productsViewModel = ProductsViewModel()
              productsViewModel.fetchData()
@@ -119,7 +119,7 @@ extension ProductsViewController: UICollectionViewDataSource,UICollectionViewDel
    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
      
-         CGSize(width: ProductCollection.bounds.width, height: ProductCollection.bounds.height)
+        CGSize(width: ProductCollection.bounds.width / 2.2, height: ProductCollection.bounds.height / 2.2)
     }
   
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

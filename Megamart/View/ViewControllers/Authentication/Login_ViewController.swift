@@ -50,7 +50,14 @@ class Login_ViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         login_viewModel.retriveAllCustomer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+        
     }
     
     

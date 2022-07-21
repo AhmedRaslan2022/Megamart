@@ -155,10 +155,10 @@ extension HomeVC:  UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         return CGSize(width: brandsCollectionView.frame.width, height: brandsCollectionView.frame.height)
     }
         if  self.isRotate {
-            return CGSize(width: brandsCollectionView.bounds.width / 3 , height: brandsCollectionView.bounds.height )
+            return CGSize(width: brandsCollectionView.bounds.width / 2.02 , height: brandsCollectionView.bounds.height )
         }
         else{
-            return CGSize(width: brandsCollectionView.bounds.height / 2 , height: brandsCollectionView.bounds.width / 2 )
+            return CGSize(width: brandsCollectionView.bounds.height / 2.01 , height: brandsCollectionView.bounds.width / 2.01 )
         }
     }
        

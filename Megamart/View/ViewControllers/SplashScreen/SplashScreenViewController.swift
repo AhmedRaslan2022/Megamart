@@ -29,9 +29,9 @@ class SplashScreenViewController: UIViewController {
             }
             else{
                 let storyBoard : UIStoryboard = UIStoryboard(name: Constants.authentication_storyboard, bundle:nil)
-                let homeVC = storyBoard.instantiateViewController(withIdentifier: Constants.login_viewController_id) as! Login_ViewController
-                homeVC.modalPresentationStyle = .fullScreen
-                self.present(homeVC, animated: false, completion: nil)
+                let loginVC = storyBoard.instantiateViewController(withIdentifier: Constants.login_viewController_id) as! Login_ViewController
+//                homeVC.modalPresentationStyle = .fullScreen
+                self.navigationController?.show(loginVC, sender: self)
             }
         }
     }

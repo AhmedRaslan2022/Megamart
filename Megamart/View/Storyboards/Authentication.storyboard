@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NK7-M1-zvL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -57,7 +57,7 @@
                                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="signup:" destination="6QI-wM-3GH" eventType="touchUpInside" id="JbB-nh-KEG"/>
+                                            <action selector="signup:" destination="6QI-wM-3GH" eventType="touchUpInside" id="8iN-xe-7PO"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Megamart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7wk-FT-Iik">
@@ -300,7 +300,9 @@
                             <constraint firstItem="L0a-Oe-4B2" firstAttribute="centerX" secondItem="sg5-Bg-3CX" secondAttribute="centerX" id="xHw-hi-fsy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9yC-80-Xe6"/>
+                    <navigationItem key="navigationItem" id="9yC-80-Xe6">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="uL4-ZM-Tz9"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="IQB-gm-cLy" id="QZf-kI-3f0"/>
                         <outlet property="confirmPassword_textField" destination="TQz-QB-wx4" id="RgD-iD-lrg"/>
@@ -314,24 +316,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dip-Pz-HCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1506" y="-250"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="N7q-Vs-RDP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NK7-M1-zvL" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a9x-3a-FlA">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6QI-wM-3GH" kind="relationship" relationship="rootViewController" id="Z3I-U0-CI5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W6U-C0-git" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-591" y="-250"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="lRf-eO-qMg">

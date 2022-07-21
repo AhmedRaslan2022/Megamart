@@ -110,7 +110,7 @@ class CategoryViewController: UIViewController {
         productsCollection.delegate = self
         productsCollection.dataSource = self
         
-        self.productsCollection.register(UINib(nibName: "CategoryCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.CategoryViewCell_id)
+        self.productsCollection.register(UINib(nibName: Constants.Products_nib_name, bundle: nil), forCellWithReuseIdentifier: Constants.ProductsViewCell_id)
         
         
 //MARK: -                 Fetch Products
@@ -299,8 +299,8 @@ class CategoryViewController: UIViewController {
             
          
             
-            let cell = productsCollection.dequeueReusableCell(withReuseIdentifier: Constants.CategoryViewCell_id, for: indexPath) as! CategoryCollectionCell
-            cell.productPrice.text = viewedArray[indexPath.row].variants[0].price
+            let cell = productsCollection.dequeueReusableCell(withReuseIdentifier: Constants.ProductsViewCell_id, for: indexPath) as! ProductViewCell
+            cell.ProductPrice.text = viewedArray[indexPath.row].variants[0].price
                let image = viewedArray[indexPath.row].image.src
                cell.setCell(imageUrl: image)
             return cell
@@ -310,7 +310,7 @@ class CategoryViewController: UIViewController {
 
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          
-             CGSize(width: productsCollection.bounds.width, height: productsCollection.bounds.height)
+            CGSize(width: productsCollection.bounds.width / 2.2, height: productsCollection.bounds.height / 2.2)
         }
      
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
