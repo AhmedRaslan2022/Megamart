@@ -164,6 +164,7 @@
                     <navigationItem key="navigationItem" id="XF0-1n-Y2l"/>
                     <connections>
                         <outlet property="backgroundView" destination="Pwh-a5-goP" id="2Vr-vi-xRA"/>
+                        <outlet property="logoImage" destination="82f-JB-yVY" id="Lca-gg-zFw"/>
                         <outlet property="signInView" destination="6B8-NL-Nm5" id="FwZ-0N-yXm"/>
                         <outlet property="signUp_button" destination="GFe-Em-vk5" id="WT2-GG-z1C"/>
                         <outlet property="userEmail_textField" destination="bq5-Q8-GM4" id="l5N-sq-gcR"/>
@@ -307,6 +308,7 @@
                         <outlet property="backgroundView" destination="IQB-gm-cLy" id="QZf-kI-3f0"/>
                         <outlet property="confirmPassword_textField" destination="TQz-QB-wx4" id="RgD-iD-lrg"/>
                         <outlet property="fullName_textField" destination="U3u-UD-Fso" id="0Zr-t9-3PN"/>
+                        <outlet property="logoImage" destination="hIK-AL-etG" id="lkk-K6-xin"/>
                         <outlet property="signUpView" destination="L0a-Oe-4B2" id="ns8-q7-Uic"/>
                         <outlet property="signUp_button" destination="jgE-6v-1BO" id="5H3-pd-EmU"/>
                         <outlet property="userEmail_textField" destination="9im-D2-3Ce" id="Chx-sb-0a9"/>
@@ -425,6 +427,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="VHH-2j-XrT" id="FtX-Yz-ohG"/>
                         <outlet property="conformPassword" destination="E1J-2u-2AC" id="NqW-eq-HR2"/>
+                        <outlet property="logoImage" destination="faB-k8-Ap3" id="YF8-q1-Goe"/>
                         <outlet property="newPassword" destination="tkn-mO-Wmd" id="3Xc-Ln-BSo"/>
                         <outlet property="updatePasswordView" destination="AVk-Ev-snN" id="4ty-gr-Wh3"/>
                         <outlet property="userEmail_textField" destination="Uvy-Lh-vxZ" id="yDG-0B-PNE"/>

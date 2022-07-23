@@ -9,10 +9,10 @@ import Foundation
 
 class ProductDetails_viewModel: ProductDetails_Protocol {
     
-    var apiService: APIService
+    var apiService: FetchProductDetailsProtocol
     var firebaseManager: FirebaseServices
     
-    init(apiService: APIService = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager() ) {
+    init(apiService: FetchProductDetailsProtocol = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager() ) {
         self.apiService = apiService
         self.firebaseManager = firebaseManager
     }

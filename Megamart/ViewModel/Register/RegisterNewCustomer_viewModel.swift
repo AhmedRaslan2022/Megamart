@@ -20,11 +20,11 @@ class RegisterNewCustomer_viewModel: RegiserNewCustomer_protocol {
     var binding: ((String?) -> Void) = {_ in }
     
     
-    var apiService: APIService
+    var apiService: RegisterProtocol_API
     var firebaseManager: FirebaseServices
     
     
-    init(apiService: APIService = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager()) {
+    init(apiService: RegisterProtocol_API = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager()) {
         self.apiService = apiService
         self.firebaseManager = firebaseManager
     }

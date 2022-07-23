@@ -14,6 +14,7 @@ class ResetPassword_ViewController: UIViewController {
     @IBOutlet weak var updatePasswordView: UIView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var userEmail_textField: UITextField!
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var conformPassword: UITextField!
     @IBOutlet weak var newPassword: UITextField!
     
@@ -24,6 +25,8 @@ class ResetPassword_ViewController: UIViewController {
         super.viewDidLoad()
         updatePasswordView.layer.cornerRadius = 30
         backgroundView.layer.cornerRadius = 30
+        logoImage.layer.cornerRadius = 20
+        logoImage.layer.cornerRadius = 20
 
         addAlert(title: "notiation", message: "Please, after updating the password, re-confirm it from your email", ActionTitle: "OK", viewController: self)
         

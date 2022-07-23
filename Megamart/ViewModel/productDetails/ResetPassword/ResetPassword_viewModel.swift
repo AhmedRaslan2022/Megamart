@@ -10,7 +10,7 @@ import Foundation
 class ResetPassword_viewModel: ResetPassword_protocol {
     
     
-    init(firebaseManager: FirebaseServices = FirebaseManager(), apiService: APIService = NetworkManager()) {
+    init(firebaseManager: FirebaseServices = FirebaseManager(), apiService: RestPasswordProtocol_API = NetworkManager()) {
         self.firebaseManager = firebaseManager
         self.apiService = apiService
     }
@@ -53,7 +53,7 @@ class ResetPassword_viewModel: ResetPassword_protocol {
     
     var bindingData_api: ((Error?) -> Void) = {_ in }
     
-    let apiService: APIService
+    let apiService: RestPasswordProtocol_API
 
     
     func restPassword_api(userEmail: String, newPassword: String) {

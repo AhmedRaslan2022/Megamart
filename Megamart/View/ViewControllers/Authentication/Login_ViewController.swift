@@ -11,6 +11,7 @@ import UIKit
 
 class Login_ViewController: UIViewController {
 
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var signUp_button: UIButton!
     @IBOutlet weak var userPassword_textField: UITextField!
     @IBOutlet weak var userEmail_textField: UITextField!
@@ -25,6 +26,9 @@ class Login_ViewController: UIViewController {
         super.viewDidLoad()
         signInView.layer.cornerRadius = 30
         backgroundView.layer.cornerRadius = 30
+        logoImage.layer.cornerRadius = 20
+        logoImage.layer.cornerRadius = 20
+        
         
         // check is logged in before or not
         if Login_Verification()  {

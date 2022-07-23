@@ -26,12 +26,6 @@ class CategoryViewController: UIViewController {
     let collectsViewModel = CollectsViewModel()
     
     
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

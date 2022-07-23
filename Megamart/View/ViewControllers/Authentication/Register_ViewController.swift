@@ -15,6 +15,7 @@ class Register_ViewController: UIViewController {
     @IBOutlet weak var userPassword_textField: UITextField!
     @IBOutlet weak var confirmPassword_textField: UITextField!
     @IBOutlet weak var userEmail_textField: UITextField!
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var fullName_textField: UITextField!
     @IBOutlet weak var signUpView: UIView!
     @IBOutlet weak var backgroundView: UIView!
@@ -26,6 +27,8 @@ class Register_ViewController: UIViewController {
         super.viewDidLoad()
         signUpView.layer.cornerRadius = 30
         backgroundView.layer.cornerRadius = 30
+        logoImage.layer.cornerRadius = 20
+        logoImage.layer.cornerRadius = 20
         
         
         self.userEmail_textField.delegate = self

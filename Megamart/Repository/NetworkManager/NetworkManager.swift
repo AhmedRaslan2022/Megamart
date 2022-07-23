@@ -9,11 +9,9 @@ import Foundation
 import Alamofire
 
 
-class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsAPIService{
-    
-    
-//MARK: -                               product details
-    
+//MARK: -                               Fetch Product Details
+
+class NetworkManager: FetchProductDetailsProtocol {
 
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.productDetails(product_id: endPoint)){
@@ -33,10 +31,12 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
         }
     }
     
-    
+}
+
     
 //MARK: -                                   create new customer
-    
+
+extension NetworkManager: RegisterProtocol_API {
 
     func registerCustomer(newCustomer: NewCustomer, completion: @escaping ((NewCustomer?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.registerCustomer() ) {
@@ -69,11 +69,13 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
         }
         
     }
+}
    
     
     
 //MARK: -                                       Reset Password
-        
+ 
+extension NetworkManager: RestPasswordProtocol_API {
 
     func restPassword(customer: NewCustomer, completion: @escaping ((Error?) -> Void))
     {
@@ -98,19 +100,41 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
                     return
                 }
                 completion(nil)
-//                guard let data = data else { return }
-//                if let decodedData: NewCustomer = convertFromJson(data: data) {
-//                    completion(nil)
-//                }
             }.resume()
     
         }
-    
    }
+    
+}
+
+//MARK: -                             Retive Customers
+ 
+extension NetworkManager: RetriveCustomersProtocol_API {
+    
+    func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void)) {
+        if let url = URL(string: UrlServices.retrievesCustomers()) {
+            print(url)
+            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { response in
+                if let data = response.data {
+                    if let customers: AllCustomers = convertFromJson(data: data) {
+                        completion(customers.customers, nil)
+                    }
+                    
+                }
+                if let error = response.error {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+}
+
 
     
 //MARK: -                             Brands
-    
+
+extension NetworkManager: BrandsAPIService {
     
     func  fetchBrands(completion: @escaping (([SmartCollection]?, Error?) -> Void)){
         if let url = URL(string: UrlServices.brands()){
@@ -135,49 +159,30 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
       
     }
 
-    
-    
-//MARK: -                             Retive Customers
-    
-    
-    func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void)) {
-        if let url = URL(string: UrlServices.retrievesCustomers()) {
-            print(url)
-            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { response in
-                if let data = response.data {
-                    if let customers: AllCustomers = convertFromJson(data: data) {
-                        completion(customers.customers, nil)
-                    }
-                    
-                }
-                if let error = response.error {
-                    completion(nil, error)
-                }
-            }
-        }
-    }
+}
     
 
 
+//MARK: -                             Retive Products
 
+extension NetworkManager: ProductsAPIService {
     
     func fetchProducts(completion: @escaping (([ProductModel]?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.products()){
             AF.request(url , method: .get, parameters: nil, encoding:JSONEncoding.default)
                         .responseData { response in
                guard let data = response.data else { return }
-                            if let decodedData: Products = convertFromJson(data: data){
-                                completion(decodedData.products, nil)
-                            }
+                if let decodedData: Products = convertFromJson(data: data){
+                    completion(decodedData.products, nil)
+                }
             }
         }
-        
-
     }
+}
     
-    
-    //MARK: -                     Collects
-    
+//MARK: -                     Retrive Collects
+
+extension NetworkManager: CollectsAPIService{
            
        func fetchCollects(completion: @escaping (([Collect]?, Error?) -> Void)) {
 
@@ -198,8 +203,6 @@ class NetworkManager: APIService , BrandsAPIService,ProductsAPIService,CollectsA
                 }.resume()
             }
         }
-
-
-
+    
   }
 

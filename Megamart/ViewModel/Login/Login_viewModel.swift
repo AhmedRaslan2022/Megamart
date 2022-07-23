@@ -12,7 +12,7 @@ import FirebaseAuth
 class Login_viewModel: Login_protocol {
     
     let defaults = UserDefaults.standard
-    var apiService: APIService
+    var apiService: RetriveCustomersProtocol_API
     
     var error: String? {
         didSet{
@@ -23,7 +23,7 @@ class Login_viewModel: Login_protocol {
     var binding: ((String?) -> Void) = {_ in }
     
     
-    init(apiService: APIService = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager()) {
+    init(apiService: RetriveCustomersProtocol_API = NetworkManager(), firebaseManager: FirebaseServices = FirebaseManager()) {
         self.apiService = apiService
         self.firebseManager = firebaseManager
     }

@@ -7,43 +7,35 @@
 
 import Foundation
 
-protocol APIService {
-    
-//MARK: - product Info
+
+
+//MARK: -                         Fetch Product Details
+
+protocol FetchProductDetailsProtocol {
     
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void ) )
 
-    
-//MARK: -       register new customer
-    
-    func registerCustomer(newCustomer: NewCustomer, completion: @escaping ((NewCustomer?, Error?) -> Void))
-    
-//MARK: -                           Login
-    
-    func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void))
-    
-//MARK: -                          Reset Password
-    
-    func restPassword(customer: NewCustomer, completion: @escaping ((Error?) -> Void))
-    
-    
 }
 
-//MARK: - Brands
+
+//MARK: -                               Brands
+
 protocol BrandsAPIService {
     
     func fetchBrands(completion: @escaping (([SmartCollection]?, Error?) -> Void ) )
     
 }
 
-//MARK: - products
+//MARK: -                               products
+
 protocol ProductsAPIService {
     
     func fetchProducts(completion: @escaping (([ProductModel]?, Error?) -> Void ) )
     
 }
 
-//MARK: - Categoty
+//MARK: -                               Categoty
+
 protocol CategotyAPIService {
     
     func fetchCategoty(completion: @escaping (([ProductModel]?, Error?) -> Void ) )
@@ -51,7 +43,7 @@ protocol CategotyAPIService {
 }
 
 
-//MARK: - Collects
+//MARK: -                                Collections
 protocol CollectsAPIService {
     
     func fetchCollects(completion: @escaping (([Collect]?, Error?) -> Void ) )
