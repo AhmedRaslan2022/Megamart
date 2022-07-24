@@ -11,21 +11,19 @@ import Alamofire
 
 //MARK: -                               Retive Customers
 
-class NetworkManager: RetriveCustomersProtocol_API {
+class NetworkManager: RetrieveCustomersProtocol_API {
 
     func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void)) {
         if let url = URL(string: UrlServices.retrievesCustomers()) {
-            print(url)
-            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { response in
-                if let data = response.data {
-                    if let customers: AllCustomers = convertFromJson(data: data) {
-                        completion(customers.customers, nil)
-                    }
-                    
+            AF.request(url).responseDecodable(of: AllCustomers.self) { response in
+                if let customers = response.value {
+                    completion(customers.customers, nil)
+                    return
                 }
                 if let error = response.error {
                     completion(nil, error)
                 }
+                
             }
         }
     }
@@ -60,11 +58,10 @@ extension NetworkManager: RegisterProtocol_API {
                 guard let data = data else { return }
                 if let decodedData: NewCustomer = convertFromJson(data: data) {
                     completion(decodedData, nil)
-                    
+
                 }
-                
+
             }.resume()
-    
         }
         
     }
@@ -110,19 +107,13 @@ extension NetworkManager: RestPasswordProtocol_API {
  
 extension NetworkManager: FetchProductDetailsProtocol {
     func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
-        if let url = URL(string: UrlServices.productDetails(product_id: endPoint)){
-            AF.request(url, method: .get, parameters: nil, encoding:JSONEncoding.default)
-                    .responseData { response in
-                            if let error = response.error {
-                                completion(nil, error)
-                            }
-               guard let data = response.data else { return }
-                    if let decodedData: Product = convertFromJson(data: data){
-                        completion(decodedData.product , nil)
-                    } else {
-                        print("Error in decode data")
-                    }
-
+        guard let url = URL(string: UrlServices.productDetails(product_id: endPoint)) else { return }
+        AF.request(url).responseDecodable(of: Product.self) { response in
+            if let product = response.value {
+                completion(product.product, nil)
+            }
+            if let error = response.error {
+                completion(nil, error)
             }
         }
     }
@@ -162,7 +153,8 @@ extension NetworkManager: BrandsAPIService {
     
 
 
-//MARK: -                             Retive Products
+//MARK: -                                       Retive Products
+
 
 extension NetworkManager: ProductsAPIService {
     
@@ -179,7 +171,8 @@ extension NetworkManager: ProductsAPIService {
     }
 }
     
-//MARK: -                     Retrive Collects
+//MARK: -                                   Retrive Collects
+
 
 extension NetworkManager: CollectsAPIService{
            

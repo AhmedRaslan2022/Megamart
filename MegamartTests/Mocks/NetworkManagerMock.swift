@@ -9,7 +9,7 @@ import Foundation
 @testable import Megamart
 
 
-protocol APIServices: FetchProductDetailsProtocol, RetriveCustomersProtocol_API, ProductsAPIService {
+protocol APIServices: FetchProductDetailsProtocol, RetrieveCustomersProtocol_API, ProductsAPIService {
 }
 
 

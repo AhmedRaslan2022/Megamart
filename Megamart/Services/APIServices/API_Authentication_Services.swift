@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: -                           Retrive Customers For LogIn
 
-protocol RetriveCustomersProtocol_API {
+protocol RetrieveCustomersProtocol_API {
     func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void))
 }
 
@@ -22,7 +22,7 @@ protocol RetriveCustomersProtocol_API {
 
 //MARK: -                           register new customer
 
-protocol RegisterProtocol_API: RetriveCustomersProtocol_API {
+protocol RegisterProtocol_API: RetrieveCustomersProtocol_API {
         
     func registerCustomer(newCustomer: NewCustomer, completion: @escaping ((NewCustomer?, Error?) -> Void))
 }
