@@ -34,6 +34,13 @@ class NetworkManagerTests: XCTestCase {
         })
 
     }
+    
+    func testFetchProducts() {
+        apiService?.fetchProducts(completion: { products, error in
+            XCTAssertNotNil(products)
+            XCTAssertNil(error)
+        })
+    }
 
 
 }

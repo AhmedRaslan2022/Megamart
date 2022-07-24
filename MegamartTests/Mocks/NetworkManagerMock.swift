@@ -9,11 +9,12 @@ import Foundation
 @testable import Megamart
 
 
-protocol APIServices: FetchProductDetailsProtocol, RetriveCustomersProtocol_API {
+protocol APIServices: FetchProductDetailsProtocol, RetriveCustomersProtocol_API, ProductsAPIService {
 }
 
 
 class NetworkManagerMock: APIServices {
+    
     
     var shouldReturnError: Bool
     
@@ -57,6 +58,28 @@ class NetworkManagerMock: APIServices {
             }
         }
     }
+    
+    
+    func fetchProducts(completion: @escaping (([ProductModel]?, Error?) -> Void)) {
+        switch shouldReturnError {
+        case true:
+            completion(nil, NetworkError.failedFetchingData)
+        case false:
+            guard let data = try? JSONSerialization.data(withJSONObject: ProductsResponse.jsonResponse, options: .fragmentsAllowed) else {
+                completion(nil, NetworkError.failedFetchingData)
+                return
+            }
+            if let decodedData: Products = convertFromJson(data: data){
+                completion(decodedData.products, nil)
+            }
+            else{
+                completion(nil, NetworkError.failedFetchingData)
+            }
+            
+        }
+    }
+
+    
     
     enum NetworkError: Error {
         case failedFetchingData

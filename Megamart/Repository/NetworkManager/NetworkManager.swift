@@ -9,24 +9,23 @@ import Foundation
 import Alamofire
 
 
-//MARK: -                               Fetch Product Details
+//MARK: -                               Retive Customers
 
-class NetworkManager: FetchProductDetailsProtocol {
+class NetworkManager: RetriveCustomersProtocol_API {
 
-    func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
-        if let url = URL(string: UrlServices.productDetails(product_id: endPoint)){
-            AF.request(url, method: .get, parameters: nil, encoding:JSONEncoding.default)
-                    .responseData { response in
-                            if let error = response.error {
-                                completion(nil, error)
-                            }
-               guard let data = response.data else { return }
-                    if let decodedData: Product = convertFromJson(data: data){
-                        completion(decodedData.product , nil)
-                    } else {
-                        print("Error in decode data")
+    func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void)) {
+        if let url = URL(string: UrlServices.retrievesCustomers()) {
+            print(url)
+            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { response in
+                if let data = response.data {
+                    if let customers: AllCustomers = convertFromJson(data: data) {
+                        completion(customers.customers, nil)
                     }
-
+                    
+                }
+                if let error = response.error {
+                    completion(nil, error)
+                }
             }
         }
     }
@@ -107,23 +106,23 @@ extension NetworkManager: RestPasswordProtocol_API {
     
 }
 
-//MARK: -                             Retive Customers
+//MARK: -                             Fetch Product Details
  
-extension NetworkManager: RetriveCustomersProtocol_API {
-    
-    func retriveCustomers(completion: @escaping (([Customer]?, Error?) -> Void)) {
-        if let url = URL(string: UrlServices.retrievesCustomers()) {
-            print(url)
-            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { response in
-                if let data = response.data {
-                    if let customers: AllCustomers = convertFromJson(data: data) {
-                        completion(customers.customers, nil)
+extension NetworkManager: FetchProductDetailsProtocol {
+    func fetchProductInfo(endPoint: String, completion: @escaping ((ProductModel?, Error?) -> Void)) {
+        if let url = URL(string: UrlServices.productDetails(product_id: endPoint)){
+            AF.request(url, method: .get, parameters: nil, encoding:JSONEncoding.default)
+                    .responseData { response in
+                            if let error = response.error {
+                                completion(nil, error)
+                            }
+               guard let data = response.data else { return }
+                    if let decodedData: Product = convertFromJson(data: data){
+                        completion(decodedData.product , nil)
+                    } else {
+                        print("Error in decode data")
                     }
-                    
-                }
-                if let error = response.error {
-                    completion(nil, error)
-                }
+
             }
         }
     }
@@ -190,8 +189,6 @@ extension NetworkManager: CollectsAPIService{
                 print(url)
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     if let data = data {
-                        print("Collections data is here before decoding line 122")
-                        print("\(data)")
                         guard let decodedData  = try? JSONDecoder().decode(Collects.self, from: data)
                         else {return}
                         completion(decodedData.collects,nil)
