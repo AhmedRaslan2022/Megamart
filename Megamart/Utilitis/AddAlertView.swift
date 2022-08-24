@@ -24,7 +24,6 @@ func requestLogin_alert(viewController: UIViewController) {
     alert.addAction(UIAlertAction(title: "Login", style: .destructive, handler: { _ in
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.authentication_storyboard, bundle:nil)
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: Constants.login_viewController_id) as! Login_ViewController
-//        loginViewController.modalPresentationStyle = .fullScreen
         viewController.navigationController?.pushViewController(loginViewController, animated: true)
     }))
     
